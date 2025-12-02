@@ -20,3 +20,27 @@ npm run dev
 ```
 
 This runs the app at http://localhost:5173/.
+
+### Preview the production build locally
+
+If you just want to see the finished site in your browser, copy and paste these commands exactly—no tweaking required:
+
+**Where to type these commands:** open a Terminal/Command Prompt window (on Windows, macOS, or Linux). If you downloaded this project, first `cd` into the project folder so your prompt shows this repository’s files (you should see `package.json` when you run `ls` or `dir`). Then run the steps below in that same terminal.
+
+1. Build the site (turns the app into static files Vite can serve):
+
+   ```bash
+   npm run build
+   ```
+
+2. Start the preview server on port **4173**:
+
+   ```bash
+   npm run preview -- --host --port 4173
+   ```
+
+3. In your browser, open <http://localhost:4173>. If `localhost` does not work, try <http://127.0.0.1:4173> instead—both addresses point to your own computer.
+
+Why those extra flags?
+- `--host` lets Vite listen on your computer so the link above works without further setup.
+- `--port 4173` avoids conflicts with the dev server that uses port 5173.
