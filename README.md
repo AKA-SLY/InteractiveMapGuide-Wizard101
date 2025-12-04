@@ -2,6 +2,10 @@
 
 This is your Wizard101 interactive map + lookup app, extracted from ChatGPT and ready for GitHub Pages.
 
+## Live site
+
+Open the hosted build at <https://aka-sly.github.io/InteractiveMapGuide-Wizard101/>. The Vite base path is configured for this GitHub Pages URL, so the app should load without a blank white screen.
+
 ## How to use
 
 1. Create a new GitHub repository named **wizard101-guide** (or any name).
