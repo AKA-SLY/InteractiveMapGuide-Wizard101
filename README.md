@@ -25,6 +25,8 @@ This runs the app at http://localhost:5173/.
 
 If you just want to see the finished site in your browser, copy and paste these commands exactly—no tweaking required. These instructions are written for macOS Terminal, but the commands are the same on Windows and Linux.
 
+> **Do I need the app downloaded?** Yes—because this runs on your own computer, you need the project files on your machine (download the ZIP or clone the repo). If you publish the app to GitHub Pages, you can then view it from that hosted URL without running anything locally.
+
 **Where to type these commands:** open the **Terminal** app. If you downloaded this project, first change into the project folder so your prompt shows this repository’s files (you should see `package.json` when you run `ls`). Do everything below from inside that folder.
 
 1. Install the dependencies (only needed the first time):
