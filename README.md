@@ -51,6 +51,7 @@ Common macOS tips
 - If the terminal says “command not found: npm,” install Node.js (which includes npm) from <https://nodejs.org/> and then rerun the commands.
 - If you accidentally close the terminal window, reopen Terminal, `cd` back into the project folder, and repeat steps 2–3.
 - To stop the preview server, press `Ctrl + C` in the terminal window where it is running.
+- If you see an error with code **ENOENT**, Terminal can’t find the files for this project. Fix it by making sure you are **inside** the project folder before running the commands: use `cd` to go to the folder that contains `package.json` (for example, `cd ~/Downloads/wizard101-guide`) and rerun the steps above.
 
 Why those extra flags?
 - `--host` lets Vite listen on your computer so the link above works without further setup.
