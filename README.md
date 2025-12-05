@@ -1,6 +1,24 @@
 # Wizard101 Interactive Guide
 
-This is your Wizard101 interactive map + lookup app, extracted from ChatGPT and ready for GitHub Pages.
+This is a React/Vite Wizard101 guide with a built-in spell, gear, character, and fishing lookup. The layout now renders immediately (no more blank white screen) and is styled for both desktop and mobile.
+
+## Live site
+
+Open the hosted build at <https://aka-sly.github.io/InteractiveMapGuide-Wizard101/>. The Vite base path is configured for this GitHub Pages URL, so the app should load without a blank white screen.
+
+### Deploying to GitHub Pages
+
+The repository now includes a GitHub Actions workflow that automatically builds and deploys the site to GitHub Pages.
+
+1. Push your changes to the `main` branch.
+2. In your repository, go to **Settings → Pages** and set the **Source** to **GitHub Actions** (you only need to do this once).
+3. After each push to `main`, the workflow will run, build the Vite app, and publish the `dist` folder to GitHub Pages.
+4. When the workflow finishes, refresh <https://aka-sly.github.io/InteractiveMapGuide-Wizard101/> (or your repository’s Pages URL) and the site should render instead of a blank page.
+
+If you still see a white screen, GitHub Pages is likely serving the raw source files instead of the built `dist` folder. Fix it by:
+- confirming **Settings → Pages → Source** is set to **GitHub Actions** (not “Deploy from a branch”)
+- opening the latest **Deploy to GitHub Pages** workflow run under the **Actions** tab and making sure both the **build** and **deploy** jobs finished successfully
+- waiting a minute after the deploy finishes—Pages sometimes needs a moment to serve the new files
 
 ## Live site
 
@@ -28,6 +46,7 @@ If you still see a white screen, GitHub Pages is likely serving the raw source f
    - builds the Vite app
    - deploys to GitHub Pages automatically
 5. After the first run finishes, go to your repo → Settings → Pages and confirm the URL.
+6. If the page ever goes blank again, re-run the **Deploy to GitHub Pages** workflow from the **Actions** tab and refresh the live URL.
 
 Locally:
 
