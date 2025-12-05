@@ -1,16 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./styles.css";
+import Wizard101Preview from "./Wizard101Preview";
 
-const root = document.getElementById("root");
-
-if (root) {
-  ReactDOM.createRoot(root).render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
-} else {
-  console.error("Root element not found. Make sure index.html has a div#root.");
-}
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <React.StrictMode>
+    <Wizard101Preview />
+  </React.StrictMode>
+);
