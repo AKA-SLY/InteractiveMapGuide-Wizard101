@@ -1,0 +1,58 @@
+import { type Spell } from "../types";
+
+export const spells: Spell[] = [
+  {
+    name: "Fire Cat",
+    school: "Fire",
+    rank: 1,
+    pipCost: 1,
+    accuracy: "75%",
+    effect: "65–105 Fire damage",
+    description: "A quick Fire opener that is reliable early on.",
+  },
+  {
+    name: "Snow Serpent",
+    school: "Ice",
+    rank: 2,
+    pipCost: 2,
+    accuracy: "85%",
+    effect: "190–230 Ice damage",
+    description: "Cheap Ice hitter with great accuracy for combos.",
+  },
+  {
+    name: "Storm Shark",
+    school: "Storm",
+    rank: 3,
+    pipCost: 3,
+    accuracy: "70%",
+    effect: "375–435 Storm damage",
+    description: "Glass-cannon strike that pairs well with buffs.",
+  },
+  {
+    name: "Phoenix",
+    school: "Fire",
+    rank: 5,
+    pipCost: 5,
+    accuracy: "70%",
+    effect: "515–595 Fire damage",
+    description: "Solid midgame boss killer once you have blades.",
+  },
+  {
+    name: "Lifeblade",
+    school: "Life",
+    rank: 0,
+    pipCost: 0,
+    accuracy: "100%",
+    effect: "+35% to next Life spell",
+    description: "Essential buff for any Life hitter or support.",
+  },
+  {
+    name: "Feint",
+    school: "Death",
+    rank: 0,
+    pipCost: 0,
+    accuracy: "100%",
+    effect: "+70% outgoing / +30% incoming",
+    description: "High-risk, high-reward trap used in nearly all strats.",
+  },
+];
