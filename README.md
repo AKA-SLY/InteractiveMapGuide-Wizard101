@@ -40,37 +40,21 @@ This runs the app at http://localhost:5173/.
 
 ### Preview the production build locally
 
-If you just want to see the finished site in your browser, copy and paste these commands exactly—no tweaking required. These instructions are written for macOS Terminal, but the commands are the same on Windows and Linux.
+If you just want to see the finished site in your browser, copy and paste these commands exactly—no tweaking required:
 
-> **Do I need the app downloaded?** Yes—because this runs on your own computer, you need the project files on your machine (download the ZIP or clone the repo). If you publish the app to GitHub Pages, you can then view it from that hosted URL without running anything locally.
-
-**Where to type these commands:** open the **Terminal** app. If you downloaded this project, first change into the project folder so your prompt shows this repository’s files (you should see `package.json` when you run `ls`). Do everything below from inside that folder.
-
-1. Install the dependencies (only needed the first time):
-
-   ```bash
-   npm install
-   ```
-
-2. Build the site (turns the app into static files Vite can serve):
+1. Build the site (turns the app into static files Vite can serve):
 
    ```bash
    npm run build
    ```
 
-3. Start the preview server on port **4173**:
+2. Start the preview server on port **4173**:
 
    ```bash
    npm run preview -- --host --port 4173
    ```
 
-4. In your browser, open <http://localhost:4173>. If `localhost` does not work, try <http://127.0.0.1:4173> instead—both addresses point to your own computer.
-
-Common macOS tips
-- If the terminal says “command not found: npm,” install Node.js (which includes npm) from <https://nodejs.org/> and then rerun the commands.
-- If you accidentally close the terminal window, reopen Terminal, `cd` back into the project folder, and repeat steps 2–3.
-- To stop the preview server, press `Ctrl + C` in the terminal window where it is running.
-- If you see an error with code **ENOENT**, Terminal can’t find the files for this project. Fix it by making sure you are **inside** the project folder before running the commands: use `cd` to go to the folder that contains `package.json` (for example, `cd ~/Downloads/wizard101-guide`) and rerun the steps above.
+3. In your browser, open <http://localhost:4173>. If `localhost` does not work, try <http://127.0.0.1:4173> instead—both addresses point to your own computer.
 
 Why those extra flags?
 - `--host` lets Vite listen on your computer so the link above works without further setup.
