@@ -1,4 +1,14 @@
-export type School = "All" | "Fire" | "Ice" | "Storm" | "Myth" | "Life" | "Death" | "Balance";
+export type School =
+  | "All"
+  | "Fire"
+  | "Ice"
+  | "Storm"
+  | "Myth"
+  | "Life"
+  | "Death"
+  | "Balance"
+  | "Astral"
+  | "Shadow";
 
 export type Spell = {
   name: string;
