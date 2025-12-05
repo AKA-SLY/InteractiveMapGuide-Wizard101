@@ -15,6 +15,10 @@ The repository now includes a GitHub Actions workflow that automatically builds 
 3. After each push to `main`, the workflow will run, build the Vite app, and publish the `dist` folder to GitHub Pages.
 4. When the workflow finishes, refresh <https://aka-sly.github.io/InteractiveMapGuide-Wizard101/> (or your repository’s Pages URL) and the site should render instead of a blank page.
 
+If you still see a white screen, GitHub Pages is likely serving the raw source files instead of the built `dist` folder. Fix it by:
+- confirming **Settings → Pages → Source** is set to **GitHub Actions** (not “Deploy from a branch”)
+- opening the latest **Deploy to GitHub Pages** workflow run under the **Actions** tab and making sure both the **build** and **deploy** jobs finished successfully
+
 ## How to use
 
 1. Create a new GitHub repository named **wizard101-guide** (or any name).
