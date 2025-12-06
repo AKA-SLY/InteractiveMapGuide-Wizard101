@@ -1,17 +1,19 @@
 import React, { useMemo, useState } from "react";
+import { categories } from "./data/categories";
+import { characters } from "./data/characters";
+import { fishing } from "./data/fishing";
+import { gear } from "./data/gear";
+import { schools } from "./data/schools";
+import { spells } from "./data/spells";
+import { worlds } from "./data/worlds";
 import {
-  categories,
-  characters,
-  fishing,
-  gear,
-  schools,
-  spells,
+  type CategoryKey,
   type Character,
   type FishingSpot,
   type Gear,
   type School,
   type Spell,
-} from "./data";
+} from "./types";
 
 function formatMeta(item: Spell | Gear | Character | FishingSpot, active: string) {
   switch (active) {
@@ -106,14 +108,14 @@ function Details({
 }
 
 function App() {
-  const [category, setCategory] = useState<string>("Spells");
+  const [category, setCategory] = useState<CategoryKey>("Spells");
   const [school, setSchool] = useState<School>("All");
   const [search, setSearch] = useState<string>("");
   const [selected, setSelected] = useState<
     Spell | Gear | Character | FishingSpot | null
   >(null);
 
-  const dataset = useMemo(() => {
+  const dataset = useMemo<(Spell | Gear | Character | FishingSpot)[]>(() => {
     switch (category) {
       case "Spells":
         return spells;
@@ -168,6 +170,18 @@ function App() {
             <a className="ghost" href="#list">
               Jump to list
             </a>
+          </div>
+
+          <div className="worlds">
+            <p className="eyebrow">World bubbles</p>
+            <div className="worlds__grid">
+              {worlds.map((world) => (
+                <div key={world.name} className="world-bubble">
+                  <div className="world-bubble__name">{world.name}</div>
+                  <div className="world-bubble__summary">{world.summary}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </header>
