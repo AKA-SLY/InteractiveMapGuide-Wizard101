@@ -18,6 +18,7 @@ export type Spell = {
   accuracy: string;
   effect: string;
   description: string;
+  image?: string;
 };
 
 export type Gear = {
@@ -27,6 +28,7 @@ export type Gear = {
   level: number;
   stats: string;
   location: string;
+  image?: string;
 };
 
 export type Character = {
@@ -35,6 +37,7 @@ export type Character = {
   world: string;
   location: string;
   tip?: string;
+  image?: string;
 };
 
 export type FishingSpot = {
@@ -43,6 +46,7 @@ export type FishingSpot = {
   school: Exclude<School, "All"> | "Any";
   rank: string;
   note: string;
+  image?: string;
 };
 
 export type CategoryKey = "Spells" | "Gear" | "Characters" | "Fishing";

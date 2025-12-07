@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { categories } from "./data/categories";
 import { characters } from "./data/characters";
 import { fishing } from "./data/fishing";
@@ -14,6 +14,23 @@ import {
   type School,
   type Spell,
 } from "./types";
+
+const PAGE_SIZE = 5;
+
+const schoolIcons: Record<Exclude<School, "All">, string> = {
+  Fire: "🔥",
+  Ice: "❄️",
+  Storm: "⚡️",
+  Myth: "🐍",
+  Life: "🍃",
+  Death: "💀",
+  Balance: "⚖️",
+  Astral: "🌠",
+  Shadow: "🌑",
+};
+
+const placeholderThumb = (label: string) =>
+  `https://dummyimage.com/160x160/1b1529/ffffff&text=${encodeURIComponent(label)}`;
 
 function formatMeta(item: Spell | Gear | Character | FishingSpot, active: string) {
   switch (active) {
@@ -49,6 +66,10 @@ function Details({
   category: string;
   onClose: () => void;
 }) {
+  const thumb =
+    (item as Spell | Gear | Character | FishingSpot).image ??
+    placeholderThumb(item.name.slice(0, 10));
+
   return (
     <div className="overlay">
       <div className="panel">
@@ -62,7 +83,15 @@ function Details({
           </button>
         </header>
 
-        <p className="panel__meta">{formatMeta(item, category)}</p>
+        <div className="panel__thumb">
+          <img src={thumb} alt="" />
+          <div className="panel__thumb-meta">
+            <p className="panel__meta">{formatMeta(item, category)}</p>
+            <p className="hint">
+              Images are placeholders—you can swap them for official art later.
+            </p>
+          </div>
+        </div>
 
         {category === "Spells" && (
           <>
@@ -115,6 +144,8 @@ function App() {
     Spell | Gear | Character | FishingSpot | null
   >(null);
   const [worldFocus, setWorldFocus] = useState<WorldBubble | null>(null);
+  const [page, setPage] = useState<number>(1);
+  const [showImages, setShowImages] = useState<boolean>(true);
 
   const dataset = useMemo<(Spell | Gear | Character | FishingSpot)[]>(() => {
     switch (category) {
@@ -130,6 +161,10 @@ function App() {
         return spells;
     }
   }, [category]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [category, school, search]);
 
   const filtered = useMemo(() => {
     return dataset.filter((item) => {
@@ -158,6 +193,11 @@ function App() {
     [filtered],
   );
 
+  const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const start = (safePage - 1) * PAGE_SIZE;
+  const pageItems = sorted.slice(start, start + PAGE_SIZE);
+
   return (
     <div className="page">
       <header className="hero">
@@ -180,7 +220,7 @@ function App() {
         </div>
       </header>
 
-      <main className="bookmark-layout" id="list">
+      <main className="content-layout" id="list">
         <section className="bookmark-shell">
           <div className="bookmark-tabs" aria-label="Categories">
             {categories.map((c) => (
@@ -247,9 +287,34 @@ function App() {
                 <p className="eyebrow" aria-live="polite">
                   {sorted.length} result{sorted.length === 1 ? "" : "s"}
                 </p>
-                <h3 className="panel__title">{category} cards</h3>
+                <h3 className="panel__title">{category} row</h3>
               </div>
-              <p className="hint">Click any item to open its detail overlay.</p>
+              <div className="row-controls">
+                <button className="ghost" onClick={() => setShowImages((v) => !v)}>
+                  {showImages ? "Hide thumbnails" : "Show thumbnails"}
+                </button>
+                <div className="pager" aria-label="Page selector">
+                  <button
+                    className="ghost"
+                    onClick={() => setPage(Math.max(1, safePage - 1))}
+                    disabled={safePage === 1}
+                    aria-label="Previous page"
+                  >
+                    ← Prev
+                  </button>
+                  <span>
+                    Page {safePage} / {totalPages}
+                  </span>
+                  <button
+                    className="ghost"
+                    onClick={() => setPage(Math.min(totalPages, safePage + 1))}
+                    disabled={safePage === totalPages}
+                    aria-label="Next page"
+                  >
+                    Next →
+                  </button>
+                </div>
+              </div>
             </div>
 
             {filtered.length === 0 ? (
@@ -257,49 +322,84 @@ function App() {
                 No matches—try a different school or name.
               </div>
             ) : (
-              <div className="grid">
-                {sorted.map((item) => (
-                  <article
-                    key={item.name}
-                    className="card"
-                    onClick={() => setSelected(item)}
-                  >
-                    <div className="card__header">
-                      <span className="dot" />
-                      <p className="eyebrow">{category}</p>
-                    </div>
-                    <h3>{item.name}</h3>
-                    <p className="muted">{formatMeta(item, category)}</p>
-                    <p className="card__cta">Open details →</p>
-                  </article>
-                ))}
+              <div className="row-cards" role="list">
+                {pageItems.map((item) => {
+                  const itemSchool =
+                    category === "Spells"
+                      ? (item as Spell).school
+                      : category === "Gear"
+                        ? (item as Gear).school
+                        : category === "Fishing"
+                          ? (item as FishingSpot).school
+                          : null;
+
+                  const schoolIcon =
+                    itemSchool && itemSchool !== "Any"
+                      ? schoolIcons[itemSchool as Exclude<School, "All">]
+                      : null;
+
+                  const thumb = (item as Spell | Gear | Character | FishingSpot).image;
+                  const displayThumb = thumb ?? placeholderThumb(item.name.slice(0, 6));
+
+                  return (
+                    <article
+                      key={item.name}
+                      className="row-card"
+                      role="listitem"
+                      onClick={() => setSelected(item)}
+                    >
+                      {showImages ? (
+                        <img className="row-card__thumb" src={displayThumb} alt="" />
+                      ) : (
+                        <div className="row-card__thumb row-card__thumb--off">Img</div>
+                      )}
+                      <div className="row-card__body">
+                        <p className="eyebrow">{category}</p>
+                        <h3>{item.name}</h3>
+                      </div>
+                      {schoolIcon && (
+                        <span className="school-chip" title={`${itemSchool} school`}>
+                          {schoolIcon}
+                        </span>
+                      )}
+                    </article>
+                  );
+                })}
               </div>
             )}
-
-            <div className="worlds worlds--inline">
-              <div className="content__header">
-                <div>
-                  <p className="eyebrow">World bubbles</p>
-                  <h3 className="panel__title">Jump into a world</h3>
-                </div>
-                <p className="hint">Tap a bubble for a quick lore pop-up.</p>
-              </div>
-              <div className="worlds__grid">
-                {worlds.map((world) => (
-                  <button
-                    key={world.name}
-                    className="world-bubble world-bubble--button"
-                    onClick={() => setWorldFocus(world)}
-                    aria-label={`Open details for ${world.name}`}
-                  >
-                    <div className="world-bubble__name">{world.name}</div>
-                    <div className="world-bubble__summary">{world.summary}</div>
-                  </button>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
+
+        <aside className="world-panel" aria-label="World bubbles">
+          <div className="world-panel__header">
+            <div>
+              <p className="eyebrow">World atlas</p>
+              <h2>World bubbles</h2>
+            </div>
+            <p className="hint">
+              Worlds stay on the right. Click any bubble to open a map pop-up.
+            </p>
+          </div>
+
+          <div className="world-panel__list">
+            {worlds.map((world) => (
+              <button
+                key={world.name}
+                className="world-bubble world-bubble--button"
+                onClick={() => setWorldFocus(world)}
+                aria-label={`Open details for ${world.name}`}
+              >
+                <div className="world-bubble__name">{world.name}</div>
+                <div className="world-bubble__summary">{world.summary}</div>
+              </button>
+            ))}
+          </div>
+
+          <p className="hint">
+            Map pop-ups will hold interactive markers later for Prospector Zeke,
+            bosses, minions, and quests.
+          </p>
+        </aside>
       </main>
 
       {selected && (
@@ -323,6 +423,19 @@ function App() {
               </button>
             </header>
             <p className="panel__body">{worldFocus.summary}</p>
+            <div className="map-frame">
+              <img
+                src={
+                  worldFocus.mapImage ??
+                  "https://dummyimage.com/1000x600/1b1529/ffffff&text=World+map"
+                }
+                alt={`${worldFocus.name} map preview`}
+              />
+            </div>
+            <p className="hint">
+              Future updates will place interactive markers on these maps for
+              Prospector Zeke items, bosses, minions, or quest paths.
+            </p>
           </div>
         </div>
       )}
