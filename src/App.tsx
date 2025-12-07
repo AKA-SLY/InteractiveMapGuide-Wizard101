@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { type ReactNode, useEffect, useMemo, useState } from "react";
 import { categories } from "./data/categories";
 import { furniture } from "./data/furniture";
 import { gear } from "./data/gear";
@@ -19,56 +19,51 @@ import {
   type SpellSource,
   type Location,
 } from "./types";
-import allSchoolIcon from "./assets/icons/schools/all.svg";
-import balanceIcon from "./assets/icons/schools/balance.svg";
-import deathIcon from "./assets/icons/schools/death.svg";
-import fireIcon from "./assets/icons/schools/fire.svg";
-import iceIcon from "./assets/icons/schools/ice.svg";
-import lifeIcon from "./assets/icons/schools/life.svg";
-import moonIcon from "./assets/icons/schools/moon.svg";
-import mythIcon from "./assets/icons/schools/myth.svg";
-import shadowIcon from "./assets/icons/schools/shadow.svg";
-import starIcon from "./assets/icons/schools/star.svg";
-import stormIcon from "./assets/icons/schools/storm.svg";
-import sunIcon from "./assets/icons/schools/sun.svg";
-import characterIcon from "./assets/icons/categories/character.svg";
-import fishingIcon from "./assets/icons/categories/fishing.svg";
-import furnitureIcon from "./assets/icons/categories/furniture.svg";
-import gearIcon from "./assets/icons/categories/gear.svg";
-import locationIcon from "./assets/icons/categories/location.svg";
-import spellIcon from "./assets/icons/categories/spell.svg";
-import treasureIcon from "./assets/icons/categories/treasure.svg";
 import worldBubbleFallback from "./assets/icons/worlds/bubble-fallback.svg";
 import worldMapFallback from "./assets/icons/worlds/map-fallback.svg";
+import { formatLibraryFileName, libraryPath, w101Icon } from "./lib/library";
 
 const PAGE_SIZE = 8;
 
 const worldFallbackImage = worldMapFallback;
 
 const schoolIcons: Record<School, string> = {
-  All: allSchoolIcon,
-  Fire: fireIcon,
-  Ice: iceIcon,
-  Storm: stormIcon,
-  Myth: mythIcon,
-  Life: lifeIcon,
-  Death: deathIcon,
-  Balance: balanceIcon,
-  Sun: sunIcon,
-  Moon: moonIcon,
-  Star: starIcon,
-  Shadow: shadowIcon,
+  All: w101Icon("All"),
+  Fire: w101Icon("Fire_School"),
+  Ice: w101Icon("Ice_School"),
+  Storm: w101Icon("Storm_School"),
+  Myth: w101Icon("Myth_School"),
+  Life: w101Icon("Life_School"),
+  Death: w101Icon("Death_School"),
+  Balance: w101Icon("Balance_School"),
+  Sun: w101Icon("Sun"),
+  Moon: w101Icon("Moon"),
+  Star: w101Icon("Star"),
+  Shadow: w101Icon("Shadow"),
 };
 
 const categoryIconFallback: Record<CategoryKey, string> = {
-  Spells: spellIcon,
-  "Treasure Cards": treasureIcon,
-  Gear: gearIcon,
-  Furniture: furnitureIcon,
-  Characters: characterIcon,
-  Fishing: fishingIcon,
-  Locations: locationIcon,
+  Spells: w101Icon("Damage_Spell"),
+  "Treasure Cards": w101Icon("Treasure_Card"),
+  Gear: w101Icon("All_Items"),
+  Furniture: w101Icon("House"),
+  Characters: w101Icon("Admin"),
+  Fishing: w101Icon("Fish_Rank_1"),
+  Locations: w101Icon("Aquila"),
 };
+
+const characterFilters = [
+  "All",
+  "Trainer",
+  "Professor",
+  "Vendor",
+  "Quest Giver",
+  "Boss",
+  "Minion",
+  "Dropping Loot",
+  "Ally",
+  "Support",
+];
 
 const placeholderThumb = (label: string) =>
   `https://dummyimage.com/240x240/f4e6c4/2b1441&text=${encodeURIComponent(label)}`;
@@ -79,21 +74,151 @@ const slugify = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)+/g, "");
 
-const LIBRARY_BASE = "/W101 Images";
+const formatPercent = (value: string | number) =>
+  typeof value === "string"
+    ? value.includes("%")
+      ? value
+      : `${value}%`
+    : `${value}%`;
 
-const libraryPath = (
+const libraryPathFromSlug = (
   folder: string,
   name: string,
   extension: "png" | "jpg" | "jpeg" | "webp" = "png",
-) => encodeURI(`${LIBRARY_BASE}/${folder}/${slugify(name)}.${extension}`);
+  formatter: (value: string) => string = slugify,
+) => libraryPath(folder, name, extension, formatter);
 
-const worldBubblePath = (name: string) => libraryPath("worlds/bubbles", name);
-const worldMapPath = (name: string) => libraryPath("worlds/maps", name);
+const worldBubblePath = (name: string) => libraryPathFromSlug("worlds/bubbles", name);
+const worldMapPath = (name: string) => libraryPathFromSlug("worlds/maps", name);
+
+const statIconFor = (label: string, value?: string) => {
+  if (label === "School" && value && value in schoolIcons) {
+    return schoolIcons[value as School];
+  }
+
+  if (label === "Role" && value) {
+    return libraryPath("Icons", value, "webp", formatLibraryFileName);
+  }
+
+  return libraryPath("Icons", value ?? label, "webp", formatLibraryFileName);
+};
+
+const mergeStatLines = (
+  base: { label: string; value: ReactNode; icon?: string }[],
+  template: { label: string; value: ReactNode; icon?: string }[],
+) => {
+  const labels = new Set(base.map((line) => line.label));
+  return [...base, ...template.filter((line) => !labels.has(line.label))];
+};
+
+const spellTemplate = (spell: Spell) => [
+  { label: "Card Type", value: spell.cardType ?? "Damage", icon: w101Icon("Damage_Spell") },
+  { label: "Target", value: spell.target ?? "Single Enemy", icon: w101Icon("All_Enemies") },
+  {
+    label: "Level Requirement",
+    value: spell.levelRequirement ? `Level ${spell.levelRequirement}+` : "Level 1+ apprentice",
+    icon: w101Icon("PvP_Level"),
+  },
+  {
+    label: "Training Cost",
+    value: spell.trainingPointCost ?? "0 training points + 80 gold",
+    icon: w101Icon("Training_Point"),
+  },
+  {
+    label: "School Pip Cost",
+    value: spell.schoolPipCost ? `${spell.schoolPipCost} school pip` : "No school pip cost",
+    icon: w101Icon(`${spell.school}_School_Pip`),
+  },
+  {
+    label: "Shadow Pip Cost",
+    value: spell.shadowPipCost ? `${spell.shadowPipCost} shadow pip` : "No shadow pips required",
+    icon: w101Icon("Shadow_Pip"),
+  },
+  { label: "Card Text", value: spell.effect, icon: w101Icon("Effect_Spell") },
+];
+
+const treasureTemplate = (card: TreasureCard) => [
+  { label: "Card Type", value: "Treasure Card", icon: w101Icon("Treasure_Card") },
+  { label: "Target", value: card.target ?? "Single Enemy", icon: w101Icon("All_Enemies") },
+  {
+    label: "Level Requirement",
+    value: card.levelRequirement ?? "Level 1+ apprentice",
+    icon: w101Icon("PvP_Level"),
+  },
+  {
+    label: "Purchase", 
+    value: card.trainingPointCost ?? "Library & Bazaar pricing",
+    icon: w101Icon("Gold"),
+  },
+];
+
+const gearTemplate = (piece: Gear) => [
+  {
+    label: "Rarity",
+    value: piece.rarity ?? "Dropped + Bazaar", 
+    icon: w101Icon("All_Items"),
+  },
+  {
+    label: "Auction",
+    value: piece.auctionable ?? "Yes, Bazaar eligible",
+    icon: w101Icon("Gold_Trophy"),
+  },
+];
+
+const characterTemplate = (npc: Character) => [
+  { label: "School", value: npc.school ?? "Neutral", icon: npc.school ? schoolIcons[npc.school] : w101Icon("All") },
+  { label: "Rank", value: npc.rank ?? "NPC", icon: w101Icon("Warning_Red") },
+  {
+    label: "Health",
+    value: npc.health ? `${npc.health} HP` : "Non-combatant",
+    icon: w101Icon("Health"),
+  },
+  {
+    label: "Cheats",
+    value: npc.cheats ?? "No cheats observed",
+    icon: w101Icon("Warning_Red_1"),
+  },
+];
+
+const furnitureTemplate = (item: Furniture) => [
+  { label: "Category", value: item.subcategory, icon: w101Icon("House") },
+  { label: "Rarity", value: item.rarity ?? "Common", icon: w101Icon("All_Items") },
+  { label: "Buy Price", value: item.buyPrice ?? "Vendor gold", icon: w101Icon("Gold") },
+  { label: "Sell Price", value: item.sellPrice ?? "75% vendor value", icon: w101Icon("Gold_Chest") },
+  { label: "Crafting", value: item.crafting ?? "No recipe required", icon: w101Icon("Crafting") },
+  {
+    label: "Housing Tags",
+    value: (item.tags ?? ["Indoor Placement"]).join(", "),
+    icon: w101Icon("Attic"),
+  },
+];
+
+const fishingTemplate = (spot: FishingSpot) => [
+  { label: "Rarity", value: spot.rarity ?? "Common", icon: w101Icon("Fish_Rank_1") },
+  { label: "Tank", value: spot.tank ?? "Regular Aquarium", icon: w101Icon("Aquarium") },
+  { label: "XP", value: spot.xp ? `${spot.xp} XP on catch` : "Base fishing XP", icon: w101Icon("XP") },
+  { label: "Size", value: spot.size ?? "Small Fry to Whopper", icon: w101Icon("Fish_Rank_2") },
+];
+
+const locationTemplate = (loc: Location) => [
+  { label: "World", value: loc.world, icon: statIconFor("World") },
+  {
+    label: "Access",
+    value: loc.access ?? "Story progression",
+    icon: w101Icon("Archmastery"),
+  },
+];
 
 function getItemImage(item: CatalogItem, category: CategoryKey) {
   if ((item as CatalogItem).image) return (item as CatalogItem).image as string;
 
-  if (category === "Spells") return libraryPath("spells", (item as Spell).name);
+  if (category === "Spells")
+    return libraryPath(
+      "Wizard101 Fire_Spells",
+      (item as Spell).name,
+      "png",
+      formatLibraryFileName,
+    );
   if (category === "Treasure Cards")
     return libraryPath("treasure-cards", (item as TreasureCard).name);
   if (category === "Gear") return libraryPath("gear", (item as Gear).name);
@@ -104,7 +229,11 @@ function getItemImage(item: CatalogItem, category: CategoryKey) {
   if (category === "Fishing") return libraryPath("fishing", (item as FishingSpot).name);
   if (category === "Locations") return libraryPath("locations", (item as Location).name);
 
-  return categoryIconFallback[category] ?? placeholderThumb(item.name.slice(0, 8));
+  return (
+    libraryPath("Icons", category, "webp", formatLibraryFileName) ||
+    categoryIconFallback[category] ||
+    placeholderThumb(item.name.slice(0, 8))
+  );
 }
 
 type CatalogItem =
@@ -158,97 +287,170 @@ function Details({
   item,
   category,
   onClose,
+  onSelectCharacter,
+  onSelectLocation,
 }: {
   item: CatalogItem;
   category: CategoryKey;
   onClose: () => void;
+  onSelectCharacter: (name: string) => void;
+  onSelectLocation: (name: string) => void;
 }) {
   const thumb = getItemImage(item, category);
   const thumbFallback =
     categoryIconFallback[category] ?? placeholderThumb(item.name.slice(0, 8));
 
-  const statLines: { label: string; value: string }[] = (() => {
+  const linkToLocation = (name: string) => (
+    <button className="chip-link" onClick={() => onSelectLocation(name)}>
+      {name}
+    </button>
+  );
+
+  const linkToCharacter = (name: string) => (
+    <button className="chip-link" onClick={() => onSelectCharacter(name)}>
+      {name}
+    </button>
+  );
+
+  const statLines: { label: string; value: ReactNode; icon?: string }[] = (() => {
     switch (category) {
       case "Spells": {
         const spell = item as Spell;
-        return [
-          { label: "School", value: spell.school },
-          { label: "Rank", value: String(spell.rank) },
-          { label: "Pips", value: `${spell.pipCost} pip${spell.pipCost === 1 ? "" : "s"}` },
-          { label: "Accuracy", value: `${spell.accuracy}%` },
-          { label: "Effect", value: spell.effect },
-          ...(spell.treasureCardNote
-            ? [{ label: "Treasure card", value: spell.treasureCardNote }]
-            : []),
-        ];
+        return mergeStatLines(
+          [
+            { label: "School", value: spell.school, icon: statIconFor("School", spell.school) },
+            { label: "Rank", value: String(spell.rank), icon: statIconFor("Rank") },
+            {
+              label: "Pips",
+              value: `${spell.pipCost} pip${spell.pipCost === 1 ? "" : "s"}`,
+              icon: statIconFor("Pip"),
+            },
+            { label: "Accuracy", value: formatPercent(spell.accuracy), icon: statIconFor("Accuracy") },
+            { label: "Effect", value: spell.effect, icon: statIconFor("Effect") },
+            ...(spell.treasureCardNote
+              ? [{ label: "Treasure card", value: spell.treasureCardNote }]
+              : []),
+          ],
+          spellTemplate(spell),
+        );
       }
       case "Treasure Cards": {
         const tc = item as TreasureCard;
-        return [
-          { label: "School", value: tc.school },
-          { label: "Pips", value: `${tc.pipCost} pip${tc.pipCost === 1 ? "" : "s"}` },
-          { label: "Accuracy", value: `${tc.accuracy}%` },
-          { label: "Effect", value: tc.effect },
-          ...(tc.relatedSpell ? [{ label: "Related spell", value: tc.relatedSpell }] : []),
-        ];
+        return mergeStatLines(
+          [
+            { label: "School", value: tc.school, icon: statIconFor("School", tc.school) },
+            {
+              label: "Pips",
+              value: `${tc.pipCost} pip${tc.pipCost === 1 ? "" : "s"}`,
+              icon: statIconFor("Pip"),
+            },
+            { label: "Accuracy", value: formatPercent(tc.accuracy), icon: statIconFor("Accuracy") },
+            { label: "Effect", value: tc.effect, icon: statIconFor("Effect") },
+            ...(tc.relatedSpell ? [{ label: "Related spell", value: tc.relatedSpell }] : []),
+          ],
+          treasureTemplate(tc),
+        );
       }
       case "Gear": {
         const piece = item as Gear;
-        return [
-          { label: "Slot", value: piece.type },
-          { label: "School", value: piece.school },
-          { label: "Level", value: `L${piece.level}` },
-          { label: "Stats", value: piece.stats },
-          { label: "Location", value: piece.location },
-          { label: "Subcategory", value: piece.subcategory },
-          ...(piece.setName ? [{ label: "Set", value: piece.setName }] : []),
-          ...(piece.setBonus ? [{ label: "Set bonus", value: piece.setBonus }] : []),
-        ];
+        return mergeStatLines(
+          [
+            { label: "Slot", value: piece.type, icon: statIconFor("Amulet") },
+            { label: "School", value: piece.school, icon: statIconFor("School", piece.school) },
+            { label: "Level", value: `L${piece.level}`, icon: statIconFor("Level") },
+            { label: "Stats", value: piece.stats, icon: statIconFor("Stats") },
+            { label: "Location", value: piece.location, icon: statIconFor("Location") },
+            { label: "Subcategory", value: piece.subcategory, icon: statIconFor("Subcategory") },
+            ...(piece.setName
+              ? [{ label: "Set", value: piece.setName, icon: statIconFor("Set") }]
+              : []),
+            ...(piece.setBonus
+              ? [{ label: "Set bonus", value: piece.setBonus, icon: statIconFor("Bonus") }]
+              : []),
+          ],
+          gearTemplate(piece),
+        );
       }
       case "Characters": {
         const npc = item as Character;
-        return [
-          { label: "Role", value: npc.role },
-          { label: "World", value: npc.world },
-          { label: "Location", value: npc.location },
-          ...(npc.tip ? [{ label: "Tip", value: npc.tip }] : []),
-        ];
+        return mergeStatLines(
+          [
+            { label: "Role", value: npc.role, icon: statIconFor("Role", npc.role) },
+            { label: "World", value: npc.world, icon: statIconFor("World") },
+            { label: "Location", value: linkToLocation(npc.location), icon: statIconFor("Location") },
+            ...(npc.classification && npc.classification.length
+              ? [
+                  {
+                    label: "Subcategory",
+                    value: npc.classification.join(", "),
+                    icon: statIconFor("Category"),
+                  },
+                ]
+              : []),
+            ...(npc.loot && npc.loot.length
+              ? [{ label: "Dropping loot", value: npc.loot.join(", "), icon: statIconFor("Loot") }]
+              : []),
+            ...(npc.tip ? [{ label: "Tip", value: npc.tip, icon: statIconFor("Tip") }] : []),
+          ],
+          characterTemplate(npc),
+        );
       }
       case "Fishing": {
         const spot = item as FishingSpot;
-        return [
-          { label: "World", value: spot.world },
-          { label: "School", value: spot.school },
-          { label: "Rank", value: spot.rank },
-          { label: "Notes", value: spot.note },
-        ];
+        return mergeStatLines(
+          [
+            { label: "World", value: spot.world, icon: statIconFor("World") },
+            { label: "School", value: spot.school, icon: statIconFor("School", spot.school) },
+            { label: "Rank", value: spot.rank, icon: statIconFor("Rank") },
+            { label: "Notes", value: spot.note, icon: statIconFor("Notes") },
+          ],
+          fishingTemplate(spot),
+        );
       }
       case "Furniture": {
         const furni = item as Furniture;
-        return [
-          { label: "World", value: furni.world },
-          { label: "Subcategory", value: furni.subcategory },
-          { label: "Location", value: furni.location },
-          ...(furni.interactive !== undefined
-            ? [{ label: "Interactive", value: furni.interactive ? "Yes" : "No" }]
-            : []),
-        ];
+        return mergeStatLines(
+          [
+            { label: "World", value: furni.world, icon: statIconFor("World") },
+            { label: "Subcategory", value: furni.subcategory, icon: statIconFor("Subcategory") },
+            { label: "Location", value: furni.location, icon: statIconFor("Location") },
+            ...(furni.interactive !== undefined
+              ? [
+                  {
+                    label: "Interactive",
+                    value: furni.interactive ? "Yes" : "No",
+                    icon: statIconFor("Interactive"),
+                  },
+                ]
+              : []),
+          ],
+          furnitureTemplate(furni),
+        );
       }
       case "Locations": {
         const loc = item as Location;
-        return [
-          { label: "World", value: loc.world },
-          ...(loc.zone ? [{ label: "Zone", value: loc.zone }] : []),
-          ...(loc.npcs && loc.npcs.length
-            ? [{ label: "NPCs", value: loc.npcs.join(", ") }]
-            : []),
-          ...(loc.bosses && loc.bosses.length
-            ? [{ label: "Bosses", value: loc.bosses.join(", ") }]
-            : []),
-          ...(loc.collectibles && loc.collectibles.length
-            ? [{ label: "Collectibles", value: loc.collectibles.join(", ") }]
-            : []),
-        ];
+        return mergeStatLines(
+          [
+            { label: "World", value: loc.world, icon: statIconFor("World") },
+            ...(loc.zone ? [{ label: "Zone", value: loc.zone, icon: statIconFor("Zone") }] : []),
+            ...(loc.npcs && loc.npcs.length
+              ? [{ label: "NPCs", value: loc.npcs.map(linkToCharacter), icon: statIconFor("NPC") }]
+              : []),
+            ...(loc.bosses && loc.bosses.length
+              ? [{ label: "Bosses", value: loc.bosses.join(", "), icon: statIconFor("Boss") }]
+              : []),
+            ...(loc.collectibles && loc.collectibles.length
+              ? [
+                  {
+                    label: "Collectibles",
+                    value: loc.collectibles.join(", "),
+                    icon: statIconFor("Collectible"),
+                  },
+                ]
+              : []),
+          ],
+          locationTemplate(loc),
+        );
       }
       default:
         return [];
@@ -389,7 +591,19 @@ function Details({
           <div className="panel__stats" role="list">
             {statLines.map((line) => (
               <div className="stat-row" role="listitem" key={line.label}>
-                <span className="stat-row__label">{line.label}</span>
+                <span className="stat-row__label">
+                  {line.icon && (
+                    <img
+                      src={line.icon}
+                      alt=""
+                      className="stat-row__icon"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                      }}
+                    />
+                  )}
+                  {line.label}
+                </span>
                 <span className="stat-row__value">{line.value}</span>
               </div>
             ))}
@@ -459,8 +673,29 @@ function Details({
                   <span className="stat-row__label">{src.type}</span>
                   <span className="stat-row__value">
                     {src.detail}
-                    {src.location ? ` — ${src.location}` : ""}
-                    {src.npc ? ` (NPC: ${src.npc})` : ""}
+                    {src.location && (
+                      <>
+                        {" "}—{" "}
+                        <button
+                          className="chip-link chip-link--inline"
+                          onClick={() => onSelectLocation(src.location!)}
+                        >
+                          {src.location}
+                        </button>
+                      </>
+                    )}
+                    {src.npc && (
+                      <>
+                        {" "}(
+                        <button
+                          className="chip-link chip-link--inline"
+                          onClick={() => onSelectCharacter(src.npc!)}
+                        >
+                          NPC: {src.npc}
+                        </button>
+                        )
+                      </>
+                    )}
                   </span>
                 </div>
               ))}
@@ -481,6 +716,7 @@ function App() {
   const [page, setPage] = useState<number>(1);
   const [showImages, setShowImages] = useState<boolean>(true);
   const [tcOnly, setTcOnly] = useState<boolean>(false);
+  const [characterFilter, setCharacterFilter] = useState<string>("All");
 
   const dataset = useMemo<CatalogItem[]>(() => {
     const entry = categories.find((c) => c.key === category);
@@ -496,6 +732,7 @@ function App() {
 
   useEffect(() => {
     setPage(1);
+    setCharacterFilter("All");
   }, [category, school, search]);
 
   useEffect(() => {
@@ -540,15 +777,38 @@ function App() {
         return (spot.school === school || spot.school === "Any") && matchesSearch;
       }
 
-      // Characters don’t filter by school, just the search box.
+      if (category === "Characters") {
+        const char = item as Character;
+        if (characterFilter === "All") return matchesSearch;
+
+        const tags = char.classification ?? [char.role];
+        return tags.some((tag) => tag.toLowerCase().includes(characterFilter.toLowerCase())) && matchesSearch;
+      }
+
       return matchesSearch;
     });
-  }, [dataset, school, search, category, tcOnly]);
+  }, [dataset, school, search, category, tcOnly, characterFilter]);
 
   const sorted = useMemo(
     () => [...filtered].sort((a, b) => a.name.localeCompare(b.name)),
     [filtered],
   );
+
+  const openCharacter = (name: string) => {
+    const match = characters.find((npc) => npc.name === name);
+    if (match) {
+      setCategory("Characters");
+      setSelected(match);
+    }
+  };
+
+  const openLocation = (name: string) => {
+    const match = locations.find((loc) => loc.name === name);
+    if (match) {
+      setCategory("Locations");
+      setSelected(match);
+    }
+  };
 
   const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
   const safePage = Math.min(page, totalPages);
@@ -618,6 +878,23 @@ function App() {
                 );
               })}
             </div>
+
+            {category === "Characters" && (
+              <div className="filter-rail" aria-label="Character subcategories">
+                {characterFilters.map((filter) => (
+                  <button
+                    key={filter}
+                    className={
+                      characterFilter === filter ? "filter-pill active" : "filter-pill"
+                    }
+                    onClick={() => setCharacterFilter(filter)}
+                    aria-pressed={characterFilter === filter}
+                  >
+                    {filter}
+                  </button>
+                ))}
+              </div>
+            )}
 
             <div className="bookmark-header">
               <div>
@@ -796,6 +1073,8 @@ function App() {
           item={selected}
           category={category}
           onClose={() => setSelected(null)}
+          onSelectCharacter={openCharacter}
+          onSelectLocation={openLocation}
         />
       )}
 
