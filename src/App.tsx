@@ -783,6 +783,9 @@ function App() {
   const [cooldownUntil, setCooldownUntil] = useState<number>(0);
   const [isScraping, setIsScraping] = useState<boolean>(false);
 
+  const viewCategory: ViewCategory =
+    category === "Spells" && spellView === "Spell cards" ? "Spell Cards" : category;
+
   const dataset = useMemo<CatalogItem[]>(() => {
     if (viewCategory === "Spell Cards") return fireSpellCards as CatalogItem[];
 
@@ -823,9 +826,6 @@ function App() {
     () => categories.filter((entry) => extraSkillKeys.includes(entry.key)),
     [],
   );
-
-  const viewCategory: ViewCategory =
-    category === "Spells" && spellView === "Spell cards" ? "Spell Cards" : category;
 
   const handleScrape = async () => {
     const now = Date.now();
@@ -1385,15 +1385,33 @@ function App() {
             </header>
             <p className="panel__body">{worldFocus.summary}</p>
             <div className="map-frame">
-              <img
-                src={worldFocus.mapImage ?? worldMapPath(worldFocus.name)}
-                alt={`${worldFocus.name} map preview`}
-                onError={(e) => {
-                  if (e.currentTarget.src !== worldFallbackImage) {
-                    e.currentTarget.src = worldFallbackImage;
-                  }
-                }}
-              />
+              <div className="map-frame__canvas">
+                <img
+                  src={worldFocus.mapImage ?? worldMapPath(worldFocus.name)}
+                  alt={`${worldFocus.name} map preview`}
+                  onError={(e) => {
+                    if (e.currentTarget.src !== worldFallbackImage) {
+                      e.currentTarget.src = worldFallbackImage;
+                    }
+                  }}
+                />
+
+                {worldFocus.markers?.map((marker) => (
+                  <div
+                    key={`${marker.label}-${marker.x}-${marker.y}`}
+                    className={`map-marker map-marker--${marker.type ?? "poi"}`}
+                    style={{ left: `${marker.x}%`, top: `${marker.y}%` }}
+                    role="note"
+                    aria-label={`${marker.label}${marker.note ? ` — ${marker.note}` : ""}`}
+                  >
+                    <span className="map-marker__dot" />
+                    <div className="map-marker__label">
+                      <strong>{marker.label}</strong>
+                      {marker.note ? <span className="map-marker__note">{marker.note}</span> : null}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {locations.filter((loc) => loc.world === worldFocus.name).length > 0 && (

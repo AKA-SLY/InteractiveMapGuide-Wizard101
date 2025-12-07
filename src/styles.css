@@ -819,9 +819,68 @@ input[type="text"] {
   overflow: hidden;
   background: #f4e6c4;
 }
+.map-frame__canvas {
+  position: relative;
+}
 .map-frame img {
   width: 100%;
   display: block;
+}
+.map-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: grid;
+  gap: 6px;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  color: #21102d;
+}
+.map-marker__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #21102d;
+  background: #f6e6ff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.65);
+}
+.map-marker__label {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #c5b5e6;
+  padding: 6px 10px;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  min-width: 140px;
+}
+.map-marker__note {
+  display: block;
+  font-size: 13px;
+  color: #563977;
+}
+.map-marker--boss .map-marker__dot {
+  background: #ffdad6;
+  border-color: #b4250d;
+}
+.map-marker--quest .map-marker__dot {
+  background: #ffe9b8;
+  border-color: #c98611;
+}
+.map-marker--trainer .map-marker__dot {
+  background: #d9f7ff;
+  border-color: #0f7fb6;
+}
+.map-marker--collectible .map-marker__dot {
+  background: #e2ffd7;
+  border-color: #3b8a24;
+}
+.map-marker--vendor .map-marker__dot {
+  background: #fff3f1;
+  border-color: #a34a32;
+}
+.map-marker--npc .map-marker__dot,
+.map-marker--poi .map-marker__dot {
+  background: #f6e6ff;
+  border-color: #5b3a92;
 }
 
 @media (max-width: 900px) {
