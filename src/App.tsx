@@ -152,6 +152,11 @@ function App() {
     });
   }, [dataset, school, search, category]);
 
+  const sorted = useMemo(
+    () => [...filtered].sort((a, b) => a.name.localeCompare(b.name)),
+    [filtered],
+  );
+
   return (
     <div className="page">
       <header className="hero">
@@ -194,6 +199,7 @@ function App() {
               <button
                 key={c.key}
                 className={c.key === category ? "tab active" : "tab"}
+                aria-pressed={c.key === category}
                 onClick={() => {
                   setCategory(c.key);
                   setSelected(null);
@@ -238,7 +244,9 @@ function App() {
         <section className="content">
           <div className="content__header">
             <div>
-              <p className="eyebrow">{filtered.length} results</p>
+              <p className="eyebrow" aria-live="polite">
+                {sorted.length} result{sorted.length === 1 ? "" : "s"}
+              </p>
               <h2>{category}</h2>
             </div>
             <p className="hint">
@@ -251,7 +259,7 @@ function App() {
             <div className="empty">No matches—try a different school or name.</div>
           ) : (
             <div className="grid">
-              {filtered.map((item) => (
+              {sorted.map((item) => (
                 <article
                   key={item.name}
                   className="card"

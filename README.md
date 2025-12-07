@@ -40,7 +40,7 @@ npm run dev
 
 This runs the app at http://localhost:5173/. If `npm install` errors on macOS with “ENOENT,” make sure you ran the commands from inside the project folder (where `package.json` lives).
 
-If you see build errors about `@vitejs/plugin-react-swc` or `vite` not being found, reinstall the dependencies to fix corrupted or partial installs:
+If you see build errors about `@vitejs/plugin-react` or `vite` not being found, reinstall the dependencies to fix corrupted or partial installs:
 
 ```bash
 rm -rf node_modules package-lock.json
@@ -52,7 +52,7 @@ The project targets **Node.js 18+** (npm 9+). Older Node/npm versions can fail t
 If the path to your project folder contains characters like `?` (for example a downloaded folder named `InteractiveMapGuide-Wizard101?tab=readme-ov-file`), Vite cannot read the config and will print errors such as:
 
 ```
-failed to load config from /path/InteractiveMapGuide-Wizard101?tab=readme-ov-file/vite.config.ts
+failed to load config from /path/InteractiveMapGuide-Wizard101?tab=readme-ov-file/vite.config.mts
 ✘ [ERROR] Failed to resolve entry for package "vite"
 ```
 
@@ -63,6 +63,8 @@ cd ~/Documents/GitHub/InteractiveMapGuide-Wizard101
 rm -rf node_modules package-lock.json
 npm install
 ```
+
+If you see `The CJS build of Vite's Node API is deprecated`, it means Node is trying to load the config in CommonJS mode. The config file is now `vite.config.mts` and the package uses "type": "module" so Vite can load it as ESM. Pull the latest changes, then reinstall dependencies with the commands above to clear any cached CJS build.
 
 ### Preview the production build locally
 
