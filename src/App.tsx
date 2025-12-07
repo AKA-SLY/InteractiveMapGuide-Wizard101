@@ -783,6 +783,9 @@ function App() {
   const [cooldownUntil, setCooldownUntil] = useState<number>(0);
   const [isScraping, setIsScraping] = useState<boolean>(false);
 
+  const viewCategory: ViewCategory =
+    category === "Spells" && spellView === "Spell cards" ? "Spell Cards" : category;
+
   const dataset = useMemo<CatalogItem[]>(() => {
     if (viewCategory === "Spell Cards") return fireSpellCards as CatalogItem[];
 
@@ -823,9 +826,6 @@ function App() {
     () => categories.filter((entry) => extraSkillKeys.includes(entry.key)),
     [],
   );
-
-  const viewCategory: ViewCategory =
-    category === "Spells" && spellView === "Spell cards" ? "Spell Cards" : category;
 
   const handleScrape = async () => {
     const now = Date.now();
