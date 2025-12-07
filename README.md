@@ -99,19 +99,20 @@ Why those extra flags?
 
 ## Using the `W101 Images` folder (no more generic icons)
 
-You can drop your official Wizard101 art directly into `public/W101 Images` and the app will load it automatically. Filenames are slugged (lowercase, spaces become dashes). If an image is missing, the UI falls back to the category or school icon so nothing breaks.
+You can drop your official Wizard101 art directly into `public/W101 Images` and the app will load it automatically. If an image is missing, the UI falls back to the category or school icon so nothing breaks.
 
-- Spells → `public/W101 Images/spells/<spell-name>.png`
-- Treasure cards → `public/W101 Images/treasure-cards/<card-name>.png`
-- Gear → `public/W101 Images/gear/<item-name>.png`
-- Furniture → `public/W101 Images/furniture/<item-name>.png`
-- Characters → `public/W101 Images/characters/<npc-name>.png`
-- Fishing → `public/W101 Images/fishing/<spot-name>.png`
-- Locations → `public/W101 Images/locations/<location-name>.png`
-- World bubbles → `public/W101 Images/worlds/bubbles/<world-name>.png`
-- World maps → `public/W101 Images/worlds/maps/<world-name>.png`
+- Spells → The bundled fire spell set in `public/W101 Images/Wizard101 Fire_Spells` is already wired in. The UI expects the existing Title_Case + underscore filenames (for example, `Fire Cat` maps to `Fire_Cat.png`).
+- Everything else → Keep using slugged filenames (lowercase, spaces become dashes) inside their folders:
+  - `public/W101 Images/treasure-cards/<card-name>.png`
+  - `public/W101 Images/gear/<item-name>.png`
+  - `public/W101 Images/furniture/<item-name>.png`
+  - `public/W101 Images/characters/<npc-name>.png`
+  - `public/W101 Images/fishing/<spot-name>.png`
+  - `public/W101 Images/locations/<location-name>.png`
+  - `public/W101 Images/worlds/bubbles/<world-name>.png`
+  - `public/W101 Images/worlds/maps/<world-name>.png`
 
-Example: `Fire Cat` becomes `public/W101 Images/spells/fire-cat.png`. PNG is used by default; the preview falls back to the placeholder when an image is missing.
+PNG is used by default; the preview falls back to the placeholder when an image is missing.
 
 ## Location data intake
 
