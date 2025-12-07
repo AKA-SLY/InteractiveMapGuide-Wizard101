@@ -1,6 +1,6 @@
 # Wizard101 Interactive Guide
 
-This is a React/Vite Wizard101 guide with a built-in spell, gear, character, and fishing lookup. The layout now renders immediately (no more blank white screen) and is styled for both desktop and mobile.
+This is a React/Vite Wizard101 guide with a built-in spell, gear, character, and fishing lookup. The layout now renders immediately (no more blank white screen) and is styled for both desktop and mobile. The `organised-layout` branch keeps the entire app in the repository root so you can clone or download it and try the full experience without hunting for nested folders.
 
 ## Live site
 
@@ -22,8 +22,8 @@ If you still see a white screen, GitHub Pages is likely serving the raw source f
 
 ## How to use
 
-1. Create a new GitHub repository named **wizard101-guide** (or any name).
-2. Download this folder and upload all files into that repo.
+1. Clone or download this repository (make sure you are on the `organised-layout` branch).
+2. Push the files into your own GitHub repository.
 3. Commit and push to the `main` branch.
 4. GitHub will run the included GitHub Actions workflow:
    - builds the Vite app
@@ -72,7 +72,7 @@ If you just want to see the finished site in your browser, copy and paste these 
 
 > **Do I need the app downloaded?** Yes—because this runs on your own computer, you need the project files on your machine (download the ZIP or clone the repo). If you publish the app to GitHub Pages, you can then view it from that hosted URL without running anything locally.
 
-**Where to type these commands:** open the **Terminal** app. If you downloaded this project, first change into the project folder so your prompt shows this repository’s files (you should see `package.json` when you run `ls`). Do everything below from inside that folder.
+**Where to type these commands:** open the **Terminal** app. If you downloaded this project, first change into the project folder so your prompt shows this repository’s files (you should see `package.json` when you run `ls`). Do everything below from inside that folder; there is no extra nested app directory on this branch.
 
 1. Install the dependencies (only needed the first time):
 
