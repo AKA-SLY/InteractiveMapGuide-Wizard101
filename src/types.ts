@@ -76,6 +76,19 @@ export type TreasureCard = {
   image?: string;
 };
 
+export type Location = {
+  name: string;
+  world: string;
+  zone?: string;
+  description?: string;
+  mapImage?: string;
+  bubbleImage?: string;
+  npcs?: string[];
+  bosses?: string[];
+  collectibles?: string[];
+  image?: string;
+};
+
 export type Character = {
   name: string;
   role: string;
@@ -100,4 +113,5 @@ export type CategoryKey =
   | "Gear"
   | "Characters"
   | "Fishing"
-  | "Furniture";
+  | "Furniture"
+  | "Locations";

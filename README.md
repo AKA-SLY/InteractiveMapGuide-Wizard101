@@ -96,3 +96,23 @@ Common macOS tips
 
 Why those extra flags?
 - The preview script automatically rebuilds, hosts on your computer, pins port 4173, and serves the correct base path (`/InteractiveMapGuide-Wizard101/`) so the page never renders blank.
+
+## Using the `Images` folder (no more generic icons)
+
+You can drop your official Wizard101 art directly into `public/Images` and the app will load it automatically. Filenames are slugged (lowercase, spaces become dashes). If an image is missing, the UI falls back to the category or school icon so nothing breaks.
+
+- Spells → `public/Images/spells/<spell-name>.png`
+- Treasure cards → `public/Images/treasure-cards/<card-name>.png`
+- Gear → `public/Images/gear/<item-name>.png`
+- Furniture → `public/Images/furniture/<item-name>.png`
+- Characters → `public/Images/characters/<npc-name>.png`
+- Fishing → `public/Images/fishing/<spot-name>.png`
+- Locations → `public/Images/locations/<location-name>.png`
+- World bubbles → `public/Images/worlds/bubbles/<world-name>.png`
+- World maps → `public/Images/worlds/maps/<world-name>.png`
+
+Example: `Fire Cat` becomes `public/Images/spells/fire-cat.png`. If you prefer JPG or WEBP, keep the same name (the preview uses PNG by default and falls back to the placeholder when an image is missing).
+
+## Location data intake
+
+A new **Locations** category is wired in (`src/data/locations.ts`). Populate it slowly, respecting the Wizard101 Central wiki’s rate limits. This repository cannot crawl the wiki automatically from this offline environment, but you can add entries by hand (world, zone, NPCs, bosses, images) and the app will render them with the same pop-up layout as the other categories.

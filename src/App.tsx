@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { categories } from "./data/categories";
 import { furniture } from "./data/furniture";
 import { gear } from "./data/gear";
+import { locations } from "./data/locations";
 import { schools } from "./data/schools";
 import { spells } from "./data/spells";
 import { treasureCards } from "./data/treasureCards";
@@ -16,6 +17,7 @@ import {
   type Furniture,
   type TreasureCard,
   type SpellSource,
+  type Location,
 } from "./types";
 import allSchoolIcon from "./assets/icons/schools/all.svg";
 import balanceIcon from "./assets/icons/schools/balance.svg";
@@ -33,6 +35,7 @@ import characterIcon from "./assets/icons/categories/character.svg";
 import fishingIcon from "./assets/icons/categories/fishing.svg";
 import furnitureIcon from "./assets/icons/categories/furniture.svg";
 import gearIcon from "./assets/icons/categories/gear.svg";
+import locationIcon from "./assets/icons/categories/location.svg";
 import spellIcon from "./assets/icons/categories/spell.svg";
 import treasureIcon from "./assets/icons/categories/treasure.svg";
 import worldBubbleFallback from "./assets/icons/worlds/bubble-fallback.svg";
@@ -64,26 +67,52 @@ const categoryIconFallback: Record<CategoryKey, string> = {
   Furniture: furnitureIcon,
   Characters: characterIcon,
   Fishing: fishingIcon,
+  Locations: locationIcon,
 };
 
 const placeholderThumb = (label: string) =>
-  `https://dummyimage.com/160x160/f4e6c4/2b1441&text=${encodeURIComponent(label)}`;
+  `https://dummyimage.com/240x240/f4e6c4/2b1441&text=${encodeURIComponent(label)}`;
+
+const slugify = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)+/g, "");
+
+const libraryPath = (
+  folder: string,
+  name: string,
+  extension: "png" | "jpg" | "jpeg" | "webp" = "png",
+) => `/Images/${folder}/${slugify(name)}.${extension}`;
+
+const worldBubblePath = (name: string) => libraryPath("worlds/bubbles", name);
+const worldMapPath = (name: string) => libraryPath("worlds/maps", name);
 
 function getItemImage(item: CatalogItem, category: CategoryKey) {
   if ((item as CatalogItem).image) return (item as CatalogItem).image as string;
 
-  if (category === "Spells") return schoolIcons[(item as Spell).school];
-  if (category === "Treasure Cards") return schoolIcons[(item as TreasureCard).school];
-  if (category === "Gear") return schoolIcons[(item as Gear).school];
-  if (category === "Fishing")
-    return (item as FishingSpot).school === "Any"
-      ? categoryIconFallback.Fishing
-      : schoolIcons[(item as FishingSpot).school];
+  if (category === "Spells") return libraryPath("spells", (item as Spell).name);
+  if (category === "Treasure Cards")
+    return libraryPath("treasure-cards", (item as TreasureCard).name);
+  if (category === "Gear") return libraryPath("gear", (item as Gear).name);
+  if (category === "Furniture")
+    return libraryPath("furniture", (item as Furniture).name);
+  if (category === "Characters")
+    return libraryPath("characters", (item as Character).name);
+  if (category === "Fishing") return libraryPath("fishing", (item as FishingSpot).name);
+  if (category === "Locations") return libraryPath("locations", (item as Location).name);
 
   return categoryIconFallback[category] ?? placeholderThumb(item.name.slice(0, 8));
 }
 
-type CatalogItem = Spell | Gear | Character | FishingSpot | TreasureCard | Furniture;
+type CatalogItem =
+  | Spell
+  | Gear
+  | Character
+  | FishingSpot
+  | TreasureCard
+  | Furniture
+  | Location;
 
 function formatMeta(item: CatalogItem, active: string) {
   switch (active) {
@@ -113,6 +142,11 @@ function formatMeta(item: CatalogItem, active: string) {
       const furni = item as Furniture;
       return `${furni.world} • ${furni.subcategory}`;
     }
+    case "Locations": {
+      const location = item as Location;
+      const zone = location.zone ? ` • ${location.zone}` : "";
+      return `${location.world}${zone}`;
+    }
     default:
       return "";
   }
@@ -128,6 +162,8 @@ function Details({
   onClose: () => void;
 }) {
   const thumb = getItemImage(item, category);
+  const thumbFallback =
+    categoryIconFallback[category] ?? placeholderThumb(item.name.slice(0, 8));
 
   const statLines: { label: string; value: string }[] = (() => {
     switch (category) {
@@ -196,6 +232,22 @@ function Details({
             : []),
         ];
       }
+      case "Locations": {
+        const loc = item as Location;
+        return [
+          { label: "World", value: loc.world },
+          ...(loc.zone ? [{ label: "Zone", value: loc.zone }] : []),
+          ...(loc.npcs && loc.npcs.length
+            ? [{ label: "NPCs", value: loc.npcs.join(", ") }]
+            : []),
+          ...(loc.bosses && loc.bosses.length
+            ? [{ label: "Bosses", value: loc.bosses.join(", ") }]
+            : []),
+          ...(loc.collectibles && loc.collectibles.length
+            ? [{ label: "Collectibles", value: loc.collectibles.join(", ") }]
+            : []),
+        ];
+      }
       default:
         return [];
     }
@@ -208,6 +260,7 @@ function Details({
     if (category === "Characters") return (item as Character).tip;
     if (category === "Fishing") return (item as FishingSpot).note;
     if (category === "Furniture") return (item as Furniture).description;
+    if (category === "Locations") return (item as Location).description;
     return undefined;
   })();
 
@@ -233,7 +286,15 @@ function Details({
 
         <div className="panel__summary">
           <div className="panel__thumb panel__thumb--stacked">
-            <img src={thumb} alt="" />
+            <img
+              src={thumb}
+              alt=""
+              onError={(e) => {
+                if (e.currentTarget.src !== thumbFallback) {
+                  e.currentTarget.src = thumbFallback;
+                }
+              }}
+            />
             <p className="hint">Official art can replace this placeholder.</p>
           </div>
           <div className="panel__stats" role="list">
@@ -268,6 +329,18 @@ function Details({
                 <ul className="pill-list">
                   <li>World: {(item as Furniture).world}</li>
                   <li>Subcategory: {(item as Furniture).subcategory}</li>
+                </ul>
+              )}
+              {category === "Locations" && (
+                <ul className="pill-list">
+                  <li>World: {(item as Location).world}</li>
+                  {(item as Location).zone && <li>Zone: {(item as Location).zone}</li>}
+                  {(item as Location).npcs && (item as Location).npcs!.length > 0 && (
+                    <li>NPCs: {(item as Location).npcs!.join(", ")}</li>
+                  )}
+                  {(item as Location).bosses && (item as Location).bosses!.length > 0 && (
+                    <li>Bosses: {(item as Location).bosses!.join(", ")}</li>
+                  )}
                 </ul>
               )}
             </div>
@@ -314,6 +387,7 @@ function App() {
     if (category === "Treasure Cards") return treasureCards;
     if (category === "Gear") return gear;
     if (category === "Furniture") return furniture;
+    if (category === "Locations") return locations as CatalogItem[];
     return [];
   }, [category]);
 
@@ -536,6 +610,8 @@ function App() {
                       : null;
 
                   const displayThumb = getItemImage(item, category);
+                  const displayFallback =
+                    categoryIconFallback[category] ?? placeholderThumb(item.name.slice(0, 8));
 
                   return (
                     <article
@@ -545,7 +621,16 @@ function App() {
                       onClick={() => setSelected(item)}
                     >
                       {showImages ? (
-                        <img className="row-card__thumb" src={displayThumb} alt="" />
+                        <img
+                          className="row-card__thumb"
+                          src={displayThumb}
+                          alt=""
+                          onError={(e) => {
+                            if (e.currentTarget.src !== displayFallback) {
+                              e.currentTarget.src = displayFallback;
+                            }
+                          }}
+                        />
                       ) : (
                         <div className="row-card__thumb row-card__thumb--off">Img</div>
                       )}
@@ -585,7 +670,7 @@ function App() {
                 onClick={() => setWorldFocus(world)}
                 aria-label={`Open details for ${world.name}`}
                 style={{
-                  backgroundImage: `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), rgba(78,51,119,0.5)), url(${world.bubbleImage ?? worldBubbleFallback})`,
+                  backgroundImage: `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), rgba(78,51,119,0.5)), url(${worldBubblePath(world.name)}), url(${world.bubbleImage ?? worldBubbleFallback}), url(${worldBubbleFallback})`,
                 }}
               >
                 <div className="world-bubble__overlay">
@@ -626,7 +711,7 @@ function App() {
             <p className="panel__body">{worldFocus.summary}</p>
             <div className="map-frame">
               <img
-                src={worldFocus.mapImage ?? worldFallbackImage}
+                src={worldFocus.mapImage ?? worldMapPath(worldFocus.name)}
                 alt={`${worldFocus.name} map preview`}
                 onError={(e) => {
                   if (e.currentTarget.src !== worldFallbackImage) {

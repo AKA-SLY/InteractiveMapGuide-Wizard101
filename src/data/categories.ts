@@ -2,6 +2,7 @@ import { characters } from "./characters";
 import { fishing } from "./fishing";
 import { furniture } from "./furniture";
 import { gear } from "./gear";
+import { locations } from "./locations";
 import { spells } from "./spells";
 import { treasureCards } from "./treasureCards";
 import {
@@ -10,6 +11,7 @@ import {
   type FishingSpot,
   type Furniture,
   type Gear,
+  type Location,
   type Spell,
   type TreasureCard,
 } from "../types";
@@ -19,11 +21,12 @@ import gearIcon from "../assets/icons/categories/gear.svg";
 import furnitureIcon from "../assets/icons/categories/furniture.svg";
 import characterIcon from "../assets/icons/categories/character.svg";
 import fishingIcon from "../assets/icons/categories/fishing.svg";
+import locationIcon from "../assets/icons/categories/location.svg";
 
 export const categories: {
   key: CategoryKey;
   icon: string;
-  dataset: (Spell | Gear | Character | FishingSpot | Furniture | TreasureCard)[];
+  dataset: (Spell | Gear | Character | FishingSpot | Furniture | TreasureCard | Location)[];
 }[] = [
   { key: "Spells", icon: spellIcon, dataset: spells },
   { key: "Treasure Cards", icon: treasureIcon, dataset: treasureCards },
@@ -31,4 +34,5 @@ export const categories: {
   { key: "Furniture", icon: furnitureIcon, dataset: furniture },
   { key: "Characters", icon: characterIcon, dataset: characters },
   { key: "Fishing", icon: fishingIcon, dataset: fishing },
+  { key: "Locations", icon: locationIcon, dataset: locations },
 ];
