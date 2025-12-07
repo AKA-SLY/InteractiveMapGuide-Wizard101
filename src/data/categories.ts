@@ -2,6 +2,7 @@ import { characters } from "./characters";
 import { fishing } from "./fishing";
 import { furniture } from "./furniture";
 import { gear } from "./gear";
+import { icons, jewels, mounts, fireSpellCards, henchmen, minions, worldMaps } from "./galleries";
 import { locations } from "./locations";
 import { spells } from "./spells";
 import { treasureCards } from "./treasureCards";
@@ -9,6 +10,7 @@ import {
   type CategoryKey,
   type Character,
   type FishingSpot,
+  type GalleryItem,
   type Furniture,
   type Gear,
   type Location,
@@ -20,7 +22,7 @@ import { w101Icon } from "../lib/library";
 export const categories: {
   key: CategoryKey;
   icon: string;
-  dataset: (Spell | Gear | Character | FishingSpot | Furniture | TreasureCard | Location)[];
+  dataset: (Spell | Gear | Character | FishingSpot | Furniture | TreasureCard | Location | GalleryItem)[];
 }[] = [
   { key: "Spells", icon: w101Icon("Damage_Spell"), dataset: spells },
   { key: "Treasure Cards", icon: w101Icon("Treasure_Card"), dataset: treasureCards },
@@ -29,4 +31,11 @@ export const categories: {
   { key: "Characters", icon: w101Icon("Admin"), dataset: characters },
   { key: "Fishing", icon: w101Icon("Fish_Rank_1"), dataset: fishing },
   { key: "Locations", icon: w101Icon("Aquila"), dataset: locations },
+  { key: "Spell Cards", icon: w101Icon("Spell_Damage"), dataset: fireSpellCards },
+  { key: "Henchmen", icon: w101Icon("All_Friends"), dataset: henchmen },
+  { key: "Jewels", icon: w101Icon("Jewel"), dataset: jewels },
+  { key: "Minions", icon: w101Icon("Minion"), dataset: minions },
+  { key: "World Maps", icon: w101Icon("Map"), dataset: worldMaps },
+  { key: "Icons", icon: w101Icon("All"), dataset: icons },
+  { key: "Mounts", icon: w101Icon("Mount"), dataset: mounts },
 ];

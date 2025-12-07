@@ -1,6 +1,21 @@
+import { libraryRoot } from "../lib/library";
 import { type Spell } from "../types";
+import { fireSpellFiles } from "./libraryFiles";
 
-export const spells: Spell[] = [
+const normalizeName = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+const spellImageMap = new Map<string, string>();
+
+fireSpellFiles.forEach((file) => {
+  const key = normalizeName(file.replace(/\.[^.]+$/, ""));
+  if (!spellImageMap.has(key)) {
+    spellImageMap.set(key, libraryRoot("Wizard101 Fire_Spells", file));
+  }
+});
+
+const spellImage = (name: string) => spellImageMap.get(normalizeName(name));
+
+const baseSpells: Spell[] = [
   {
     name: "Fire Cat",
     school: "Fire",
@@ -305,3 +320,8 @@ export const spells: Spell[] = [
     ],
   },
 ];
+
+export const spells: Spell[] = baseSpells.map((spell) => ({
+  ...spell,
+  image: spell.image ?? spellImage(spell.name),
+}));

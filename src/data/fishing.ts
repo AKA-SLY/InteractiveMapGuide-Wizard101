@@ -1,10 +1,23 @@
-import { formatLibraryFileName, libraryPath } from "../lib/library";
+import { libraryRoot } from "../lib/library";
 import { type FishingSpot } from "../types";
+import { fishFiles } from "./libraryFiles";
 
 const fishImage = (name: string) =>
-  libraryPath("Fishes", `Fish ${name}`, "png", formatLibraryFileName);
+  libraryRoot("Fishes", `Fish_${name.replace(/\s+/g, "_")}.png`);
 
-export const fishing: FishingSpot[] = [
+const readableName = (fileName: string) =>
+  fileName.replace(/^Fish_/, "").replace(/\.[^.]+$/, "").replace(/_/g, " ");
+
+const generatedFishing: FishingSpot[] = fishFiles.map((file) => ({
+  name: readableName(file),
+  world: "Unknown",
+  school: "Any",
+  rank: "Unknown",
+  note: "Image reference added from library.",
+  image: libraryRoot("Fishes", file),
+}));
+
+const detailedFishing: FishingSpot[] = [
   {
     name: "Icecuda",
     world: "Wizard City",
@@ -237,4 +250,11 @@ export const fishing: FishingSpot[] = [
     note: "Fluttering shrimp basking in Bastion's luminous ponds.",
     image: fishImage("Butterfly Shrimp"),
   },
+];
+
+const detailedNames = new Set(detailedFishing.map((fish) => fish.name));
+
+export const fishing: FishingSpot[] = [
+  ...detailedFishing,
+  ...generatedFishing.filter((fish) => !detailedNames.has(fish.name)),
 ];
