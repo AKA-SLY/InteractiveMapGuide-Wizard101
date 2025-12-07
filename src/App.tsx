@@ -209,6 +209,18 @@ const locationTemplate = (loc: Location) => [
   },
 ];
 
+const statIconFor = (label: string, value?: string) => {
+  if (label === "School" && value && value in schoolIcons) {
+    return schoolIcons[value as School];
+  }
+
+  if (label === "Role" && value) {
+    return libraryPath("Icons", value, "webp", formatLibraryFileName);
+  }
+
+  return libraryPath("Icons", value ?? label, "webp", formatLibraryFileName);
+};
+
 function getItemImage(item: CatalogItem, category: CategoryKey) {
   if ((item as CatalogItem).image) return (item as CatalogItem).image as string;
 
