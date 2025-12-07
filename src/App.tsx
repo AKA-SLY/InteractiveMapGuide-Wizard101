@@ -62,13 +62,14 @@ const categoryIconFallback: Record<CategoryKey | "Spell Cards", string> = {
   Fishing: w101Icon("Fish_Rank_1"),
   Locations: w101Icon("Aquila"),
   "Spell Cards": w101Icon("Spell_Damage"),
+  Jewels: w101Icon("Jewel"),
   Gardening: w101Icon("Gardening"),
   Monstrology: w101Icon("Monstrology"),
   Cantrip: w101Icon("Cantrip"),
   Mounts: w101Icon("Mount"),
 };
-
-const extraSkillKeys: CategoryKey[] = ["Gardening", "Fishing", "Monstrology", "Cantrip"];
+const extraSkillKeys: CategoryKey[] = ["Gardening", "Monstrology", "Cantrip"];
+const npcCategoryKeys: CategoryKey[] = ["Characters", "Henchmen", "Minions"];
 const SCRAPE_COOLDOWN_MS = 7000;
 
 const placeholderThumb = (label: string) =>
@@ -346,6 +347,9 @@ function formatMeta(item: CatalogItem, active: string) {
 
 const subcategoriesFor = (item: CatalogItem, active: ViewCategory) => {
   if (active === "Characters") return (item as Character).classification ?? [];
+  if (active === "Gear") return [(item as Gear).subcategory];
+  if (active === "Furniture") return [(item as Furniture).subcategory];
+  if (active === "Jewels") return (item as GalleryItem).tags?.map((tag) => `${tag} Jewel`) ?? [];
   if (active === "Minions") return (item as GalleryItem).tags ?? [];
   if (active === "Spell Cards") return (item as GalleryItem).tags ?? [];
   return [];
@@ -779,6 +783,8 @@ function App() {
   const [minionFilter, setMinionFilter] = useState<string>("All Worlds");
   const [spellView, setSpellView] = useState<"Spell list" | "Spell cards">("Spell list");
   const [extraSkillsOpen, setExtraSkillsOpen] = useState<boolean>(false);
+  const [npcOpen, setNpcOpen] = useState<boolean>(false);
+  const [subcategoryFilter, setSubcategoryFilter] = useState<string>("All");
   const [scrapeStatus, setScrapeStatus] = useState<string>("Idle");
   const [cooldownUntil, setCooldownUntil] = useState<number>(0);
   const [isScraping, setIsScraping] = useState<boolean>(false);
@@ -818,8 +824,43 @@ function App() {
     return list.length ? ["All Worlds", ...list] : ["All Worlds", "Unknown World"];
   }, [category, dataset]);
 
+  const itemSubcategories = useMemo(() => {
+    if (category === "Gear") {
+      const tags = new Set<string>();
+      (dataset as Gear[]).forEach((piece) => tags.add(piece.subcategory));
+      const list = Array.from(tags).sort();
+      return ["All", ...list];
+    }
+
+    if (category === "Furniture") {
+      const tags = new Set<string>();
+      (dataset as Furniture[]).forEach((item) => tags.add(item.subcategory));
+      const list = Array.from(tags).sort();
+      return ["All", ...list];
+    }
+
+    if (category === "Jewels") {
+      const tags = new Set<string>();
+      (dataset as GalleryItem[]).forEach((item) =>
+        (item.tags ?? []).forEach((tag) => tags.add(`${tag} Jewel`)),
+      );
+
+      const list = Array.from(tags).sort();
+      return list.length ? ["All", ...list] : [];
+    }
+
+    return [];
+  }, [category, dataset]);
+
   const primaryCategories = useMemo(
-    () => categories.filter((entry) => !extraSkillKeys.includes(entry.key)),
+    () =>
+      categories.filter(
+        (entry) => !extraSkillKeys.includes(entry.key) && !npcCategoryKeys.includes(entry.key),
+      ),
+    [],
+  );
+  const npcCategories = useMemo(
+    () => categories.filter((entry) => npcCategoryKeys.includes(entry.key)),
     [],
   );
   const extraSkillCategories = useMemo(
@@ -892,6 +933,7 @@ function App() {
     setPage(1);
     setCharacterFilter("All");
     setMinionFilter("All Worlds");
+    setSubcategoryFilter("All");
   }, [category, school, search, spellView]);
 
   useEffect(() => {
@@ -912,38 +954,49 @@ function App() {
         .toLowerCase()
         .includes(search.toLowerCase().trim());
 
-      if (school === "All") {
-        if (viewCategory === "Spells" && tcOnly) {
-          return (item as Spell).hasTreasureCard && matchesSearch;
-        }
-        return matchesSearch;
-      }
-
       if (viewCategory === "Spell Cards") {
         return matchesSearch;
       }
 
       if (viewCategory === "Spells") {
         const spell = item as Spell;
-        return (
-          spell.school === school &&
-          matchesSearch &&
-          (tcOnly ? spell.hasTreasureCard === true : true)
-        );
+        const matchesSchool = school === "All" || spell.school === school;
+        const matchesTreasure = tcOnly ? spell.hasTreasureCard === true : true;
+        return matchesSearch && matchesSchool && matchesTreasure;
       }
 
       if (viewCategory === "Treasure Cards") {
         const tc = item as TreasureCard;
-        return tc.school === school && matchesSearch;
+        const matchesSchool = school === "All" || tc.school === school;
+        return matchesSearch && matchesSchool;
       }
 
       if (viewCategory === "Gear") {
-        return (item as Gear).school === school && matchesSearch;
+        const piece = item as Gear;
+        const matchesSchool = school === "All" || piece.school === school;
+        const matchesSub =
+          subcategoryFilter === "All" || piece.subcategory === subcategoryFilter;
+        return matchesSearch && matchesSchool && matchesSub;
       }
 
       if (viewCategory === "Fishing") {
         const spot = item as FishingSpot;
-        return (spot.school === school || spot.school === "Any") && matchesSearch;
+        const matchesSchool = school === "All" || spot.school === school || spot.school === "Any";
+        return matchesSearch && matchesSchool;
+      }
+
+      if (viewCategory === "Furniture") {
+        const furni = item as Furniture;
+        const matchesSub =
+          subcategoryFilter === "All" || furni.subcategory === subcategoryFilter;
+        return matchesSearch && matchesSub;
+      }
+
+      if (viewCategory === "Jewels") {
+        const tags = (item as GalleryItem).tags ?? ["Other Jewel"];
+        const matchesSub =
+          subcategoryFilter === "All" || tags.includes(subcategoryFilter.replace(/ Jewel$/, ""));
+        return matchesSearch && matchesSub;
       }
 
       if (viewCategory === "Characters") {
@@ -962,7 +1015,16 @@ function App() {
 
       return matchesSearch;
     });
-  }, [dataset, school, search, viewCategory, tcOnly, characterFilter, minionFilter]);
+  }, [
+    dataset,
+    school,
+    search,
+    viewCategory,
+    tcOnly,
+    characterFilter,
+    minionFilter,
+    subcategoryFilter,
+  ]);
 
   const sorted = useMemo(
     () => [...filtered].sort((a, b) => a.name.localeCompare(b.name)),
@@ -1034,6 +1096,43 @@ function App() {
                 <span className="bookmark__label">{c.key}</span>
               </button>
             ))}
+
+            <div className="bookmark--group">
+              <button
+                className={npcOpen ? "bookmark active" : "bookmark"}
+                aria-pressed={npcOpen}
+                aria-expanded={npcOpen}
+                onClick={() => setNpcOpen((open) => !open)}
+                title="NPCs"
+              >
+                <span className="icon" aria-hidden>
+                  <img src={npcCategories[0]?.icon ?? w101Icon("Admin")} alt="" />
+                </span>
+                <span className="bookmark__label">NPCs</span>
+              </button>
+
+              {npcOpen && (
+                <div className="bookmark-group__body" aria-label="NPC categories">
+                  {npcCategories.map((c) => (
+                    <button
+                      key={c.key}
+                      className={c.key === category ? "bookmark active" : "bookmark"}
+                      aria-pressed={c.key === category}
+                      title={c.key}
+                      onClick={() => {
+                        setCategory(c.key);
+                        setSelected(null);
+                      }}
+                    >
+                      <span className="icon" aria-hidden>
+                        <img src={c.icon} alt="" />
+                      </span>
+                      <span className="bookmark__label">{c.key}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <div className="bookmark--group">
               <button
@@ -1111,6 +1210,22 @@ function App() {
                 ))}
               </div>
             )}
+
+            {(category === "Gear" || category === "Furniture" || category === "Jewels") &&
+              itemSubcategories.length > 0 && (
+                <div className="filter-rail" aria-label="Item subcategories">
+                  {itemSubcategories.map((filter) => (
+                    <button
+                      key={filter}
+                      className={subcategoryFilter === filter ? "filter-pill active" : "filter-pill"}
+                      onClick={() => setSubcategoryFilter(filter)}
+                      aria-pressed={subcategoryFilter === filter}
+                    >
+                      {filter}
+                    </button>
+                  ))}
+                </div>
+              )}
 
             {category === "Spells" && (
               <div className="filter-rail" aria-label="Spell data type">
@@ -1303,6 +1418,12 @@ function App() {
                                   event.stopPropagation();
                                   if (viewCategory === "Characters") setCharacterFilter(tag);
                                   if (viewCategory === "Minions") setMinionFilter(tag);
+                                  if (
+                                    viewCategory === "Gear" ||
+                                    viewCategory === "Furniture" ||
+                                    viewCategory === "Jewels"
+                                  )
+                                    setSubcategoryFilter(tag);
                                 }}
                               >
                                 {tag}
