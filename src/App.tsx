@@ -25,7 +25,9 @@ const schoolIcons: Record<Exclude<School, "All">, string> = {
   Life: "🍃",
   Death: "💀",
   Balance: "⚖️",
-  Astral: "🌠",
+  Sun: "☀️",
+  Moon: "🌙",
+  Star: "⭐️",
   Shadow: "🌑",
 };
 
@@ -242,6 +244,27 @@ function App() {
           </div>
 
           <div className="bookmark-body">
+            <div className="school-rail" aria-label="Schools">
+              {schools.map((s) => {
+                const icon =
+                  s === "All" ? "🌌" : schoolIcons[s as Exclude<School, "All">];
+                return (
+                  <button
+                    key={s}
+                    className={s === school ? "school-pill active" : "school-pill"}
+                    onClick={() => setSchool(s)}
+                    aria-pressed={s === school}
+                    aria-label={`${s} school`}
+                  >
+                    <span className="school-pill__icon" aria-hidden>
+                      {icon}
+                    </span>
+                    <span className="school-pill__label">{s}</span>
+                  </button>
+                );
+              })}
+            </div>
+
             <div className="bookmark-header">
               <div>
                 <p className="eyebrow">Filter & search</p>
@@ -254,22 +277,6 @@ function App() {
             </div>
 
             <div className="filter-grid">
-              <div className="filter">
-                <label htmlFor="school">Filter by school</label>
-                <div className="pill-row">
-                  {schools.map((s) => (
-                    <button
-                      key={s}
-                      id={s === school ? "school" : undefined}
-                      className={s === school ? "pill active" : "pill"}
-                      onClick={() => setSchool(s)}
-                    >
-                      {s}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
               <div className="filter">
                 <label htmlFor="search">Search by name</label>
                 <input

@@ -9,6 +9,8 @@ export const schools: School[] = [
   "Life",
   "Death",
   "Balance",
-  "Astral",
+  "Sun",
+  "Moon",
+  "Star",
   "Shadow",
 ];

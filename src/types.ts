@@ -7,7 +7,9 @@ export type School =
   | "Life"
   | "Death"
   | "Balance"
-  | "Astral"
+  | "Sun"
+  | "Moon"
+  | "Star"
   | "Shadow";
 
 export type Spell = {
