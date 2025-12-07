@@ -49,6 +49,21 @@ npm install
 
 The project targets **Node.js 18+** (npm 9+). Older Node/npm versions can fail to resolve the Vite plugins.
 
+If the path to your project folder contains characters like `?` (for example a downloaded folder named `InteractiveMapGuide-Wizard101?tab=readme-ov-file`), Vite cannot read the config and will print errors such as:
+
+```
+failed to load config from /path/InteractiveMapGuide-Wizard101?tab=readme-ov-file/vite.config.ts
+✘ [ERROR] Failed to resolve entry for package "vite"
+```
+
+Fix it by renaming or moving the folder so the full path has no `?`, then reinstall the dependencies to refresh the module cache:
+
+```bash
+cd ~/Documents/GitHub/InteractiveMapGuide-Wizard101
+rm -rf node_modules package-lock.json
+npm install
+```
+
 ### Preview the production build locally
 
 If you just want to see the finished site in your browser, copy and paste these commands exactly—no tweaking required. These instructions are written for macOS Terminal, but the commands are the same on Windows and Linux.
