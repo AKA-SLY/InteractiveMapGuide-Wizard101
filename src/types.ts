@@ -35,6 +35,12 @@ export type Spell = {
   accuracy: string;
   effect: string;
   description: string;
+  target?: string;
+  levelRequirement?: number;
+  trainingPointCost?: string;
+  schoolPipCost?: number;
+  shadowPipCost?: number;
+  cardType?: string;
   sources: SpellSource[];
   image?: string;
   hasTreasureCard?: boolean;
@@ -49,6 +55,8 @@ export type Gear = {
   level: number;
   stats: string;
   location: string;
+  rarity?: string;
+  auctionable?: string;
   setName?: string;
   setBonus?: string;
   image?: string;
@@ -60,6 +68,11 @@ export type Furniture = {
   subcategory: string;
   world: string;
   location: string;
+  rarity?: string;
+  buyPrice?: string;
+  sellPrice?: string;
+  crafting?: string;
+  tags?: string[];
   interactive?: boolean;
   description?: string;
   image?: string;
@@ -74,6 +87,9 @@ export type TreasureCard = {
   accuracy: string;
   effect: string;
   description: string;
+  target?: string;
+  levelRequirement?: string;
+  trainingPointCost?: string;
   sources: SpellSource[];
   image?: string;
 };
@@ -83,6 +99,7 @@ export type Location = {
   world: string;
   zone?: string;
   description?: string;
+  access?: string;
   mapImage?: string;
   bubbleImage?: string;
   npcs?: string[];
@@ -97,6 +114,10 @@ export type Character = {
   role: string;
   world: string;
   location: string;
+  school?: Exclude<School, "All">;
+  rank?: string;
+  health?: number;
+  cheats?: string;
   classification?: (
     | "Trainer"
     | "Boss"
@@ -120,6 +141,10 @@ export type FishingSpot = {
   school: Exclude<School, "All"> | "Any";
   rank: string;
   note: string;
+  rarity?: string;
+  tank?: string;
+  xp?: number;
+  size?: string;
   image?: string;
   sources?: SpellSource[];
 };
