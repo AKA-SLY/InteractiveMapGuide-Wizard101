@@ -79,7 +79,12 @@ const slugify = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)+/g, "");
 
-const LIBRARY_BASE = new URL("W101 Images/", import.meta.env.BASE_URL).pathname;
+const basePath = import.meta.env.BASE_URL.replace(/\/+$/, "");
+
+const libraryRoot = (...segments: string[]) =>
+  `${basePath}/${["W101 Images", ...segments]
+    .map((segment) => segment.split("/").map(encodeURIComponent).join("/"))
+    .join("/")}`;
 
 const formatLibraryFileName = (value: string) =>
   value
@@ -95,7 +100,7 @@ const libraryPath = (
   name: string,
   extension: "png" | "jpg" | "jpeg" | "webp" = "png",
   formatter: (value: string) => string = slugify,
-) => new URL(`${folder}/${formatter(name)}.${extension}`, LIBRARY_BASE).pathname;
+) => `${libraryRoot(folder)}/${encodeURIComponent(formatter(name))}.${extension}`;
 
 const worldBubblePath = (name: string) => libraryPath("worlds/bubbles", name);
 const worldMapPath = (name: string) => libraryPath("worlds/maps", name);
