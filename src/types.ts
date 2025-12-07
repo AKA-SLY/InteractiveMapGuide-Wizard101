@@ -52,6 +52,7 @@ export type Gear = {
   setName?: string;
   setBonus?: string;
   image?: string;
+  sources?: SpellSource[];
 };
 
 export type Furniture = {
@@ -62,6 +63,7 @@ export type Furniture = {
   interactive?: boolean;
   description?: string;
   image?: string;
+  sources?: SpellSource[];
 };
 
 export type TreasureCard = {
@@ -87,6 +89,7 @@ export type Location = {
   bosses?: string[];
   collectibles?: string[];
   image?: string;
+  sources?: SpellSource[];
 };
 
 export type Character = {
@@ -96,6 +99,7 @@ export type Character = {
   location: string;
   tip?: string;
   image?: string;
+  sources?: SpellSource[];
 };
 
 export type FishingSpot = {
@@ -105,6 +109,7 @@ export type FishingSpot = {
   rank: string;
   note: string;
   image?: string;
+  sources?: SpellSource[];
 };
 
 export type CategoryKey =

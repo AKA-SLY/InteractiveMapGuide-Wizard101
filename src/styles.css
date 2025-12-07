@@ -97,7 +97,7 @@ h3 {
   border-radius: 50%;
   border: 2px solid #b19de0;
   box-shadow: 0 16px 36px rgba(55, 35, 96, 0.35);
-  width: 160px;
+  width: 130px;
   aspect-ratio: 1 / 1;
   display: grid;
   place-items: center;
@@ -155,8 +155,8 @@ h3 {
   gap: 18px;
   position: sticky;
   top: 20px;
-  min-height: 680px;
-  max-width: 520px;
+  min-height: 620px;
+  max-width: 540px;
 }
 .world-panel__header {
   display: flex;
@@ -166,10 +166,39 @@ h3 {
 }
 .world-panel__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
   justify-items: center;
   align-items: start;
+}
+
+.world-locations {
+  margin-top: 12px;
+  background: #f8f1df;
+  border: 1px solid #c7b7e4;
+  border-radius: 14px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.world-locations__header h4 {
+  margin: 0;
+}
+
+.world-locations__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.world-locations__chip {
+  border-radius: 12px;
+  background: #e6dafd;
+  border: 1px solid #a28ed2;
+  padding: 8px 12px;
+  font-size: 13px;
+  line-height: 1.2;
 }
 
 .primary,
@@ -658,6 +687,10 @@ input[type="text"] {
     padding-top: 8px;
     display: grid;
     gap: 8px;
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
 .pill-list {

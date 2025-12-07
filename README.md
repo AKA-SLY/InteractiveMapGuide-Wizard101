@@ -97,21 +97,21 @@ Common macOS tips
 Why those extra flags?
 - The preview script automatically rebuilds, hosts on your computer, pins port 4173, and serves the correct base path (`/InteractiveMapGuide-Wizard101/`) so the page never renders blank.
 
-## Using the `Images` folder (no more generic icons)
+## Using the `W101 Images` folder (no more generic icons)
 
-You can drop your official Wizard101 art directly into `public/Images` and the app will load it automatically. Filenames are slugged (lowercase, spaces become dashes). If an image is missing, the UI falls back to the category or school icon so nothing breaks.
+You can drop your official Wizard101 art directly into `public/W101 Images` and the app will load it automatically. Filenames are slugged (lowercase, spaces become dashes). If an image is missing, the UI falls back to the category or school icon so nothing breaks.
 
-- Spells → `public/Images/spells/<spell-name>.png`
-- Treasure cards → `public/Images/treasure-cards/<card-name>.png`
-- Gear → `public/Images/gear/<item-name>.png`
-- Furniture → `public/Images/furniture/<item-name>.png`
-- Characters → `public/Images/characters/<npc-name>.png`
-- Fishing → `public/Images/fishing/<spot-name>.png`
-- Locations → `public/Images/locations/<location-name>.png`
-- World bubbles → `public/Images/worlds/bubbles/<world-name>.png`
-- World maps → `public/Images/worlds/maps/<world-name>.png`
+- Spells → `public/W101 Images/spells/<spell-name>.png`
+- Treasure cards → `public/W101 Images/treasure-cards/<card-name>.png`
+- Gear → `public/W101 Images/gear/<item-name>.png`
+- Furniture → `public/W101 Images/furniture/<item-name>.png`
+- Characters → `public/W101 Images/characters/<npc-name>.png`
+- Fishing → `public/W101 Images/fishing/<spot-name>.png`
+- Locations → `public/W101 Images/locations/<location-name>.png`
+- World bubbles → `public/W101 Images/worlds/bubbles/<world-name>.png`
+- World maps → `public/W101 Images/worlds/maps/<world-name>.png`
 
-Example: `Fire Cat` becomes `public/Images/spells/fire-cat.png`. If you prefer JPG or WEBP, keep the same name (the preview uses PNG by default and falls back to the placeholder when an image is missing).
+Example: `Fire Cat` becomes `public/W101 Images/spells/fire-cat.png`. PNG is used by default; the preview falls back to the placeholder when an image is missing.
 
 ## Location data intake
 
