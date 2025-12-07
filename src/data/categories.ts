@@ -2,10 +2,11 @@ import { characters } from "./characters";
 import { fishing } from "./fishing";
 import { furniture } from "./furniture";
 import { gear } from "./gear";
-import { icons, jewels, mounts, fireSpellCards, henchmen, minions, worldMaps } from "./galleries";
+import { jewels, mounts, fireSpellCards, henchmen, minions } from "./galleries";
 import { locations } from "./locations";
 import { spells } from "./spells";
 import { treasureCards } from "./treasureCards";
+import { cantrip, extraSkillsIcon, gardening, monstrology } from "./extraSkills";
 import {
   type CategoryKey,
   type Character,
@@ -35,7 +36,8 @@ export const categories: {
   { key: "Henchmen", icon: w101Icon("All_Friends"), dataset: henchmen },
   { key: "Jewels", icon: w101Icon("Jewel"), dataset: jewels },
   { key: "Minions", icon: w101Icon("Minion"), dataset: minions },
-  { key: "World Maps", icon: w101Icon("Map"), dataset: worldMaps },
-  { key: "Icons", icon: w101Icon("All"), dataset: icons },
   { key: "Mounts", icon: w101Icon("Mount"), dataset: mounts },
+  { key: "Gardening", icon: extraSkillsIcon, dataset: gardening },
+  { key: "Monstrology", icon: w101Icon("Monstrology"), dataset: monstrology },
+  { key: "Cantrip", icon: w101Icon("Cantrip"), dataset: cantrip },
 ];

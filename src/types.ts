@@ -168,6 +168,7 @@ export type CategoryKey =
   | "Henchmen"
   | "Jewels"
   | "Minions"
-  | "World Maps"
-  | "Icons"
-  | "Mounts";
+  | "Mounts"
+  | "Gardening"
+  | "Monstrology"
+  | "Cantrip";
