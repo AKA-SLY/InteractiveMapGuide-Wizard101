@@ -741,7 +741,6 @@ function App() {
   const [minionFilter, setMinionFilter] = useState<string>("All Worlds");
   const [extraSkillsOpen, setExtraSkillsOpen] = useState<boolean>(false);
   const [scrapeStatus, setScrapeStatus] = useState<string>("Idle");
-  const [scrapeCategoryInput, setScrapeCategoryInput] = useState<string>("Spells");
   const [cooldownUntil, setCooldownUntil] = useState<number>(0);
   const [isScraping, setIsScraping] = useState<boolean>(false);
 
@@ -795,12 +794,10 @@ function App() {
     }
 
     setIsScraping(true);
-    setScrapeStatus(`Scraping ${SCRAPE_PAGE_COUNT} pages of ${scrapeCategoryInput}...`);
+    setScrapeStatus(`Scraping ${SCRAPE_PAGE_COUNT} pages of ${category}...`);
 
     for (let pageIndex = 1; pageIndex <= SCRAPE_PAGE_COUNT; pageIndex++) {
-      setScrapeStatus(
-        `Scraping page ${pageIndex} / ${SCRAPE_PAGE_COUNT} for ${scrapeCategoryInput}...`,
-      );
+      setScrapeStatus(`Scraping page ${pageIndex} / ${SCRAPE_PAGE_COUNT} for ${category}...`);
       // Simulate a respectful delay per page scrape to avoid stressing the source site.
       // Replace this with real fetch logic if CORS and API rules allow.
       // eslint-disable-next-line no-await-in-loop
@@ -808,9 +805,7 @@ function App() {
     }
 
     const nextCooldown = Date.now() + SCRAPE_COOLDOWN_MS;
-    setScrapeStatus(
-      `Captured stat outlines for ${scrapeCategoryInput}. Cooldown in progress...`,
-    );
+    setScrapeStatus(`Captured stat outlines for ${category}. Cooldown in progress...`);
     setCooldownUntil(nextCooldown);
     setIsScraping(false);
 
@@ -1086,27 +1081,17 @@ function App() {
                 <p className="eyebrow">Data helper</p>
                 <h3 className="scrape-tools__title">Wizard101 Central scraper</h3>
                 <p className="hint">
-                  Pull {SCRAPE_PAGE_COUNT} pages for a category with a built-in 7 second cooldown
-                  to avoid spamming.
+                  Pull {SCRAPE_PAGE_COUNT} pages for the active category with a built-in 7 second
+                  cooldown to avoid spamming.
                 </p>
               </div>
               <div className="scrape-tools__controls">
-                <label className="sr-only" htmlFor="scrape-category">
-                  Category to scrape
-                </label>
-                <input
-                  id="scrape-category"
-                  type="text"
-                  value={scrapeCategoryInput}
-                  onChange={(e) => setScrapeCategoryInput(e.target.value)}
-                  placeholder="Spells, gear, worlds..."
-                />
                 <button
                   className="primary"
                   onClick={handleScrape}
                   disabled={isScraping || cooldownUntil > Date.now()}
                 >
-                  {isScraping ? "Scraping..." : "Scrape 10 pages"}
+                  {isScraping ? "Scraping..." : `Scrape 10 pages of ${category}`}
                 </button>
                 <p className="hint" aria-live="polite">
                   {scrapeStatus}
