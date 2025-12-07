@@ -79,13 +79,23 @@ const slugify = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)+/g, "");
 
-const LIBRARY_BASE = "/W101 Images";
+const LIBRARY_BASE = new URL("W101 Images/", import.meta.env.BASE_URL).pathname;
+
+const formatLibraryFileName = (value: string) =>
+  value
+    .replace(/['’]/g, "")
+    .replace(/[^A-Za-z0-9]+/g, " ")
+    .trim()
+    .split(/\s+/)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join("_");
 
 const libraryPath = (
   folder: string,
   name: string,
   extension: "png" | "jpg" | "jpeg" | "webp" = "png",
-) => encodeURI(`${LIBRARY_BASE}/${folder}/${slugify(name)}.${extension}`);
+  formatter: (value: string) => string = slugify,
+) => new URL(`${folder}/${formatter(name)}.${extension}`, LIBRARY_BASE).pathname;
 
 const worldBubblePath = (name: string) => libraryPath("worlds/bubbles", name);
 const worldMapPath = (name: string) => libraryPath("worlds/maps", name);
@@ -93,7 +103,13 @@ const worldMapPath = (name: string) => libraryPath("worlds/maps", name);
 function getItemImage(item: CatalogItem, category: CategoryKey) {
   if ((item as CatalogItem).image) return (item as CatalogItem).image as string;
 
-  if (category === "Spells") return libraryPath("spells", (item as Spell).name);
+  if (category === "Spells")
+    return libraryPath(
+      "Wizard101 Fire_Spells",
+      (item as Spell).name,
+      "png",
+      formatLibraryFileName,
+    );
   if (category === "Treasure Cards")
     return libraryPath("treasure-cards", (item as TreasureCard).name);
   if (category === "Gear") return libraryPath("gear", (item as Gear).name);
