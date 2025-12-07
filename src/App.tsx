@@ -17,28 +17,71 @@ import {
   type TreasureCard,
   type SpellSource,
 } from "./types";
+import allSchoolIcon from "./assets/icons/schools/all.svg";
+import balanceIcon from "./assets/icons/schools/balance.svg";
+import deathIcon from "./assets/icons/schools/death.svg";
+import fireIcon from "./assets/icons/schools/fire.svg";
+import iceIcon from "./assets/icons/schools/ice.svg";
+import lifeIcon from "./assets/icons/schools/life.svg";
+import moonIcon from "./assets/icons/schools/moon.svg";
+import mythIcon from "./assets/icons/schools/myth.svg";
+import shadowIcon from "./assets/icons/schools/shadow.svg";
+import starIcon from "./assets/icons/schools/star.svg";
+import stormIcon from "./assets/icons/schools/storm.svg";
+import sunIcon from "./assets/icons/schools/sun.svg";
+import characterIcon from "./assets/icons/categories/character.svg";
+import fishingIcon from "./assets/icons/categories/fishing.svg";
+import furnitureIcon from "./assets/icons/categories/furniture.svg";
+import gearIcon from "./assets/icons/categories/gear.svg";
+import spellIcon from "./assets/icons/categories/spell.svg";
+import treasureIcon from "./assets/icons/categories/treasure.svg";
+import worldBubbleFallback from "./assets/icons/worlds/bubble-fallback.svg";
+import worldMapFallback from "./assets/icons/worlds/map-fallback.svg";
 
 const PAGE_SIZE = 8;
 
-const worldFallbackImage =
-  "https://dummyimage.com/900x520/dacfb2/2c1c4a&text=World+map";
+const worldFallbackImage = worldMapFallback;
 
-const schoolIcons: Record<Exclude<School, "All">, string> = {
-  Fire: "🔥",
-  Ice: "❄️",
-  Storm: "⚡️",
-  Myth: "🐍",
-  Life: "🍃",
-  Death: "💀",
-  Balance: "⚖️",
-  Sun: "☀️",
-  Moon: "🌙",
-  Star: "⭐️",
-  Shadow: "🌑",
+const schoolIcons: Record<School, string> = {
+  All: allSchoolIcon,
+  Fire: fireIcon,
+  Ice: iceIcon,
+  Storm: stormIcon,
+  Myth: mythIcon,
+  Life: lifeIcon,
+  Death: deathIcon,
+  Balance: balanceIcon,
+  Sun: sunIcon,
+  Moon: moonIcon,
+  Star: starIcon,
+  Shadow: shadowIcon,
+};
+
+const categoryIconFallback: Record<CategoryKey, string> = {
+  Spells: spellIcon,
+  "Treasure Cards": treasureIcon,
+  Gear: gearIcon,
+  Furniture: furnitureIcon,
+  Characters: characterIcon,
+  Fishing: fishingIcon,
 };
 
 const placeholderThumb = (label: string) =>
   `https://dummyimage.com/160x160/f4e6c4/2b1441&text=${encodeURIComponent(label)}`;
+
+function getItemImage(item: CatalogItem, category: CategoryKey) {
+  if ((item as CatalogItem).image) return (item as CatalogItem).image as string;
+
+  if (category === "Spells") return schoolIcons[(item as Spell).school];
+  if (category === "Treasure Cards") return schoolIcons[(item as TreasureCard).school];
+  if (category === "Gear") return schoolIcons[(item as Gear).school];
+  if (category === "Fishing")
+    return (item as FishingSpot).school === "Any"
+      ? categoryIconFallback.Fishing
+      : schoolIcons[(item as FishingSpot).school];
+
+  return categoryIconFallback[category] ?? placeholderThumb(item.name.slice(0, 8));
+}
 
 type CatalogItem = Spell | Gear | Character | FishingSpot | TreasureCard | Furniture;
 
@@ -81,12 +124,10 @@ function Details({
   onClose,
 }: {
   item: CatalogItem;
-  category: string;
+  category: CategoryKey;
   onClose: () => void;
 }) {
-  const thumb =
-    (item as CatalogItem).image ??
-    placeholderThumb(item.name.slice(0, 10));
+  const thumb = getItemImage(item, category);
 
   const statLines: { label: string; value: string }[] = (() => {
     switch (category) {
@@ -373,7 +414,7 @@ function App() {
                 }}
               >
                 <span className="icon" aria-hidden>
-                  {c.icon}
+                  <img src={c.icon} alt="" />
                 </span>
                 <span className="bookmark__label">{c.key}</span>
               </button>
@@ -383,8 +424,7 @@ function App() {
           <div className="bookmark-body">
             <div className="school-rail" aria-label="Schools">
               {schools.map((s) => {
-                const icon =
-                  s === "All" ? "🌌" : schoolIcons[s as Exclude<School, "All">];
+                const icon = schoolIcons[s];
                 return (
                   <button
                     key={s}
@@ -394,7 +434,7 @@ function App() {
                     aria-label={`${s} school`}
                   >
                     <span className="school-pill__icon" aria-hidden>
-                      {icon}
+                      <img src={icon} alt="" />
                     </span>
                     <span className="sr-only">{s}</span>
                   </button>
@@ -492,11 +532,10 @@ function App() {
 
                   const schoolIcon =
                     itemSchool && itemSchool !== "Any"
-                      ? schoolIcons[itemSchool as Exclude<School, "All">]
+                      ? schoolIcons[itemSchool as School]
                       : null;
 
-                  const thumb = (item as CatalogItem).image;
-                  const displayThumb = thumb ?? placeholderThumb(item.name.slice(0, 6));
+                  const displayThumb = getItemImage(item, category);
 
                   return (
                     <article
@@ -516,7 +555,7 @@ function App() {
                       </div>
                       {schoolIcon && (
                         <span className="school-chip" title={`${itemSchool} school`}>
-                          {schoolIcon}
+                          <img src={schoolIcon} alt={`${itemSchool} school icon`} />
                         </span>
                       )}
                     </article>
@@ -546,9 +585,7 @@ function App() {
                 onClick={() => setWorldFocus(world)}
                 aria-label={`Open details for ${world.name}`}
                 style={{
-                  backgroundImage: world.bubbleImage
-                    ? `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), rgba(78,51,119,0.5)), url(${world.bubbleImage})`
-                    : undefined,
+                  backgroundImage: `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), rgba(78,51,119,0.5)), url(${world.bubbleImage ?? worldBubbleFallback})`,
                 }}
               >
                 <div className="world-bubble__overlay">

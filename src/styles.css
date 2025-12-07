@@ -277,7 +277,11 @@ button:hover,
   font-weight: 700;
 }
 
-.icon { font-size: 18px; }
+.icon img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
 
 .bookmark-body {
   display: flex;
@@ -314,8 +318,10 @@ button:hover,
   border-color: #8c6fd6;
 }
 
-.school-pill__icon {
-  font-size: 15px;
+.school-pill__icon img {
+  width: 18px;
+  height: 18px;
+  display: block;
 }
 
 .bookmark-header {
@@ -482,7 +488,11 @@ input[type="text"] {
   border-radius: 10px;
   background: #e7d9ff;
   border: 1px solid #bca5e5;
-  font-size: 18px;
+}
+
+.school-chip img {
+  width: 18px;
+  height: 18px;
 }
 
 .grid {
