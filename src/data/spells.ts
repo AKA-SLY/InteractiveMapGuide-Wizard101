@@ -9,6 +9,11 @@ export const spells: Spell[] = [
     accuracy: "75%",
     effect: "65–105 Fire damage",
     description: "A quick Fire opener that is reliable early on.",
+    sources: [
+      { type: "Trainer", detail: "Learned from Dalia Falmea", location: "Ravenwood" },
+      { type: "Vendor", detail: "Treasure card from library vendor" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Fireblade",
@@ -18,6 +23,11 @@ export const spells: Spell[] = [
     accuracy: "100%",
     effect: "+35% to next Fire damage spell",
     description: "Core buff for every Fire hitter—stack before any big attack.",
+    sources: [
+      { type: "Trainer", detail: "Dalia Falmea teaches at level 7", location: "Ravenwood" },
+      { type: "Quest", detail: "Given after the early Fire questline" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Fire Trap",
@@ -27,6 +37,11 @@ export const spells: Spell[] = [
     accuracy: "100%",
     effect: "+30% to next Fire spell on target",
     description: "Easy-to-stack trap that amplifies any following Fire hit.",
+    sources: [
+      { type: "Trainer", detail: "Dalia Falmea", location: "Ravenwood" },
+      { type: "Quest", detail: "Unlocked through Fire study" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Fire Elf",
@@ -36,6 +51,11 @@ export const spells: Spell[] = [
     accuracy: "80%",
     effect: "210 Fire damage over 3 rounds",
     description: "Damage-over-time opener that keeps shields at bay.",
+    sources: [
+      { type: "Trainer", detail: "Dalia Falmea", location: "Ravenwood" },
+      { type: "Dropped", detail: "Fire elites across Krokotopia" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Sunbird",
@@ -45,6 +65,11 @@ export const spells: Spell[] = [
     accuracy: "80%",
     effect: "305–345 Fire damage",
     description: "Reliable single-target hit for early and midgame bosses.",
+    sources: [
+      { type: "Trainer", detail: "Dalia Falmea", location: "Ravenwood" },
+      { type: "Quest", detail: "Earned in Fire studies", location: "Fire School" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Heck Hound",
@@ -54,6 +79,12 @@ export const spells: Spell[] = [
     accuracy: "75%",
     effect: "Damage-over-time scales with each pip used",
     description: "Load extra pips to ramp this DoT for shield-piercing pressure.",
+    sources: [
+      { type: "Trainer", detail: "Dalia Falmea", location: "Ravenwood" },
+      { type: "Dropped", detail: "Kraken, Krokopatra, and early bosses" },
+    ],
+    treasureCardNote: "Treasure card variant stacks separately and appears in packs.",
+    hasTreasureCard: true,
   },
   {
     name: "Meteor Strike",
@@ -63,6 +94,11 @@ export const spells: Spell[] = [
     accuracy: "75%",
     effect: "305–345 Fire damage to all enemies",
     description: "Classic Fire AoE that clears mobs once you gain power pips.",
+    sources: [
+      { type: "Trainer", detail: "Dalia Falmea", location: "Ravenwood" },
+      { type: "Quest", detail: "Unlocked during Krokotopia progression" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Phoenix",
@@ -72,6 +108,10 @@ export const spells: Spell[] = [
     accuracy: "70%",
     effect: "515–595 Fire damage",
     description: "Solid midgame boss killer once you have blades.",
+    sources: [
+      { type: "Trainer", detail: "Dalia Falmea", location: "Ravenwood" },
+      { type: "Quest", detail: "Krokotopia story progression" },
+    ],
   },
   {
     name: "Power Link",
@@ -81,6 +121,11 @@ export const spells: Spell[] = [
     accuracy: "80%",
     effect: "305 Fire damage over 3 rounds + 203 healing over 3 rounds",
     description: "Provides steady sustain while keeping pressure on a single foe.",
+    sources: [
+      { type: "Trainer", detail: "Dalia Falmea", location: "Ravenwood" },
+      { type: "Quest", detail: "Rewarded during Dragonspyre" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Helephant",
@@ -90,6 +135,10 @@ export const spells: Spell[] = [
     accuracy: "80%",
     effect: "585–645 Fire damage",
     description: "Signature late-game Fire nuke before moving into shadow hits.",
+    sources: [
+      { type: "Trainer", detail: "Dalia Falmea", location: "Ravenwood" },
+      { type: "Dropped", detail: "Dropped by Dragonspyre bosses" },
+    ],
   },
   {
     name: "Efreet",
@@ -99,6 +148,10 @@ export const spells: Spell[] = [
     accuracy: "75%",
     effect: "835–915 Fire damage and -45% accuracy to target",
     description: "Heavy burst with a crippling weakness to slow down enemy casts.",
+    sources: [
+      { type: "Trainer", detail: "Dalia Falmea", location: "Ravenwood" },
+      { type: "Quest", detail: "Awarded in Zafaria storyline" },
+    ],
   },
   {
     name: "Snow Serpent",
@@ -108,6 +161,10 @@ export const spells: Spell[] = [
     accuracy: "85%",
     effect: "190–230 Ice damage",
     description: "Cheap Ice hitter with great accuracy for combos.",
+    sources: [
+      { type: "Trainer", detail: "Lydia Greyrose", location: "Ravenwood" },
+      { type: "Dropped", detail: "Frost themed mobs in Krokotopia" },
+    ],
   },
   {
     name: "Ice Beetle",
@@ -117,6 +174,11 @@ export const spells: Spell[] = [
     accuracy: "90%",
     effect: "65–105 Ice damage",
     description: "Early-game poke that pairs with traps for quick finishes.",
+    sources: [
+      { type: "Trainer", detail: "Lydia Greyrose", location: "Ravenwood" },
+      { type: "Vendor", detail: "Treasure card versions at library" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Ice Trap",
@@ -126,6 +188,11 @@ export const spells: Spell[] = [
     accuracy: "100%",
     effect: "+30% to next Ice spell on target",
     description: "Simple trap that boosts any following Ice hit.",
+    sources: [
+      { type: "Trainer", detail: "Lydia Greyrose", location: "Ravenwood" },
+      { type: "Quest", detail: "Awarded in early Ice quests" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Iceblade",
@@ -135,6 +202,11 @@ export const spells: Spell[] = [
     accuracy: "100%",
     effect: "+40% to next Ice damage spell",
     description: "Bread-and-butter Ice buff for both hitters and tanks.",
+    sources: [
+      { type: "Trainer", detail: "Lydia Greyrose", location: "Ravenwood" },
+      { type: "Quest", detail: "Gained after early Ice story quests" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Blizzard",
@@ -144,6 +216,11 @@ export const spells: Spell[] = [
     accuracy: "80%",
     effect: "290–370 Ice damage to all enemies",
     description: "Go-to mob clear that stays consistent thanks to high accuracy.",
+    sources: [
+      { type: "Trainer", detail: "Lydia Greyrose", location: "Ravenwood" },
+      { type: "Quest", detail: "Unlocked mid Krokotopia" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Colossus",
@@ -153,6 +230,11 @@ export const spells: Spell[] = [
     accuracy: "80%",
     effect: "460–540 Ice damage",
     description: "Chunky single-target hit that benefits from Ice’s natural resist.",
+    sources: [
+      { type: "Trainer", detail: "Lydia Greyrose", location: "Ravenwood" },
+      { type: "Quest", detail: "Given mid-MB storyline", location: "Marleybone" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Frostbite",
@@ -162,6 +244,11 @@ export const spells: Spell[] = [
     accuracy: "75%",
     effect: "45 Ice damage + 420 Ice damage over 3 rounds",
     description: "Premium DoT that slices through shields and sets up follow-ups.",
+    sources: [
+      { type: "Trainer", detail: "Lydia Greyrose", location: "Ravenwood" },
+      { type: "Dropped", detail: "Dropped by bosses in Marleybone" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Ice Wyvern",
@@ -171,6 +258,10 @@ export const spells: Spell[] = [
     accuracy: "85%",
     effect: "515–595 Ice damage",
     description: "Efficient boss finisher when you need accuracy over raw damage.",
+    sources: [
+      { type: "Trainer", detail: "Lydia Greyrose", location: "Ravenwood" },
+      { type: "Quest", detail: "Granted in Dragonspyre" },
+    ],
   },
   {
     name: "Frost Giant",
@@ -180,6 +271,11 @@ export const spells: Spell[] = [
     accuracy: "80%",
     effect: "460–540 Ice damage to all enemies and Stun",
     description: "Arena staple that freezes entire mobs for a free follow-up.",
+    sources: [
+      { type: "Trainer", detail: "Lydia Greyrose", location: "Ravenwood" },
+      { type: "Quest", detail: "Earned late Marleybone" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Tower Shield",
@@ -189,6 +285,11 @@ export const spells: Spell[] = [
     accuracy: "100%",
     effect: "-50% to next incoming damage spell",
     description: "Universal shield that keeps tanks alive through heavy hits.",
+    sources: [
+      { type: "Trainer", detail: "Lydia Greyrose", location: "Ravenwood" },
+      { type: "Vendor", detail: "Treasure cards from many libraries" },
+    ],
+    hasTreasureCard: true,
   },
   {
     name: "Woolly Mammoth",
@@ -198,113 +299,9 @@ export const spells: Spell[] = [
     accuracy: "80%",
     effect: "770–830 Ice damage and Stun",
     description: "High-level burst that also steals a round with an automatic stun.",
-  },
-  {
-    name: "Storm Shark",
-    school: "Storm",
-    rank: 3,
-    pipCost: 3,
-    accuracy: "70%",
-    effect: "375–435 Storm damage",
-    description: "Glass-cannon strike that pairs well with buffs.",
-  },
-  {
-    name: "Tempest",
-    school: "Storm",
-    rank: 0,
-    pipCost: 2,
-    accuracy: "75%",
-    effect: "80 Storm damage base +80 per pip to all enemies",
-    description: "Scales with pips, making it Storm’s flexible farming tool.",
-  },
-  {
-    name: "Storm Lord",
-    school: "Storm",
-    rank: 7,
-    pipCost: 7,
-    accuracy: "75%",
-    effect: "690–770 Storm damage to all enemies and Stun",
-    description: "Signature Storm AoE that ends mob fights and buys a stun round.",
-  },
-  {
-    name: "Humongofrog",
-    school: "Myth",
-    rank: 4,
-    pipCost: 4,
-    accuracy: "90%",
-    effect: "335–395 Myth damage to all enemies",
-    description: "Efficient AoE that Myth wizards spam for safe clears.",
-  },
-  {
-    name: "Orthrus",
-    school: "Myth",
-    rank: 6,
-    pipCost: 6,
-    accuracy: "85%",
-    effect: "470 Myth damage + 470 Myth damage to same target",
-    description: "Double-strike finisher that slices through shields and wards.",
-  },
-  {
-    name: "Centaur",
-    school: "Life",
-    rank: 5,
-    pipCost: 5,
-    accuracy: "90%",
-    effect: "515–595 Life damage",
-    description: "Dependable midgame Life hitter for boss duels.",
-  },
-  {
-    name: "Forest Lord",
-    school: "Life",
-    rank: 7,
-    pipCost: 7,
-    accuracy: "90%",
-    effect: "540–620 Life damage to all enemies",
-    description: "Massive Life AoE that clears mobs while keeping accuracy high.",
-  },
-  {
-    name: "Skeletal Pirate",
-    school: "Death",
-    rank: 5,
-    pipCost: 5,
-    accuracy: "85%",
-    effect: "430–530 Death damage",
-    description: "High-damage Death single hit that pairs with Feint.",
-  },
-  {
-    name: "Feint",
-    school: "Death",
-    rank: 0,
-    pipCost: 0,
-    accuracy: "100%",
-    effect: "+70% outgoing / +30% incoming",
-    description: "High-risk, high-reward trap used in nearly all strats.",
-  },
-  {
-    name: "Sandstorm",
-    school: "Balance",
-    rank: 4,
-    pipCost: 4,
-    accuracy: "85%",
-    effect: "285–345 Balance damage to all enemies",
-    description: "Workhorse Balance AoE for brisk mob clears.",
-  },
-  {
-    name: "Judgement",
-    school: "Balance",
-    rank: 0,
-    pipCost: 2,
-    accuracy: "100%",
-    effect: "100 Balance damage per pip on target",
-    description: "Scales directly with pips, giving Balance flexible burst.",
-  },
-  {
-    name: "Savage Paw",
-    school: "Balance",
-    rank: 5,
-    pipCost: 5,
-    accuracy: "90%",
-    effect: "500 Balance damage and applies a 25% Balanceblade",
-    description: "Hit-and-blade combo that jump-starts any Balance offense.",
+    sources: [
+      { type: "Trainer", detail: "Lydia Greyrose", location: "Ravenwood" },
+      { type: "Quest", detail: "Unlocked in Zafaria" },
+    ],
   },
 ];

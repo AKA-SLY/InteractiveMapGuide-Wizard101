@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { categories } from "./data/categories";
-import { characters } from "./data/characters";
-import { fishing } from "./data/fishing";
+import { furniture } from "./data/furniture";
 import { gear } from "./data/gear";
 import { schools } from "./data/schools";
 import { spells } from "./data/spells";
+import { treasureCards } from "./data/treasureCards";
 import { type WorldBubble, worlds } from "./data/worlds";
 import {
   type CategoryKey,
@@ -13,6 +13,9 @@ import {
   type Gear,
   type School,
   type Spell,
+  type Furniture,
+  type TreasureCard,
+  type SpellSource,
 } from "./types";
 
 const PAGE_SIZE = 8;
@@ -37,7 +40,9 @@ const schoolIcons: Record<Exclude<School, "All">, string> = {
 const placeholderThumb = (label: string) =>
   `https://dummyimage.com/160x160/f4e6c4/2b1441&text=${encodeURIComponent(label)}`;
 
-function formatMeta(item: Spell | Gear | Character | FishingSpot, active: string) {
+type CatalogItem = Spell | Gear | Character | FishingSpot | TreasureCard | Furniture;
+
+function formatMeta(item: CatalogItem, active: string) {
   switch (active) {
     case "Spells": {
       const spell = item as Spell;
@@ -45,9 +50,13 @@ function formatMeta(item: Spell | Gear | Character | FishingSpot, active: string
         spell.pipCost === 1 ? "" : "s"
       }`;
     }
+    case "Treasure Cards": {
+      const tc = item as TreasureCard;
+      return `${tc.school} • ${tc.pipCost} pip${tc.pipCost === 1 ? "" : "s"}`;
+    }
     case "Gear": {
       const piece = item as Gear;
-      return `${piece.school} ${piece.type} • L${piece.level} • ${piece.stats}`;
+      return `${piece.school} ${piece.type} • ${piece.subcategory} • L${piece.level}`;
     }
     case "Characters": {
       const npc = item as Character;
@@ -56,6 +65,10 @@ function formatMeta(item: Spell | Gear | Character | FishingSpot, active: string
     case "Fishing": {
       const spot = item as FishingSpot;
       return `${spot.world} • ${spot.rank} • ${spot.school}`;
+    }
+    case "Furniture": {
+      const furni = item as Furniture;
+      return `${furni.world} • ${furni.subcategory}`;
     }
     default:
       return "";
@@ -67,12 +80,12 @@ function Details({
   category,
   onClose,
 }: {
-  item: Spell | Gear | Character | FishingSpot;
+  item: CatalogItem;
   category: string;
   onClose: () => void;
 }) {
   const thumb =
-    (item as Spell | Gear | Character | FishingSpot).image ??
+    (item as CatalogItem).image ??
     placeholderThumb(item.name.slice(0, 10));
 
   const statLines: { label: string; value: string }[] = (() => {
@@ -85,6 +98,19 @@ function Details({
           { label: "Pips", value: `${spell.pipCost} pip${spell.pipCost === 1 ? "" : "s"}` },
           { label: "Accuracy", value: `${spell.accuracy}%` },
           { label: "Effect", value: spell.effect },
+          ...(spell.treasureCardNote
+            ? [{ label: "Treasure card", value: spell.treasureCardNote }]
+            : []),
+        ];
+      }
+      case "Treasure Cards": {
+        const tc = item as TreasureCard;
+        return [
+          { label: "School", value: tc.school },
+          { label: "Pips", value: `${tc.pipCost} pip${tc.pipCost === 1 ? "" : "s"}` },
+          { label: "Accuracy", value: `${tc.accuracy}%` },
+          { label: "Effect", value: tc.effect },
+          ...(tc.relatedSpell ? [{ label: "Related spell", value: tc.relatedSpell }] : []),
         ];
       }
       case "Gear": {
@@ -95,6 +121,9 @@ function Details({
           { label: "Level", value: `L${piece.level}` },
           { label: "Stats", value: piece.stats },
           { label: "Location", value: piece.location },
+          { label: "Subcategory", value: piece.subcategory },
+          ...(piece.setName ? [{ label: "Set", value: piece.setName }] : []),
+          ...(piece.setBonus ? [{ label: "Set bonus", value: piece.setBonus }] : []),
         ];
       }
       case "Characters": {
@@ -115,6 +144,17 @@ function Details({
           { label: "Notes", value: spot.note },
         ];
       }
+      case "Furniture": {
+        const furni = item as Furniture;
+        return [
+          { label: "World", value: furni.world },
+          { label: "Subcategory", value: furni.subcategory },
+          { label: "Location", value: furni.location },
+          ...(furni.interactive !== undefined
+            ? [{ label: "Interactive", value: furni.interactive ? "Yes" : "No" }]
+            : []),
+        ];
+      }
       default:
         return [];
     }
@@ -122,9 +162,17 @@ function Details({
 
   const description = (() => {
     if (category === "Spells") return (item as Spell).description;
+    if (category === "Treasure Cards") return (item as TreasureCard).description;
     if (category === "Gear") return (item as Gear).stats;
     if (category === "Characters") return (item as Character).tip;
     if (category === "Fishing") return (item as FishingSpot).note;
+    if (category === "Furniture") return (item as Furniture).description;
+    return undefined;
+  })();
+
+  const sources: SpellSource[] | undefined = (() => {
+    if (category === "Spells") return (item as Spell).sources;
+    if (category === "Treasure Cards") return (item as TreasureCard).sources;
     return undefined;
   })();
 
@@ -175,6 +223,30 @@ function Details({
                   <li>Rank: {(item as FishingSpot).rank}</li>
                 </ul>
               )}
+              {category === "Furniture" && (
+                <ul className="pill-list">
+                  <li>World: {(item as Furniture).world}</li>
+                  <li>Subcategory: {(item as Furniture).subcategory}</li>
+                </ul>
+              )}
+            </div>
+          </details>
+        )}
+
+        {sources && sources.length > 0 && (
+          <details className="accordion" open>
+            <summary>Acquisition & sources</summary>
+            <div className="accordion__body source-list">
+              {sources.map((src) => (
+                <div className="stat-row" key={`${src.type}-${src.detail}`}>
+                  <span className="stat-row__label">{src.type}</span>
+                  <span className="stat-row__value">
+                    {src.detail}
+                    {src.location ? ` — ${src.location}` : ""}
+                    {src.npc ? ` (NPC: ${src.npc})` : ""}
+                  </span>
+                </div>
+              ))}
             </div>
           </details>
         )}
@@ -187,31 +259,32 @@ function App() {
   const [category, setCategory] = useState<CategoryKey>("Spells");
   const [school, setSchool] = useState<School>("All");
   const [search, setSearch] = useState<string>("");
-  const [selected, setSelected] = useState<
-    Spell | Gear | Character | FishingSpot | null
-  >(null);
+  const [selected, setSelected] = useState<CatalogItem | null>(null);
   const [worldFocus, setWorldFocus] = useState<WorldBubble | null>(null);
   const [page, setPage] = useState<number>(1);
   const [showImages, setShowImages] = useState<boolean>(true);
+  const [tcOnly, setTcOnly] = useState<boolean>(false);
 
-  const dataset = useMemo<(Spell | Gear | Character | FishingSpot)[]>(() => {
-    switch (category) {
-      case "Spells":
-        return spells;
-      case "Gear":
-        return gear;
-      case "Characters":
-        return characters;
-      case "Fishing":
-        return fishing;
-      default:
-        return spells;
-    }
+  const dataset = useMemo<CatalogItem[]>(() => {
+    const entry = categories.find((c) => c.key === category);
+
+    if (entry) return entry.dataset as CatalogItem[];
+    if (category === "Spells") return spells;
+    if (category === "Treasure Cards") return treasureCards;
+    if (category === "Gear") return gear;
+    if (category === "Furniture") return furniture;
+    return [];
   }, [category]);
 
   useEffect(() => {
     setPage(1);
   }, [category, school, search]);
+
+  useEffect(() => {
+    if (category !== "Spells") {
+      setTcOnly(false);
+    }
+  }, [category]);
 
   const filtered = useMemo(() => {
     return dataset.filter((item) => {
@@ -219,10 +292,29 @@ function App() {
         .toLowerCase()
         .includes(search.toLowerCase().trim());
 
-      if (school === "All") return matchesSearch;
+      if (school === "All") {
+        if (category === "Spells" && tcOnly) {
+          return (item as Spell).hasTreasureCard && matchesSearch;
+        }
+        return matchesSearch;
+      }
 
-      if (category === "Spells" || category === "Gear") {
-        return (item as Spell | Gear).school === school && matchesSearch;
+      if (category === "Spells") {
+        const spell = item as Spell;
+        return (
+          spell.school === school &&
+          matchesSearch &&
+          (tcOnly ? spell.hasTreasureCard === true : true)
+        );
+      }
+
+      if (category === "Treasure Cards") {
+        const tc = item as TreasureCard;
+        return tc.school === school && matchesSearch;
+      }
+
+      if (category === "Gear") {
+        return (item as Gear).school === school && matchesSearch;
       }
 
       if (category === "Fishing") {
@@ -233,7 +325,7 @@ function App() {
       // Characters don’t filter by school, just the search box.
       return matchesSearch;
     });
-  }, [dataset, school, search, category]);
+  }, [dataset, school, search, category, tcOnly]);
 
   const sorted = useMemo(
     () => [...filtered].sort((a, b) => a.name.localeCompare(b.name)),
@@ -332,6 +424,17 @@ function App() {
                   onChange={(e) => setSearch(e.target.value)}
                 />
               </div>
+              {category === "Spells" && (
+                <label className="toggle" htmlFor="tc-only">
+                  <input
+                    id="tc-only"
+                    type="checkbox"
+                    checked={tcOnly}
+                    onChange={(e) => setTcOnly(e.target.checked)}
+                  />
+                  <span>Show only spells that have a treasure card</span>
+                </label>
+              )}
             </div>
 
             <div className="content__header">
@@ -379,6 +482,8 @@ function App() {
                   const itemSchool =
                     category === "Spells"
                       ? (item as Spell).school
+                      : category === "Treasure Cards"
+                        ? (item as TreasureCard).school
                       : category === "Gear"
                         ? (item as Gear).school
                         : category === "Fishing"
@@ -390,7 +495,7 @@ function App() {
                       ? schoolIcons[itemSchool as Exclude<School, "All">]
                       : null;
 
-                  const thumb = (item as Spell | Gear | Character | FishingSpot).image;
+                  const thumb = (item as CatalogItem).image;
                   const displayThumb = thumb ?? placeholderThumb(item.name.slice(0, 6));
 
                   return (

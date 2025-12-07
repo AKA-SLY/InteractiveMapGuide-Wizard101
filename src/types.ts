@@ -12,6 +12,21 @@ export type School =
   | "Star"
   | "Shadow";
 
+export type SpellSource = {
+  type:
+    | "Trainer"
+    | "Quest"
+    | "Vendor"
+    | "Dropped"
+    | "Crafted"
+    | "TC Vendor"
+    | "Pack"
+    | "Other";
+  detail: string;
+  location?: string;
+  npc?: string;
+};
+
 export type Spell = {
   name: string;
   school: Exclude<School, "All">;
@@ -20,16 +35,44 @@ export type Spell = {
   accuracy: string;
   effect: string;
   description: string;
+  sources: SpellSource[];
   image?: string;
+  hasTreasureCard?: boolean;
+  treasureCardNote?: string;
 };
 
 export type Gear = {
   name: string;
   school: Exclude<School, "All">;
   type: string;
+  subcategory: string;
   level: number;
   stats: string;
   location: string;
+  setName?: string;
+  setBonus?: string;
+  image?: string;
+};
+
+export type Furniture = {
+  name: string;
+  subcategory: string;
+  world: string;
+  location: string;
+  interactive?: boolean;
+  description?: string;
+  image?: string;
+};
+
+export type TreasureCard = {
+  name: string;
+  relatedSpell?: string;
+  school: Exclude<School, "All">;
+  pipCost: number;
+  accuracy: string;
+  effect: string;
+  description: string;
+  sources: SpellSource[];
   image?: string;
 };
 
@@ -51,4 +94,10 @@ export type FishingSpot = {
   image?: string;
 };
 
-export type CategoryKey = "Spells" | "Gear" | "Characters" | "Fishing";
+export type CategoryKey =
+  | "Spells"
+  | "Treasure Cards"
+  | "Gear"
+  | "Characters"
+  | "Fishing"
+  | "Furniture";
