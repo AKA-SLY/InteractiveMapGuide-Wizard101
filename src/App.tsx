@@ -79,11 +79,13 @@ const slugify = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)+/g, "");
 
+const LIBRARY_BASE = "/W101 Images";
+
 const libraryPath = (
   folder: string,
   name: string,
   extension: "png" | "jpg" | "jpeg" | "webp" = "png",
-) => `/Images/${folder}/${slugify(name)}.${extension}`;
+) => encodeURI(`${LIBRARY_BASE}/${folder}/${slugify(name)}.${extension}`);
 
 const worldBubblePath = (name: string) => libraryPath("worlds/bubbles", name);
 const worldMapPath = (name: string) => libraryPath("worlds/maps", name);
@@ -267,7 +269,94 @@ function Details({
   const sources: SpellSource[] | undefined = (() => {
     if (category === "Spells") return (item as Spell).sources;
     if (category === "Treasure Cards") return (item as TreasureCard).sources;
+    if ((item as Gear).sources) return (item as Gear).sources;
+    if ((item as Character).sources) return (item as Character).sources;
+    if ((item as Furniture).sources) return (item as Furniture).sources;
+    if ((item as FishingSpot).sources) return (item as FishingSpot).sources;
+    if ((item as Location).sources) return (item as Location).sources;
     return undefined;
+  })();
+
+  const moreDetails: { label: string; value: string }[] = (() => {
+    switch (category) {
+      case "Spells": {
+        const spell = item as Spell;
+        return [
+          { label: "Description", value: spell.description },
+          { label: "Effect", value: spell.effect },
+          { label: "Accuracy", value: `${spell.accuracy}%` },
+          {
+            label: "Treasure card available",
+            value: spell.hasTreasureCard ? "Yes" : "No",
+          },
+          ...(spell.treasureCardNote
+            ? [{ label: "Treasure card note", value: spell.treasureCardNote }]
+            : []),
+        ];
+      }
+      case "Treasure Cards": {
+        const tc = item as TreasureCard;
+        return [
+          { label: "Description", value: tc.description },
+          ...(tc.relatedSpell
+            ? [{ label: "Related spell", value: tc.relatedSpell }]
+            : []),
+        ];
+      }
+      case "Gear": {
+        const piece = item as Gear;
+        return [
+          { label: "Stats", value: piece.stats },
+          { label: "Location", value: piece.location },
+          ...(piece.setName ? [{ label: "Set", value: piece.setName }] : []),
+          ...(piece.setBonus ? [{ label: "Set bonus", value: piece.setBonus }] : []),
+        ];
+      }
+      case "Characters": {
+        const npc = item as Character;
+        return [
+          { label: "Role", value: npc.role },
+          { label: "Location", value: npc.location },
+          ...(npc.tip ? [{ label: "Tip", value: npc.tip }] : []),
+        ];
+      }
+      case "Fishing": {
+        const spot = item as FishingSpot;
+        return [
+          { label: "Rank", value: spot.rank },
+          { label: "Notes", value: spot.note },
+        ];
+      }
+      case "Furniture": {
+        const furni = item as Furniture;
+        return [
+          { label: "Location", value: furni.location },
+          ...(furni.description
+            ? [{ label: "Description", value: furni.description }]
+            : []),
+          ...(furni.interactive !== undefined
+            ? [{ label: "Interactive", value: furni.interactive ? "Yes" : "No" }]
+            : []),
+        ];
+      }
+      case "Locations": {
+        const loc = item as Location;
+        return [
+          ...(loc.description ? [{ label: "Description", value: loc.description }] : []),
+          ...(loc.npcs && loc.npcs.length
+            ? [{ label: "NPCs", value: loc.npcs.join(", ") }]
+            : []),
+          ...(loc.bosses && loc.bosses.length
+            ? [{ label: "Bosses", value: loc.bosses.join(", ") }]
+            : []),
+          ...(loc.collectibles && loc.collectibles.length
+            ? [{ label: "Collectibles", value: loc.collectibles.join(", ") }]
+            : []),
+        ];
+      }
+      default:
+        return [];
+    }
   })();
 
   return (
@@ -343,6 +432,20 @@ function Details({
                   )}
                 </ul>
               )}
+            </div>
+          </details>
+        )}
+
+        {moreDetails.length > 0 && (
+          <details className="accordion" open>
+            <summary>Full stat breakdown</summary>
+            <div className="accordion__body stat-grid">
+              {moreDetails.map((line) => (
+                <div className="stat-row" role="listitem" key={line.label}>
+                  <span className="stat-row__label">{line.label}</span>
+                  <span className="stat-row__value">{line.value}</span>
+                </div>
+              ))}
             </div>
           </details>
         )}
@@ -720,6 +823,34 @@ function App() {
                 }}
               />
             </div>
+
+            {locations.filter((loc) => loc.world === worldFocus.name).length > 0 && (
+              <div className="world-locations">
+                <div className="world-locations__header">
+                  <p className="eyebrow">Locations</p>
+                  <h4>Explore {worldFocus.name}</h4>
+                </div>
+                <div className="world-locations__list">
+                  {locations
+                    .filter((loc) => loc.world === worldFocus.name)
+                    .map((loc) => (
+                      <button
+                        key={loc.name}
+                        className="world-locations__chip"
+                        onClick={() => {
+                          setCategory("Locations");
+                          setSelected(loc);
+                          setWorldFocus(null);
+                        }}
+                      >
+                        {loc.name}
+                        {loc.zone ? ` — ${loc.zone}` : ""}
+                      </button>
+                    ))}
+                </div>
+              </div>
+            )}
+
             <p className="hint">
               Future updates will place interactive markers on these maps for
               Prospector Zeke items, bosses, minions, or quest paths.
