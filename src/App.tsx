@@ -5,7 +5,7 @@ import { fishing } from "./data/fishing";
 import { gear } from "./data/gear";
 import { schools } from "./data/schools";
 import { spells } from "./data/spells";
-import { worlds } from "./data/worlds";
+import { type WorldBubble, worlds } from "./data/worlds";
 import {
   type CategoryKey,
   type Character,
@@ -114,6 +114,7 @@ function App() {
   const [selected, setSelected] = useState<
     Spell | Gear | Character | FishingSpot | null
   >(null);
+  const [worldFocus, setWorldFocus] = useState<WorldBubble | null>(null);
 
   const dataset = useMemo<(Spell | Gear | Character | FishingSpot)[]>(() => {
     switch (category) {
@@ -176,29 +177,16 @@ function App() {
               Jump to list
             </a>
           </div>
-
-          <div className="worlds">
-            <p className="eyebrow">World bubbles</p>
-            <div className="worlds__grid">
-              {worlds.map((world) => (
-                <div key={world.name} className="world-bubble">
-                  <div className="world-bubble__name">{world.name}</div>
-                  <div className="world-bubble__summary">{world.summary}</div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </header>
 
-      <main className="layout" id="list">
-        <aside className="sidebar">
-          <p className="eyebrow">Categories</p>
-          <div className="sidebar__items">
+      <main className="bookmark-layout" id="list">
+        <section className="bookmark-shell">
+          <div className="bookmark-tabs" aria-label="Categories">
             {categories.map((c) => (
               <button
                 key={c.key}
-                className={c.key === category ? "tab active" : "tab"}
+                className={c.key === category ? "bookmark active" : "bookmark"}
                 aria-pressed={c.key === category}
                 onClick={() => {
                   setCategory(c.key);
@@ -208,74 +196,109 @@ function App() {
                 <span className="icon" aria-hidden>
                   {c.icon}
                 </span>
-                {c.key}
+                <span className="bookmark__label">{c.key}</span>
               </button>
             ))}
           </div>
 
-          <div className="filter">
-            <label htmlFor="school">Filter by school</label>
-            <div className="pill-row">
-              {schools.map((s) => (
-                <button
-                  key={s}
-                  id={s === school ? "school" : undefined}
-                  className={s === school ? "pill active" : "pill"}
-                  onClick={() => setSchool(s)}
-                >
-                  {s}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="filter">
-            <label htmlFor="search">Search by name</label>
-            <input
-              id="search"
-              type="text"
-              placeholder="Type to search"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </div>
-        </aside>
-
-        <section className="content">
-          <div className="content__header">
-            <div>
-              <p className="eyebrow" aria-live="polite">
-                {sorted.length} result{sorted.length === 1 ? "" : "s"}
+          <div className="bookmark-body">
+            <div className="bookmark-header">
+              <div>
+                <p className="eyebrow">Filter & search</p>
+                <h2>{category}</h2>
+              </div>
+              <p className="hint">
+                Pick a school, type a name, and tap a card. Everything lives in
+                this left-edge bookmark box.
               </p>
-              <h2>{category}</h2>
             </div>
-            <p className="hint">
-              Tip: click any card to see quick stats. The list updates instantly
-              as you type.
-            </p>
-          </div>
 
-          {filtered.length === 0 ? (
-            <div className="empty">No matches—try a different school or name.</div>
-          ) : (
-            <div className="grid">
-              {sorted.map((item) => (
-                <article
-                  key={item.name}
-                  className="card"
-                  onClick={() => setSelected(item)}
-                >
-                  <div className="card__header">
-                    <span className="dot" />
-                    <p className="eyebrow">{category}</p>
-                  </div>
-                  <h3>{item.name}</h3>
-                  <p className="muted">{formatMeta(item, category)}</p>
-                  <p className="card__cta">Open details →</p>
-                </article>
-              ))}
+            <div className="filter-grid">
+              <div className="filter">
+                <label htmlFor="school">Filter by school</label>
+                <div className="pill-row">
+                  {schools.map((s) => (
+                    <button
+                      key={s}
+                      id={s === school ? "school" : undefined}
+                      className={s === school ? "pill active" : "pill"}
+                      onClick={() => setSchool(s)}
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="filter">
+                <label htmlFor="search">Search by name</label>
+                <input
+                  id="search"
+                  type="text"
+                  placeholder="Type to search"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              </div>
             </div>
-          )}
+
+            <div className="content__header">
+              <div>
+                <p className="eyebrow" aria-live="polite">
+                  {sorted.length} result{sorted.length === 1 ? "" : "s"}
+                </p>
+                <h3 className="panel__title">{category} cards</h3>
+              </div>
+              <p className="hint">Click any item to open its detail overlay.</p>
+            </div>
+
+            {filtered.length === 0 ? (
+              <div className="empty">
+                No matches—try a different school or name.
+              </div>
+            ) : (
+              <div className="grid">
+                {sorted.map((item) => (
+                  <article
+                    key={item.name}
+                    className="card"
+                    onClick={() => setSelected(item)}
+                  >
+                    <div className="card__header">
+                      <span className="dot" />
+                      <p className="eyebrow">{category}</p>
+                    </div>
+                    <h3>{item.name}</h3>
+                    <p className="muted">{formatMeta(item, category)}</p>
+                    <p className="card__cta">Open details →</p>
+                  </article>
+                ))}
+              </div>
+            )}
+
+            <div className="worlds worlds--inline">
+              <div className="content__header">
+                <div>
+                  <p className="eyebrow">World bubbles</p>
+                  <h3 className="panel__title">Jump into a world</h3>
+                </div>
+                <p className="hint">Tap a bubble for a quick lore pop-up.</p>
+              </div>
+              <div className="worlds__grid">
+                {worlds.map((world) => (
+                  <button
+                    key={world.name}
+                    className="world-bubble world-bubble--button"
+                    onClick={() => setWorldFocus(world)}
+                    aria-label={`Open details for ${world.name}`}
+                  >
+                    <div className="world-bubble__name">{world.name}</div>
+                    <div className="world-bubble__summary">{world.summary}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
       </main>
 
@@ -285,6 +308,23 @@ function App() {
           category={category}
           onClose={() => setSelected(null)}
         />
+      )}
+
+      {worldFocus && (
+        <div className="overlay">
+          <div className="panel">
+            <header className="panel__header">
+              <div>
+                <p className="eyebrow">World</p>
+                <h3 className="panel__title">{worldFocus.name}</h3>
+              </div>
+              <button className="ghost" onClick={() => setWorldFocus(null)}>
+                ✕
+              </button>
+            </header>
+            <p className="panel__body">{worldFocus.summary}</p>
+          </div>
+        </div>
       )}
     </div>
   );
