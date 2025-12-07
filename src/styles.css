@@ -102,6 +102,27 @@ h3 {
   color: #2a1f3e;
   line-height: 1.4;
 }
+.world-panel {
+  background: #120c1f;
+  border: 1px solid #2f2542;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.35);
+  display: grid;
+  gap: 12px;
+  position: sticky;
+  top: 20px;
+}
+.world-panel__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.world-panel__list {
+  display: grid;
+  gap: 10px;
+}
 
 .primary,
 .ghost,
@@ -137,8 +158,12 @@ button:hover,
   color: #f2eefc;
 }
 
-.bookmark-layout {
+.content-layout {
   padding: 28px 32px 44px;
+  display: grid;
+  grid-template-columns: minmax(0, 2.4fr) minmax(280px, 1fr);
+  gap: 18px;
+  align-items: start;
 }
 
 .bookmark-shell {
@@ -274,6 +299,77 @@ input[type="text"] {
   color: #c9bdf3;
   font-size: 14px;
 }
+.row-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.pager {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.row-cards {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 1fr);
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.row-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  background: #1b1529;
+  border: 1px solid #2f2542;
+  border-radius: 14px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: border 120ms ease, transform 120ms ease;
+}
+.row-card:hover {
+  border-color: #6b5dd8;
+  transform: translateY(-1px);
+}
+.row-card__thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #20172c, #0f0a16);
+  border: 1px solid #2f2542;
+}
+.row-card__thumb--off {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9bdf3;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+.row-card__body h3 {
+  margin: 6px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.row-card__body {
+  min-width: 0;
+}
+.school-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: #2a1f3e;
+  border: 1px solid #2f2542;
+  font-size: 18px;
+}
 
 .grid {
   display: grid;
@@ -343,7 +439,7 @@ input[type="text"] {
   background: #0e0a16;
   border: 1px solid #2f2542;
   border-radius: 16px;
-  width: min(460px, 100%);
+  width: min(760px, 100%);
   padding: 18px;
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
 }
@@ -367,6 +463,23 @@ input[type="text"] {
   margin: 0 0 8px;
   line-height: 1.5;
 }
+.panel__thumb {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 8px 0 10px;
+}
+.panel__thumb img {
+  width: 96px;
+  height: 96px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid #2f2542;
+}
+.panel__thumb-meta {
+  display: grid;
+  gap: 6px;
+}
 
 .pill-list {
   list-style: none;
@@ -384,8 +497,23 @@ input[type="text"] {
   padding: 8px 12px;
   font-size: 14px;
 }
+.map-frame {
+  margin: 10px 0;
+  border: 1px solid #2f2542;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0f0a16;
+}
+.map-frame img {
+  width: 100%;
+  display: block;
+}
 
 @media (max-width: 900px) {
+  .content-layout {
+    grid-template-columns: 1fr;
+  }
+
   .bookmark-shell {
     padding-left: 22px;
   }
@@ -399,5 +527,9 @@ input[type="text"] {
   .bookmark {
     clip-path: none;
     border-radius: 12px;
+  }
+
+  .world-panel {
+    position: static;
   }
 }
