@@ -83,7 +83,7 @@ If you just want to see the finished site in your browser, copy and paste these 
 2. Start the preview server on port **4173** (this also rebuilds the app so you always see the latest changes):
 
    ```bash
-   npm run preview -- --host --port 4173
+   npm run preview
    ```
 
 3. In your browser, open <http://localhost:4173/InteractiveMapGuide-Wizard101/>. If `localhost` does not work, try <http://127.0.0.1:4173/InteractiveMapGuide-Wizard101/> instead—both addresses point to your own computer. You should see the categories rail and world atlas immediately (not a blank page).
@@ -95,5 +95,4 @@ Common macOS tips
 - If you see an error with code **ENOENT**, Terminal can’t find the files for this project. Fix it by making sure you are **inside** the project folder before running the commands: use `cd` to go to the folder that contains `package.json` (for example, `cd ~/Downloads/wizard101-guide`) and rerun the steps above.
 
 Why those extra flags?
-- `--host` lets Vite listen on your computer so the link above works without further setup.
-- `--port 4173` avoids conflicts with the dev server that uses port 5173.
+- The preview script automatically rebuilds, hosts on your computer, pins port 4173, and serves the correct base path (`/InteractiveMapGuide-Wizard101/`) so the page never renders blank.
