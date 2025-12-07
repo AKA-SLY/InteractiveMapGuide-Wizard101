@@ -97,6 +97,18 @@ export type Character = {
   role: string;
   world: string;
   location: string;
+  classification?: (
+    | "Trainer"
+    | "Boss"
+    | "Minion"
+    | "Vendor"
+    | "Quest Giver"
+    | "Dropping Loot"
+    | "Ally"
+    | "Professor"
+    | "Support"
+  )[];
+  loot?: string[];
   tip?: string;
   image?: string;
   sources?: SpellSource[];

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { type ReactNode, useEffect, useMemo, useState } from "react";
 import { categories } from "./data/categories";
 import { furniture } from "./data/furniture";
 import { gear } from "./data/gear";
@@ -70,6 +70,19 @@ const categoryIconFallback: Record<CategoryKey, string> = {
   Locations: locationIcon,
 };
 
+const characterFilters = [
+  "All",
+  "Trainer",
+  "Professor",
+  "Vendor",
+  "Quest Giver",
+  "Boss",
+  "Minion",
+  "Dropping Loot",
+  "Ally",
+  "Support",
+];
+
 const placeholderThumb = (label: string) =>
   `https://dummyimage.com/240x240/f4e6c4/2b1441&text=${encodeURIComponent(label)}`;
 
@@ -105,6 +118,18 @@ const libraryPath = (
 const worldBubblePath = (name: string) => libraryPath("worlds/bubbles", name);
 const worldMapPath = (name: string) => libraryPath("worlds/maps", name);
 
+const statIconFor = (label: string, value?: string) => {
+  if (label === "School" && value && value in schoolIcons) {
+    return schoolIcons[value as School];
+  }
+
+  if (label === "Role" && value) {
+    return libraryPath("Icons", value, "webp", formatLibraryFileName);
+  }
+
+  return libraryPath("Icons", value ?? label, "webp", formatLibraryFileName);
+};
+
 function getItemImage(item: CatalogItem, category: CategoryKey) {
   if ((item as CatalogItem).image) return (item as CatalogItem).image as string;
 
@@ -125,7 +150,11 @@ function getItemImage(item: CatalogItem, category: CategoryKey) {
   if (category === "Fishing") return libraryPath("fishing", (item as FishingSpot).name);
   if (category === "Locations") return libraryPath("locations", (item as Location).name);
 
-  return categoryIconFallback[category] ?? placeholderThumb(item.name.slice(0, 8));
+  return (
+    libraryPath("Icons", category, "webp", formatLibraryFileName) ||
+    categoryIconFallback[category] ||
+    placeholderThumb(item.name.slice(0, 8))
+  );
 }
 
 type CatalogItem =
@@ -179,25 +208,45 @@ function Details({
   item,
   category,
   onClose,
+  onSelectCharacter,
+  onSelectLocation,
 }: {
   item: CatalogItem;
   category: CategoryKey;
   onClose: () => void;
+  onSelectCharacter: (name: string) => void;
+  onSelectLocation: (name: string) => void;
 }) {
   const thumb = getItemImage(item, category);
   const thumbFallback =
     categoryIconFallback[category] ?? placeholderThumb(item.name.slice(0, 8));
 
-  const statLines: { label: string; value: string }[] = (() => {
+  const linkToLocation = (name: string) => (
+    <button className="chip-link" onClick={() => onSelectLocation(name)}>
+      {name}
+    </button>
+  );
+
+  const linkToCharacter = (name: string) => (
+    <button className="chip-link" onClick={() => onSelectCharacter(name)}>
+      {name}
+    </button>
+  );
+
+  const statLines: { label: string; value: ReactNode; icon?: string }[] = (() => {
     switch (category) {
       case "Spells": {
         const spell = item as Spell;
         return [
-          { label: "School", value: spell.school },
-          { label: "Rank", value: String(spell.rank) },
-          { label: "Pips", value: `${spell.pipCost} pip${spell.pipCost === 1 ? "" : "s"}` },
-          { label: "Accuracy", value: `${spell.accuracy}%` },
-          { label: "Effect", value: spell.effect },
+          { label: "School", value: spell.school, icon: statIconFor("School", spell.school) },
+          { label: "Rank", value: String(spell.rank), icon: statIconFor("Rank") },
+          {
+            label: "Pips",
+            value: `${spell.pipCost} pip${spell.pipCost === 1 ? "" : "s"}`,
+            icon: statIconFor("Pip"),
+          },
+          { label: "Accuracy", value: `${spell.accuracy}%`, icon: statIconFor("Accuracy") },
+          { label: "Effect", value: spell.effect, icon: statIconFor("Effect") },
           ...(spell.treasureCardNote
             ? [{ label: "Treasure card", value: spell.treasureCardNote }]
             : []),
@@ -206,68 +255,100 @@ function Details({
       case "Treasure Cards": {
         const tc = item as TreasureCard;
         return [
-          { label: "School", value: tc.school },
-          { label: "Pips", value: `${tc.pipCost} pip${tc.pipCost === 1 ? "" : "s"}` },
-          { label: "Accuracy", value: `${tc.accuracy}%` },
-          { label: "Effect", value: tc.effect },
+          { label: "School", value: tc.school, icon: statIconFor("School", tc.school) },
+          {
+            label: "Pips",
+            value: `${tc.pipCost} pip${tc.pipCost === 1 ? "" : "s"}`,
+            icon: statIconFor("Pip"),
+          },
+          { label: "Accuracy", value: `${tc.accuracy}%`, icon: statIconFor("Accuracy") },
+          { label: "Effect", value: tc.effect, icon: statIconFor("Effect") },
           ...(tc.relatedSpell ? [{ label: "Related spell", value: tc.relatedSpell }] : []),
         ];
       }
       case "Gear": {
         const piece = item as Gear;
         return [
-          { label: "Slot", value: piece.type },
-          { label: "School", value: piece.school },
-          { label: "Level", value: `L${piece.level}` },
-          { label: "Stats", value: piece.stats },
-          { label: "Location", value: piece.location },
-          { label: "Subcategory", value: piece.subcategory },
-          ...(piece.setName ? [{ label: "Set", value: piece.setName }] : []),
-          ...(piece.setBonus ? [{ label: "Set bonus", value: piece.setBonus }] : []),
+          { label: "Slot", value: piece.type, icon: statIconFor("Amulet") },
+          { label: "School", value: piece.school, icon: statIconFor("School", piece.school) },
+          { label: "Level", value: `L${piece.level}`, icon: statIconFor("Level") },
+          { label: "Stats", value: piece.stats, icon: statIconFor("Stats") },
+          { label: "Location", value: piece.location, icon: statIconFor("Location") },
+          { label: "Subcategory", value: piece.subcategory, icon: statIconFor("Subcategory") },
+          ...(piece.setName
+            ? [{ label: "Set", value: piece.setName, icon: statIconFor("Set") }]
+            : []),
+          ...(piece.setBonus
+            ? [{ label: "Set bonus", value: piece.setBonus, icon: statIconFor("Bonus") }]
+            : []),
         ];
       }
       case "Characters": {
         const npc = item as Character;
         return [
-          { label: "Role", value: npc.role },
-          { label: "World", value: npc.world },
-          { label: "Location", value: npc.location },
-          ...(npc.tip ? [{ label: "Tip", value: npc.tip }] : []),
+          { label: "Role", value: npc.role, icon: statIconFor("Role", npc.role) },
+          { label: "World", value: npc.world, icon: statIconFor("World") },
+          { label: "Location", value: linkToLocation(npc.location), icon: statIconFor("Location") },
+          ...(npc.classification && npc.classification.length
+            ? [
+                {
+                  label: "Subcategory",
+                  value: npc.classification.join(", "),
+                  icon: statIconFor("Category"),
+                },
+              ]
+            : []),
+          ...(npc.loot && npc.loot.length
+            ? [{ label: "Dropping loot", value: npc.loot.join(", "), icon: statIconFor("Loot") }]
+            : []),
+          ...(npc.tip ? [{ label: "Tip", value: npc.tip, icon: statIconFor("Tip") }] : []),
         ];
       }
       case "Fishing": {
         const spot = item as FishingSpot;
         return [
-          { label: "World", value: spot.world },
-          { label: "School", value: spot.school },
-          { label: "Rank", value: spot.rank },
-          { label: "Notes", value: spot.note },
+          { label: "World", value: spot.world, icon: statIconFor("World") },
+          { label: "School", value: spot.school, icon: statIconFor("School", spot.school) },
+          { label: "Rank", value: spot.rank, icon: statIconFor("Rank") },
+          { label: "Notes", value: spot.note, icon: statIconFor("Notes") },
         ];
       }
       case "Furniture": {
         const furni = item as Furniture;
         return [
-          { label: "World", value: furni.world },
-          { label: "Subcategory", value: furni.subcategory },
-          { label: "Location", value: furni.location },
+          { label: "World", value: furni.world, icon: statIconFor("World") },
+          { label: "Subcategory", value: furni.subcategory, icon: statIconFor("Subcategory") },
+          { label: "Location", value: furni.location, icon: statIconFor("Location") },
           ...(furni.interactive !== undefined
-            ? [{ label: "Interactive", value: furni.interactive ? "Yes" : "No" }]
+            ? [
+                {
+                  label: "Interactive",
+                  value: furni.interactive ? "Yes" : "No",
+                  icon: statIconFor("Interactive"),
+                },
+              ]
             : []),
         ];
       }
       case "Locations": {
         const loc = item as Location;
         return [
-          { label: "World", value: loc.world },
-          ...(loc.zone ? [{ label: "Zone", value: loc.zone }] : []),
+          { label: "World", value: loc.world, icon: statIconFor("World") },
+          ...(loc.zone ? [{ label: "Zone", value: loc.zone, icon: statIconFor("Zone") }] : []),
           ...(loc.npcs && loc.npcs.length
-            ? [{ label: "NPCs", value: loc.npcs.join(", ") }]
+            ? [{ label: "NPCs", value: loc.npcs.map(linkToCharacter), icon: statIconFor("NPC") }]
             : []),
           ...(loc.bosses && loc.bosses.length
-            ? [{ label: "Bosses", value: loc.bosses.join(", ") }]
+            ? [{ label: "Bosses", value: loc.bosses.join(", "), icon: statIconFor("Boss") }]
             : []),
           ...(loc.collectibles && loc.collectibles.length
-            ? [{ label: "Collectibles", value: loc.collectibles.join(", ") }]
+            ? [
+                {
+                  label: "Collectibles",
+                  value: loc.collectibles.join(", "),
+                  icon: statIconFor("Collectible"),
+                },
+              ]
             : []),
         ];
       }
@@ -410,7 +491,19 @@ function Details({
           <div className="panel__stats" role="list">
             {statLines.map((line) => (
               <div className="stat-row" role="listitem" key={line.label}>
-                <span className="stat-row__label">{line.label}</span>
+                <span className="stat-row__label">
+                  {line.icon && (
+                    <img
+                      src={line.icon}
+                      alt=""
+                      className="stat-row__icon"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                      }}
+                    />
+                  )}
+                  {line.label}
+                </span>
                 <span className="stat-row__value">{line.value}</span>
               </div>
             ))}
@@ -480,8 +573,29 @@ function Details({
                   <span className="stat-row__label">{src.type}</span>
                   <span className="stat-row__value">
                     {src.detail}
-                    {src.location ? ` — ${src.location}` : ""}
-                    {src.npc ? ` (NPC: ${src.npc})` : ""}
+                    {src.location && (
+                      <>
+                        {" "}—{" "}
+                        <button
+                          className="chip-link chip-link--inline"
+                          onClick={() => onSelectLocation(src.location!)}
+                        >
+                          {src.location}
+                        </button>
+                      </>
+                    )}
+                    {src.npc && (
+                      <>
+                        {" "}(
+                        <button
+                          className="chip-link chip-link--inline"
+                          onClick={() => onSelectCharacter(src.npc!)}
+                        >
+                          NPC: {src.npc}
+                        </button>
+                        )
+                      </>
+                    )}
                   </span>
                 </div>
               ))}
@@ -502,6 +616,7 @@ function App() {
   const [page, setPage] = useState<number>(1);
   const [showImages, setShowImages] = useState<boolean>(true);
   const [tcOnly, setTcOnly] = useState<boolean>(false);
+  const [characterFilter, setCharacterFilter] = useState<string>("All");
 
   const dataset = useMemo<CatalogItem[]>(() => {
     const entry = categories.find((c) => c.key === category);
@@ -517,6 +632,7 @@ function App() {
 
   useEffect(() => {
     setPage(1);
+    setCharacterFilter("All");
   }, [category, school, search]);
 
   useEffect(() => {
@@ -561,15 +677,38 @@ function App() {
         return (spot.school === school || spot.school === "Any") && matchesSearch;
       }
 
-      // Characters don’t filter by school, just the search box.
+      if (category === "Characters") {
+        const char = item as Character;
+        if (characterFilter === "All") return matchesSearch;
+
+        const tags = char.classification ?? [char.role];
+        return tags.some((tag) => tag.toLowerCase().includes(characterFilter.toLowerCase())) && matchesSearch;
+      }
+
       return matchesSearch;
     });
-  }, [dataset, school, search, category, tcOnly]);
+  }, [dataset, school, search, category, tcOnly, characterFilter]);
 
   const sorted = useMemo(
     () => [...filtered].sort((a, b) => a.name.localeCompare(b.name)),
     [filtered],
   );
+
+  const openCharacter = (name: string) => {
+    const match = characters.find((npc) => npc.name === name);
+    if (match) {
+      setCategory("Characters");
+      setSelected(match);
+    }
+  };
+
+  const openLocation = (name: string) => {
+    const match = locations.find((loc) => loc.name === name);
+    if (match) {
+      setCategory("Locations");
+      setSelected(match);
+    }
+  };
 
   const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
   const safePage = Math.min(page, totalPages);
@@ -639,6 +778,23 @@ function App() {
                 );
               })}
             </div>
+
+            {category === "Characters" && (
+              <div className="filter-rail" aria-label="Character subcategories">
+                {characterFilters.map((filter) => (
+                  <button
+                    key={filter}
+                    className={
+                      characterFilter === filter ? "filter-pill active" : "filter-pill"
+                    }
+                    onClick={() => setCharacterFilter(filter)}
+                    aria-pressed={characterFilter === filter}
+                  >
+                    {filter}
+                  </button>
+                ))}
+              </div>
+            )}
 
             <div className="bookmark-header">
               <div>
@@ -817,6 +973,8 @@ function App() {
           item={selected}
           category={category}
           onClose={() => setSelected(null)}
+          onSelectCharacter={openCharacter}
+          onSelectLocation={openLocation}
         />
       )}
 
