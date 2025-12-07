@@ -6,6 +6,7 @@ export const characters: Character[] = [
     role: "Headmaster",
     world: "Wizard City",
     location: "Ravenwood",
+    classification: ["Trainer", "Quest Giver", "Support"],
     tip: "Talk to him to move the main story forward.",
   },
   {
@@ -13,6 +14,7 @@ export const characters: Character[] = [
     role: "Guide",
     world: "Wizard City",
     location: "Ravenwood",
+    classification: ["Support"],
     tip: "Helps explain new mechanics for brand-new wizards.",
   },
   {
@@ -20,6 +22,7 @@ export const characters: Character[] = [
     role: "Vendor",
     world: "Multiple",
     location: "The Commons",
+    classification: ["Vendor", "Quest Giver"],
     tip: "Sells stitching and collects world-specific crafts.",
   },
   {
@@ -27,6 +30,7 @@ export const characters: Character[] = [
     role: "Trainer",
     world: "Wizard City",
     location: "Nightside",
+    classification: ["Trainer", "Professor"],
     tip: "Unlocks Feint and other key Death utility spells.",
   },
   {
@@ -34,6 +38,7 @@ export const characters: Character[] = [
     role: "Fire Professor",
     world: "Wizard City",
     location: "Fire School, Ravenwood",
+    classification: ["Professor", "Trainer"],
     tip: "Grants core Fire spells as you level and visit class.",
   },
   {
@@ -41,6 +46,7 @@ export const characters: Character[] = [
     role: "Ice Professor",
     world: "Wizard City",
     location: "Ice School, Ravenwood",
+    classification: ["Professor", "Trainer"],
     tip: "Returns often for Tower Shield and powerful Ice blades.",
   },
   {
@@ -48,6 +54,7 @@ export const characters: Character[] = [
     role: "Myth Professor",
     world: "Wizard City",
     location: "Myth School, Ravenwood",
+    classification: ["Professor", "Trainer"],
     tip: "Teaches Minotaur, Orthrus, and other double-hit spells.",
   },
   {
@@ -55,6 +62,7 @@ export const characters: Character[] = [
     role: "Storm Professor",
     world: "Wizard City",
     location: "Storm School, Ravenwood",
+    classification: ["Professor", "Trainer"],
     tip: "Check in for Tempest and Storm Lord as you rank up.",
   },
   {
@@ -62,6 +70,7 @@ export const characters: Character[] = [
     role: "Life Professor",
     world: "Wizard City",
     location: "Life School, Ravenwood",
+    classification: ["Professor", "Trainer"],
     tip: "Visit often for heals and Life blades that boost every hit.",
   },
   {
@@ -69,6 +78,7 @@ export const characters: Character[] = [
     role: "Student",
     world: "Wizard City",
     location: "Nightside",
+    classification: ["Support"],
     tip: "Death apprentice who introduces underground quests.",
   },
   {
@@ -76,6 +86,7 @@ export const characters: Character[] = [
     role: "Balance Professor",
     world: "Wizard City",
     location: "Balance School, Ravenwood",
+    classification: ["Professor", "Trainer"],
     tip: "Early Balance teacher before you sail to Krokotopia.",
   },
   {
@@ -83,6 +94,7 @@ export const characters: Character[] = [
     role: "Balance Master",
     world: "Krokotopia",
     location: "Krokosphinx",
+    classification: ["Trainer", "Professor"],
     tip: "Offers advanced Balance spells once you reach Krokotopia.",
   },
   {
@@ -90,6 +102,7 @@ export const characters: Character[] = [
     role: "Trainer",
     world: "Krokotopia",
     location: "Krokosphinx",
+    classification: ["Trainer"],
     tip: "Visit for key cross-school blades and traps.",
   },
   {
@@ -97,6 +110,7 @@ export const characters: Character[] = [
     role: "Storm Master",
     world: "Celestia",
     location: "Survey Camp",
+    classification: ["Professor", "Trainer"],
     tip: "Hands out Critical-focused Storm spells in Celestia.",
   },
   {
@@ -104,6 +118,7 @@ export const characters: Character[] = [
     role: "Quest Giver",
     world: "Wizard City",
     location: "Olde Town",
+    classification: ["Quest Giver", "Vendor"],
     tip: "Collects crafting badges and starts the crafting questline.",
   },
   {
@@ -111,6 +126,7 @@ export const characters: Character[] = [
     role: "Explorer",
     world: "Multiple",
     location: "The Commons",
+    classification: ["Quest Giver", "Support"],
     tip: "Find his hidden item collections each world for training points.",
   },
   {
@@ -118,6 +134,7 @@ export const characters: Character[] = [
     role: "Arena Master",
     world: "Wizard City",
     location: "Pet Pavilion",
+    classification: ["Trainer", "Support"],
     tip: "Visit for PvP tutorials and tournament registration.",
   },
   {
@@ -125,6 +142,7 @@ export const characters: Character[] = [
     role: "Healer",
     world: "Avalon",
     location: "Caliburn",
+    classification: ["Support"],
     tip: "Provides potion and healing services during Avalon’s story.",
   },
   {
@@ -132,6 +150,7 @@ export const characters: Character[] = [
     role: "Quest Giver",
     world: "Azteca",
     location: "Three Points",
+    classification: ["Quest Giver"],
     tip: "Sends you to repair the World Gate and meet the Aztecosaurs.",
   },
   {
@@ -139,6 +158,7 @@ export const characters: Character[] = [
     role: "Ally",
     world: "Avalon",
     location: "High Road",
+    classification: ["Ally", "Support"],
     tip: "Guides you through restoring Avalon and grants a spiral key.",
   },
   {
@@ -146,6 +166,8 @@ export const characters: Character[] = [
     role: "Shadow Queen",
     world: "Khrysalis",
     location: "Shadow Palace",
+    classification: ["Boss", "Dropping Loot"],
+    loot: ["Morganthe amulets", "Shadow enchantments"],
     tip: "Major antagonist—prepare shields and dispels for her battles.",
   },
   {
@@ -153,6 +175,7 @@ export const characters: Character[] = [
     role: "Narrator",
     world: "Khrysalis",
     location: "Bastion",
+    classification: ["Support"],
     tip: "Sets up the endgame arc leading into Polaris and Mirage.",
   },
   {
@@ -160,6 +183,7 @@ export const characters: Character[] = [
     role: "Skyfarer",
     world: "Marleybone",
     location: "Regent's Square",
+    classification: ["Quest Giver", "Support"],
     tip: "Helps you commandeer airship routes between islands.",
   },
   {
@@ -167,6 +191,7 @@ export const characters: Character[] = [
     role: "Detective",
     world: "Marleybone",
     location: "Scotland Yard",
+    classification: ["Support", "Quest Giver"],
     tip: "Solves cases like Meowiarty—expect street fights and clues.",
   },
   {
@@ -174,6 +199,7 @@ export const characters: Character[] = [
     role: "Vendor",
     world: "Mooshu",
     location: "Hametsu Village",
+    classification: ["Vendor"],
     tip: "Sells crafted gear recipes for the Hametsu zone.",
   },
   {
@@ -181,6 +207,7 @@ export const characters: Character[] = [
     role: "Monk",
     world: "Mooshu",
     location: "Jade Palace",
+    classification: ["Support", "Quest Giver"],
     tip: "Offers side quests focused on balance and harmony.",
   },
   {
@@ -188,6 +215,7 @@ export const characters: Character[] = [
     role: "Shadow Dealer",
     world: "Khrysalis",
     location: "Bastion",
+    classification: ["Vendor", "Support"],
     tip: "Teaches Shadow-enhanced spells once you unlock the school.",
   },
   {
@@ -195,6 +223,8 @@ export const characters: Character[] = [
     role: "Explorer",
     world: "Azteca",
     location: "Saltmeadow Swamp",
+    classification: ["Boss", "Dropping Loot"],
+    loot: ["Amulets", "Pet jewels"],
     tip: "Quest chain includes dueling hordes of White Razors.",
   },
   {
@@ -202,6 +232,7 @@ export const characters: Character[] = [
     role: "Trainer",
     world: "Dragonspyre",
     location: "The Basilica",
+    classification: ["Trainer"],
     tip: "Sells damage-enhancing amulets and advanced reagents.",
   },
   {
@@ -209,6 +240,7 @@ export const characters: Character[] = [
     role: "Photographer",
     world: "Wizard City",
     location: "The Commons",
+    classification: ["Quest Giver", "Support"],
     tip: "Starts the Photomancy quest and daily picture challenges.",
   },
   {
@@ -216,6 +248,7 @@ export const characters: Character[] = [
     role: "Announcer",
     world: "Wizard City",
     location: "The Commons",
+    classification: ["Support"],
     tip: "Provides event news and rotating holiday alerts.",
   },
   {
@@ -223,6 +256,7 @@ export const characters: Character[] = [
     role: "Warrior",
     world: "Polaris",
     location: "Walruskberg",
+    classification: ["Ally"],
     tip: "Ally during Rasputin’s siege—brings strong Ice hits.",
   },
   {
@@ -230,6 +264,7 @@ export const characters: Character[] = [
     role: "Spirit Guide",
     world: "Zafaria",
     location: "Baobab Crossroads",
+    classification: ["Support", "Quest Giver"],
     tip: "Helps navigate Elephant Graveyard trials and lore.",
   },
   {
@@ -237,6 +272,7 @@ export const characters: Character[] = [
     role: "Moon Instructor",
     world: "Celestia",
     location: "Survey Camp",
+    classification: ["Trainer", "Professor"],
     tip: "Introduces Moon school polymorphs and Astral basics.",
   },
   {
@@ -244,6 +280,7 @@ export const characters: Character[] = [
     role: "Archivist",
     world: "Mirage",
     location: "Aggrobah",
+    classification: ["Support", "Quest Giver"],
     tip: "Guides you through Mirage’s vaults and shadowy bosses.",
   },
   {
@@ -251,6 +288,7 @@ export const characters: Character[] = [
     role: "Worldsmith",
     world: "Karamelle",
     location: "Karamelle City",
+    classification: ["Support", "Quest Giver"],
     tip: "Explains how the spiral’s newest world connects to old foes.",
   },
 ];
