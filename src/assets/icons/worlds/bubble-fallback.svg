@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="bubble" cx="30%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#cfc3e6" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#7c5fa6" stop-opacity="0.9" />
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="92" fill="url(#bubble)" stroke="#3a255b" stroke-width="8" />
+  <text x="100" y="112" text-anchor="middle" font-size="26" fill="#24163c" font-family="serif">World</text>
+</svg>
