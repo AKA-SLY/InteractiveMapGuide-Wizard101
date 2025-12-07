@@ -109,6 +109,13 @@ export type Location = {
   sources?: SpellSource[];
 };
 
+export type GalleryItem = {
+  name: string;
+  category: string;
+  image: string;
+  tags?: string[];
+};
+
 export type Character = {
   name: string;
   role: string;
@@ -156,4 +163,11 @@ export type CategoryKey =
   | "Characters"
   | "Fishing"
   | "Furniture"
-  | "Locations";
+  | "Locations"
+  | "Spell Cards"
+  | "Henchmen"
+  | "Jewels"
+  | "Minions"
+  | "World Maps"
+  | "Icons"
+  | "Mounts";

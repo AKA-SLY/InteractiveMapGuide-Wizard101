@@ -1,12 +1,30 @@
+import { libraryRoot } from "../lib/library";
 import { type FishingSpot } from "../types";
+import { fishFiles } from "./libraryFiles";
 
-export const fishing: FishingSpot[] = [
+const fishImage = (name: string) =>
+  libraryRoot("Fishes", `Fish_${name.replace(/\s+/g, "_")}.png`);
+
+const readableName = (fileName: string) =>
+  fileName.replace(/^Fish_/, "").replace(/\.[^.]+$/, "").replace(/_/g, " ");
+
+const generatedFishing: FishingSpot[] = fishFiles.map((file) => ({
+  name: readableName(file),
+  world: "Unknown",
+  school: "Any",
+  rank: "Unknown",
+  note: "Image reference added from library.",
+  image: libraryRoot("Fishes", file),
+}));
+
+const detailedFishing: FishingSpot[] = [
   {
     name: "Icecuda",
     world: "Wizard City",
     school: "Ice",
     rank: "Rank 1",
     note: "Common starter fish found around the Commons pond.",
+    image: fishImage("Icecuda"),
   },
   {
     name: "Grape Jellyfish",
@@ -14,6 +32,7 @@ export const fishing: FishingSpot[] = [
     school: "Life",
     rank: "Rank 1",
     note: "Easier to catch in the Oasis when using Reveal Fish School.",
+    image: fishImage("Grape Jellyfish"),
   },
   {
     name: "Silver Streak",
@@ -21,5 +40,221 @@ export const fishing: FishingSpot[] = [
     school: "Storm",
     rank: "Rank 2",
     note: "Prefers stormy ponds near Northguard’s waterfall.",
+    image: fishImage("Silver Streak"),
   },
+  {
+    name: "Firecuda",
+    world: "Wizard City",
+    school: "Fire",
+    rank: "Rank 1",
+    note: "Spawns in warm water near the Commons dock.",
+    image: fishImage("Firecuda"),
+  },
+  {
+    name: "Stormacuda",
+    world: "Wizard City",
+    school: "Storm",
+    rank: "Rank 1",
+    note: "A reliable starter catch around the Commons pond.",
+    image: fishImage("Stormacuda"),
+  },
+  {
+    name: "Mythacuda",
+    world: "Wizard City",
+    school: "Myth",
+    rank: "Rank 1",
+    note: "Often appears when casting Myth lures in the Commons.",
+    image: fishImage("Mythacuda"),
+  },
+  {
+    name: "Lifeacuda",
+    world: "Wizard City",
+    school: "Life",
+    rank: "Rank 1",
+    note: "Shows up regularly with Reveal Fish School active.",
+    image: fishImage("Lifeacuda"),
+  },
+  {
+    name: "Deathacuda",
+    world: "Wizard City",
+    school: "Death",
+    rank: "Rank 1",
+    note: "Early-game Death catch found in the Commons pond.",
+    image: fishImage("Deathacuda"),
+  },
+  {
+    name: "Balancecuda",
+    world: "Krokotopia",
+    school: "Balance",
+    rank: "Rank 1",
+    note: "Common Balance fish in the Oasis and Krokosphinx waters.",
+    image: fishImage("Balancecuda"),
+  },
+  {
+    name: "Musushi",
+    world: "Mooshu",
+    school: "Myth",
+    rank: "Rank 2",
+    note: "A bulky Myth fish lurking in Hametsu Village waterways.",
+    image: fishImage("Musushi"),
+  },
+  {
+    name: "Devil Ray",
+    world: "Celestia",
+    school: "Death",
+    rank: "Rank 2",
+    note: "Glides through Science Center pools during the day.",
+    image: fishImage("Devil Ray"),
+  },
+  {
+    name: "Bone Fish",
+    world: "Wizard City",
+    school: "Death",
+    rank: "Rank 1",
+    note: "Spooky skeleton fish that bites quickly near the Commons.",
+    image: fishImage("Bone Fish"),
+  },
+  {
+    name: "Dragon Eel",
+    world: "Dragonspyre",
+    school: "Fire",
+    rank: "Rank 2",
+    note: "Prefers lava streams in the Athenium and Plaza of Conquests.",
+    image: fishImage("Dragon Eel"),
+  },
+  {
+    name: "Achilles Tang",
+    world: "Aquila",
+    school: "Storm",
+    rank: "Rank 2",
+    note: "Greek-inspired reef fish patrolling the Garden of Hesperides.",
+    image: fishImage("Achilles Tang"),
+  },
+  {
+    name: "Aero Dwarf Doodlefish",
+    world: "Empyrea",
+    school: "Storm",
+    rank: "Rank 2",
+    note: "Found hovering in the Aerial Jungle's floating pools.",
+    image: fishImage("Aero Dwarf Doodlefish"),
+  },
+  {
+    name: "Alhazred Doodlefish",
+    world: "Krokotopia",
+    school: "Balance",
+    rank: "Rank 2",
+    note: "A scholarly fish that surfaces near the Krokosphinx docks.",
+    image: fishImage("Alhazred Doodlefish"),
+  },
+  {
+    name: "Anglyosaur",
+    world: "Azteca",
+    school: "Myth",
+    rank: "Rank 3",
+    note: "Spotted in Saltmeadow Swamp alongside other dino fish.",
+    image: fishImage("Anglyosaur"),
+  },
+  {
+    name: "Antchovy",
+    world: "Marleybone",
+    school: "Death",
+    rank: "Rank 1",
+    note: "Commonly lurks in Knight's Court and Royal Museum fountains.",
+    image: fishImage("Antchovy"),
+  },
+  {
+    name: "Apollock",
+    world: "Aquila",
+    school: "Fire",
+    rank: "Rank 2",
+    note: "Shimmers around Mount Olympus statues during sunlit hours.",
+    image: fishImage("Apollock"),
+  },
+  {
+    name: "AxXolotl",
+    world: "Azteca",
+    school: "Life",
+    rank: "Rank 2",
+    note: "Gentle Life fish resting near mangroves in Zocalo waterways.",
+    image: fishImage("AxXolotl"),
+  },
+  {
+    name: "Bacchus Cuda",
+    world: "Aquila",
+    school: "Life",
+    rank: "Rank 2",
+    note: "Celebratory cuda circling the wine pools of Atlantea.",
+    image: fishImage("Bacchus Cuda"),
+  },
+  {
+    name: "Bear Acuda",
+    world: "Grizzleheim",
+    school: "Ice",
+    rank: "Rank 2",
+    note: "Chilly predator swimming around Northguard's icy shores.",
+    image: fishImage("Bear Acuda"),
+  },
+  {
+    name: "Beastman Doodlefish",
+    world: "Empyrea",
+    school: "Myth",
+    rank: "Rank 2",
+    note: "A doodlefish modeled after Beastmen in the Reverie pools.",
+    image: fishImage("Beastman Doodlefish"),
+  },
+  {
+    name: "Black Knight Bass",
+    world: "Avalon",
+    school: "Death",
+    rank: "Rank 3",
+    note: "Haunts the moats of Caliburn after dusk.",
+    image: fishImage("Black Knight Bass"),
+  },
+  {
+    name: "Blackberry Jellyfish",
+    world: "Celestia",
+    school: "Storm",
+    rank: "Rank 2",
+    note: "Drifts through Survey Camp shallows in bright purple hues.",
+    image: fishImage("Blackberry Jellyfish"),
+  },
+  {
+    name: "Black Squidow",
+    world: "Celestia",
+    school: "Death",
+    rank: "Rank 2",
+    note: "Sneaks across the Science Center's darker trenches.",
+    image: fishImage("Black Squidow"),
+  },
+  {
+    name: "Box Jelly",
+    world: "Celestia",
+    school: "Storm",
+    rank: "Rank 2",
+    note: "Square-shaped jellyfish roaming District of the Stars pools.",
+    image: fishImage("Box Jelly"),
+  },
+  {
+    name: "Brain Sturgeon",
+    world: "Polaris",
+    school: "Ice",
+    rank: "Rank 2",
+    note: "A scholarly sturgeon that thrives in Walruskberg libraries.",
+    image: fishImage("Brain Sturgeon"),
+  },
+  {
+    name: "Butterfly Shrimp",
+    world: "Khrysalis",
+    school: "Life",
+    rank: "Rank 2",
+    note: "Fluttering shrimp basking in Bastion's luminous ponds.",
+    image: fishImage("Butterfly Shrimp"),
+  },
+];
+
+const detailedNames = new Set(detailedFishing.map((fish) => fish.name));
+
+export const fishing: FishingSpot[] = [
+  ...detailedFishing,
+  ...generatedFishing.filter((fish) => !detailedNames.has(fish.name)),
 ];
