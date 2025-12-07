@@ -80,19 +80,13 @@ If you just want to see the finished site in your browser, copy and paste these 
    npm install
    ```
 
-2. Build the site (turns the app into static files Vite can serve):
-
-   ```bash
-   npm run build
-   ```
-
-3. Start the preview server on port **4173**:
+2. Start the preview server on port **4173** (this also rebuilds the app so you always see the latest changes):
 
    ```bash
    npm run preview -- --host --port 4173
    ```
 
-4. In your browser, open <http://localhost:4173>. If `localhost` does not work, try <http://127.0.0.1:4173> instead—both addresses point to your own computer.
+3. In your browser, open <http://localhost:4173/InteractiveMapGuide-Wizard101/>. If `localhost` does not work, try <http://127.0.0.1:4173/InteractiveMapGuide-Wizard101/> instead—both addresses point to your own computer. You should see the categories rail and world atlas immediately (not a blank page).
 
 Common macOS tips
 - If the terminal says “command not found: npm,” install Node.js (which includes npm) from <https://nodejs.org/> and then rerun the commands.
