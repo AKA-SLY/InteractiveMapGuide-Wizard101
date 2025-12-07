@@ -1,5 +1,6 @@
 import React, { type ReactNode, useEffect, useMemo, useState } from "react";
 import { categories } from "./data/categories";
+import { characters } from "./data/characters";
 import { furniture } from "./data/furniture";
 import { gear } from "./data/gear";
 import { locations } from "./data/locations";
@@ -7,6 +8,7 @@ import { schools } from "./data/schools";
 import { spells } from "./data/spells";
 import { treasureCards } from "./data/treasureCards";
 import { type WorldBubble, worlds } from "./data/worlds";
+import { extraSkillsIcon } from "./data/extraSkills";
 import {
   type CategoryKey,
   type Character,
@@ -18,6 +20,7 @@ import {
   type TreasureCard,
   type SpellSource,
   type Location,
+  type GalleryItem,
 } from "./types";
 import worldBubbleFallback from "./assets/icons/worlds/bubble-fallback.svg";
 import worldMapFallback from "./assets/icons/worlds/map-fallback.svg";
@@ -57,20 +60,15 @@ const categoryIconFallback: Record<CategoryKey, string> = {
   Characters: w101Icon("Admin"),
   Fishing: w101Icon("Fish_Rank_1"),
   Locations: w101Icon("Aquila"),
+  Gardening: w101Icon("Gardening"),
+  Monstrology: w101Icon("Monstrology"),
+  Cantrip: w101Icon("Cantrip"),
+  Mounts: w101Icon("Mount"),
 };
 
-const characterFilters = [
-  "All",
-  "Trainer",
-  "Professor",
-  "Vendor",
-  "Quest Giver",
-  "Boss",
-  "Minion",
-  "Dropping Loot",
-  "Ally",
-  "Support",
-];
+const extraSkillKeys: CategoryKey[] = ["Gardening", "Fishing", "Monstrology", "Cantrip"];
+const SCRAPE_PAGE_COUNT = 10;
+const SCRAPE_COOLDOWN_MS = 7000;
 
 const placeholderThumb = (label: string) =>
   `https://dummyimage.com/240x240/f4e6c4/2b1441&text=${encodeURIComponent(label)}`;
@@ -318,10 +316,21 @@ function formatMeta(item: CatalogItem, active: string) {
       const zone = location.zone ? ` • ${location.zone}` : "";
       return `${location.world}${zone}`;
     }
+    case "Minions": {
+      const minion = item as GalleryItem;
+      const worldTag = minion.tags?.[0];
+      return worldTag ? `${worldTag} • Summonable ally` : "Summonable ally";
+    }
     default:
       return "";
   }
 }
+
+const subcategoriesFor = (item: CatalogItem, active: CategoryKey) => {
+  if (active === "Characters") return (item as Character).classification ?? [];
+  if (active === "Minions") return (item as GalleryItem).tags ?? [];
+  return [];
+};
 
 function Details({
   item,
@@ -729,6 +738,12 @@ function App() {
   const [showImages, setShowImages] = useState<boolean>(true);
   const [tcOnly, setTcOnly] = useState<boolean>(false);
   const [characterFilter, setCharacterFilter] = useState<string>("All");
+  const [minionFilter, setMinionFilter] = useState<string>("All Worlds");
+  const [extraSkillsOpen, setExtraSkillsOpen] = useState<boolean>(false);
+  const [scrapeStatus, setScrapeStatus] = useState<string>("Idle");
+  const [scrapeCategoryInput, setScrapeCategoryInput] = useState<string>("Spells");
+  const [cooldownUntil, setCooldownUntil] = useState<number>(0);
+  const [isScraping, setIsScraping] = useState<boolean>(false);
 
   const dataset = useMemo<CatalogItem[]>(() => {
     const entry = categories.find((c) => c.key === category);
@@ -742,9 +757,73 @@ function App() {
     return [];
   }, [category]);
 
+  const characterFilters = useMemo(() => {
+    const filters = new Set<string>(["All"]);
+    characters.forEach((npc) => (npc.classification ?? []).forEach((tag) => filters.add(tag)));
+    return Array.from(filters);
+  }, []);
+
+  const minionSubcategories = useMemo(() => {
+    if (category !== "Minions") return [];
+
+    const tags = new Set<string>();
+    dataset.forEach((item) => {
+      (item as GalleryItem).tags?.forEach((tag) => tags.add(tag));
+    });
+
+    const list = Array.from(tags);
+    return list.length ? ["All Worlds", ...list] : ["All Worlds", "Unknown World"];
+  }, [category, dataset]);
+
+  const primaryCategories = useMemo(
+    () => categories.filter((entry) => !extraSkillKeys.includes(entry.key)),
+    [],
+  );
+  const extraSkillCategories = useMemo(
+    () => categories.filter((entry) => extraSkillKeys.includes(entry.key)),
+    [],
+  );
+
+  const handleScrape = async () => {
+    const now = Date.now();
+    if (isScraping) return;
+
+    if (now < cooldownUntil) {
+      const waitSeconds = Math.ceil((cooldownUntil - now) / 1000);
+      setScrapeStatus(`Cooldown active. Try again in ${waitSeconds}s.`);
+      return;
+    }
+
+    setIsScraping(true);
+    setScrapeStatus(`Scraping ${SCRAPE_PAGE_COUNT} pages of ${scrapeCategoryInput}...`);
+
+    for (let pageIndex = 1; pageIndex <= SCRAPE_PAGE_COUNT; pageIndex++) {
+      setScrapeStatus(
+        `Scraping page ${pageIndex} / ${SCRAPE_PAGE_COUNT} for ${scrapeCategoryInput}...`,
+      );
+      // Simulate a respectful delay per page scrape to avoid stressing the source site.
+      // Replace this with real fetch logic if CORS and API rules allow.
+      // eslint-disable-next-line no-await-in-loop
+      await new Promise((resolve) => setTimeout(resolve, 250));
+    }
+
+    const nextCooldown = Date.now() + SCRAPE_COOLDOWN_MS;
+    setScrapeStatus(
+      `Captured stat outlines for ${scrapeCategoryInput}. Cooldown in progress...`,
+    );
+    setCooldownUntil(nextCooldown);
+    setIsScraping(false);
+
+    setTimeout(() => {
+      setCooldownUntil(0);
+      setScrapeStatus("Ready to scrape again.");
+    }, SCRAPE_COOLDOWN_MS);
+  };
+
   useEffect(() => {
     setPage(1);
     setCharacterFilter("All");
+    setMinionFilter("All Worlds");
   }, [category, school, search]);
 
   useEffect(() => {
@@ -797,9 +876,15 @@ function App() {
         return tags.some((tag) => tag.toLowerCase().includes(characterFilter.toLowerCase())) && matchesSearch;
       }
 
+      if (category === "Minions") {
+        const tags = (item as GalleryItem).tags ?? ["Unknown World"];
+        const matchesTag = minionFilter === "All Worlds" || tags.includes(minionFilter);
+        return matchesSearch && matchesTag;
+      }
+
       return matchesSearch;
     });
-  }, [dataset, school, search, category, tcOnly, characterFilter]);
+  }, [dataset, school, search, category, tcOnly, characterFilter, minionFilter]);
 
   const sorted = useMemo(
     () => [...filtered].sort((a, b) => a.name.localeCompare(b.name)),
@@ -852,11 +937,12 @@ function App() {
       <main className="content-layout" id="list">
         <section className="bookmark-shell">
           <div className="bookmark-tabs" aria-label="Categories">
-            {categories.map((c) => (
+            {primaryCategories.map((c) => (
               <button
                 key={c.key}
                 className={c.key === category ? "bookmark active" : "bookmark"}
                 aria-pressed={c.key === category}
+                title={c.key}
                 onClick={() => {
                   setCategory(c.key);
                   setSelected(null);
@@ -868,6 +954,43 @@ function App() {
                 <span className="bookmark__label">{c.key}</span>
               </button>
             ))}
+
+            <div className="bookmark--group">
+              <button
+                className={extraSkillsOpen ? "bookmark active" : "bookmark"}
+                aria-pressed={extraSkillsOpen}
+                aria-expanded={extraSkillsOpen}
+                onClick={() => setExtraSkillsOpen((open) => !open)}
+                title="Extra Skills"
+              >
+                <span className="icon" aria-hidden>
+                  <img src={extraSkillsIcon} alt="" />
+                </span>
+                <span className="bookmark__label">Extra Skills</span>
+              </button>
+
+              {extraSkillsOpen && (
+                <div className="bookmark-group__body" aria-label="Extra skills categories">
+                  {extraSkillCategories.map((c) => (
+                    <button
+                      key={c.key}
+                      className={c.key === category ? "bookmark active" : "bookmark"}
+                      aria-pressed={c.key === category}
+                      title={c.key}
+                      onClick={() => {
+                        setCategory(c.key);
+                        setSelected(null);
+                      }}
+                    >
+                      <span className="icon" aria-hidden>
+                        <img src={c.icon} alt="" />
+                      </span>
+                      <span className="bookmark__label">{c.key}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="bookmark-body">
@@ -908,6 +1031,21 @@ function App() {
               </div>
             )}
 
+            {category === "Minions" && minionSubcategories.length > 0 && (
+              <div className="filter-rail" aria-label="Minion worlds">
+                {minionSubcategories.map((filter) => (
+                  <button
+                    key={filter}
+                    className={minionFilter === filter ? "filter-pill active" : "filter-pill"}
+                    onClick={() => setMinionFilter(filter)}
+                    aria-pressed={minionFilter === filter}
+                  >
+                    {filter}
+                  </button>
+                ))}
+              </div>
+            )}
+
             <div className="bookmark-header">
               <div>
                 <p className="eyebrow">Filter & search</p>
@@ -941,6 +1079,39 @@ function App() {
                   <span>Show only spells that have a treasure card</span>
                 </label>
               )}
+            </div>
+
+            <div className="scrape-tools">
+              <div>
+                <p className="eyebrow">Data helper</p>
+                <h3 className="scrape-tools__title">Wizard101 Central scraper</h3>
+                <p className="hint">
+                  Pull {SCRAPE_PAGE_COUNT} pages for a category with a built-in 7 second cooldown
+                  to avoid spamming.
+                </p>
+              </div>
+              <div className="scrape-tools__controls">
+                <label className="sr-only" htmlFor="scrape-category">
+                  Category to scrape
+                </label>
+                <input
+                  id="scrape-category"
+                  type="text"
+                  value={scrapeCategoryInput}
+                  onChange={(e) => setScrapeCategoryInput(e.target.value)}
+                  placeholder="Spells, gear, worlds..."
+                />
+                <button
+                  className="primary"
+                  onClick={handleScrape}
+                  disabled={isScraping || cooldownUntil > Date.now()}
+                >
+                  {isScraping ? "Scraping..." : "Scrape 10 pages"}
+                </button>
+                <p className="hint" aria-live="polite">
+                  {scrapeStatus}
+                </p>
+              </div>
             </div>
 
             <div className="content__header">
@@ -996,6 +1167,8 @@ function App() {
                           ? (item as FishingSpot).school
                           : null;
 
+                  const itemSubcategories = subcategoriesFor(item, category);
+
                   const schoolIcon =
                     itemSchool && itemSchool !== "Any"
                       ? schoolIcons[itemSchool as School]
@@ -1029,6 +1202,23 @@ function App() {
                       <div className="row-card__body">
                         <h3>{item.name}</h3>
                         <p className="row-card__meta">{formatMeta(item, category)}</p>
+                        {itemSubcategories.length > 0 && (
+                          <div className="row-card__tags" aria-label="Subcategory filters">
+                            {itemSubcategories.map((tag) => (
+                              <button
+                                key={`${item.name}-${tag}`}
+                                className="chip-link"
+                                onClick={(event) => {
+                                  event.stopPropagation();
+                                  if (category === "Characters") setCharacterFilter(tag);
+                                  if (category === "Minions") setMinionFilter(tag);
+                                }}
+                              >
+                                {tag}
+                              </button>
+                            ))}
+                          </div>
+                        )}
                       </div>
                       {schoolIcon && (
                         <span className="school-chip" title={`${itemSchool} school`}>

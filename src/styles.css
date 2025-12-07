@@ -304,6 +304,29 @@ button:hover,
 
 .bookmark__label {
   font-weight: 700;
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, max-width 0.2s ease;
+}
+
+.bookmark:hover .bookmark__label,
+.bookmark:focus-visible .bookmark__label,
+.bookmark.active .bookmark__label {
+  opacity: 1;
+  max-width: 220px;
+}
+
+.bookmark--group {
+  display: grid;
+  gap: 8px;
+}
+
+.bookmark-group__body {
+  display: grid;
+  gap: 8px;
+  padding-left: 18px;
 }
 
 .icon img {
@@ -387,6 +410,34 @@ button:hover,
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 14px;
+}
+
+.scrape-tools {
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px dashed #b9a3e0;
+  background: #f9f2e3;
+  border-radius: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.scrape-tools__title {
+  margin: 4px 0;
+}
+
+.scrape-tools__controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.scrape-tools__controls input {
+  min-width: 220px;
 }
 
 .filter { display: grid; gap: 8px; }
@@ -529,6 +580,13 @@ input[type="text"] {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.row-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
 }
 .school-chip {
   display: inline-flex;

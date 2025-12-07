@@ -1,5 +1,6 @@
 import { libraryRoot } from "../lib/library";
 import { type GalleryItem } from "../types";
+import { worlds } from "./worlds";
 import {
   fireSpellFiles,
   henchmenFiles,
@@ -20,12 +21,23 @@ const buildGallery = (
   folder: string,
   category: GalleryItem["category"],
   prefix?: string,
+  buildTags?: (file: string) => string[] | undefined,
 ): GalleryItem[] =>
   files.map((file) => ({
     name: readableName(file, prefix),
     category,
     image: libraryRoot(folder, file),
+    tags: buildTags?.(file),
   }));
+
+const inferWorldTag = (file: string) => {
+  const normalized = file.replace(/\.[^.]+$/, "").replace(/[_-]/g, " ").toLowerCase();
+  const match = worlds.find((world) =>
+    normalized.includes(world.name.toLowerCase().replace(/\s+/g, " ")),
+  );
+
+  return [match?.name ?? "Unknown World"];
+};
 
 export const fireSpellCards: GalleryItem[] = buildGallery(
   fireSpellFiles,
@@ -37,7 +49,13 @@ export const henchmen: GalleryItem[] = buildGallery(henchmenFiles, "Henchment", 
 
 export const jewels: GalleryItem[] = buildGallery(jewelFiles, "Jewels", "Jewels");
 
-export const minions: GalleryItem[] = buildGallery(minionFiles, "Minions", "Minions");
+export const minions: GalleryItem[] = buildGallery(
+  minionFiles,
+  "Minions",
+  "Minions",
+  undefined,
+  inferWorldTag,
+);
 
 export const worldMaps: GalleryItem[] = buildGallery(worldMapFiles, "World map Images", "World Maps");
 
