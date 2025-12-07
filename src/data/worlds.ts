@@ -1,6 +1,7 @@
 export type WorldBubble = {
   name: string;
   summary: string;
+  bubbleImage?: string;
   mapImage?: string;
 };
 
@@ -8,71 +9,113 @@ export const worlds: WorldBubble[] = [
   {
     name: "Wizard City",
     summary: "Start here — classes, commons, and basics.",
-    mapImage: "https://dummyimage.com/900x520/1e1f2b/ffffff&text=Wizard+City+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/9/9d/WizardCity_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/9/9d/WizardCity_-_WorldMap.png",
   },
   {
     name: "Krokotopia",
     summary: "Pyramids, Balance lessons, and hidden obelisks.",
-    mapImage: "https://dummyimage.com/900x520/1b2a2f/ffffff&text=Krokotopia+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/e/e1/Krokotopia_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/e/e1/Krokotopia_-_WorldMap.png",
   },
   {
     name: "Marleybone",
     summary: "Cobblestone capers with clockworks and detectives.",
-    mapImage: "https://dummyimage.com/900x520/1f2637/ffffff&text=Marleybone+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/5/50/Marleybone_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/5/50/Marleybone_-_WorldMap.png",
   },
   {
     name: "Mooshu",
     summary: "Spiritual gardens, Oni bosses, and Jade Palace.",
-    mapImage: "https://dummyimage.com/900x520/1f2730/ffffff&text=Mooshu+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/f/f0/Mooshu_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/f/f0/Mooshu_-_WorldMap.png",
   },
   {
     name: "Dragonspyre",
     summary: "Lava forges, Drake brothers, and final exams.",
-    mapImage: "https://dummyimage.com/900x520/2b2434/ffffff&text=Dragonspyre+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/8/8b/Dragonspyre_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/8/8b/Dragonspyre_-_WorldMap.png",
   },
   {
     name: "Celestia",
     summary: "Underwater domes and the birth of Astral magic.",
-    mapImage: "https://dummyimage.com/900x520/1e2c37/ffffff&text=Celestia+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/4/45/Celestia_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/4/45/Celestia_-_WorldMap.png",
   },
   {
     name: "Zafaria",
     summary: "Savannah rings, Drum Jungle, and Baobab market.",
-    mapImage: "https://dummyimage.com/900x520/2a262c/ffffff&text=Zafaria+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/7/7c/Zafaria_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/7/7c/Zafaria_-_WorldMap.png",
   },
   {
     name: "Avalon",
     summary: "Knights, Wyrd woods, and King Artorius’ quests.",
-    mapImage: "https://dummyimage.com/900x520/222b2f/ffffff&text=Avalon+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/a/ad/Avalon_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/a/ad/Avalon_-_WorldMap.png",
   },
   {
     name: "Azteca",
     summary: "Dying world of Aztecosaurs racing against comets.",
-    mapImage: "https://dummyimage.com/900x520/2e2530/ffffff&text=Azteca+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/0/0a/Azteca_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/0/0a/Azteca_-_WorldMap.png",
   },
   {
     name: "Khrysalis",
     summary: "Shadow-touched siege against the Umbra Legion.",
-    mapImage: "https://dummyimage.com/900x520/1f2633/ffffff&text=Khrysalis+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/f/fb/Khrysalis_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/f/fb/Khrysalis_-_WorldMap.png",
   },
   {
     name: "Polaris",
     summary: "Frozen revolution led by Rasputin’s Borealis army.",
-    mapImage: "https://dummyimage.com/900x520/213144/ffffff&text=Polaris+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/4/42/Polaris_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/4/42/Polaris_-_WorldMap.png",
   },
   {
     name: "Mirage",
     summary: "Dunes, thieves, and grand libraries in Aggrobah.",
-    mapImage: "https://dummyimage.com/900x520/2f2732/ffffff&text=Mirage+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/1/17/Mirage_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/1/17/Mirage_-_WorldMap.png",
   },
   {
     name: "Empyrea",
     summary: "Skyship arcs through Storm and Chaos segments.",
-    mapImage: "https://dummyimage.com/900x520/23293c/ffffff&text=Empyrea+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/d/dc/Empyrea_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/d/dc/Empyrea_-_WorldMap.png",
   },
   {
     name: "Karamelle",
     summary: "Candy citadels hiding surprisingly dark secrets.",
-    mapImage: "https://dummyimage.com/900x520/2e2333/ffffff&text=Karamelle+Map",
+    bubbleImage:
+      "https://static.wikia.nocookie.net/wizard101/images/2/2f/Karamelle_-_WorldMap.png",
+    mapImage:
+      "https://static.wikia.nocookie.net/wizard101/images/2/2f/Karamelle_-_WorldMap.png",
   },
 ];

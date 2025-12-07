@@ -17,6 +17,9 @@ import {
 
 const PAGE_SIZE = 5;
 
+const worldFallbackImage =
+  "https://dummyimage.com/900x520/dacfb2/2c1c4a&text=World+map";
+
 const schoolIcons: Record<Exclude<School, "All">, string> = {
   Fire: "🔥",
   Ice: "❄️",
@@ -32,7 +35,7 @@ const schoolIcons: Record<Exclude<School, "All">, string> = {
 };
 
 const placeholderThumb = (label: string) =>
-  `https://dummyimage.com/160x160/1b1529/ffffff&text=${encodeURIComponent(label)}`;
+  `https://dummyimage.com/160x160/f4e6c4/2b1441&text=${encodeURIComponent(label)}`;
 
 function formatMeta(item: Spell | Gear | Character | FishingSpot, active: string) {
   switch (active) {
@@ -259,7 +262,7 @@ function App() {
                     <span className="school-pill__icon" aria-hidden>
                       {icon}
                     </span>
-                    <span className="school-pill__label">{s}</span>
+                    <span className="sr-only">{s}</span>
                   </button>
                 );
               })}
@@ -294,7 +297,7 @@ function App() {
                 <p className="eyebrow" aria-live="polite">
                   {sorted.length} result{sorted.length === 1 ? "" : "s"}
                 </p>
-                <h3 className="panel__title">{category} row</h3>
+                <h3 className="panel__title">{category} picks</h3>
               </div>
               <div className="row-controls">
                 <button className="ghost" onClick={() => setShowImages((v) => !v)}>
@@ -361,8 +364,8 @@ function App() {
                         <div className="row-card__thumb row-card__thumb--off">Img</div>
                       )}
                       <div className="row-card__body">
-                        <p className="eyebrow">{category}</p>
                         <h3>{item.name}</h3>
+                        <p className="row-card__meta">{formatMeta(item, category)}</p>
                       </div>
                       {schoolIcon && (
                         <span className="school-chip" title={`${itemSchool} school`}>
@@ -395,9 +398,16 @@ function App() {
                 className="world-bubble world-bubble--button"
                 onClick={() => setWorldFocus(world)}
                 aria-label={`Open details for ${world.name}`}
+                style={{
+                  backgroundImage: world.bubbleImage
+                    ? `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), rgba(78,51,119,0.5)), url(${world.bubbleImage})`
+                    : undefined,
+                }}
               >
-                <div className="world-bubble__name">{world.name}</div>
-                <div className="world-bubble__summary">{world.summary}</div>
+                <div className="world-bubble__overlay">
+                  <div className="world-bubble__name">{world.name}</div>
+                  <div className="world-bubble__summary">{world.summary}</div>
+                </div>
               </button>
             ))}
           </div>
@@ -432,11 +442,13 @@ function App() {
             <p className="panel__body">{worldFocus.summary}</p>
             <div className="map-frame">
               <img
-                src={
-                  worldFocus.mapImage ??
-                  "https://dummyimage.com/1000x600/1b1529/ffffff&text=World+map"
-                }
+                src={worldFocus.mapImage ?? worldFallbackImage}
                 alt={`${worldFocus.name} map preview`}
+                onError={(e) => {
+                  if (e.currentTarget.src !== worldFallbackImage) {
+                    e.currentTarget.src = worldFallbackImage;
+                  }
+                }}
               />
             </div>
             <p className="hint">
