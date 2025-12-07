@@ -15,7 +15,7 @@ import {
   type Spell,
 } from "./types";
 
-const PAGE_SIZE = 5;
+const PAGE_SIZE = 8;
 
 const worldFallbackImage =
   "https://dummyimage.com/900x520/dacfb2/2c1c4a&text=World+map";
@@ -75,6 +75,59 @@ function Details({
     (item as Spell | Gear | Character | FishingSpot).image ??
     placeholderThumb(item.name.slice(0, 10));
 
+  const statLines: { label: string; value: string }[] = (() => {
+    switch (category) {
+      case "Spells": {
+        const spell = item as Spell;
+        return [
+          { label: "School", value: spell.school },
+          { label: "Rank", value: String(spell.rank) },
+          { label: "Pips", value: `${spell.pipCost} pip${spell.pipCost === 1 ? "" : "s"}` },
+          { label: "Accuracy", value: `${spell.accuracy}%` },
+          { label: "Effect", value: spell.effect },
+        ];
+      }
+      case "Gear": {
+        const piece = item as Gear;
+        return [
+          { label: "Slot", value: piece.type },
+          { label: "School", value: piece.school },
+          { label: "Level", value: `L${piece.level}` },
+          { label: "Stats", value: piece.stats },
+          { label: "Location", value: piece.location },
+        ];
+      }
+      case "Characters": {
+        const npc = item as Character;
+        return [
+          { label: "Role", value: npc.role },
+          { label: "World", value: npc.world },
+          { label: "Location", value: npc.location },
+          ...(npc.tip ? [{ label: "Tip", value: npc.tip }] : []),
+        ];
+      }
+      case "Fishing": {
+        const spot = item as FishingSpot;
+        return [
+          { label: "World", value: spot.world },
+          { label: "School", value: spot.school },
+          { label: "Rank", value: spot.rank },
+          { label: "Notes", value: spot.note },
+        ];
+      }
+      default:
+        return [];
+    }
+  })();
+
+  const description = (() => {
+    if (category === "Spells") return (item as Spell).description;
+    if (category === "Gear") return (item as Gear).stats;
+    if (category === "Characters") return (item as Character).tip;
+    if (category === "Fishing") return (item as FishingSpot).note;
+    return undefined;
+  })();
+
   return (
     <div className="overlay">
       <div className="panel">
@@ -82,59 +135,48 @@ function Details({
           <div>
             <p className="eyebrow">{category}</p>
             <h3 className="panel__title">{item.name}</h3>
+            <p className="panel__meta">{formatMeta(item, category)}</p>
           </div>
           <button className="ghost" onClick={onClose} aria-label="Close">
             ✕
           </button>
         </header>
 
-        <div className="panel__thumb">
-          <img src={thumb} alt="" />
-          <div className="panel__thumb-meta">
-            <p className="panel__meta">{formatMeta(item, category)}</p>
-            <p className="hint">
-              Images are placeholders—you can swap them for official art later.
-            </p>
+        <div className="panel__summary">
+          <div className="panel__thumb panel__thumb--stacked">
+            <img src={thumb} alt="" />
+            <p className="hint">Official art can replace this placeholder.</p>
+          </div>
+          <div className="panel__stats" role="list">
+            {statLines.map((line) => (
+              <div className="stat-row" role="listitem" key={line.label}>
+                <span className="stat-row__label">{line.label}</span>
+                <span className="stat-row__value">{line.value}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {category === "Spells" && (
-          <>
-            <p className="panel__body">{(item as Spell).description}</p>
-            <ul className="pill-list">
-              <li>Accuracy: {(item as Spell).accuracy}</li>
-              <li>Effect: {(item as Spell).effect}</li>
-            </ul>
-          </>
-        )}
-
-        {category === "Gear" && (
-          <>
-            <p className="panel__body">{(item as Gear).stats}</p>
-            <p className="panel__body">Location: {(item as Gear).location}</p>
-          </>
-        )}
-
-        {category === "Characters" && (
-          <>
-            <p className="panel__body">
-              {(item as Character).role} in {(item as Character).world}
-            </p>
-            {(item as Character).tip && (
-              <p className="panel__body">Tip: {(item as Character).tip}</p>
-            )}
-          </>
-        )}
-
-        {category === "Fishing" && (
-          <>
-            <p className="panel__body">{(item as FishingSpot).note}</p>
-            <ul className="pill-list">
-              <li>World: {(item as FishingSpot).world}</li>
-              <li>School: {(item as FishingSpot).school}</li>
-              <li>Rank: {(item as FishingSpot).rank}</li>
-            </ul>
-          </>
+        {description && (
+          <details className="accordion" open>
+            <summary>Details & description</summary>
+            <div className="accordion__body">
+              <p className="panel__body">{description}</p>
+              {category === "Spells" && (
+                <ul className="pill-list">
+                  <li>Accuracy: {(item as Spell).accuracy}%</li>
+                  <li>Effect: {(item as Spell).effect}</li>
+                </ul>
+              )}
+              {category === "Fishing" && (
+                <ul className="pill-list">
+                  <li>World: {(item as FishingSpot).world}</li>
+                  <li>School: {(item as FishingSpot).school}</li>
+                  <li>Rank: {(item as FishingSpot).rank}</li>
+                </ul>
+              )}
+            </div>
+          </details>
         )}
       </div>
     </div>
