@@ -1,3 +1,4 @@
+import { formatLibraryFileName, libraryPath } from "../lib/library";
 import { type Character } from "../types";
 
 export const characters: Character[] = [
@@ -10,6 +11,12 @@ export const characters: Character[] = [
     rank: "Legendary Wizard",
     classification: ["Trainer", "Quest Giver", "Support"],
     tip: "Talk to him to move the main story forward.",
+    image: libraryPath(
+      "World Based NPC/Avalon NPC",
+      "Merle Ambrose 7",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Gamma",
@@ -20,6 +27,12 @@ export const characters: Character[] = [
     rank: "Owl Courier",
     classification: ["Support"],
     tip: "Helps explain new mechanics for brand-new wizards.",
+    image: libraryPath(
+      "World Based NPC/MooShu NPC",
+      "Gamma 6",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Eloise Merryweather",
@@ -28,6 +41,12 @@ export const characters: Character[] = [
     location: "The Commons",
     classification: ["Vendor", "Quest Giver"],
     tip: "Sells stitching and collects world-specific crafts.",
+    image: libraryPath(
+      "World Based NPC/Krokotopia NPC",
+      "Eloise Merryweather 3",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Dworgyn",
@@ -38,6 +57,12 @@ export const characters: Character[] = [
     rank: "Assistant",
     classification: ["Trainer", "Professor"],
     tip: "Unlocks Feint and other key Death utility spells.",
+    image: libraryPath(
+      "World Based NPC/MooShu NPC",
+      "Dworgyn 3",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Dalia Falmea",
@@ -48,6 +73,12 @@ export const characters: Character[] = [
     rank: "Professor",
     classification: ["Professor", "Trainer"],
     tip: "Grants core Fire spells as you level and visit class.",
+    image: libraryPath(
+      "World Based NPC/Avalon NPC",
+      "Dalia Falmea",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Lydia Greyrose",
@@ -58,6 +89,12 @@ export const characters: Character[] = [
     rank: "Professor",
     classification: ["Professor", "Trainer"],
     tip: "Returns often for Tower Shield and powerful Ice blades.",
+    image: libraryPath(
+      "World Based NPC/Avalon NPC",
+      "Lydia Greyrose",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Cyrus Drake",
@@ -68,6 +105,12 @@ export const characters: Character[] = [
     rank: "Professor",
     classification: ["Professor", "Trainer"],
     tip: "Teaches Minotaur, Orthrus, and other double-hit spells.",
+    image: libraryPath(
+      "World Based NPC/Dragonspyre NPC",
+      "Cyrus Drake 4",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Halston Balestrom",
@@ -78,6 +121,12 @@ export const characters: Character[] = [
     rank: "Professor",
     classification: ["Professor", "Trainer"],
     tip: "Check in for Tempest and Storm Lord as you rank up.",
+    image: libraryPath(
+      "World Based NPC/Marleybone NPC",
+      "Halston Balestrom 4",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Moolinda Wu",
@@ -88,6 +137,12 @@ export const characters: Character[] = [
     rank: "Professor",
     classification: ["Professor", "Trainer"],
     tip: "Visit often for heals and Life blades that boost every hit.",
+    image: libraryPath(
+      "World Based NPC/MooShu NPC",
+      "Moolinda Wu",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Malorn Ashthorn",
@@ -96,6 +151,12 @@ export const characters: Character[] = [
     location: "Nightside",
     classification: ["Support"],
     tip: "Death apprentice who introduces underground quests.",
+    image: libraryPath(
+      "World Based NPC/MooShu NPC",
+      "Malorn Ashthorn",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Arthur Wethersfield",
@@ -104,6 +165,12 @@ export const characters: Character[] = [
     location: "Balance School, Ravenwood",
     classification: ["Professor", "Trainer"],
     tip: "Early Balance teacher before you sail to Krokotopia.",
+    image: libraryPath(
+      "World Based NPC/Avalon NPC",
+      "Arthur Wethersfield",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Alhazred",
@@ -112,6 +179,12 @@ export const characters: Character[] = [
     location: "Krokosphinx",
     classification: ["Trainer", "Professor"],
     tip: "Offers advanced Balance spells once you reach Krokotopia.",
+    image: libraryPath(
+      "World Based NPC/Krokotopia NPC",
+      "Alhazred",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Niles the Balance Tree",
@@ -120,6 +193,12 @@ export const characters: Character[] = [
     location: "Krokosphinx",
     classification: ["Trainer"],
     tip: "Visit for key cross-school blades and traps.",
+    image: libraryPath(
+      "World Based NPC/Krokotopia NPC",
+      "Niles",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Professor Baelstrom",
@@ -128,6 +207,12 @@ export const characters: Character[] = [
     location: "Survey Camp",
     classification: ["Professor", "Trainer"],
     tip: "Hands out Critical-focused Storm spells in Celestia.",
+    image: libraryPath(
+      "World Based NPC/Marleybone NPC",
+      "Halston Balestrom 4",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Gloria Krendell",
@@ -136,6 +221,12 @@ export const characters: Character[] = [
     location: "Olde Town",
     classification: ["Quest Giver", "Vendor"],
     tip: "Collects crafting badges and starts the crafting questline.",
+    image: libraryPath(
+      "World Based NPC/Avalon NPC",
+      "Gloria Krendell",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Prospector Zeke",
@@ -144,6 +235,12 @@ export const characters: Character[] = [
     location: "The Commons",
     classification: ["Quest Giver", "Support"],
     tip: "Find his hidden item collections each world for training points.",
+    image: libraryPath(
+      "World Based NPC/Prospecter Zeke Images",
+      "Prospector Zeke",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Diego the Duelmaster",
@@ -152,6 +249,12 @@ export const characters: Character[] = [
     location: "Pet Pavilion",
     classification: ["Trainer", "Support"],
     tip: "Visit for PvP tutorials and tournament registration.",
+    image: libraryPath(
+      "World Based NPC/Krokotopia NPC",
+      "Arena Master",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Molly Earthsong",
@@ -160,6 +263,12 @@ export const characters: Character[] = [
     location: "Caliburn",
     classification: ["Support"],
     tip: "Provides potion and healing services during Avalon’s story.",
+    image: libraryPath(
+      "World Based NPC/Avalon NPC",
+      "Molly Earthsong",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Sir Pike Del Lago",
@@ -168,6 +277,12 @@ export const characters: Character[] = [
     location: "Three Points",
     classification: ["Quest Giver"],
     tip: "Sends you to repair the World Gate and meet the Aztecosaurs.",
+    image: libraryPath(
+      "World Based NPC/Avalon NPC",
+      "Sir Pike Del Lago",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "King Artorius",
@@ -176,6 +291,12 @@ export const characters: Character[] = [
     location: "High Road",
     classification: ["Ally", "Support"],
     tip: "Guides you through restoring Avalon and grants a spiral key.",
+    image: libraryPath(
+      "World Based NPC/Avalon NPC",
+      "King Artorius",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Morganthe",
@@ -185,6 +306,12 @@ export const characters: Character[] = [
     classification: ["Boss", "Dropping Loot"],
     loot: ["Morganthe amulets", "Shadow enchantments"],
     tip: "Major antagonist—prepare shields and dispels for her battles.",
+    image: libraryPath(
+      "World Based NPC/Azteca NPC",
+      "Morganthe 7",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Old Cob",
@@ -193,6 +320,12 @@ export const characters: Character[] = [
     location: "Bastion",
     classification: ["Support"],
     tip: "Sets up the endgame arc leading into Polaris and Mirage.",
+    image: libraryPath(
+      "World Based NPC/Celestia NPC",
+      "Old Cob",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Captain Avery",
@@ -201,6 +334,12 @@ export const characters: Character[] = [
     location: "Regent's Square",
     classification: ["Quest Giver", "Support"],
     tip: "Helps you commandeer airship routes between islands.",
+    image: libraryPath(
+      "World Based NPC/Marleybone NPC",
+      "Captain Avery",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Sherlock Bones",
@@ -209,6 +348,12 @@ export const characters: Character[] = [
     location: "Scotland Yard",
     classification: ["Support", "Quest Giver"],
     tip: "Solves cases like Meowiarty—expect street fights and clues.",
+    image: libraryPath(
+      "World Based NPC/Marleybone NPC",
+      "Sherlock Bones",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Shiruku Neko",
@@ -217,6 +362,12 @@ export const characters: Character[] = [
     location: "Hametsu Village",
     classification: ["Vendor"],
     tip: "Sells crafted gear recipes for the Hametsu zone.",
+    image: libraryPath(
+      "World Based NPC/MooShu NPC",
+      "Shiruku Neko",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Shunzang",
@@ -225,6 +376,12 @@ export const characters: Character[] = [
     location: "Jade Palace",
     classification: ["Support", "Quest Giver"],
     tip: "Offers side quests focused on balance and harmony.",
+    image: libraryPath(
+      "World Based NPC/MooShu NPC",
+      "Shunzang",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Zaltanna the MirrorMask",
@@ -233,6 +390,12 @@ export const characters: Character[] = [
     location: "Bastion",
     classification: ["Vendor", "Support"],
     tip: "Teaches Shadow-enhanced spells once you unlock the school.",
+    image: libraryPath(
+      "World Based NPC/Zafaria NPC",
+      "Zaltanna the MirrorMask",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Ponce de Gibbon",
@@ -242,6 +405,12 @@ export const characters: Character[] = [
     classification: ["Boss", "Dropping Loot"],
     loot: ["Amulets", "Pet jewels"],
     tip: "Quest chain includes dueling hordes of White Razors.",
+    image: libraryPath(
+      "World Based NPC/Azteca NPC",
+      "Ponce de Gibbon",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Balthazar Dragonthorn",
@@ -250,6 +419,12 @@ export const characters: Character[] = [
     location: "The Basilica",
     classification: ["Trainer"],
     tip: "Sells damage-enhancing amulets and advanced reagents.",
+    image: libraryPath(
+      "World Based NPC/Dragonspyre NPC",
+      "Balthazar Dragonthorn",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Annie Shutterbug",
@@ -258,6 +433,12 @@ export const characters: Character[] = [
     location: "The Commons",
     classification: ["Quest Giver", "Support"],
     tip: "Starts the Photomancy quest and daily picture challenges.",
+    image: libraryPath(
+      "World Based NPC/Avalon NPC",
+      "Annie Shutterbug",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Abner K. Doodle",
@@ -266,6 +447,12 @@ export const characters: Character[] = [
     location: "The Commons",
     classification: ["Support"],
     tip: "Provides event news and rotating holiday alerts.",
+    image: libraryPath(
+      "World Based NPC/Marleybone NPC",
+      "Abner K Doodle",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Ivan the Great",
@@ -274,6 +461,12 @@ export const characters: Character[] = [
     location: "Walruskberg",
     classification: ["Ally"],
     tip: "Ally during Rasputin’s siege—brings strong Ice hits.",
+    image: libraryPath(
+      "World Based NPC/Krokotopia NPC",
+      "Ivan the Great 27",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Qhoya",
@@ -282,6 +475,12 @@ export const characters: Character[] = [
     location: "Baobab Crossroads",
     classification: ["Support", "Quest Giver"],
     tip: "Helps navigate Elephant Graveyard trials and lore.",
+    image: libraryPath(
+      "World Based NPC/Zafaria NPC",
+      "Qhoya",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Istar",
@@ -290,6 +489,12 @@ export const characters: Character[] = [
     location: "Survey Camp",
     classification: ["Trainer", "Professor"],
     tip: "Introduces Moon school polymorphs and Astral basics.",
+    image: libraryPath(
+      "World Based NPC/Krokotopia NPC",
+      "Istar 27",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Khaba the Weaver",
@@ -298,6 +503,12 @@ export const characters: Character[] = [
     location: "Aggrobah",
     classification: ["Support", "Quest Giver"],
     tip: "Guides you through Mirage’s vaults and shadowy bosses.",
+    image: libraryPath(
+      "World Based NPC/Krokotopia NPC",
+      "General Khaba",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
   {
     name: "Mallory",
@@ -306,5 +517,11 @@ export const characters: Character[] = [
     location: "Karamelle City",
     classification: ["Support", "Quest Giver"],
     tip: "Explains how the spiral’s newest world connects to old foes.",
+    image: libraryPath(
+      "World Based NPC/Avalon NPC",
+      "Mallory",
+      "jpg",
+      formatLibraryFileName,
+    ),
   },
 ];
