@@ -21,7 +21,14 @@ import {
 } from "./types";
 import worldBubbleFallback from "./assets/icons/worlds/bubble-fallback.svg";
 import worldMapFallback from "./assets/icons/worlds/map-fallback.svg";
-import { formatLibraryFileName, libraryPath, w101Icon } from "./lib/library";
+import {
+  formatLibraryFileName,
+  libraryPath,
+  libraryPathFromSlug,
+  w101Icon,
+  worldBubblePath,
+  worldMapPath,
+} from "./lib/library";
 
 const PAGE_SIZE = 8;
 
@@ -68,11 +75,27 @@ const characterFilters = [
 const placeholderThumb = (label: string) =>
   `https://dummyimage.com/240x240/f4e6c4/2b1441&text=${encodeURIComponent(label)}`;
 
-const slugify = (value: string) =>
-  value
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)+/g, "");
+const treasureCardArtName = (name: string, relatedSpell?: string) => {
+  const baseName = relatedSpell ?? name.replace(/\(TC\)/gi, "").trim();
+  const formatted = formatLibraryFileName(baseName);
+  return formatted.startsWith("Treasure_Card")
+    ? formatted
+    : `Treasure_Card_${formatted}`;
+};
+
+const fishingArtName = (name: string) => `Fish_${formatLibraryFileName(name)}`;
+
+const henchmanArt = (npc: Character) => {
+  if (npc.classification?.includes("Minion")) {
+    return libraryPath("Minions", npc.name, "png", formatLibraryFileName);
+  }
+
+  if (/hench/i.test(npc.role)) {
+    return libraryPath("Henchment", npc.name, "png", formatLibraryFileName);
+  }
+
+  return undefined;
+};
 
 const formatPercent = (value: string | number) =>
   typeof value === "string"
@@ -80,16 +103,6 @@ const formatPercent = (value: string | number) =>
       ? value
       : `${value}%`
     : `${value}%`;
-
-const libraryPathFromSlug = (
-  folder: string,
-  name: string,
-  extension: "png" | "jpg" | "jpeg" | "webp" = "png",
-  formatter: (value: string) => string = slugify,
-) => libraryPath(folder, name, extension, formatter);
-
-const worldBubblePath = (name: string) => libraryPathFromSlug("worlds/bubbles", name);
-const worldMapPath = (name: string) => libraryPathFromSlug("worlds/maps", name);
 
 const statIconFor = (label: string, value?: string) => {
   if (label === "School" && value && value in schoolIcons) {
@@ -219,15 +232,42 @@ function getItemImage(item: CatalogItem, category: CategoryKey) {
       "png",
       formatLibraryFileName,
     );
-  if (category === "Treasure Cards")
-    return libraryPath("treasure-cards", (item as TreasureCard).name);
-  if (category === "Gear") return libraryPath("gear", (item as Gear).name);
-  if (category === "Furniture")
-    return libraryPath("furniture", (item as Furniture).name);
-  if (category === "Characters")
-    return libraryPath("characters", (item as Character).name);
-  if (category === "Fishing") return libraryPath("fishing", (item as FishingSpot).name);
-  if (category === "Locations") return libraryPath("locations", (item as Location).name);
+  if (category === "Treasure Cards") {
+    const tc = item as TreasureCard;
+    return libraryPath(
+      "Wizard101 Fire_Spells",
+      treasureCardArtName(tc.name, tc.relatedSpell),
+      "png",
+      formatLibraryFileName,
+    );
+  }
+  if (category === "Gear") {
+    const piece = item as Gear;
+    return (
+      libraryPath("Icons", piece.type, "webp", formatLibraryFileName) ||
+      libraryPath("Jewels", piece.name, "png", formatLibraryFileName)
+    );
+  }
+  if (category === "Furniture") {
+    const furni = item as Furniture;
+    return libraryPath("Icons", furni.subcategory ?? "House", "webp", formatLibraryFileName);
+  }
+  if (category === "Characters") {
+    const npc = item as Character;
+    return (
+      henchmanArt(npc) ??
+      libraryPath("Icons", npc.role ?? "Characters", "webp", formatLibraryFileName)
+    );
+  }
+  if (category === "Fishing")
+    return libraryPath(
+      "Fishes",
+      fishingArtName((item as FishingSpot).name),
+      "png",
+      formatLibraryFileName,
+    );
+  if (category === "Locations")
+    return libraryPathFromSlug("World map Images", (item as Location).name);
 
   return (
     libraryPath("Icons", category, "webp", formatLibraryFileName) ||
@@ -479,85 +519,84 @@ function Details({
     return undefined;
   })();
 
-  const moreDetails: { label: string; value: string }[] = (() => {
+  const detailLines: { label: string; value: ReactNode; icon?: string }[] = (() => {
     switch (category) {
       case "Spells": {
         const spell = item as Spell;
-        return [
-          { label: "Description", value: spell.description },
-          { label: "Effect", value: spell.effect },
-          { label: "Accuracy", value: `${spell.accuracy}%` },
+        return mergeStatLines(statLines, [
+          { label: "Description", value: spell.description, icon: statIconFor("Effect") },
           {
-            label: "Treasure card available",
-            value: spell.hasTreasureCard ? "Yes" : "No",
+            label: "Treasure card",
+            value: spell.hasTreasureCard ? "Available" : "Unavailable",
+            icon: w101Icon("Treasure_Card"),
           },
           ...(spell.treasureCardNote
-            ? [{ label: "Treasure card note", value: spell.treasureCardNote }]
+            ? [{ label: "Treasure card note", value: spell.treasureCardNote, icon: w101Icon("Treasure_Card") }]
             : []),
-        ];
+        ]);
       }
       case "Treasure Cards": {
         const tc = item as TreasureCard;
-        return [
-          { label: "Description", value: tc.description },
+        return mergeStatLines(statLines, [
+          { label: "Description", value: tc.description, icon: statIconFor("Effect") },
           ...(tc.relatedSpell
-            ? [{ label: "Related spell", value: tc.relatedSpell }]
+            ? [{ label: "Related spell", value: tc.relatedSpell, icon: statIconFor("Spell") }]
             : []),
-        ];
+        ]);
       }
       case "Gear": {
         const piece = item as Gear;
-        return [
-          { label: "Stats", value: piece.stats },
-          { label: "Location", value: piece.location },
-          ...(piece.setName ? [{ label: "Set", value: piece.setName }] : []),
-          ...(piece.setBonus ? [{ label: "Set bonus", value: piece.setBonus }] : []),
-        ];
+        return mergeStatLines(statLines, [
+          { label: "Stats", value: piece.stats, icon: statIconFor("Stats") },
+          { label: "Location", value: piece.location, icon: statIconFor("Location") },
+          ...(piece.setName
+            ? [{ label: "Set", value: piece.setName, icon: statIconFor("Set") }]
+            : []),
+          ...(piece.setBonus
+            ? [{ label: "Set bonus", value: piece.setBonus, icon: statIconFor("Bonus") }]
+            : []),
+        ]);
       }
       case "Characters": {
         const npc = item as Character;
-        return [
-          { label: "Role", value: npc.role },
-          { label: "Location", value: npc.location },
-          ...(npc.tip ? [{ label: "Tip", value: npc.tip }] : []),
-        ];
+        return mergeStatLines(statLines, [
+          ...(npc.tip ? [{ label: "Tip", value: npc.tip, icon: statIconFor("Tip") }] : []),
+          ...(npc.loot && npc.loot.length
+            ? [{ label: "Loot", value: npc.loot.join(", "), icon: statIconFor("Loot") }]
+            : []),
+        ]);
       }
       case "Fishing": {
         const spot = item as FishingSpot;
-        return [
-          { label: "Rank", value: spot.rank },
-          { label: "Notes", value: spot.note },
-        ];
+        return mergeStatLines(statLines, [
+          { label: "World", value: spot.world, icon: statIconFor("World") },
+          { label: "School", value: spot.school, icon: statIconFor("School", spot.school) },
+          { label: "Rank", value: spot.rank, icon: statIconFor("Rank") },
+          { label: "Notes", value: spot.note, icon: statIconFor("Note") },
+        ]);
       }
       case "Furniture": {
         const furni = item as Furniture;
-        return [
-          { label: "Location", value: furni.location },
+        return mergeStatLines(statLines, [
+          { label: "World", value: furni.world, icon: statIconFor("World") },
+          { label: "Location", value: furni.location, icon: statIconFor("Location") },
           ...(furni.description
-            ? [{ label: "Description", value: furni.description }]
+            ? [{ label: "Description", value: furni.description, icon: statIconFor("Description") }]
             : []),
-          ...(furni.interactive !== undefined
-            ? [{ label: "Interactive", value: furni.interactive ? "Yes" : "No" }]
-            : []),
-        ];
+        ]);
       }
       case "Locations": {
         const loc = item as Location;
-        return [
-          ...(loc.description ? [{ label: "Description", value: loc.description }] : []),
-          ...(loc.npcs && loc.npcs.length
-            ? [{ label: "NPCs", value: loc.npcs.join(", ") }]
-            : []),
-          ...(loc.bosses && loc.bosses.length
-            ? [{ label: "Bosses", value: loc.bosses.join(", ") }]
-            : []),
+        return mergeStatLines(statLines, [
+          ...(loc.description ? [{ label: "Description", value: loc.description, icon: statIconFor("Description") }] : []),
+          ...(loc.access ? [{ label: "Access", value: loc.access, icon: statIconFor("Access") }] : []),
           ...(loc.collectibles && loc.collectibles.length
-            ? [{ label: "Collectibles", value: loc.collectibles.join(", ") }]
+            ? [{ label: "Collectibles", value: loc.collectibles.join(", "), icon: statIconFor("Collectible") }]
             : []),
-        ];
+        ]);
       }
       default:
-        return [];
+        return statLines;
     }
   })();
 
@@ -610,53 +649,26 @@ function Details({
           </div>
         </div>
 
-        {description && (
+        {(description || detailLines.length > 0) && (
           <details className="accordion" open>
             <summary>Details & description</summary>
-            <div className="accordion__body">
-              <p className="panel__body">{description}</p>
-              {category === "Spells" && (
-                <ul className="pill-list">
-                  <li>Accuracy: {(item as Spell).accuracy}%</li>
-                  <li>Effect: {(item as Spell).effect}</li>
-                </ul>
-              )}
-              {category === "Fishing" && (
-                <ul className="pill-list">
-                  <li>World: {(item as FishingSpot).world}</li>
-                  <li>School: {(item as FishingSpot).school}</li>
-                  <li>Rank: {(item as FishingSpot).rank}</li>
-                </ul>
-              )}
-              {category === "Furniture" && (
-                <ul className="pill-list">
-                  <li>World: {(item as Furniture).world}</li>
-                  <li>Subcategory: {(item as Furniture).subcategory}</li>
-                </ul>
-              )}
-              {category === "Locations" && (
-                <ul className="pill-list">
-                  <li>World: {(item as Location).world}</li>
-                  {(item as Location).zone && <li>Zone: {(item as Location).zone}</li>}
-                  {(item as Location).npcs && (item as Location).npcs!.length > 0 && (
-                    <li>NPCs: {(item as Location).npcs!.join(", ")}</li>
-                  )}
-                  {(item as Location).bosses && (item as Location).bosses!.length > 0 && (
-                    <li>Bosses: {(item as Location).bosses!.join(", ")}</li>
-                  )}
-                </ul>
-              )}
-            </div>
-          </details>
-        )}
-
-        {moreDetails.length > 0 && (
-          <details className="accordion" open>
-            <summary>Full stat breakdown</summary>
             <div className="accordion__body stat-grid">
-              {moreDetails.map((line) => (
+              {description && <p className="panel__body stat-row__value">{description}</p>}
+              {detailLines.map((line) => (
                 <div className="stat-row" role="listitem" key={line.label}>
-                  <span className="stat-row__label">{line.label}</span>
+                  <span className="stat-row__label">
+                    {line.icon && (
+                      <img
+                        src={line.icon}
+                        alt=""
+                        className="stat-row__icon"
+                        onError={(e) => {
+                          e.currentTarget.style.display = "none";
+                        }}
+                      />
+                    )}
+                    {line.label}
+                  </span>
                   <span className="stat-row__value">{line.value}</span>
                 </div>
               ))}
