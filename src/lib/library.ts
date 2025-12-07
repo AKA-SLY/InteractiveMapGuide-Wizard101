@@ -37,7 +37,7 @@ export const libraryPathFromSlug = (
   formatter: (value: string) => string = slugify,
 ) => libraryPath(folder, name, extension, formatter);
 
-const worldArtFiles: Record<string, string> = {
+const worldBubbleFiles: Record<string, string> = {
   "wizard city": "images99d33ab103ab4ba2b1cc3c58d1455938.png",
   krokotopia: "images00e161ed394c40eda40c7eed0ef6bf82.png",
   marleybone: "images5501e6f32859477f997ab623b957cb35.png",
@@ -54,9 +54,30 @@ const worldArtFiles: Record<string, string> = {
   karamelle: "images11a1be42efa24d90b0b697e37c557e3d.png",
 };
 
-const worldArtFile = (name: string) =>
-  worldArtFiles[name.toLowerCase()] ?? `${formatLibraryFileName(name)}.png`;
+const worldMapFiles: Record<string, string> = {
+  "wizard city": "images07ea454d3ca44d5e8416fc2658e97ca1.png",
+  krokotopia: "images07fee8bd22ce45fe81f359b2764a1b22.png",
+  marleybone: "images08c75c2121b3453aade77791af05d8cd.png",
+  mooshu: "images09b68b776ba446cbb1bded475a13106d.png",
+  dragonspyre: "images0a1f2b26dfb346bca66e33c59c43c3dd.png",
+  celestia: "images0b3d88af600845d7a88b7b7cc05ec78d.png",
+  zafaria: "images0b6f0938bbe14abe81f165b90b2b0ca9.png",
+  avalon: "images0c79f3cd330840e2805022228d41daff.png",
+  azteca: "images0ce60c3425a04213b0bcf86010605819.png",
+  khrysalis: "images0e31b5afdab942adac738956b798ddd7.png",
+  polaris: "images0e3285712d7d45729751d559b78b99d3.png",
+  mirage: "images0e4b4e0594d543029baec5bbebfaa952.png",
+  empyrea: "images0eb2c58c96574c25914c8b30af927836.png",
+  karamelle: "images0ef7aba8d05e405f9734dcb23660d654.png",
+};
 
-export const worldBubblePath = (name: string) => libraryRoot("World map Images", worldArtFile(name));
+const worldArtFile = (
+  name: string,
+  library: Record<string, string>,
+) => library[name.toLowerCase()] ?? `${formatLibraryFileName(name)}.png`;
 
-export const worldMapPath = (name: string) => libraryRoot("World map Images", worldArtFile(name));
+export const worldBubblePath = (name: string) =>
+  libraryRoot("World map Images", worldArtFile(name, worldBubbleFiles));
+
+export const worldMapPath = (name: string) =>
+  libraryRoot("World map Images", worldArtFile(name, worldMapFiles));
