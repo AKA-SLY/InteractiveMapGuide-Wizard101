@@ -2,7 +2,7 @@ import { characters } from "./characters";
 import { fishing } from "./fishing";
 import { furniture } from "./furniture";
 import { gear } from "./gear";
-import { jewels, mounts, fireSpellCards, henchmen, minions } from "./galleries";
+import { jewels, mounts, henchmen, minions } from "./galleries";
 import { locations } from "./locations";
 import { spells } from "./spells";
 import { treasureCards } from "./treasureCards";
@@ -32,7 +32,6 @@ export const categories: {
   { key: "Characters", icon: w101Icon("Admin"), dataset: characters },
   { key: "Fishing", icon: w101Icon("Fish_Rank_1"), dataset: fishing },
   { key: "Locations", icon: w101Icon("Aquila"), dataset: locations },
-  { key: "Spell Cards", icon: w101Icon("Spell_Damage"), dataset: fireSpellCards },
   { key: "Henchmen", icon: w101Icon("All_Friends"), dataset: henchmen },
   { key: "Jewels", icon: w101Icon("Jewel"), dataset: jewels },
   { key: "Minions", icon: w101Icon("Minion"), dataset: minions },

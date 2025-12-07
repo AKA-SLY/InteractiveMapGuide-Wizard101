@@ -9,6 +9,7 @@ import { spells } from "./data/spells";
 import { treasureCards } from "./data/treasureCards";
 import { type WorldBubble, worlds } from "./data/worlds";
 import { extraSkillsIcon } from "./data/extraSkills";
+import { fireSpellCards } from "./data/galleries";
 import {
   type CategoryKey,
   type Character,
@@ -52,7 +53,7 @@ const schoolIcons: Record<School, string> = {
   Shadow: w101Icon("Shadow"),
 };
 
-const categoryIconFallback: Record<CategoryKey, string> = {
+const categoryIconFallback: Record<CategoryKey | "Spell Cards", string> = {
   Spells: w101Icon("Damage_Spell"),
   "Treasure Cards": w101Icon("Treasure_Card"),
   Gear: w101Icon("All_Items"),
@@ -60,6 +61,7 @@ const categoryIconFallback: Record<CategoryKey, string> = {
   Characters: w101Icon("Admin"),
   Fishing: w101Icon("Fish_Rank_1"),
   Locations: w101Icon("Aquila"),
+  "Spell Cards": w101Icon("Spell_Damage"),
   Gardening: w101Icon("Gardening"),
   Monstrology: w101Icon("Monstrology"),
   Cantrip: w101Icon("Cantrip"),
@@ -67,7 +69,6 @@ const categoryIconFallback: Record<CategoryKey, string> = {
 };
 
 const extraSkillKeys: CategoryKey[] = ["Gardening", "Fishing", "Monstrology", "Cantrip"];
-const SCRAPE_PAGE_COUNT = 10;
 const SCRAPE_COOLDOWN_MS = 7000;
 
 const placeholderThumb = (label: string) =>
@@ -94,6 +95,11 @@ const henchmanArt = (npc: Character) => {
 
   return undefined;
 };
+
+const npcPortrait = (npc: Character) =>
+  npc.world
+    ? libraryPath(`World Based NPC/${npc.world} NPC`, npc.name, "jpg", formatLibraryFileName)
+    : undefined;
 
 const formatPercent = (value: string | number) =>
   typeof value === "string"
@@ -220,7 +226,7 @@ const locationTemplate = (loc: Location) => [
   },
 ];
 
-function getItemImage(item: CatalogItem, category: CategoryKey) {
+function getItemImage(item: CatalogItem, category: ViewCategory) {
   if ((item as CatalogItem).image) return (item as CatalogItem).image as string;
 
   if (category === "Spells")
@@ -253,9 +259,13 @@ function getItemImage(item: CatalogItem, category: CategoryKey) {
   if (category === "Characters") {
     const npc = item as Character;
     return (
+      npcPortrait(npc) ??
       henchmanArt(npc) ??
       libraryPath("Icons", npc.role ?? "Characters", "webp", formatLibraryFileName)
     );
+  }
+  if (category === "Spell Cards") {
+    return libraryPath("Wizard101 Fire_Spells", item.name, "png", formatLibraryFileName);
   }
   if (category === "Fishing")
     return libraryPath(
@@ -281,7 +291,10 @@ type CatalogItem =
   | FishingSpot
   | TreasureCard
   | Furniture
-  | Location;
+  | Location
+  | GalleryItem;
+
+type ViewCategory = CategoryKey | "Spell Cards";
 
 function formatMeta(item: CatalogItem, active: string) {
   switch (active) {
@@ -316,6 +329,11 @@ function formatMeta(item: CatalogItem, active: string) {
       const zone = location.zone ? ` • ${location.zone}` : "";
       return `${location.world}${zone}`;
     }
+    case "Spell Cards": {
+      const card = item as GalleryItem;
+      const worldTag = card.tags?.[0];
+      return worldTag ? `${worldTag} • Spell card art` : "Spell card art";
+    }
     case "Minions": {
       const minion = item as GalleryItem;
       const worldTag = minion.tags?.[0];
@@ -326,9 +344,10 @@ function formatMeta(item: CatalogItem, active: string) {
   }
 }
 
-const subcategoriesFor = (item: CatalogItem, active: CategoryKey) => {
+const subcategoriesFor = (item: CatalogItem, active: ViewCategory) => {
   if (active === "Characters") return (item as Character).classification ?? [];
   if (active === "Minions") return (item as GalleryItem).tags ?? [];
+  if (active === "Spell Cards") return (item as GalleryItem).tags ?? [];
   return [];
 };
 
@@ -340,7 +359,7 @@ function Details({
   onSelectLocation,
 }: {
   item: CatalogItem;
-  category: CategoryKey;
+  category: ViewCategory;
   onClose: () => void;
   onSelectCharacter: (name: string) => void;
   onSelectLocation: (name: string) => void;
@@ -501,6 +520,21 @@ function Details({
           locationTemplate(loc),
         );
       }
+      case "Spell Cards": {
+        const card = item as GalleryItem;
+        return [
+          { label: "Type", value: "Spell card", icon: w101Icon("Spell_Damage") },
+          ...(card.tags?.length
+            ? [
+                {
+                  label: "Tags",
+                  value: card.tags.join(", "),
+                  icon: statIconFor("Category"),
+                },
+              ]
+            : []),
+        ];
+      }
       default:
         return [];
     }
@@ -514,17 +548,20 @@ function Details({
     if (category === "Fishing") return (item as FishingSpot).note;
     if (category === "Furniture") return (item as Furniture).description;
     if (category === "Locations") return (item as Location).description;
+    if (category === "Spell Cards")
+      return `Spell card artwork for ${(item as GalleryItem).name}.`;
     return undefined;
   })();
 
   const sources: SpellSource[] | undefined = (() => {
     if (category === "Spells") return (item as Spell).sources;
     if (category === "Treasure Cards") return (item as TreasureCard).sources;
-    if ((item as Gear).sources) return (item as Gear).sources;
-    if ((item as Character).sources) return (item as Character).sources;
-    if ((item as Furniture).sources) return (item as Furniture).sources;
-    if ((item as FishingSpot).sources) return (item as FishingSpot).sources;
-    if ((item as Location).sources) return (item as Location).sources;
+    if (category === "Gear") return (item as Gear).sources;
+    if (category === "Characters") return (item as Character).sources;
+    if (category === "Furniture") return (item as Furniture).sources;
+    if (category === "Fishing") return (item as FishingSpot).sources;
+    if (category === "Locations") return (item as Location).sources;
+    if (category === "Spell Cards") return undefined;
     return undefined;
   })();
 
@@ -733,28 +770,32 @@ function App() {
   const [school, setSchool] = useState<School>("All");
   const [search, setSearch] = useState<string>("");
   const [selected, setSelected] = useState<CatalogItem | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<ViewCategory>("Spells");
   const [worldFocus, setWorldFocus] = useState<WorldBubble | null>(null);
   const [page, setPage] = useState<number>(1);
   const [showImages, setShowImages] = useState<boolean>(true);
   const [tcOnly, setTcOnly] = useState<boolean>(false);
   const [characterFilter, setCharacterFilter] = useState<string>("All");
   const [minionFilter, setMinionFilter] = useState<string>("All Worlds");
+  const [spellView, setSpellView] = useState<"Spell list" | "Spell cards">("Spell list");
   const [extraSkillsOpen, setExtraSkillsOpen] = useState<boolean>(false);
   const [scrapeStatus, setScrapeStatus] = useState<string>("Idle");
   const [cooldownUntil, setCooldownUntil] = useState<number>(0);
   const [isScraping, setIsScraping] = useState<boolean>(false);
 
   const dataset = useMemo<CatalogItem[]>(() => {
-    const entry = categories.find((c) => c.key === category);
+    if (viewCategory === "Spell Cards") return fireSpellCards as CatalogItem[];
+
+    const entry = categories.find((c) => c.key === viewCategory);
 
     if (entry) return entry.dataset as CatalogItem[];
-    if (category === "Spells") return spells;
-    if (category === "Treasure Cards") return treasureCards;
-    if (category === "Gear") return gear;
-    if (category === "Furniture") return furniture;
-    if (category === "Locations") return locations as CatalogItem[];
+    if (viewCategory === "Spells") return spells;
+    if (viewCategory === "Treasure Cards") return treasureCards;
+    if (viewCategory === "Gear") return gear;
+    if (viewCategory === "Furniture") return furniture;
+    if (viewCategory === "Locations") return locations as CatalogItem[];
     return [];
-  }, [category]);
+  }, [viewCategory]);
 
   const characterFilters = useMemo(() => {
     const filters = new Set<string>(["All"]);
@@ -783,6 +824,9 @@ function App() {
     [],
   );
 
+  const viewCategory: ViewCategory =
+    category === "Spells" && spellView === "Spell cards" ? "Spell Cards" : category;
+
   const handleScrape = async () => {
     const now = Date.now();
     if (isScraping) return;
@@ -794,24 +838,53 @@ function App() {
     }
 
     setIsScraping(true);
-    setScrapeStatus(`Scraping ${SCRAPE_PAGE_COUNT} pages of ${category}...`);
+    setScrapeStatus(`Analyzing ${viewCategory} filters...`);
 
-    for (let pageIndex = 1; pageIndex <= SCRAPE_PAGE_COUNT; pageIndex++) {
-      setScrapeStatus(`Scraping page ${pageIndex} / ${SCRAPE_PAGE_COUNT} for ${category}...`);
-      // Simulate a respectful delay per page scrape to avoid stressing the source site.
-      // Replace this with real fetch logic if CORS and API rules allow.
-      // eslint-disable-next-line no-await-in-loop
-      await new Promise((resolve) => setTimeout(resolve, 250));
-    }
+    const helperTip = (() => {
+      if (viewCategory === "Spells") {
+        return tcOnly
+          ? "Showing only spells that grant a treasure card—try Balance for hybrid picks."
+          : "Tap a school to zero in on the right training path, then open a card for pip costs.";
+      }
+      if (viewCategory === "Spell Cards") {
+        return "Use the search bar to jump straight to spellements or art variants.";
+      }
+      if (viewCategory === "Gear") {
+        return "Filter by school to see gear that naturally buffs your class.";
+      }
+      if (viewCategory === "Characters") {
+        return "Use subcategory chips (Trainer, Boss, Vendor) to find who to talk to next.";
+      }
+      if (viewCategory === "Fishing") {
+        return "Match the rank and school to your lure before heading to that world.";
+      }
+      if (viewCategory === "Locations") {
+        return "Open a location to hop over to connected NPCs and bosses.";
+      }
+      return "Browse the cards and tap any item to open quick stats.";
+    })();
+
+    await new Promise((resolve) => setTimeout(resolve, 350));
+
+    const sampleNames = filtered
+      .slice(0, 3)
+      .map((item) => item.name)
+      .join(", ");
+
+    const helperStatus = `Helper ready: ${filtered.length} ${viewCategory.toLowerCase()} match${
+      filtered.length === 1 ? "" : "es"
+    }. ${sampleNames ? `Try ${sampleNames}. ` : ""}${helperTip}`;
+
+    setScrapeStatus(helperStatus);
 
     const nextCooldown = Date.now() + SCRAPE_COOLDOWN_MS;
-    setScrapeStatus(`Captured stat outlines for ${category}. Cooldown in progress...`);
+    setScrapeStatus(`${helperStatus} Cooldown in progress...`);
     setCooldownUntil(nextCooldown);
     setIsScraping(false);
 
     setTimeout(() => {
       setCooldownUntil(0);
-      setScrapeStatus("Ready to scrape again.");
+      setScrapeStatus("Helper ready again.");
     }, SCRAPE_COOLDOWN_MS);
   };
 
@@ -819,11 +892,17 @@ function App() {
     setPage(1);
     setCharacterFilter("All");
     setMinionFilter("All Worlds");
-  }, [category, school, search]);
+  }, [category, school, search, spellView]);
+
+  useEffect(() => {
+    if (category !== "Spells" || spellView !== "Spell list") {
+      setTcOnly(false);
+    }
+  }, [category, spellView]);
 
   useEffect(() => {
     if (category !== "Spells") {
-      setTcOnly(false);
+      setSpellView("Spell list");
     }
   }, [category]);
 
@@ -834,13 +913,17 @@ function App() {
         .includes(search.toLowerCase().trim());
 
       if (school === "All") {
-        if (category === "Spells" && tcOnly) {
+        if (viewCategory === "Spells" && tcOnly) {
           return (item as Spell).hasTreasureCard && matchesSearch;
         }
         return matchesSearch;
       }
 
-      if (category === "Spells") {
+      if (viewCategory === "Spell Cards") {
+        return matchesSearch;
+      }
+
+      if (viewCategory === "Spells") {
         const spell = item as Spell;
         return (
           spell.school === school &&
@@ -849,21 +932,21 @@ function App() {
         );
       }
 
-      if (category === "Treasure Cards") {
+      if (viewCategory === "Treasure Cards") {
         const tc = item as TreasureCard;
         return tc.school === school && matchesSearch;
       }
 
-      if (category === "Gear") {
+      if (viewCategory === "Gear") {
         return (item as Gear).school === school && matchesSearch;
       }
 
-      if (category === "Fishing") {
+      if (viewCategory === "Fishing") {
         const spot = item as FishingSpot;
         return (spot.school === school || spot.school === "Any") && matchesSearch;
       }
 
-      if (category === "Characters") {
+      if (viewCategory === "Characters") {
         const char = item as Character;
         if (characterFilter === "All") return matchesSearch;
 
@@ -871,7 +954,7 @@ function App() {
         return tags.some((tag) => tag.toLowerCase().includes(characterFilter.toLowerCase())) && matchesSearch;
       }
 
-      if (category === "Minions") {
+      if (viewCategory === "Minions") {
         const tags = (item as GalleryItem).tags ?? ["Unknown World"];
         const matchesTag = minionFilter === "All Worlds" || tags.includes(minionFilter);
         return matchesSearch && matchesTag;
@@ -879,7 +962,7 @@ function App() {
 
       return matchesSearch;
     });
-  }, [dataset, school, search, category, tcOnly, characterFilter, minionFilter]);
+  }, [dataset, school, search, viewCategory, tcOnly, characterFilter, minionFilter]);
 
   const sorted = useMemo(
     () => [...filtered].sort((a, b) => a.name.localeCompare(b.name)),
@@ -891,6 +974,7 @@ function App() {
     if (match) {
       setCategory("Characters");
       setSelected(match);
+      setSelectedCategory("Characters");
     }
   };
 
@@ -899,6 +983,7 @@ function App() {
     if (match) {
       setCategory("Locations");
       setSelected(match);
+      setSelectedCategory("Locations");
     }
   };
 
@@ -997,6 +1082,7 @@ function App() {
                     key={s}
                     className={s === school ? "school-pill active" : "school-pill"}
                     onClick={() => setSchool(s)}
+                    disabled={viewCategory === "Spell Cards"}
                     aria-pressed={s === school}
                     aria-label={`${s} school`}
                   >
@@ -1026,6 +1112,23 @@ function App() {
               </div>
             )}
 
+            {category === "Spells" && (
+              <div className="filter-rail" aria-label="Spell data type">
+                {["Spell list", "Spell cards"].map((mode) => (
+                  <button
+                    key={mode}
+                    className={
+                      spellView === mode ? "filter-pill active" : "filter-pill"
+                    }
+                    onClick={() => setSpellView(mode as typeof spellView)}
+                    aria-pressed={spellView === mode}
+                  >
+                    {mode}
+                  </button>
+                ))}
+              </div>
+            )}
+
             {category === "Minions" && minionSubcategories.length > 0 && (
               <div className="filter-rail" aria-label="Minion worlds">
                 {minionSubcategories.map((filter) => (
@@ -1044,7 +1147,7 @@ function App() {
             <div className="bookmark-header">
               <div>
                 <p className="eyebrow">Filter & search</p>
-                <h2>{category}</h2>
+                <h2>{viewCategory}</h2>
               </div>
               <p className="hint">
                 Pick a school, type a name, and tap a card. Everything lives in
@@ -1063,7 +1166,7 @@ function App() {
                   onChange={(e) => setSearch(e.target.value)}
                 />
               </div>
-              {category === "Spells" && (
+              {viewCategory === "Spells" && (
                 <label className="toggle" htmlFor="tc-only">
                   <input
                     id="tc-only"
@@ -1079,10 +1182,10 @@ function App() {
             <div className="scrape-tools">
               <div>
                 <p className="eyebrow">Data helper</p>
-                <h3 className="scrape-tools__title">Wizard101 Central scraper</h3>
+                <h3 className="scrape-tools__title">Guided navigation</h3>
                 <p className="hint">
-                  Pull {SCRAPE_PAGE_COUNT} pages for the active category with a built-in 7 second
-                  cooldown to avoid spamming.
+                  Summarizes your current filters and suggests where to explore next so the
+                  guide always points you toward useful picks.
                 </p>
               </div>
               <div className="scrape-tools__controls">
@@ -1091,7 +1194,7 @@ function App() {
                   onClick={handleScrape}
                   disabled={isScraping || cooldownUntil > Date.now()}
                 >
-                  {isScraping ? "Scraping..." : `Scrape 10 pages of ${category}`}
+                  {isScraping ? "Building tips..." : `Guide me through ${viewCategory}`}
                 </button>
                 <p className="hint" aria-live="polite">
                   {scrapeStatus}
@@ -1104,7 +1207,7 @@ function App() {
                 <p className="eyebrow" aria-live="polite">
                   {sorted.length} result{sorted.length === 1 ? "" : "s"}
                 </p>
-                <h3 className="panel__title">{category} picks</h3>
+                <h3 className="panel__title">{viewCategory} picks</h3>
               </div>
               <div className="row-controls">
                 <button className="ghost" onClick={() => setShowImages((v) => !v)}>
@@ -1142,33 +1245,36 @@ function App() {
               <div className="row-cards" role="list">
                 {pageItems.map((item) => {
                   const itemSchool =
-                    category === "Spells"
+                    viewCategory === "Spells"
                       ? (item as Spell).school
-                      : category === "Treasure Cards"
+                      : viewCategory === "Treasure Cards"
                         ? (item as TreasureCard).school
-                      : category === "Gear"
+                      : viewCategory === "Gear"
                         ? (item as Gear).school
-                        : category === "Fishing"
+                        : viewCategory === "Fishing"
                           ? (item as FishingSpot).school
                           : null;
 
-                  const itemSubcategories = subcategoriesFor(item, category);
+                  const itemSubcategories = subcategoriesFor(item, viewCategory);
 
                   const schoolIcon =
                     itemSchool && itemSchool !== "Any"
                       ? schoolIcons[itemSchool as School]
                       : null;
 
-                  const displayThumb = getItemImage(item, category);
+                  const displayThumb = getItemImage(item, viewCategory);
                   const displayFallback =
-                    categoryIconFallback[category] ?? placeholderThumb(item.name.slice(0, 8));
+                    categoryIconFallback[viewCategory] ?? placeholderThumb(item.name.slice(0, 8));
 
                   return (
                     <article
                       key={item.name}
                       className="row-card"
                       role="listitem"
-                      onClick={() => setSelected(item)}
+                      onClick={() => {
+                        setSelected(item);
+                        setSelectedCategory(viewCategory);
+                      }}
                     >
                       {showImages ? (
                         <img
@@ -1186,7 +1292,7 @@ function App() {
                       )}
                       <div className="row-card__body">
                         <h3>{item.name}</h3>
-                        <p className="row-card__meta">{formatMeta(item, category)}</p>
+                        <p className="row-card__meta">{formatMeta(item, viewCategory)}</p>
                         {itemSubcategories.length > 0 && (
                           <div className="row-card__tags" aria-label="Subcategory filters">
                             {itemSubcategories.map((tag) => (
@@ -1195,8 +1301,8 @@ function App() {
                                 className="chip-link"
                                 onClick={(event) => {
                                   event.stopPropagation();
-                                  if (category === "Characters") setCharacterFilter(tag);
-                                  if (category === "Minions") setMinionFilter(tag);
+                                  if (viewCategory === "Characters") setCharacterFilter(tag);
+                                  if (viewCategory === "Minions") setMinionFilter(tag);
                                 }}
                               >
                                 {tag}
@@ -1258,7 +1364,7 @@ function App() {
       {selected && (
         <Details
           item={selected}
-          category={category}
+          category={selectedCategory}
           onClose={() => setSelected(null)}
           onSelectCharacter={openCharacter}
           onSelectLocation={openLocation}

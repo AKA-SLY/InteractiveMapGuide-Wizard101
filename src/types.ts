@@ -164,7 +164,6 @@ export type CategoryKey =
   | "Fishing"
   | "Furniture"
   | "Locations"
-  | "Spell Cards"
   | "Henchmen"
   | "Jewels"
   | "Minions"
