@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#e9dfc5" />
+      <stop offset="100%" stop-color="#c5b49a" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="520" fill="url(#bg)" />
+  <rect x="40" y="40" width="820" height="440" rx="20" fill="#f7f1e0" stroke="#6b4b2d" stroke-width="8" />
+  <text x="450" y="270" text-anchor="middle" font-size="48" fill="#6b4b2d" font-family="serif">World map</text>
+</svg>
