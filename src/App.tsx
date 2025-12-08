@@ -72,7 +72,7 @@ const categoryIconFallback: Record<CategoryKey | "Spell Cards", string> = {
   Cantrip: w101Icon("Cantrip"),
   Mounts: w101Icon("Mount"),
   Castles: w101Icon("Castle"),
-  Scrolls: w101Icon("Scroll"),
+  Scrolls: w101Icon("Music_Scroll"),
   Quests: w101Icon("Quest"),
   Bosses: w101Icon("Warning_Red"),
   "Fishing Spells": w101Icon("Fishing"),
@@ -391,6 +391,9 @@ type CatalogItem =
 
 type ViewCategory = CategoryKey | "Spell Cards";
 
+// Display label helper (keeps internal keys stable but lets us rename in UI)
+const displayCategory = (key: ViewCategory) => (key === "Scrolls" ? "Music Scrolls" : key);
+
 function formatMeta(item: CatalogItem, active: string) {
   switch (active) {
     case "Spells": {
@@ -429,7 +432,8 @@ function formatMeta(item: CatalogItem, active: string) {
     }
     case "Scrolls": {
       const scroll = item as Furniture;
-      return `${scroll.world} • ${scroll.subcategory}`;
+      // Emphasize that this tab is for Music Scrolls specifically
+      return `${scroll.world} • Music Scroll`;
     }
     case "Locations": {
       const location = item as Location;
@@ -459,6 +463,50 @@ function formatMeta(item: CatalogItem, active: string) {
     default:
       return "";
   }
+}
+
+// Parse a Gear.stats string into comparable numeric stats
+type ParsedStats = Partial<Record<
+  | "Damage"
+  | "Resist"
+  | "Accuracy"
+  | "Health"
+  | "Pierce"
+  | "Power Pip"
+  | "Incoming Heal"
+  | "Outgoing Heal",
+  number
+>>;
+
+function parseGearStats(stats: string): ParsedStats {
+  const out: ParsedStats = {};
+  const parts = stats.split(/[,•]/);
+  for (const raw of parts) {
+    const s = raw.trim();
+    // Percent stats
+    const mPct = s.match(/([+-]?\d+)\s*%\s*(Damage|Resist|Accuracy|Pierce|Power\s*Pip|Incoming\s*Heal|Outgoing\s*Heal)/i);
+    if (mPct) {
+      const val = Number(mPct[1]);
+      const key = mPct[2]
+        .replace(/\s+/g, " ")
+        .replace(/\bPip\b/i, "Pip")
+        .replace(/\bPower pip\b/i, "Power Pip")
+        .replace(/\bincoming heal\b/i, "Incoming Heal")
+        .replace(/\boutgoing heal\b/i, "Outgoing Heal")
+        .replace(/^\w/, (c) => c.toUpperCase()) as keyof ParsedStats;
+      out[key] = (out[key] ?? 0) + val;
+      continue;
+    }
+    // Flat stats
+    const mFlat = s.match(/([+-]?\d+)\s*(Health)/i);
+    if (mFlat) {
+      const val = Number(mFlat[1]);
+      const key = mFlat[2].replace(/^\w/, (c) => c.toUpperCase()) as keyof ParsedStats;
+      out[key] = (out[key] ?? 0) + val;
+      continue;
+    }
+  }
+  return out;
 }
 
 const subcategoriesFor = (item: CatalogItem, active: ViewCategory) => {
@@ -874,7 +922,7 @@ function Details({
       <div className="panel">
         <header className="panel__header">
           <div>
-            <p className="eyebrow">{category}</p>
+            <p className="eyebrow">{displayCategory(category)}</p>
             <h3 className="panel__title">{item.name}</h3>
             <p className="panel__meta">{formatMeta(item, category)}</p>
           </div>
@@ -1039,6 +1087,25 @@ function App() {
   const [compareItems, setCompareItems] = useState<Gear[]>([]);
 
   const compareLimit = 5;
+
+  // Parse compare stats and compute per-stat maxima for color-coded VS effect
+  const parsedCompare = useMemo(() =>
+    compareItems.map((item) => ({ item, stats: parseGearStats(item.stats) })),
+  [compareItems]);
+
+  const compareMax = useMemo(() => {
+    const max: ParsedStats = {};
+    for (const entry of parsedCompare) {
+      const s = entry.stats;
+      for (const key in s) {
+        const k = key as keyof ParsedStats;
+        const val = s[k] as number | undefined;
+        if (val == null) continue;
+        if (max[k] == null || val > (max[k] as number)) max[k] = val;
+      }
+    }
+    return max;
+  }, [parsedCompare]);
 
   const viewCategory: ViewCategory =
     category === "Spells" && spellView === "Spell cards" ? "Spell Cards" : category;
@@ -1366,7 +1433,7 @@ function App() {
                 <span className="icon" aria-hidden>
                   <img src={c.icon} alt="" />
                 </span>
-                <span className="bookmark__label">{c.key}</span>
+                <span className="bookmark__label">{displayCategory(c.key as ViewCategory)}</span>
               </button>
             ))}
 
@@ -1406,7 +1473,7 @@ function App() {
                       <span className="icon" aria-hidden>
                         <img src={c.icon} alt="" />
                       </span>
-                      <span className="bookmark__label">{c.key}</span>
+                      <span className="bookmark__label">{displayCategory(c.key as ViewCategory)}</span>
                     </button>
                   ))}
                 </div>
@@ -1630,7 +1697,7 @@ function App() {
                 <p className="eyebrow" aria-live="polite">
                   {sorted.length} result{sorted.length === 1 ? "" : "s"}
                 </p>
-                <h3 className="panel__title">{viewCategory} picks</h3>
+                <h3 className="panel__title">{displayCategory(viewCategory)} picks</h3>
               </div>
               <div className="row-controls">
                 <button className="ghost" onClick={() => setShowImages((v) => !v)}>
@@ -1828,7 +1895,9 @@ function App() {
           {compareItems.length === 0 ? (
             <p className="hint">Add gear cards to compare up to five pieces.</p>
           ) : (
-            <div className="compare-drawer__grid">
+            <>
+              {compareItems.length >= 2 && <div className="vs-badge" aria-hidden>VS</div>}
+              <div className="compare-drawer__grid">
               {compareItems.map((piece) => (
                 <div key={piece.name} className="compare-card">
                   <div className="compare-card__header">
@@ -1845,11 +1914,30 @@ function App() {
                     </button>
                   </div>
                   <p className="compare-card__meta">{`${piece.type} • L${piece.level} • ${piece.subcategory}`}</p>
-                  <p className="compare-card__stat">{piece.stats}</p>
+                  {/* Stat pills with color-coded VS */}
+                  <div className="stat-pills">
+                    {Object.entries(parseGearStats(piece.stats)).map(([key, val]) => {
+                      const max = (compareMax as any)[key] as number | undefined;
+                      if (val == null) return null;
+                      let state: "win" | "loss" | "tie" = "tie";
+                      if (max != null) {
+                        if (val === max) state = "win";
+                        else if (val < max) state = "loss";
+                      }
+                      const unit = key === "Health" ? "" : "%";
+                      return (
+                        <span key={key} className={`stat-pill stat-pill--${state}`} title={`${key}`}>
+                          <strong>{key}:</strong> {val}
+                          {unit}
+                        </span>
+                      );
+                    })}
+                  </div>
                   <p className="compare-card__stat compare-card__stat--muted">{piece.location}</p>
                 </div>
               ))}
-            </div>
+              </div>
+            </>
           )}
         </div>
       </div>
@@ -1877,7 +1965,19 @@ function App() {
                 ✕
               </button>
             </header>
-            <p className="panel__body">{worldFocus.summary}</p>
+            <div className="world-art">
+              <img
+                className="world-art__img"
+                src={worldFocus.bubbleImage ?? worldBubblePath(worldFocus.name)}
+                alt={`${worldFocus.name} bubble art`}
+                onError={(e) => {
+                  if (e.currentTarget.src !== worldBubbleFallback) {
+                    e.currentTarget.src = worldBubbleFallback;
+                  }
+                }}
+              />
+              <p className="panel__body" style={{ margin: 0 }}>{worldFocus.summary}</p>
+            </div>
             <div className="map-frame">
               <div className="map-frame__canvas">
                 <img

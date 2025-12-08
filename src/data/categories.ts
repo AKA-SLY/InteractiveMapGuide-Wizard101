@@ -41,7 +41,7 @@ export const categories: {
   { key: "Gear", icon: w101Icon("All_Items"), dataset: gear },
   { key: "Furniture", icon: w101Icon("House"), dataset: furniture },
   { key: "Castles", icon: w101Icon("Castle"), dataset: castles },
-  { key: "Scrolls", icon: w101Icon("Scroll"), dataset: scrolls },
+  { key: "Scrolls", icon: w101Icon("Music_Scroll"), dataset: scrolls },
   { key: "Quests", icon: w101Icon("Quest"), dataset: quests },
   { key: "Characters", icon: w101Icon("Admin"), dataset: characters },
   { key: "Bosses", icon: w101Icon("Warning_Red"), dataset: bosses },

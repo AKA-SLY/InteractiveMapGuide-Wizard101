@@ -29,7 +29,96 @@ const iconSpell = (
   tags,
 });
 
-export const gardening: GalleryItem[] = [
+// Expand Gardening spells using the official images already placed in the repo.
+// We list the known filenames from public/W101 Images/ Extra Skill Spells/Gardening Spells
+// and auto-generate GalleryItems so they populate the app without manual entry.
+
+const gardeningFiles: { file: string; tags?: string[] }[] = [
+  { file: "(Spell)_Ant_Lion" },
+  { file: "(Spell)_Bee_Hive" },
+  { file: "(Spell)_Bee_Team", tags: ["Rank 2 gardening attack", "Hits 3 pests for 30 per rank"] },
+  { file: "(Spell)_Bee_Swarm" },
+  { file: "(Spell)_Bold_Magic" },
+  { file: "(Spell)_Brilliant_Beams", tags: ["Energy 5", "Pollinates large area"] },
+  { file: "(Spell)_Bug_Bolt", tags: ["Rank 1 gardening attack", "Removes one pest"] },
+  { file: "(Spell)_Deep_Freeze", tags: ["Rank 5 pest clear", "Freezes medium area"] },
+  { file: "(Spell)_Downpour" },
+  { file: "(Spell)_Dragonflies" },
+  { file: "(Spell)_Enchanted_Lg_Soil" },
+  { file: "(Spell)_Enchanted_Med_Soil" },
+  { file: "(Spell)_Enchanted_Sm_Soil" },
+  { file: "(Spell)_Flute_Duet" },
+  { file: "(Spell)_Flute_Ensemble" },
+  { file: "(Spell)_Flute_Solo" },
+  { file: "(Spell)_Fly_Swatter" },
+  { file: "(Spell)_Gusty_Winds" },
+  { file: "(Spell)_Large_Soil" },
+  { file: "(Spell)_Medium_Soil" },
+  { file: "(Spell)_Miniature_Bloodbats" },
+  { file: "(Spell)_Mist" },
+  { file: "(Spell)_Monsoon" },
+  { file: "(Spell)_Pest_Bomb" },
+  { file: "(Spell)_Pest_Zapper" },
+  { file: "(Spell)_Plant_All" },
+  { file: "(Spell)_Plow" },
+  { file: "(Spell)_Plow_All" },
+  { file: "(Spell)_Pungent_Bug_Spray" },
+  { file: "(Spell)_Putrid_Bug_Spray" },
+  { file: "(Spell)_Revive" },
+  { file: "(Spell)_Second_Spring" },
+  { file: "(Spell)_Shower" },
+  { file: "(Spell)_Small_Soil" },
+  { file: "(Spell)_Solar_Flares" },
+  { file: "(Spell)_Streaming_Sunlight" },
+  { file: "(Spell)_Strawman" },
+  { file: "(Spell)_Summon_Pixie" },
+  { file: "(Spell)_Touch_of_Magic" },
+  { file: "(Spell)_Warming_Rays" },
+  { file: "(Spell)_Wind_Chimes" },
+  { file: "(Spell)_Worker_Bee" },
+  { file: "(Item_Card)_Growzone_Layer", tags: ["Item card", "Adds temporary 3×3 large plot layer"] },
+  { file: "(Item_Card)_Summon_Pixie", tags: ["Item card", "Summons gardening pixie helper"] },
+  { file: "(Treasure_Card)_Baby_Sunbird" },
+  { file: "(Treasure_Card)_Bee_Swarm" },
+  { file: "(Treasure_Card)_Flute_Solo" },
+  { file: "(Treasure_Card)_Flute_Symphony" },
+  { file: "(Treasure_Card)_Fly_Swatter" },
+  { file: "(Treasure_Card)_Itsy_Bitsy_Spider" },
+  { file: "(Treasure_Card)_Pungent_Bug_Spray" },
+  { file: "(Treasure_Card)_Putrid_Bug_Spray" },
+  { file: "(Treasure_Card)_Second_Spring" },
+  { file: "(Treasure_Card)_Shower" },
+  { file: "(Treasure_Card)_Solar_Flares" },
+  { file: "(Treasure_Card)_Strawman" },
+  { file: "(Treasure_Card)_Streaming_Sunlight" },
+  { file: "(Treasure_Card)_Summon_Pixie" },
+  { file: "(Treasure_Card)_Supreme_Sunburst" },
+];
+
+const prettifyGardeningName = (file: string) => {
+  // Strip leading (Type)_ and replace underscores with spaces
+  const noPrefix = file.replace(/^\((?:Spell|Item_Card|Treasure_Card|TreasureCard)\)_/i, "");
+  // Friendly expansions
+  return noPrefix
+    .replace(/_/g, " ")
+    .replace(/\bLg\b/g, "Large")
+    .replace(/\bSm\b/g, "Small")
+    .trim();
+};
+
+const generatedGardening: GalleryItem[] = gardeningFiles.map(({ file, tags }) =>
+  spellCard(
+    prettifyGardeningName(file),
+    "Gardening",
+    "Extra Skill Spells/Gardening Spells",
+    file,
+    tags ?? []
+  ),
+);
+
+// Deduplicate by name while preserving the richer tag entries from the curated list below.
+const curatedGardening: GalleryItem[] = [
+  // Keep a few curated items with helpful tags; they will override generated entries of same name
   spellCard(
     "Bee Team",
     "Gardening",
@@ -44,35 +133,17 @@ export const gardening: GalleryItem[] = [
     "(Item_Card)_Growzone_Layer",
     ["Item card", "Adds temporary 3×3 large plot layer"],
   ),
-  spellCard(
-    "Summon Pixie",
-    "Gardening",
-    "Extra Skill Spells/Gardening Spells",
-    "(Item_Card)_Summon_Pixie",
-    ["Item card", "Summons gardening pixie helper"],
-  ),
-  spellCard(
-    "Bug Bolt",
-    "Gardening",
-    "Extra Skill Spells/Gardening Spells",
-    "(Spell)_Bug_Bolt",
-    ["Rank 1 gardening attack", "Removes one pest"],
-  ),
-  spellCard(
-    "Brilliant Beams",
-    "Gardening",
-    "Extra Skill Spells/Gardening Spells",
-    "(Spell)_Brilliant_Beams",
-    ["Energy 5", "Pollinates large area"],
-  ),
-  spellCard(
-    "Deep Freeze",
-    "Gardening",
-    "Extra Skill Spells/Gardening Spells",
-    "(Spell)_Deep_Freeze",
-    ["Rank 5 pest clear", "Freezes medium area"],
-  ),
 ];
+
+const mergeByName = (items: GalleryItem[]) => {
+  const map = new Map<string, GalleryItem>();
+  for (const it of items) {
+    map.set(it.name.toLowerCase(), it);
+  }
+  return Array.from(map.values());
+};
+
+export const gardening: GalleryItem[] = mergeByName([...generatedGardening, ...curatedGardening]);
 
 export const monstrology: GalleryItem[] = [
   iconSpell(

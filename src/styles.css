@@ -1072,6 +1072,69 @@ input[type="text"] {
   color: #7c66b7;
 }
 
+/* VS badge and stat pills for color-coded compare */
+.vs-badge {
+  position: sticky;
+  top: 6px;
+  margin: 4px 0 8px;
+  width: max-content;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #5b35a5;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  box-shadow: 0 6px 16px rgba(41, 20, 50, 0.25);
+}
+
+.stat-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid transparent;
+}
+.stat-pill strong { font-weight: 700; }
+.stat-pill--win {
+  background: #e7f9ec;
+  color: #1c6b2d;
+  border-color: #9bd3ac;
+}
+.stat-pill--tie {
+  background: #f1eaff;
+  color: #4b3580;
+  border-color: #c8b7ee;
+}
+.stat-pill--loss {
+  background: #fff0f0;
+  color: #8a2b2b;
+  border-color: #f1b3b3;
+}
+
+/* World art (bubble preview) inside world popup */
+.world-art {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 6px;
+}
+.world-art__img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #c5b5e6;
+  box-shadow: 0 6px 18px rgba(27, 11, 45, 0.2);
+}
+
 @media (max-width: 900px) {
   .content-layout {
     grid-template-columns: 1fr;
