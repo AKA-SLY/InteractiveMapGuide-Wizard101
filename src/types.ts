@@ -114,6 +114,7 @@ export type GalleryItem = {
   category: string;
   image: string;
   tags?: string[];
+  wikiUrl?: string;
 };
 
 export type Character = {
@@ -163,6 +164,8 @@ export type CategoryKey =
   | "Characters"
   | "Fishing"
   | "Furniture"
+  | "Castles"
+  | "Scrolls"
   | "Locations"
   | "Henchmen"
   | "Jewels"
@@ -170,4 +173,6 @@ export type CategoryKey =
   | "Mounts"
   | "Gardening"
   | "Monstrology"
-  | "Cantrip";
+  | "Cantrip"
+  | "Bosses"
+  | "Fishing Spells";

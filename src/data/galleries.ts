@@ -16,6 +16,9 @@ const readableName = (fileName: string, prefix?: string) => {
   return withoutPrefix.replace(/_/g, " ").trim();
 };
 
+const wikiUrlFor = (name: string, category: string) =>
+  `https://www.wizard101central.com/wiki/${encodeURIComponent(category)}:${encodeURIComponent(name.replace(/\s+/g, "_"))}`;
+
 const buildGallery = (
   files: readonly string[],
   folder: string,
@@ -28,6 +31,7 @@ const buildGallery = (
     category,
     image: libraryRoot(folder, file),
     tags: buildTags?.(file),
+    wikiUrl: wikiUrlFor(readableName(file, prefix), category),
   }));
 
 const inferWorldTag = (file: string) => {
