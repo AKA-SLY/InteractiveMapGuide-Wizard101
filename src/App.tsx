@@ -99,7 +99,8 @@ const henchmanArt = (npc: Character) => {
   }
 
   if (/hench/i.test(npc.role)) {
-    return libraryPath("Henchment", npc.name, "png", formatLibraryFileName);
+    // Correct folder name per W101 Images structure
+    return libraryPath("Henchmen", npc.name, "png", formatLibraryFileName);
   }
 
   return undefined;
@@ -238,17 +239,18 @@ const locationTemplate = (loc: Location) => [
 function getItemImage(item: CatalogItem, category: ViewCategory) {
   if ((item as CatalogItem).image) return (item as CatalogItem).image as string;
 
-  if (category === "Spells")
-    return libraryPath(
-      "Wizard101 Fire_Spells",
-      (item as Spell).name,
-      "png",
-      formatLibraryFileName,
-    );
+  if (category === "Spells") {
+    const spell = item as Spell;
+    // Use school-based spell folders, e.g., "Wizard101 Fire_Spells"
+    const schoolFolder = `Wizard101 ${spell.school}_Spells`;
+    return libraryPath(schoolFolder, spell.name, "png", formatLibraryFileName);
+  }
   if (category === "Treasure Cards") {
     const tc = item as TreasureCard;
+    // Use school-based spell folders for related treasure card art
+    const schoolFolder = `Wizard101 ${tc.school}_Spells`;
     return libraryPath(
-      "Wizard101 Fire_Spells",
+      schoolFolder,
       treasureCardArtName(tc.name, tc.relatedSpell),
       "png",
       formatLibraryFileName,
