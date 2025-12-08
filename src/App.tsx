@@ -22,6 +22,7 @@ import {
   type SpellSource,
   type Location,
   type GalleryItem,
+  type Quest,
 } from "./types";
 import worldBubbleFallback from "./assets/icons/worlds/bubble-fallback.svg";
 import worldMapFallback from "./assets/icons/worlds/map-fallback.svg";
@@ -69,6 +70,7 @@ const categoryIconFallback: Record<CategoryKey | "Spell Cards", string> = {
   Mounts: w101Icon("Mount"),
   Castles: w101Icon("Castle"),
   Scrolls: w101Icon("Scroll"),
+  Quests: w101Icon("Quest"),
   Bosses: w101Icon("Warning_Red"),
   "Fishing Spells": w101Icon("Fishing"),
 };
@@ -283,6 +285,9 @@ function getItemImage(item: CatalogItem, category: ViewCategory) {
   if (category === "Spell Cards") {
     return libraryPath("Wizard101 Fire_Spells", item.name, "png", formatLibraryFileName);
   }
+  if (category === "Quests") {
+    return libraryPath("Icons", "Quest", "webp", formatLibraryFileName);
+  }
   if (category === "Fishing")
     return libraryPath(
       "Fishes",
@@ -301,6 +306,7 @@ function getItemImage(item: CatalogItem, category: ViewCategory) {
 }
 
 type CatalogItem =
+  | Quest
   | Spell
   | Gear
   | Character
@@ -356,6 +362,11 @@ function formatMeta(item: CatalogItem, active: string) {
       const location = item as Location;
       const zone = location.zone ? ` • ${location.zone}` : "";
       return `${location.world}${zone}`;
+    }
+    case "Quests": {
+      const quest = item as Quest;
+      const questWorld = quest.world ? `${quest.world} • ` : "";
+      return `${questWorld}${quest.category ?? "Quest"}`;
     }
     case "Spell Cards": {
       const card = item as GalleryItem;
@@ -567,6 +578,17 @@ function Details({
             { label: "Location", value: scroll.location, icon: statIconFor("Location") },
           ],
           furnitureTemplate(scroll),
+        );
+      }
+      case "Quests": {
+        const quest = item as Quest;
+        return mergeStatLines(
+          [
+            { label: "World", value: quest.world ?? "Wizard City", icon: statIconFor("World") },
+            { label: "Category", value: quest.category ?? "Quest", icon: statIconFor("Category") },
+            ...(quest.description ? [{ label: "Description", value: quest.description }] : []),
+          ],
+          quest.sources?.length ? quest.sources : [],
         );
       }
       case "Locations": {
