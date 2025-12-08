@@ -392,6 +392,7 @@ const subcategoriesFor = (item: CatalogItem, active: ViewCategory) => {
   if (active === "Jewels") return (item as GalleryItem).tags?.map((tag) => `${tag} Jewel`) ?? [];
   if (active === "Minions") return (item as GalleryItem).tags ?? [];
   if (active === "Spell Cards") return (item as GalleryItem).tags ?? [];
+  if (active === "Quests") return [(item as Quest).category ?? "Quest"];
   return [];
 };
 
@@ -659,6 +660,8 @@ function Details({
     return undefined;
   })();
 
+  const wikiUrl = (item as { wikiUrl?: string }).wikiUrl;
+
   const sources: SpellSource[] | undefined = (() => {
     if (category === "Spells") return (item as Spell).sources;
     if (category === "Treasure Cards") return (item as TreasureCard).sources;
@@ -810,6 +813,11 @@ function Details({
               }}
             />
             <p className="hint">Official art can replace this placeholder.</p>
+            {wikiUrl && (
+              <a className="chip-link chip-link--inline" href={wikiUrl} target="_blank" rel="noreferrer">
+                View wiki article
+              </a>
+            )}
           </div>
           <div className="panel__stats" role="list">
             {statLines.map((line) => (
@@ -983,6 +991,13 @@ function App() {
       return ["All", ...list];
     }
 
+    if (category === "Quests") {
+      const tags = new Set<string>();
+      (dataset as Quest[]).forEach((quest) => tags.add(quest.category ?? "Quest"));
+      const list = Array.from(tags).sort();
+      return ["All", ...list];
+    }
+
     if (category === "Jewels") {
       const tags = new Set<string>();
       (dataset as GalleryItem[]).forEach((item) =>
@@ -1088,6 +1103,12 @@ function App() {
         const tags = (item as GalleryItem).tags ?? ["Other Jewel"];
         const matchesSub =
           subcategoryFilter === "All" || tags.includes(subcategoryFilter.replace(/ Jewel$/, ""));
+        return matchesSearch && matchesSub;
+      }
+
+      if (viewCategory === "Quests") {
+        const quest = item as Quest;
+        const matchesSub = subcategoryFilter === "All" || quest.category === subcategoryFilter;
         return matchesSearch && matchesSub;
       }
 
@@ -1386,7 +1407,10 @@ function App() {
               </div>
             )}
 
-            {(category === "Gear" || category === "Furniture" || category === "Jewels") &&
+            {(category === "Gear" ||
+              category === "Furniture" ||
+              category === "Jewels" ||
+              category === "Quests") &&
               itemSubcategories.length > 0 && (
                 <div className="filter-rail" aria-label="Item subcategories">
                   {itemSubcategories.map((filter) => (
@@ -1573,7 +1597,8 @@ function App() {
                                   if (
                                     viewCategory === "Gear" ||
                                     viewCategory === "Furniture" ||
-                                    viewCategory === "Jewels"
+                                    viewCategory === "Jewels" ||
+                                    viewCategory === "Quests"
                                   )
                                     setSubcategoryFilter(tag);
                                 }}

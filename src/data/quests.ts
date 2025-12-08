@@ -2,6 +2,20 @@ import { type Quest } from "../types";
 
 export const quests: Quest[] = [
   {
+    name: "The Sixth School",
+    world: "Wizard City",
+    category: "Main Quest",
+    description: "Early storyline step that introduces Malistaire's motives.",
+    wikiUrl: "https://wiki.wizard101central.com/wiki/Quest:The_Sixth_School",
+  },
+  {
+    name: "Trial of the Spheres",
+    world: "Celestia",
+    category: "Dungeon Quest",
+    description: "Closing the Celestia arc with a multi-battle gauntlet.",
+    wikiUrl: "https://wiki.wizard101central.com/wiki/Quest:Trial_of_the_Spheres",
+  },
+  {
     name: "Advanced Combat",
     world: "Wizard City",
     category: "Side Quest",

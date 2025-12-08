@@ -150,6 +150,7 @@ export type Character = {
   loot?: string[];
   tip?: string;
   image?: string;
+  wikiUrl?: string;
   sources?: SpellSource[];
 };
 
@@ -164,6 +165,7 @@ export type FishingSpot = {
   xp?: number;
   size?: string;
   image?: string;
+  wikiUrl?: string;
   sources?: SpellSource[];
 };
 

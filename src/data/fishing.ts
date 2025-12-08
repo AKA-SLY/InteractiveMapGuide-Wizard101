@@ -5,6 +5,9 @@ import { fishFiles } from "./libraryFiles";
 const fishImage = (name: string) =>
   libraryRoot("Fishes", `Fish_${name.replace(/\s+/g, "_")}.png`);
 
+const fishWiki = (name: string) =>
+  `https://www.wizard101central.com/wiki/Fish:${encodeURIComponent(name.replace(/\s+/g, "_"))}`;
+
 const readableName = (fileName: string) =>
   fileName.replace(/^Fish_/, "").replace(/\.[^.]+$/, "").replace(/_/g, " ");
 
@@ -15,6 +18,7 @@ const generatedFishing: FishingSpot[] = fishFiles.map((file) => ({
   rank: "Unknown",
   note: "Image reference added from library.",
   image: libraryRoot("Fishes", file),
+  wikiUrl: fishWiki(readableName(file)),
 }));
 
 const detailedFishing: FishingSpot[] = [
@@ -25,6 +29,7 @@ const detailedFishing: FishingSpot[] = [
     rank: "Rank 1",
     note: "Common starter fish found around the Commons pond.",
     image: fishImage("Icecuda"),
+    wikiUrl: fishWiki("Icecuda"),
   },
   {
     name: "Grape Jellyfish",
@@ -33,6 +38,7 @@ const detailedFishing: FishingSpot[] = [
     rank: "Rank 1",
     note: "Easier to catch in the Oasis when using Reveal Fish School.",
     image: fishImage("Grape Jellyfish"),
+    wikiUrl: fishWiki("Grape Jellyfish"),
   },
   {
     name: "Silver Streak",
@@ -255,6 +261,8 @@ const detailedFishing: FishingSpot[] = [
 const detailedNames = new Set(detailedFishing.map((fish) => fish.name));
 
 export const fishing: FishingSpot[] = [
-  ...detailedFishing,
-  ...generatedFishing.filter((fish) => !detailedNames.has(fish.name)),
+  ...detailedFishing.map((fish) => ({ ...fish, wikiUrl: fish.wikiUrl ?? fishWiki(fish.name) })),
+  ...generatedFishing
+    .filter((fish) => !detailedNames.has(fish.name))
+    .map((fish) => ({ ...fish, wikiUrl: fish.wikiUrl ?? fishWiki(fish.name) })),
 ];
