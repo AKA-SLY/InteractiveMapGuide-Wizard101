@@ -1,6 +1,7 @@
 import { type Gear } from "../types";
+import { testGear } from "./gearTest";
 
-export const gear: Gear[] = [
+const baseGear: Gear[] = [
   {
     name: "Novice Fire Hat",
     school: "Fire",
@@ -86,3 +87,7 @@ export const gear: Gear[] = [
     setBonus: "+4% Resist (2pcs), +6% Damage (3pcs), +10% Incoming Heal (4pcs)",
   },
 ];
+
+// Merge in test gear items from JSON to populate the app as requested.
+// Keep test data after base items so curated examples remain visible first.
+export const gear: Gear[] = [...baseGear, ...testGear];
