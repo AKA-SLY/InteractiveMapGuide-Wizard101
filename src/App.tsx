@@ -1261,27 +1261,14 @@ function App() {
 
   return (
     <div className="page">
-      <div className="top-bar">
-        <div>
-          <p className="eyebrow">Wizard101 toolkit</p>
-          <h1>Interactive Guide</h1>
-          <p className="hint top-bar__lede">
-            Compact navigation keeps everything visible on a 1980×1080 display while
-            you hop between spells, gear, locations, and worlds.
-          </p>
-        </div>
-        <div className="top-bar__actions">
-          <a
-            className="primary primary--compact"
-            href="https://aka-sly.github.io/InteractiveMapGuide-Wizard101/"
-          >
-            Live preview
-          </a>
-          <button className="ghost ghost--compact" onClick={jumpToList}>
-            Jump to list
-          </button>
-        </div>
-      </div>
+      {/* Floating live preview button retained after removing top area */}
+      <a
+        className="live-preview-fab"
+        href="https://aka-sly.github.io/InteractiveMapGuide-Wizard101/"
+        aria-label="Open live preview"
+      >
+        Live preview
+      </a>
 
       <div className="info-rail" aria-label="XML stats and shortcuts">
         <div className="data-stats__card data-stats__card--compact">

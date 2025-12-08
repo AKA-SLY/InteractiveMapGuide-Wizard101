@@ -36,7 +36,8 @@ a { color: inherit; }
   min-height: 100vh;
   background: linear-gradient(180deg, rgba(97, 78, 156, 0.12), transparent 18%),
     radial-gradient(circle at 8% 22%, rgba(71, 43, 124, 0.06), transparent 32%);
-  max-width: 1380px;
+  /* Expand to 1080p-friendly canvas */
+  max-width: 1920px;
   margin: 0 auto;
   width: 100%;
   padding: 10px 16px 150px;
@@ -63,6 +64,26 @@ a { color: inherit; }
 
 .top-bar__lede {
   max-width: 720px;
+}
+
+/* Floating Live Preview button (FAB) */
+.live-preview-fab {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: 1000;
+  background: #5b35a5;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgba(41, 20, 50, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.live-preview-fab:hover {
+  background: #6a41bd;
 }
 
 h1 {
