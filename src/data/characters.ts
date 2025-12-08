@@ -1,7 +1,9 @@
 import { formatLibraryFileName, libraryPath } from "../lib/library";
 import { type Character } from "../types";
 
-export const characters: Character[] = [
+const npcWiki = (name: string) =>
+  `https://www.wizard101central.com/wiki/NPC:${encodeURIComponent(name.replace(/\s+/g, "_"))}`;
+const characterEntries: Character[] = [
   {
     name: "Merle Ambrose",
     role: "Headmaster",
@@ -17,6 +19,7 @@ export const characters: Character[] = [
       "jpg",
       formatLibraryFileName,
     ),
+    wikiUrl: npcWiki("Merle Ambrose"),
   },
   {
     name: "Gamma",
@@ -33,6 +36,7 @@ export const characters: Character[] = [
       "jpg",
       formatLibraryFileName,
     ),
+    wikiUrl: npcWiki("Gamma"),
   },
   {
     name: "Eloise Merryweather",
@@ -525,3 +529,8 @@ export const characters: Character[] = [
     ),
   },
 ];
+
+export const characters: Character[] = characterEntries.map((npc) => ({
+  ...npc,
+  wikiUrl: npc.wikiUrl ?? npcWiki(npc.name),
+}));

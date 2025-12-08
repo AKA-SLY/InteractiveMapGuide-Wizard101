@@ -34,6 +34,7 @@ import {
   worldBubblePath,
   worldMapPath,
 } from "./lib/library";
+import { xmlDataStats } from "./data/xmlData";
 
 const PAGE_SIZE = 8;
 
@@ -60,6 +61,7 @@ const categoryIconFallback: Record<CategoryKey | "Spell Cards", string> = {
   Gear: w101Icon("All_Items"),
   Furniture: w101Icon("House"),
   Characters: w101Icon("Admin"),
+  Henchmen: w101Icon("Minion"),
   Fishing: w101Icon("Fish_Rank_1"),
   Locations: w101Icon("Aquila"),
   "Spell Cards": w101Icon("Spell_Damage"),
@@ -75,18 +77,10 @@ const categoryIconFallback: Record<CategoryKey | "Spell Cards", string> = {
   "Fishing Spells": w101Icon("Fishing"),
 };
 const extraSkillKeys: CategoryKey[] = ["Gardening", "Monstrology", "Cantrip", "Fishing Spells"];
-const npcCategoryKeys: CategoryKey[] = ["Characters", "Minions", "Bosses"];
+const npcCategoryKeys: CategoryKey[] = ["Characters", "Minions", "Henchmen", "Bosses"];
 const housingCategoryKeys: CategoryKey[] = ["Furniture", "Castles", "Scrolls"];
-const SCRAPE_COOLDOWN_MS = 7000;
-
 const placeholderThumb = (label: string) =>
   `https://dummyimage.com/240x240/f4e6c4/2b1441&text=${encodeURIComponent(label)}`;
-
-const wikiUrlFor = (name: string, namespace?: string) => {
-  const slug = name.trim().replace(/\s+/g, "_");
-  const prefix = namespace ? `${encodeURIComponent(namespace)}:` : "";
-  return `https://www.wizard101central.com/wiki/${prefix}${encodeURIComponent(slug)}`;
-};
 
 const treasureCardArtName = (name: string, relatedSpell?: string) => {
   const baseName = relatedSpell ?? name.replace(/\(TC\)/gi, "").trim();
@@ -390,11 +384,15 @@ function formatMeta(item: CatalogItem, active: string) {
 
 const subcategoriesFor = (item: CatalogItem, active: ViewCategory) => {
   if (active === "Characters") return (item as Character).classification ?? [];
-  if (active === "Gear") return [(item as Gear).subcategory];
+  if (active === "Gear") {
+    const piece = item as Gear;
+    return [piece.type, piece.subcategory].filter(Boolean);
+  }
   if (active === "Furniture") return [(item as Furniture).subcategory];
   if (active === "Jewels") return (item as GalleryItem).tags?.map((tag) => `${tag} Jewel`) ?? [];
   if (active === "Minions") return (item as GalleryItem).tags ?? [];
   if (active === "Spell Cards") return (item as GalleryItem).tags ?? [];
+  if (active === "Quests") return [(item as Quest).category ?? "Quest"];
   return [];
 };
 
@@ -414,7 +412,6 @@ function Details({
   const thumb = getItemImage(item, category);
   const thumbFallback =
     categoryIconFallback[category] ?? placeholderThumb(item.name.slice(0, 8));
-  const wikiLink = (item as { wikiUrl?: string }).wikiUrl ?? wikiUrlFor(item.name, category);
 
   const linkToLocation = (name: string) => (
     <button className="chip-link" onClick={() => onSelectLocation(name)}>
@@ -663,6 +660,8 @@ function Details({
     return undefined;
   })();
 
+  const wikiUrl = (item as { wikiUrl?: string }).wikiUrl;
+
   const sources: SpellSource[] | undefined = (() => {
     if (category === "Spells") return (item as Spell).sources;
     if (category === "Treasure Cards") return (item as TreasureCard).sources;
@@ -814,6 +813,11 @@ function Details({
               }}
             />
             <p className="hint">Official art can replace this placeholder.</p>
+            {wikiUrl && (
+              <a className="chip-link chip-link--inline" href={wikiUrl} target="_blank" rel="noreferrer">
+                View wiki article
+              </a>
+            )}
           </div>
           <div className="panel__stats" role="list">
             {statLines.map((line) => (
@@ -835,12 +839,6 @@ function Details({
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="panel__links">
-          <a className="chip-link" href={wikiLink} target="_blank" rel="noreferrer">
-            Wizard101Central wiki page
-          </a>
         </div>
 
         {(description || detailLines.length > 0) && (
@@ -930,9 +928,6 @@ function App() {
   const [npcOpen, setNpcOpen] = useState<boolean>(false);
   const [housingOpen, setHousingOpen] = useState<boolean>(false);
   const [subcategoryFilter, setSubcategoryFilter] = useState<string>("All");
-  const [scrapeStatus, setScrapeStatus] = useState<string>("Idle");
-  const [cooldownUntil, setCooldownUntil] = useState<number>(0);
-  const [isScraping, setIsScraping] = useState<boolean>(false);
 
   const viewCategory: ViewCategory =
     category === "Spells" && spellView === "Spell cards" ? "Spell Cards" : category;
@@ -981,7 +976,10 @@ function App() {
   const itemSubcategories = useMemo(() => {
     if (category === "Gear") {
       const tags = new Set<string>();
-      (dataset as Gear[]).forEach((piece) => tags.add(piece.subcategory));
+      (dataset as Gear[]).forEach((piece) => {
+        tags.add(piece.type);
+        tags.add(piece.subcategory);
+      });
       const list = Array.from(tags).sort();
       return ["All", ...list];
     }
@@ -989,6 +987,13 @@ function App() {
     if (category === "Furniture") {
       const tags = new Set<string>();
       (dataset as Furniture[]).forEach((item) => tags.add(item.subcategory));
+      const list = Array.from(tags).sort();
+      return ["All", ...list];
+    }
+
+    if (category === "Quests") {
+      const tags = new Set<string>();
+      (dataset as Quest[]).forEach((quest) => tags.add(quest.category ?? "Quest"));
       const list = Array.from(tags).sort();
       return ["All", ...list];
     }
@@ -1028,76 +1033,6 @@ function App() {
     () => categories.filter((entry) => extraSkillKeys.includes(entry.key)),
     [],
   );
-
-  const handleScrape = async () => {
-    const now = Date.now();
-    if (isScraping) return;
-
-    if (now < cooldownUntil) {
-      const waitSeconds = Math.ceil((cooldownUntil - now) / 1000);
-      setScrapeStatus(`Cooldown active. Try again in ${waitSeconds}s.`);
-      return;
-    }
-
-    setIsScraping(true);
-    setScrapeStatus(`Analyzing ${viewCategory} filters...`);
-
-    const helperTip = (() => {
-      if (viewCategory === "Spells") {
-        return tcOnly
-          ? "Showing only spells that grant a treasure card—try Balance for hybrid picks."
-          : "Tap a school to zero in on the right training path, then open a card for pip costs.";
-      }
-      if (viewCategory === "Spell Cards") {
-        return "Use the search bar to jump straight to spellements or art variants.";
-      }
-      if (viewCategory === "Gear") {
-        return "Filter by school to see gear that naturally buffs your class.";
-      }
-      if (viewCategory === "Characters") {
-        return "Use subcategory chips (Trainer, Boss, Vendor) to find who to talk to next.";
-      }
-      if (viewCategory === "Bosses") {
-        return "Filter by world to find the right story boss before porting in.";
-      }
-      if (viewCategory === "Fishing") {
-        return "Match the rank and school to your lure before heading to that world.";
-      }
-      if (viewCategory === "Fishing Spells") {
-        return "Use these fishing spells when you need to reset or reveal fish schools.";
-      }
-      if (viewCategory === "Furniture" || viewCategory === "Castles" || viewCategory === "Scrolls") {
-        return "Open the housing tab to browse indoor, outdoor, and wall options.";
-      }
-      if (viewCategory === "Locations") {
-        return "Open a location to hop over to connected NPCs and bosses.";
-      }
-      return "Browse the cards and tap any item to open quick stats.";
-    })();
-
-    await new Promise((resolve) => setTimeout(resolve, 350));
-
-    const sampleNames = filtered
-      .slice(0, 3)
-      .map((item) => item.name)
-      .join(", ");
-
-    const helperStatus = `Helper ready: ${filtered.length} ${viewCategory.toLowerCase()} match${
-      filtered.length === 1 ? "" : "es"
-    }. ${sampleNames ? `Try ${sampleNames}. ` : ""}${helperTip}`;
-
-    setScrapeStatus(helperStatus);
-
-    const nextCooldown = Date.now() + SCRAPE_COOLDOWN_MS;
-    setScrapeStatus(`${helperStatus} Cooldown in progress...`);
-    setCooldownUntil(nextCooldown);
-    setIsScraping(false);
-
-    setTimeout(() => {
-      setCooldownUntil(0);
-      setScrapeStatus("Helper ready again.");
-    }, SCRAPE_COOLDOWN_MS);
-  };
 
   useEffect(() => {
     setPage(1);
@@ -1145,7 +1080,9 @@ function App() {
         const piece = item as Gear;
         const matchesSchool = school === "All" || piece.school === school;
         const matchesSub =
-          subcategoryFilter === "All" || piece.subcategory === subcategoryFilter;
+          subcategoryFilter === "All" ||
+          piece.subcategory === subcategoryFilter ||
+          piece.type === subcategoryFilter;
         return matchesSearch && matchesSchool && matchesSub;
       }
 
@@ -1166,6 +1103,12 @@ function App() {
         const tags = (item as GalleryItem).tags ?? ["Other Jewel"];
         const matchesSub =
           subcategoryFilter === "All" || tags.includes(subcategoryFilter.replace(/ Jewel$/, ""));
+        return matchesSearch && matchesSub;
+      }
+
+      if (viewCategory === "Quests") {
+        const quest = item as Quest;
+        const matchesSub = subcategoryFilter === "All" || quest.category === subcategoryFilter;
         return matchesSearch && matchesSub;
       }
 
@@ -1249,6 +1192,26 @@ function App() {
               Jump to list
             </a>
           </div>
+
+          <div className="data-stats" aria-label="XML stats">
+            <div className="data-stats__card">
+              <p className="eyebrow">Spell index</p>
+              <h3>{xmlDataStats.totalSpells.toLocaleString()} entries</h3>
+              <p className="hint">
+                Parsed directly from the bundled Category Spells XML export.
+              </p>
+              <p className="data-stats__examples">
+                Examples: {xmlDataStats.sampleSpells.join(", ") || "Unavailable"}
+              </p>
+            </div>
+            <div className="data-stats__card">
+              <p className="eyebrow">Balance spells</p>
+              <h3>{xmlDataStats.balanceSpellCount.toLocaleString()} entries</h3>
+              <p className="hint">
+                Balance-only subset sourced from the balance spell XML file.
+              </p>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -1258,7 +1221,9 @@ function App() {
             {primaryCategories.map((c) => (
               <button
                 key={c.key}
-                className={c.key === category ? "bookmark active" : "bookmark"}
+                className={
+                  c.key === category ? "bookmark bookmark--primary active" : "bookmark bookmark--primary"
+                }
                 aria-pressed={c.key === category}
                 title={c.key}
                 onClick={() => {
@@ -1275,7 +1240,9 @@ function App() {
 
             <div className="bookmark--group">
               <button
-                className={housingOpen ? "bookmark active" : "bookmark"}
+                className={
+                  housingOpen ? "bookmark bookmark--primary active" : "bookmark bookmark--primary"
+                }
                 aria-pressed={housingOpen}
                 aria-expanded={housingOpen}
                 onClick={() => setHousingOpen((open) => !open)}
@@ -1292,7 +1259,11 @@ function App() {
                   {housingCategories.map((c) => (
                     <button
                       key={c.key}
-                      className={c.key === category ? "bookmark active" : "bookmark"}
+                      className={
+                        c.key === category
+                          ? "bookmark bookmark--sub active"
+                          : "bookmark bookmark--sub"
+                      }
                       aria-pressed={c.key === category}
                       title={c.key}
                       onClick={() => {
@@ -1312,7 +1283,7 @@ function App() {
 
             <div className="bookmark--group">
               <button
-                className={npcOpen ? "bookmark active" : "bookmark"}
+                className={npcOpen ? "bookmark bookmark--primary active" : "bookmark bookmark--primary"}
                 aria-pressed={npcOpen}
                 aria-expanded={npcOpen}
                 onClick={() => setNpcOpen((open) => !open)}
@@ -1329,7 +1300,11 @@ function App() {
                   {npcCategories.map((c) => (
                     <button
                       key={c.key}
-                      className={c.key === category ? "bookmark active" : "bookmark"}
+                      className={
+                        c.key === category
+                          ? "bookmark bookmark--sub active"
+                          : "bookmark bookmark--sub"
+                      }
                       aria-pressed={c.key === category}
                       title={c.key}
                       onClick={() => {
@@ -1349,7 +1324,11 @@ function App() {
 
             <div className="bookmark--group">
               <button
-                className={extraSkillsOpen ? "bookmark active" : "bookmark"}
+                className={
+                  extraSkillsOpen
+                    ? "bookmark bookmark--primary active"
+                    : "bookmark bookmark--primary"
+                }
                 aria-pressed={extraSkillsOpen}
                 aria-expanded={extraSkillsOpen}
                 onClick={() => setExtraSkillsOpen((open) => !open)}
@@ -1366,7 +1345,11 @@ function App() {
                   {extraSkillCategories.map((c) => (
                     <button
                       key={c.key}
-                      className={c.key === category ? "bookmark active" : "bookmark"}
+                      className={
+                        c.key === category
+                          ? "bookmark bookmark--sub active"
+                          : "bookmark bookmark--sub"
+                      }
                       aria-pressed={c.key === category}
                       title={c.key}
                       onClick={() => {
@@ -1424,7 +1407,10 @@ function App() {
               </div>
             )}
 
-            {(category === "Gear" || category === "Furniture" || category === "Jewels") &&
+            {(category === "Gear" ||
+              category === "Furniture" ||
+              category === "Jewels" ||
+              category === "Quests") &&
               itemSubcategories.length > 0 && (
                 <div className="filter-rail" aria-label="Item subcategories">
                   {itemSubcategories.map((filter) => (
@@ -1505,29 +1491,6 @@ function App() {
                   <span>Show only spells that have a treasure card</span>
                 </label>
               )}
-            </div>
-
-            <div className="scrape-tools">
-              <div>
-                <p className="eyebrow">Data helper</p>
-                <h3 className="scrape-tools__title">Guided navigation</h3>
-                <p className="hint">
-                  Summarizes your current filters and suggests where to explore next so the
-                  guide always points you toward useful picks.
-                </p>
-              </div>
-              <div className="scrape-tools__controls">
-                <button
-                  className="primary"
-                  onClick={handleScrape}
-                  disabled={isScraping || cooldownUntil > Date.now()}
-                >
-                  {isScraping ? "Building tips..." : `Guide me through ${viewCategory}`}
-                </button>
-                <p className="hint" aria-live="polite">
-                  {scrapeStatus}
-                </p>
-              </div>
             </div>
 
             <div className="content__header">
@@ -1634,7 +1597,8 @@ function App() {
                                   if (
                                     viewCategory === "Gear" ||
                                     viewCategory === "Furniture" ||
-                                    viewCategory === "Jewels"
+                                    viewCategory === "Jewels" ||
+                                    viewCategory === "Quests"
                                   )
                                     setSubcategoryFilter(tag);
                                 }}
