@@ -984,34 +984,6 @@ function App() {
     return [];
   }, [category, dataset]);
 
-  const itemSubcategories = useMemo(() => {
-    if (category === "Gear") {
-      const tags = new Set<string>();
-      (dataset as Gear[]).forEach((piece) => tags.add(piece.subcategory));
-      const list = Array.from(tags).sort();
-      return ["All", ...list];
-    }
-
-    if (category === "Furniture") {
-      const tags = new Set<string>();
-      (dataset as Furniture[]).forEach((item) => tags.add(item.subcategory));
-      const list = Array.from(tags).sort();
-      return ["All", ...list];
-    }
-
-    if (category === "Jewels") {
-      const tags = new Set<string>();
-      (dataset as GalleryItem[]).forEach((item) =>
-        (item.tags ?? []).forEach((tag) => tags.add(`${tag} Jewel`)),
-      );
-
-      const list = Array.from(tags).sort();
-      return list.length ? ["All", ...list] : [];
-    }
-
-    return [];
-  }, [category, dataset]);
-
   const primaryCategories = useMemo(
     () =>
       categories.filter(
@@ -1589,7 +1561,7 @@ function App() {
                           ? (item as FishingSpot).school
                           : null;
 
-                  const itemSubcategories = subcategoriesFor(item, viewCategory);
+                  const itemTags = subcategoriesFor(item, viewCategory);
 
                   const schoolIcon =
                     itemSchool && itemSchool !== "Any"
@@ -1627,9 +1599,9 @@ function App() {
                       <div className="row-card__body">
                         <h3>{item.name}</h3>
                         <p className="row-card__meta">{formatMeta(item, viewCategory)}</p>
-                        {itemSubcategories.length > 0 && (
+                        {itemTags.length > 0 && (
                           <div className="row-card__tags" aria-label="Subcategory filters">
-                            {itemSubcategories.map((tag) => (
+                            {itemTags.map((tag) => (
                               <button
                                 key={`${item.name}-${tag}`}
                                 className="chip-link"
