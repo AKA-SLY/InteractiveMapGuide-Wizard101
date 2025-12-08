@@ -62,6 +62,7 @@ const categoryIconFallback: Record<CategoryKey | "Spell Cards", string> = {
   Furniture: w101Icon("House"),
   Characters: w101Icon("Admin"),
   Henchmen: w101Icon("Minion"),
+  Minions: w101Icon("Minion"),
   Fishing: w101Icon("Fish_Rank_1"),
   Locations: w101Icon("Aquila"),
   "Spell Cards": w101Icon("Spell_Damage"),
@@ -332,6 +333,47 @@ function getItemImage(item: CatalogItem, category: ViewCategory) {
     categoryIconFallback[category] ||
     placeholderThumb(item.name.slice(0, 8))
   );
+}
+
+// Provide alternate slug-based image paths that mirror README guidance for dropping art
+function getAltImage(item: CatalogItem, category: ViewCategory) {
+  switch (category) {
+    case "Treasure Cards": {
+      const tc = item as TreasureCard;
+      // Prefer slug path like: W101 Images/treasure-cards/<name>.png
+      return libraryPathFromSlug("treasure-cards", tc.relatedSpell ?? tc.name);
+    }
+    case "Gear": {
+      const piece = item as Gear;
+      return libraryPathFromSlug("gear", piece.name);
+    }
+    case "Furniture":
+    case "Castles":
+    case "Scrolls": {
+      const furni = item as Furniture;
+      return libraryPathFromSlug("furniture", furni.name);
+    }
+    case "Characters":
+    case "Bosses": {
+      const npc = item as Character;
+      return libraryPathFromSlug("characters", npc.name);
+    }
+    case "Fishing": {
+      const spot = item as FishingSpot;
+      return libraryPathFromSlug("fishing", spot.name);
+    }
+    case "Locations": {
+      const loc = item as Location;
+      return libraryPathFromSlug("locations", loc.name);
+    }
+    case "Spells": {
+      const spell = item as Spell;
+      // Allow an alt path for card art dumps if provided using slug folder
+      return libraryPathFromSlug("spells", spell.name);
+    }
+    default:
+      return undefined;
+  }
 }
 
 type CatalogItem =
@@ -844,7 +886,13 @@ function Details({
             <img
               src={thumb}
               alt=""
+              data-alt={getAltImage(item, category) || ""}
               onError={(e) => {
+                const alt = (e.currentTarget.getAttribute("data-alt") || "").trim();
+                if (alt && e.currentTarget.src !== alt) {
+                  e.currentTarget.src = alt;
+                  return;
+                }
                 if (e.currentTarget.src !== thumbFallback) {
                   e.currentTarget.src = thumbFallback;
                 }
@@ -1654,7 +1702,13 @@ function App() {
                           className="row-card__thumb"
                           src={displayThumb}
                           alt=""
+                          data-alt={getAltImage(item, viewCategory) || ""}
                           onError={(e) => {
+                            const alt = (e.currentTarget.getAttribute("data-alt") || "").trim();
+                            if (alt && e.currentTarget.src !== alt) {
+                              e.currentTarget.src = alt;
+                              return;
+                            }
                             if (e.currentTarget.src !== displayFallback) {
                               e.currentTarget.src = displayFallback;
                             }
