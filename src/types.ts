@@ -94,6 +94,16 @@ export type TreasureCard = {
   image?: string;
 };
 
+export type Quest = {
+  name: string;
+  world?: string;
+  category?: string;
+  description?: string;
+  wikiUrl?: string;
+  image?: string;
+  sources?: SpellSource[];
+};
+
 export type Location = {
   name: string;
   world: string;
@@ -166,6 +176,7 @@ export type CategoryKey =
   | "Furniture"
   | "Castles"
   | "Scrolls"
+  | "Quests"
   | "Locations"
   | "Henchmen"
   | "Jewels"

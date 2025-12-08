@@ -6,6 +6,7 @@ import { furniture } from "./furniture";
 import { gear } from "./gear";
 import { jewels, mounts, minions } from "./galleries";
 import { locations } from "./locations";
+import { quests } from "./quests";
 import { spells } from "./spells";
 import { treasureCards } from "./treasureCards";
 import {
@@ -21,6 +22,7 @@ import {
   type Character,
   type FishingSpot,
   type GalleryItem,
+  type Quest,
   type Furniture,
   type Gear,
   type Location,
@@ -32,7 +34,7 @@ import { w101Icon } from "../lib/library";
 export const categories: {
   key: CategoryKey;
   icon: string;
-  dataset: (Spell | Gear | Character | FishingSpot | Furniture | TreasureCard | Location | GalleryItem)[];
+  dataset: (Quest | Spell | Gear | Character | FishingSpot | Furniture | TreasureCard | Location | GalleryItem)[];
 }[] = [
   { key: "Spells", icon: w101Icon("Damage_Spell"), dataset: spells },
   { key: "Treasure Cards", icon: w101Icon("Treasure_Card"), dataset: treasureCards },
@@ -40,6 +42,7 @@ export const categories: {
   { key: "Furniture", icon: w101Icon("House"), dataset: furniture },
   { key: "Castles", icon: w101Icon("Castle"), dataset: castles },
   { key: "Scrolls", icon: w101Icon("Scroll"), dataset: scrolls },
+  { key: "Quests", icon: w101Icon("Quest"), dataset: quests },
   { key: "Characters", icon: w101Icon("Admin"), dataset: characters },
   { key: "Bosses", icon: w101Icon("Warning_Red"), dataset: bosses },
   { key: "Fishing", icon: w101Icon("Fish_Rank_1"), dataset: fishing },
