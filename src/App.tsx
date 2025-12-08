@@ -241,7 +241,16 @@ function getItemImage(item: CatalogItem, category: ViewCategory) {
 
   if (category === "Spells") {
     const spell = item as Spell;
-    // Use school-based spell folders, e.g., "Wizard101 Fire_Spells"
+    // Astral schools live under Extra Skill Spells/<School> Spells and commonly use webp with (Spell)_ prefix
+    if (spell.school === "Sun" || spell.school === "Moon" || spell.school === "Star") {
+      return libraryPath(
+        `Extra Skill Spells/${spell.school} Spells`,
+        `(Spell)_${formatLibraryFileName(spell.name)}`,
+        "webp",
+        (v) => v,
+      );
+    }
+    // Elemental/Spirit/Balance use school-based folders, e.g., "Wizard101 Fire_Spells"
     const schoolFolder = `Wizard101 ${spell.school}_Spells`;
     return libraryPath(schoolFolder, spell.name, "png", formatLibraryFileName);
   }
@@ -345,6 +354,20 @@ function getAltImage(item: CatalogItem, category: ViewCategory) {
       // Prefer slug path like: W101 Images/treasure-cards/<name>.png
       return libraryPathFromSlug("treasure-cards", tc.relatedSpell ?? tc.name);
     }
+    case "Spells": {
+      const spell = item as Spell;
+      // Alternate path for Astral schools: handle leading-space folder variant in repo
+      if (spell.school === "Sun" || spell.school === "Moon" || spell.school === "Star") {
+        return libraryPath(
+          " Extra Skill Spells/" + `${spell.school} Spells`,
+          `(Spell)_${formatLibraryFileName(spell.name)}`,
+          "webp",
+          (v) => v,
+        );
+      }
+      // Allow an alt path for card art dumps if provided using slug folder
+      return libraryPathFromSlug("spells", spell.name);
+    }
     case "Gear": {
       const piece = item as Gear;
       return libraryPathFromSlug("gear", piece.name);
@@ -368,11 +391,28 @@ function getAltImage(item: CatalogItem, category: ViewCategory) {
       const loc = item as Location;
       return libraryPathFromSlug("locations", loc.name);
     }
-    case "Spells": {
-      const spell = item as Spell;
-      // Allow an alt path for card art dumps if provided using slug folder
-      return libraryPathFromSlug("spells", spell.name);
-    }
+    case "Gardening":
+      // Leading-space folder variant fallback
+      return libraryPath(
+        " Extra Skill Spells/Gardening Spells",
+        (item as GalleryItem).name,
+        "png",
+        formatLibraryFileName,
+      );
+    case "Fishing Spells":
+      return libraryPath(
+        " Extra Skill Spells/Fishing Spells",
+        (item as GalleryItem).name,
+        "png",
+        formatLibraryFileName,
+      );
+    case "Cantrip":
+      return libraryPath(
+        " Extra Skill Spells/Cantrip Spells",
+        (item as GalleryItem).name,
+        "png",
+        formatLibraryFileName,
+      );
     default:
       return undefined;
   }
