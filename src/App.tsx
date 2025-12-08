@@ -984,6 +984,34 @@ function App() {
     return [];
   }, [category, dataset]);
 
+  const itemSubcategories = useMemo(() => {
+    if (category === "Gear") {
+      const tags = new Set<string>();
+      (dataset as Gear[]).forEach((piece) => tags.add(piece.subcategory));
+      const list = Array.from(tags).sort();
+      return ["All", ...list];
+    }
+
+    if (category === "Furniture") {
+      const tags = new Set<string>();
+      (dataset as Furniture[]).forEach((item) => tags.add(item.subcategory));
+      const list = Array.from(tags).sort();
+      return ["All", ...list];
+    }
+
+    if (category === "Jewels") {
+      const tags = new Set<string>();
+      (dataset as GalleryItem[]).forEach((item) =>
+        (item.tags ?? []).forEach((tag) => tags.add(`${tag} Jewel`)),
+      );
+
+      const list = Array.from(tags).sort();
+      return list.length ? ["All", ...list] : [];
+    }
+
+    return [];
+  }, [category, dataset]);
+
   const primaryCategories = useMemo(
     () =>
       categories.filter(
