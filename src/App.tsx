@@ -289,6 +289,41 @@ function getItemImage(item: CatalogItem, category: ViewCategory) {
       "png",
       formatLibraryFileName,
     );
+  if (category === "Fishing Spells")
+    return (
+      (item as GalleryItem).image ||
+      libraryPath(
+        "Extra Skill Spells/Fishing Spells",
+        (item as GalleryItem).name,
+        "png",
+        formatLibraryFileName,
+      )
+    );
+  if (category === "Gardening")
+    return (
+      (item as GalleryItem).image ||
+      libraryPath(
+        "Extra Skill Spells/Gardening Spells",
+        (item as GalleryItem).name,
+        "png",
+        formatLibraryFileName,
+      )
+    );
+  if (category === "Cantrip")
+    return (
+      (item as GalleryItem).image ||
+      libraryPath(
+        "Extra Skill Spells/Cantrip Spells",
+        (item as GalleryItem).name,
+        "png",
+        formatLibraryFileName,
+      )
+    );
+  if (category === "Monstrology")
+    return (
+      (item as GalleryItem).image ||
+      libraryPath("Icons", "Monstrology", "webp", formatLibraryFileName)
+    );
   if (category === "Locations")
     return libraryPathFromSlug("World map Images", (item as Location).name);
 
@@ -402,16 +437,19 @@ function Details({
   onClose,
   onSelectCharacter,
   onSelectLocation,
+  onAddToCompare,
 }: {
   item: CatalogItem;
   category: ViewCategory;
   onClose: () => void;
   onSelectCharacter: (name: string) => void;
   onSelectLocation: (name: string) => void;
+  onAddToCompare?: (gear: Gear) => void;
 }) {
   const thumb = getItemImage(item, category);
   const thumbFallback =
     categoryIconFallback[category] ?? placeholderThumb(item.name.slice(0, 8));
+  const gearComparable = category === "Gear" && onAddToCompare;
 
   const linkToLocation = (name: string) => (
     <button className="chip-link" onClick={() => onSelectLocation(name)}>
@@ -906,6 +944,25 @@ function Details({
             </div>
           </details>
         )}
+
+        <div className="panel__actions">
+          <button className="ghost" onClick={onClose}>
+            Back to results
+          </button>
+          {gearComparable && (
+            <button
+              className="primary primary--compact"
+              onClick={() => onAddToCompare?.(item as Gear)}
+            >
+              Add to compare
+            </button>
+          )}
+          {wikiUrl && (
+            <a className="ghost ghost--chip" href={wikiUrl} target="_blank" rel="noreferrer">
+              Open wiki
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -928,6 +985,10 @@ function App() {
   const [npcOpen, setNpcOpen] = useState<boolean>(false);
   const [housingOpen, setHousingOpen] = useState<boolean>(false);
   const [subcategoryFilter, setSubcategoryFilter] = useState<string>("All");
+  const [compareOpen, setCompareOpen] = useState<boolean>(false);
+  const [compareItems, setCompareItems] = useState<Gear[]>([]);
+
+  const compareLimit = 5;
 
   const viewCategory: ViewCategory =
     category === "Spells" && spellView === "Spell cards" ? "Spell Cards" : category;
@@ -1033,6 +1094,31 @@ function App() {
     () => categories.filter((entry) => extraSkillKeys.includes(entry.key)),
     [],
   );
+  const xmlQuickLinks = useMemo(() => xmlDataStats.sampleSpells, []);
+
+  const addGearToCompare = (piece: Gear) => {
+    setCompareItems((current) => {
+      if (current.some((item) => item.name === piece.name)) return current;
+      if (current.length >= compareLimit) return current;
+      return [...current, piece];
+    });
+    setCompareOpen(true);
+  };
+
+  const removeCompareItem = (name: string) => {
+    setCompareItems((current) => current.filter((item) => item.name !== name));
+  };
+
+  const openXmlSpell = (name: string) => {
+    setCategory("Spells");
+    setSpellView("Spell list");
+    setSelected(null);
+    setSearch(name);
+  };
+
+  const jumpToList = () => {
+    document.getElementById("list")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   useEffect(() => {
     setPage(1);
@@ -1175,45 +1261,54 @@ function App() {
 
   return (
     <div className="page">
-      <header className="hero">
+      <div className="top-bar">
         <div>
           <p className="eyebrow">Wizard101 toolkit</p>
           <h1>Interactive Guide</h1>
-          <p className="lede">
-            Browse spells, gear, characters, and fishing spots with quick filters
-            and mobile-friendly cards. No more blank white page—the content loads
-            instantly.
+          <p className="hint top-bar__lede">
+            Compact navigation keeps everything visible on a 1980×1080 display while
+            you hop between spells, gear, locations, and worlds.
           </p>
-          <div className="actions">
-            <a className="primary" href="https://aka-sly.github.io/InteractiveMapGuide-Wizard101/">
-              View live preview
-            </a>
-            <a className="ghost" href="#list">
-              Jump to list
-            </a>
-          </div>
+        </div>
+        <div className="top-bar__actions">
+          <a
+            className="primary primary--compact"
+            href="https://aka-sly.github.io/InteractiveMapGuide-Wizard101/"
+          >
+            Live preview
+          </a>
+          <button className="ghost ghost--compact" onClick={jumpToList}>
+            Jump to list
+          </button>
+        </div>
+      </div>
 
-          <div className="data-stats" aria-label="XML stats">
-            <div className="data-stats__card">
-              <p className="eyebrow">Spell index</p>
-              <h3>{xmlDataStats.totalSpells.toLocaleString()} entries</h3>
-              <p className="hint">
-                Parsed directly from the bundled Category Spells XML export.
-              </p>
-              <p className="data-stats__examples">
-                Examples: {xmlDataStats.sampleSpells.join(", ") || "Unavailable"}
-              </p>
-            </div>
-            <div className="data-stats__card">
-              <p className="eyebrow">Balance spells</p>
-              <h3>{xmlDataStats.balanceSpellCount.toLocaleString()} entries</h3>
-              <p className="hint">
-                Balance-only subset sourced from the balance spell XML file.
-              </p>
-            </div>
+      <div className="info-rail" aria-label="XML stats and shortcuts">
+        <div className="data-stats__card data-stats__card--compact">
+          <p className="eyebrow">Spell index</p>
+          <h3>{xmlDataStats.totalSpells.toLocaleString()} entries</h3>
+          <p className="hint">Parsed from the bundled Category Spells XML export.</p>
+          <p className="data-stats__examples">
+            Examples: {xmlDataStats.sampleSpells.join(", ") || "Unavailable"}
+          </p>
+        </div>
+        <div className="data-stats__card data-stats__card--compact">
+          <p className="eyebrow">Balance spells</p>
+          <h3>{xmlDataStats.balanceSpellCount.toLocaleString()} entries</h3>
+          <p className="hint">Balance-only subset sourced from the balance XML file.</p>
+        </div>
+        <div className="info-rail__xml">
+          <p className="eyebrow">XML quick hops</p>
+          <p className="hint">Use parsed spell names as instant search filters.</p>
+          <div className="chip-row">
+            {xmlQuickLinks.map((name) => (
+              <button key={name} className="chip-link" onClick={() => openXmlSpell(name)}>
+                {name}
+              </button>
+            ))}
           </div>
         </div>
-      </header>
+      </div>
 
       <main className="content-layout" id="list">
         <section className="bookmark-shell">
@@ -1609,6 +1704,24 @@ function App() {
                           </div>
                         )}
                       </div>
+                      {viewCategory === "Gear" && (
+                        <button
+                          className="row-card__action"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            addGearToCompare(item as Gear);
+                          }}
+                          disabled={compareItems.length >= compareLimit}
+                          title={
+                            compareItems.length >= compareLimit
+                              ? "Compare list is full"
+                              : "Add to compare"
+                          }
+                          aria-label={`Compare ${item.name}`}
+                        >
+                          Compare
+                        </button>
+                      )}
                       {schoolIcon && (
                         <span className="school-chip" title={`${itemSchool} school`}>
                           <img src={schoolIcon} alt={`${itemSchool} school icon`} />
@@ -1659,6 +1772,45 @@ function App() {
         </aside>
       </main>
 
+      <div className={`compare-drawer ${compareOpen ? "compare-drawer--open" : ""}`}>
+        <button
+          className="compare-drawer__toggle"
+          onClick={() => setCompareOpen((open) => !open)}
+        >
+          {compareOpen
+            ? "Hide gear compare"
+            : `Gear compare (${compareItems.length}/${compareLimit})`}
+        </button>
+        <div className="compare-drawer__body">
+          {compareItems.length === 0 ? (
+            <p className="hint">Add gear cards to compare up to five pieces.</p>
+          ) : (
+            <div className="compare-drawer__grid">
+              {compareItems.map((piece) => (
+                <div key={piece.name} className="compare-card">
+                  <div className="compare-card__header">
+                    <div>
+                      <p className="eyebrow">{piece.school}</p>
+                      <strong>{piece.name}</strong>
+                    </div>
+                    <button
+                      className="ghost ghost--compact"
+                      onClick={() => removeCompareItem(piece.name)}
+                      aria-label={`Remove ${piece.name} from compare`}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  <p className="compare-card__meta">{`${piece.type} • L${piece.level} • ${piece.subcategory}`}</p>
+                  <p className="compare-card__stat">{piece.stats}</p>
+                  <p className="compare-card__stat compare-card__stat--muted">{piece.location}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
       {selected && (
         <Details
           item={selected}
@@ -1666,6 +1818,7 @@ function App() {
           onClose={() => setSelected(null)}
           onSelectCharacter={openCharacter}
           onSelectLocation={openLocation}
+          onAddToCompare={selectedCategory === "Gear" ? addGearToCompare : undefined}
         />
       )}
 
