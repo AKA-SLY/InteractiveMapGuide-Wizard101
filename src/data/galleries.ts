@@ -16,6 +16,9 @@ const readableName = (fileName: string, prefix?: string) => {
   return withoutPrefix.replace(/_/g, " ").trim();
 };
 
+const wikiUrlFor = (name: string, category: string) =>
+  `https://www.wizard101central.com/wiki/${encodeURIComponent(category)}:${encodeURIComponent(name.replace(/\s+/g, "_"))}`;
+
 const buildGallery = (
   files: readonly string[],
   folder: string,
@@ -28,6 +31,7 @@ const buildGallery = (
     category,
     image: libraryRoot(folder, file),
     tags: buildTags?.(file),
+    wikiUrl: wikiUrlFor(readableName(file, prefix), category),
   }));
 
 const inferWorldTag = (file: string) => {
@@ -47,7 +51,19 @@ export const fireSpellCards: GalleryItem[] = buildGallery(
 
 export const henchmen: GalleryItem[] = buildGallery(henchmenFiles, "Henchment", "Henchmen");
 
-export const jewels: GalleryItem[] = buildGallery(jewelFiles, "Jewels", "Jewels");
+const jewelTags = (file: string) => {
+  const match = file.match(/_(Circle|Square|Triangle|Tear|Star)/i);
+  const shape = match?.[1];
+  return shape ? [shape] : undefined;
+};
+
+export const jewels: GalleryItem[] = buildGallery(
+  jewelFiles,
+  "Jewels",
+  "Jewels",
+  undefined,
+  jewelTags,
+);
 
 export const minions: GalleryItem[] = buildGallery(
   minionFiles,
