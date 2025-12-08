@@ -61,6 +61,7 @@ const categoryIconFallback: Record<CategoryKey | "Spell Cards", string> = {
   Gear: w101Icon("All_Items"),
   Furniture: w101Icon("House"),
   Characters: w101Icon("Admin"),
+  Henchmen: w101Icon("Minion"),
   Fishing: w101Icon("Fish_Rank_1"),
   Locations: w101Icon("Aquila"),
   "Spell Cards": w101Icon("Spell_Damage"),
@@ -76,7 +77,7 @@ const categoryIconFallback: Record<CategoryKey | "Spell Cards", string> = {
   "Fishing Spells": w101Icon("Fishing"),
 };
 const extraSkillKeys: CategoryKey[] = ["Gardening", "Monstrology", "Cantrip", "Fishing Spells"];
-const npcCategoryKeys: CategoryKey[] = ["Characters", "Minions", "Bosses"];
+const npcCategoryKeys: CategoryKey[] = ["Characters", "Minions", "Henchmen", "Bosses"];
 const housingCategoryKeys: CategoryKey[] = ["Furniture", "Castles", "Scrolls"];
 const placeholderThumb = (label: string) =>
   `https://dummyimage.com/240x240/f4e6c4/2b1441&text=${encodeURIComponent(label)}`;
@@ -383,7 +384,10 @@ function formatMeta(item: CatalogItem, active: string) {
 
 const subcategoriesFor = (item: CatalogItem, active: ViewCategory) => {
   if (active === "Characters") return (item as Character).classification ?? [];
-  if (active === "Gear") return [(item as Gear).subcategory];
+  if (active === "Gear") {
+    const piece = item as Gear;
+    return [piece.type, piece.subcategory].filter(Boolean);
+  }
   if (active === "Furniture") return [(item as Furniture).subcategory];
   if (active === "Jewels") return (item as GalleryItem).tags?.map((tag) => `${tag} Jewel`) ?? [];
   if (active === "Minions") return (item as GalleryItem).tags ?? [];
@@ -964,7 +968,10 @@ function App() {
   const itemSubcategories = useMemo(() => {
     if (category === "Gear") {
       const tags = new Set<string>();
-      (dataset as Gear[]).forEach((piece) => tags.add(piece.subcategory));
+      (dataset as Gear[]).forEach((piece) => {
+        tags.add(piece.type);
+        tags.add(piece.subcategory);
+      });
       const list = Array.from(tags).sort();
       return ["All", ...list];
     }
@@ -1058,7 +1065,9 @@ function App() {
         const piece = item as Gear;
         const matchesSchool = school === "All" || piece.school === school;
         const matchesSub =
-          subcategoryFilter === "All" || piece.subcategory === subcategoryFilter;
+          subcategoryFilter === "All" ||
+          piece.subcategory === subcategoryFilter ||
+          piece.type === subcategoryFilter;
         return matchesSearch && matchesSchool && matchesSub;
       }
 
