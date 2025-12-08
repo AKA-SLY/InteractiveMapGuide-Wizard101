@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Slippers of Rites",
+    "slot": "Boots",
+    "label": "Item:Slippers of Rites",
+    "wiki_url": "https://wiki.wizard101central.com/wiki/Item:Slippers_of_Rites",
+    "categories": [
+      "Boots"
+    ],
+    "display_name": "Item:Slippers of Rites",
+    "level_required": 5,
+    "school": null,
+    "bonuses": {},
+    "bonuses_raw": [
+      "+8 Max"
+    ],
+    "item_cards": [],
+    "dropped_by": [
+      "Alicane Swiftarrow",
+      "Baron Greebly",
+      "Bastilla Gravewynd",
+      "Cyclops Legionnaire",
+      "Electric Eel (Rank 2)",
+      "Fire Elf Hunter",
+      "General Akilles",
+      "Gobbler Scavenger",
+      "Gobbler Scouter",
+      "Iron Golem",
+      "Kestrel Blackstorm",
+      "Rattlebones",
+      "Rotting Fodder",
+      "Sanitation Worker",
+      "The Harvest Lord",
+      "Wormguts"
+    ],
+    "vendor_sell_price": 11,
+    "tradeable": true,
+    "no_auction": false
+  },
+  {
+    "name": "Boots of Captivation",
+    "slot": "Boots",
+    "label": "Item:Boots of Captivation",
+    "wiki_url": "https://wiki.wizard101central.com/wiki/Item:Boots_of_Captivation",
+    "categories": [
+      "Boots"
+    ],
+    "display_name": "wiki.wizard101central.com",
+    "level_required": null,
+    "school": null,
+    "bonuses": {},
+    "bonuses_raw": [],
+    "item_cards": [],
+    "dropped_by": [],
+    "vendor_sell_price": null,
+    "tradeable": false,
+    "no_auction": false
+  },
+  {
+    "name": "Famous Footwraps",
+    "slot": "Boots",
+    "label": "Item:Famous Footwraps",
+    "wiki_url": "https://wiki.wizard101central.com/wiki/Item:Famous_Footwraps",
+    "categories": [
+      "Boots"
+    ],
+    "display_name": "wiki.wizard101central.com",
+    "level_required": null,
+    "school": null,
+    "bonuses": {},
+    "bonuses_raw": [],
+    "item_cards": [],
+    "dropped_by": [],
+    "vendor_sell_price": null,
+    "tradeable": false,
+    "no_auction": false
+  },
+  {
+    "name": "Lord Nightshade's Boots",
+    "slot": "Boots",
+    "label": "Item:Lord Nightshade's Boots",
+    "wiki_url": "https://wiki.wizard101central.com/wiki/Item:Lord_Nightshade-27s_Boots",
+    "categories": [
+      "Boots"
+    ],
+    "display_name": "wiki.wizard101central.com",
+    "level_required": null,
+    "school": null,
+    "bonuses": {},
+    "bonuses_raw": [],
+    "item_cards": [],
+    "dropped_by": [],
+    "vendor_sell_price": null,
+    "tradeable": false,
+    "no_auction": false
+  },
+  {
+    "name": "Rattlebones' Footwraps",
+    "slot": "Boots",
+    "label": "Item:Rattlebones' Footwraps",
+    "wiki_url": "https://wiki.wizard101central.com/wiki/Item:Rattlebones-27_Footwraps",
+    "categories": [
+      "Boots"
+    ],
+    "display_name": "wiki.wizard101central.com",
+    "level_required": null,
+    "school": null,
+    "bonuses": {},
+    "bonuses_raw": [],
+    "item_cards": [],
+    "dropped_by": [],
+    "vendor_sell_price": null,
+    "tradeable": false,
+    "no_auction": false
+  }
+]
