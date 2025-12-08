@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF[
+	<!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	<!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+	<!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
+	<!ENTITY swivt 'http://semantic-mediawiki.org/swivt/1.0#'>
+	<!ENTITY wiki 'http://wiki.wizard101central.com/wiki/Special:URIResolver/'>
+	<!ENTITY category 'http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3A'>
+	<!ENTITY property 'http://wiki.wizard101central.com/wiki/Special:URIResolver/Property-3A'>
+	<!ENTITY wikiurl 'https://wiki.wizard101central.com/wiki/'>
+]>
+
+<rdf:RDF
+	xmlns:rdf="&rdf;"
+	xmlns:rdfs="&rdfs;"
+	xmlns:owl ="&owl;"
+	xmlns:swivt="&swivt;"
+	xmlns:wiki="&wiki;"
+	xmlns:category="&category;"
+	xmlns:property="&property;">
+
+	<owl:Ontology rdf:about="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ASpells">
+		<swivt:creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-07T21:10:44-05:00</swivt:creationDate>
+		<owl:imports rdf:resource="http://semantic-mediawiki.org/swivt/1.0"/>
+	</owl:Ontology>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells">
+		<rdfs:label>Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ASpells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ASpells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageModificationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-11-05T19:03:53Z</swivt:wikiPageModificationDate>
+		<property:Modification_date-23aux rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2455506.2943634</property:Modification_date-23aux>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3AContent"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ATraining_Point_Spells">
+		<rdfs:label>Training Point Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ATraining_Point_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ATraining_Point_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Training Point Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASchool_Exclusive_Spells">
+		<rdfs:label>School Exclusive Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ASchool_Exclusive_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ASchool_Exclusive_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">School Exclusive Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells_by_Pip_Cost">
+		<rdfs:label>Spells by Pip Cost</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ASpells_by_Pip_Cost"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ASpells_by_Pip_Cost"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spells by Pip Cost</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3AItem_Cards">
+		<rdfs:label>Item Cards</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3AItem_Cards"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3AItem_Cards"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Item Cards</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ATreasure_Cards">
+		<rdfs:label>Treasure Cards</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ATreasure_Cards"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ATreasure_Cards"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Treasure Cards</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ANon-2DLearnable_Spells">
+		<rdfs:label>Non-Learnable Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ANon-2DLearnable_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ANon-2DLearnable_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Non-Learnable Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells_by_School">
+		<rdfs:label>Spells by School</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ASpells_by_School"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ASpells_by_School"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spells by School</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells_by_Type">
+		<rdfs:label>Spells by Type</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ASpells_by_Type"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ASpells_by_Type"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spells by Type</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ARetired_Spells">
+		<rdfs:label>Retired Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ARetired_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ARetired_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Retired Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ADropped_Spells">
+		<rdfs:label>Dropped Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ADropped_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ADropped_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dropped Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ACrafted_Spells">
+		<rdfs:label>Crafted Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ACrafted_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ACrafted_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crafted Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3AShadow_Enhanced_Spells">
+		<rdfs:label>Shadow Enhanced Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3AShadow_Enhanced_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3AShadow_Enhanced_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shadow Enhanced Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ABeastmoon_Spells">
+		<rdfs:label>Beastmoon Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ABeastmoon_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ABeastmoon_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beastmoon Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ABought_Spells">
+		<rdfs:label>Bought Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ABought_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ABought_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bought Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpellwrighting_Spells">
+		<rdfs:label>Spellwrighting Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ASpellwrighting_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ASpellwrighting_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spellwrighting Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3AGiven_Spells">
+		<rdfs:label>Given Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3AGiven_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3AGiven_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Given Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASchool_Pip_Spells">
+		<rdfs:label>School Pip Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3ASchool_Pip_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3ASchool_Pip_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">School Pip Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3AFusion_Spells">
+		<rdfs:label>Fusion Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3AFusion_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3AFusion_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fusion Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3AMagic_Weaving_Spells">
+		<rdfs:label>Magic Weaving Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Category-3AMagic_Weaving_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Category-3AMagic_Weaving_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Magic Weaving Spells</swivt:wikiPageSortKey>
+		<rdfs:subClassOf rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+	</owl:Class>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AFire_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Fire School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AFire_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AFire_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fire School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AStorm_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Storm School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AStorm_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AStorm_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Storm School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3ALife_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Life School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3ALife_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3ALife_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Life School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AIce_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Ice School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AIce_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AIce_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ice School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AMyth_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Myth School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AMyth_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AMyth_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Myth School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3ADeath_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Death School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3ADeath_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3ADeath_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Death School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3ABalance_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Balance School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3ABalance_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3ABalance_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Balance School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3ASun_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Sun School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3ASun_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3ASun_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sun School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AStar_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Star School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AStar_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AStar_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AMoon_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Moon School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AMoon_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AMoon_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Moon School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AGardening_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Gardening School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AGardening_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AGardening_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gardening School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AShadow_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Shadow School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AShadow_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AShadow_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shadow School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AFishing_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Fishing School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AFishing_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AFishing_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fishing School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3ACantrip_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Cantrip School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3ACantrip_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3ACantrip_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cantrip School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AFire_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Fire School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AFire_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AFire_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fire School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AStorm_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Storm School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AStorm_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AStorm_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Storm School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3ALife_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Life School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3ALife_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3ALife_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Life School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AIce_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Ice School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AIce_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AIce_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ice School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AMyth_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Myth School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AMyth_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AMyth_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Myth School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3ADeath_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Death School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3ADeath_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3ADeath_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Death School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3ABalance_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Balance School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3ABalance_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3ABalance_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Balance School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3ASun_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Sun School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3ASun_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3ASun_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sun School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AStar_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Star School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AStar_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AStar_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AMoon_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Moon School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AMoon_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AMoon_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Moon School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AGardening_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Gardening School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AGardening_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AGardening_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gardening School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AShadow_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Shadow School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AShadow_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AShadow_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shadow School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3AFishing_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Fishing School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3AFishing_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3AFishing_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fishing School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<swivt:Subject rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Spell-3ACantrip_School_Spells">
+		<rdf:type rdf:resource="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3ASpells"/>
+		<rdfs:label>Spell:Cantrip School Spells</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Spell-3ACantrip_School_Spells"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Spell-3ACantrip_School_Spells"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cantrip School Spells</swivt:wikiPageSortKey>
+	</swivt:Subject>
+	<owl:ObjectProperty rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Property-3ASubcategory_of">
+		<rdfs:label>Subcategory of</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://wiki.wizard101central.com/wiki/Special:ExportRDF/Property-3ASubcategory_of"/>
+		<swivt:page rdf:resource="https://wiki.wizard101central.com/wiki/Property-3ASubcategory_of"/>
+		<swivt:wikiNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">152</swivt:wikiNamespace>
+		<swivt:wikiPageContentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</swivt:wikiPageContentLanguage>
+		<swivt:wikiPageSortKey rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subcategory of</swivt:wikiPageSortKey>
+	</owl:ObjectProperty>
+	<owl:DatatypeProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#creationDate" />
+	<owl:ObjectProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#page" />
+	<owl:DatatypeProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#wikiNamespace" />
+	<owl:DatatypeProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#wikiPageContentLanguage" />
+	<owl:DatatypeProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#wikiPageModificationDate" />
+	<owl:DatatypeProperty rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Property-3AModification_date-23aux" />
+	<owl:DatatypeProperty rdf:about="http://semantic-mediawiki.org/swivt/1.0#wikiPageSortKey" />
+	<owl:Class rdf:about="http://wiki.wizard101central.com/wiki/Special:URIResolver/Category-3AContent" />
+	<!-- Created by Semantic MediaWiki, https://www.semantic-mediawiki.org/ -->
+</rdf:RDF>
