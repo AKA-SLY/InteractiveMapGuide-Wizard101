@@ -4,7 +4,7 @@ import { castles } from "./castles";
 import { fishing } from "./fishing";
 import { furniture } from "./furniture";
 import { gear } from "./gear";
-import { jewels, mounts, minions } from "./galleries";
+import { henchmen, jewels, mounts, minions } from "./galleries";
 import { locations } from "./locations";
 import { quests } from "./quests";
 import { spells } from "./spells";
@@ -45,6 +45,7 @@ export const categories: {
   { key: "Quests", icon: w101Icon("Quest"), dataset: quests },
   { key: "Characters", icon: w101Icon("Admin"), dataset: characters },
   { key: "Bosses", icon: w101Icon("Warning_Red"), dataset: bosses },
+  { key: "Henchmen", icon: w101Icon("Minion"), dataset: henchmen },
   { key: "Fishing", icon: w101Icon("Fish_Rank_1"), dataset: fishing },
   { key: "Locations", icon: w101Icon("Aquila"), dataset: locations },
   { key: "Jewels", icon: w101Icon("Jewel"), dataset: jewels },
