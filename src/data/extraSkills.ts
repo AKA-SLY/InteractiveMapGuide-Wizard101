@@ -133,4 +133,28 @@ export const cantrip: GalleryItem[] = [
   ),
 ];
 
+export const fishingSpells: GalleryItem[] = [
+  spellCard(
+    "Reveal Fish School",
+    "Fishing Spells",
+    "Extra Skill Spells/Fishing Spells",
+    "(Spell)_Reveal_Fish_School",
+    ["Rank 1 fishing", "Shows school of nearby fish"],
+  ),
+  spellCard(
+    "Summon Fish",
+    "Fishing Spells",
+    "Extra Skill Spells/Fishing Spells",
+    "(Spell)_Summon_Fish",
+    ["Rank 2 fishing", "Resets fish in pond"],
+  ),
+  spellCard(
+    "Charm Fish",
+    "Fishing Spells",
+    "Extra Skill Spells/Fishing Spells",
+    "(Spell)_Charm_Fish",
+    ["Rank 2 fishing", "Keeps fish from fleeing"],
+  ),
+];
+
 export const extraSkillsIcon = w101Icon("Utility");
