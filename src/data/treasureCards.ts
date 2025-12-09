@@ -1,6 +1,8 @@
 import { type TreasureCard } from "../types";
+import { treasureCardsFromJson } from "./json/treasureCardsFromJson";
+import { mergeByName } from "./util/merge";
 
-export const treasureCards: TreasureCard[] = [
+const baseTreasureCards: TreasureCard[] = [
   {
     name: "Fire Cat (TC)",
     relatedSpell: "Fire Cat",
@@ -58,3 +60,8 @@ export const treasureCards: TreasureCard[] = [
     ],
   },
 ];
+
+export const treasureCards: TreasureCard[] = mergeByName<TreasureCard>(
+  baseTreasureCards,
+  treasureCardsFromJson,
+);

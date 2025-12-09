@@ -1,6 +1,8 @@
 import { type Furniture } from "../types";
+import { furnitureFromJson } from "./json/furnitureFromJson";
+import { mergeByName } from "./util/merge";
 
-export const furniture: Furniture[] = [
+const baseFurniture: Furniture[] = [
   {
     name: "Ravenwood Oak Desk",
     subcategory: "Indoor",
@@ -26,3 +28,5 @@ export const furniture: Furniture[] = [
     description: "Wall-mounted rack that displays up to three weapons.",
   },
 ];
+
+export const furniture: Furniture[] = mergeByName<Furniture>(baseFurniture, furnitureFromJson);

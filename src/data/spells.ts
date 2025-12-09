@@ -2,6 +2,8 @@ import { libraryRoot } from "../lib/library";
 import { type Spell } from "../types";
 import { astralSpells } from "./astralSpells";
 import { fireSpellFiles } from "./libraryFiles";
+import { spellsFromJson } from "./json/spellsFromJson";
+import { mergeByName } from "./util/merge";
 
 const normalizeName = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
 
@@ -322,8 +324,11 @@ const baseSpells: Spell[] = [
   },
 ];
 
-// Merge core (Elemental/Spirit/Balance) spell samples with Astral (Sun/Moon/Star)
-export const spells: Spell[] = [...baseSpells, ...astralSpells].map((spell) => ({
+// Merge curated samples + Astral with any JSON-ingested spells (curated wins)
+export const spells: Spell[] = mergeByName<Spell>(
+  [...baseSpells, ...astralSpells].map((spell) => ({
   ...spell,
   image: spell.image ?? spellImage(spell.name),
-}));
+  })),
+  spellsFromJson,
+);

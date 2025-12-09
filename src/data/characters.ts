@@ -1,5 +1,7 @@
 import { formatLibraryFileName, libraryPath } from "../lib/library";
 import { type Character } from "../types";
+import { charactersFromJson } from "./json/charactersFromJson";
+import { mergeByName } from "./util/merge";
 
 const npcWiki = (name: string) =>
   `https://www.wizard101central.com/wiki/NPC:${encodeURIComponent(name.replace(/\s+/g, "_"))}`;
@@ -530,7 +532,10 @@ const characterEntries: Character[] = [
   },
 ];
 
-export const characters: Character[] = characterEntries.map((npc) => ({
-  ...npc,
-  wikiUrl: npc.wikiUrl ?? npcWiki(npc.name),
-}));
+export const characters: Character[] = mergeByName<Character>(
+  characterEntries.map((npc) => ({
+    ...npc,
+    wikiUrl: npc.wikiUrl ?? npcWiki(npc.name),
+  })),
+  charactersFromJson,
+);

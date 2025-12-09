@@ -1,6 +1,8 @@
 import { type Location } from "../types";
+import { locationsFromJson } from "./json/locationsFromJson";
+import { mergeByName } from "./util/merge";
 
-export const locations: Location[] = [
+const baseLocations: Location[] = [
   {
     name: "Ravenwood",
     world: "Wizard City",
@@ -32,3 +34,5 @@ export const locations: Location[] = [
     bubbleImage: "/Images/locations/barkingham-palace-bubble.png",
   },
 ];
+
+export const locations: Location[] = mergeByName<Location>(baseLocations, locationsFromJson);

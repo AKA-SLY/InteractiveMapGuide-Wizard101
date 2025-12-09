@@ -1,6 +1,8 @@
 import { type Quest } from "../types";
+import { questsFromJson } from "./json/questsFromJson";
+import { mergeByName } from "./util/merge";
 
-export const quests: Quest[] = [
+const baseQuests: Quest[] = [
   {
     name: "The Sixth School",
     world: "Wizard City",
@@ -226,3 +228,5 @@ export const quests: Quest[] = [
     wikiUrl: "https://wiki.wizard101central.com/wiki/Quest-3ASell_Out",
   },
 ];
+
+export const quests: Quest[] = mergeByName<Quest>(baseQuests, questsFromJson);

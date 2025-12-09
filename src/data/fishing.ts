@@ -1,6 +1,8 @@
 import { libraryRoot } from "../lib/library";
 import { type FishingSpot } from "../types";
 import { fishFiles } from "./libraryFiles";
+import { fishingFromJson } from "./json/fishingFromJson";
+import { mergeByName } from "./util/merge";
 
 const fishImage = (name: string) =>
   libraryRoot("Fishes", `Fish_${name.replace(/\s+/g, "_")}.png`);
@@ -260,9 +262,12 @@ const detailedFishing: FishingSpot[] = [
 
 const detailedNames = new Set(detailedFishing.map((fish) => fish.name));
 
-export const fishing: FishingSpot[] = [
-  ...detailedFishing.map((fish) => ({ ...fish, wikiUrl: fish.wikiUrl ?? fishWiki(fish.name) })),
-  ...generatedFishing
-    .filter((fish) => !detailedNames.has(fish.name))
-    .map((fish) => ({ ...fish, wikiUrl: fish.wikiUrl ?? fishWiki(fish.name) })),
-];
+export const fishing: FishingSpot[] = mergeByName<FishingSpot>(
+  [
+    ...detailedFishing.map((fish) => ({ ...fish, wikiUrl: fish.wikiUrl ?? fishWiki(fish.name) })),
+    ...generatedFishing
+      .filter((fish) => !detailedNames.has(fish.name))
+      .map((fish) => ({ ...fish, wikiUrl: fish.wikiUrl ?? fishWiki(fish.name) })),
+  ],
+  fishingFromJson,
+);
