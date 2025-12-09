@@ -1,0 +1,163 @@
+{
+  "Boots_of_Captivation": {
+    "id_key": "Boots_of_Captivation",
+    "name": "Item:Boots of Captivation",
+    "url": "https://wiki.wizard101central.com/wiki/Item:Boots_of_Captivation",
+    "categories": [],
+    "gear_slot": "Boots",
+    "level_requirement": 35,
+    "school": null,
+    "raw_fields": {},
+    "item_cards": [],
+    "dropped_by": [
+      "Clonky",
+      "Confused Forest Warrior",
+      "Otomo Courier",
+      "Otomo Supply Runner",
+      "Sanzoku Bandit",
+      "Sanzoku Outlaw",
+      "Skratch",
+      "Tainted Forest Imp",
+      "Troll Mercenary"
+    ]
+  },
+  "Famous_Footwraps": {
+    "id_key": "Famous_Footwraps",
+    "name": "Item:Famous Footwraps",
+    "url": "https://wiki.wizard101central.com/wiki/Item:Famous_Footwraps",
+    "categories": [],
+    "gear_slot": "Boots",
+    "level_requirement": 25,
+    "school": null,
+    "raw_fields": {},
+    "item_cards": [],
+    "dropped_by": [
+      "Deadly Scratcher",
+      "Gearhead (Boss)",
+      "Jacques the Scratcher (Rank 6)",
+      "Meowiarty",
+      "Midnighter",
+      "O'Leary Conniver"
+    ]
+  },
+  "Lord_Nightshades_Boots": {
+    "id_key": "Lord_Nightshades_Boots",
+    "name": "Lord Nightshade's Boots",
+    "url": "https://wiki.wizard101central.com/wiki/Item:Lord_Nightshade-27s_Boots",
+    "categories": [],
+    "gear_slot": null,
+    "level_requirement": null,
+    "school": null,
+    "raw_fields": {},
+    "item_cards": [],
+    "dropped_by": []
+  },
+  "Rattlebones_Footwraps": {
+    "id_key": "Rattlebones_Footwraps",
+    "name": "Rattlebones' Footwraps",
+    "url": "https://wiki.wizard101central.com/wiki/Item:Rattlebones-27_Footwraps",
+    "categories": [],
+    "gear_slot": null,
+    "level_requirement": null,
+    "school": null,
+    "raw_fields": {},
+    "item_cards": [],
+    "dropped_by": []
+  },
+  "Healers_Shoes": {
+    "id_key": "Healers_Shoes",
+    "name": "Healer's Shoes",
+    "url": "https://wiki.wizard101central.com/wiki/Item:Healer-27s_Shoes",
+    "categories": [],
+    "gear_slot": null,
+    "level_requirement": null,
+    "school": null,
+    "raw_fields": {},
+    "item_cards": [],
+    "dropped_by": []
+  },
+  "Roughspun_Shoes": {
+    "id_key": "Roughspun_Shoes",
+    "name": "Roughspun Shoes",
+    "url": "https://wiki.wizard101central.com/wiki/Item:Roughspun_Shoes",
+    "categories": [],
+    "gear_slot": null,
+    "level_requirement": null,
+    "school": null,
+    "raw_fields": {},
+    "item_cards": [],
+    "dropped_by": []
+  },
+  "Graven_Boots": {
+    "id_key": "Graven_Boots",
+    "name": "Graven Boots",
+    "url": "https://wiki.wizard101central.com/wiki/Item:Graven_Boots",
+    "categories": [],
+    "gear_slot": null,
+    "level_requirement": null,
+    "school": null,
+    "raw_fields": {},
+    "item_cards": [],
+    "dropped_by": []
+  },
+  "Nirini_Champions_Sandals": {
+    "id_key": "Nirini_Champions_Sandals",
+    "name": "Nirini Champion's Sandals",
+    "url": "https://wiki.wizard101central.com/wiki/Item:Nirini_Champion-27s_Sandals",
+    "categories": [],
+    "gear_slot": null,
+    "level_requirement": null,
+    "school": null,
+    "raw_fields": {},
+    "item_cards": [],
+    "dropped_by": []
+  },
+  "Shoes_of_the_Fortress": {
+    "id_key": "Shoes_of_the_Fortress",
+    "name": "Shoes of the Fortress",
+    "url": "https://wiki.wizard101central.com/wiki/Item:Shoes_of_the_Fortress",
+    "categories": [],
+    "gear_slot": null,
+    "level_requirement": null,
+    "school": null,
+    "raw_fields": {},
+    "item_cards": [],
+    "dropped_by": []
+  },
+  "Boots_of_the_Great_Troll": {
+    "id_key": "Boots_of_the_Great_Troll",
+    "name": "Boots of the Great Troll",
+    "url": "https://wiki.wizard101central.com/wiki/Item:Boots_of_the_Great_Troll",
+    "categories": [],
+    "gear_slot": null,
+    "level_requirement": null,
+    "school": null,
+    "raw_fields": {},
+    "item_cards": [],
+    "dropped_by": []
+  },
+  "Frost-Touched_Shoes": {
+    "id_key": "Frost-Touched_Shoes",
+    "name": "Frost-Touched Shoes",
+    "url": "https://wiki.wizard101central.com/wiki/Item:Frost-2DTouched_Shoes",
+    "categories": [],
+    "gear_slot": null,
+    "level_requirement": null,
+    "school": null,
+    "raw_fields": {},
+    "item_cards": [],
+    "dropped_by": []
+  },
+  "Powerful_Boots": {
+    "id_key": "Powerful_Boots",
+    "name": "Powerful Boots",
+    "url": "https://wiki.wizard101central.com/wiki/Item:Powerful_Boots",
+    "categories": [],
+    "gear_slot": null,
+    "level_requirement": null,
+    "school": null,
+    "raw_fields": {},
+    "item_cards": [],
+    "dropped_by": []
+  }
+}
