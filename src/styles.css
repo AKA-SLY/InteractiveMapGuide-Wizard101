@@ -350,7 +350,8 @@ button:hover,
   grid-template-columns: minmax(420px, 1fr) minmax(520px, 1.05fr);
   gap: 18px;
   align-items: stretch;
-  max-width: 1340px;
+  /* Widen for 1080p+/1920p layouts */
+  max-width: 1680px;
   margin: 8px auto 0;
 }
 
@@ -1004,7 +1005,8 @@ input[type="text"] {
   left: 0;
   right: 0;
   bottom: 0;
-  max-width: 1380px;
+  /* Match wider content layout */
+  max-width: 1680px;
   margin: 0 auto;
   padding: 0 16px 14px;
   display: grid;

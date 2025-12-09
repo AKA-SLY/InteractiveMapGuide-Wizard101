@@ -1,5 +1,6 @@
 import { libraryRoot } from "../lib/library";
 import { type Spell } from "../types";
+import { astralSpells } from "./astralSpells";
 import { fireSpellFiles } from "./libraryFiles";
 
 const normalizeName = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
@@ -321,7 +322,8 @@ const baseSpells: Spell[] = [
   },
 ];
 
-export const spells: Spell[] = baseSpells.map((spell) => ({
+// Merge core (Elemental/Spirit/Balance) spell samples with Astral (Sun/Moon/Star)
+export const spells: Spell[] = [...baseSpells, ...astralSpells].map((spell) => ({
   ...spell,
   image: spell.image ?? spellImage(spell.name),
 }));

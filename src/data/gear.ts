@@ -1,5 +1,6 @@
 import { type Gear } from "../types";
 import { testGear } from "./gearTest";
+import { gearFromJson } from "./json/gearFromJson";
 
 const baseGear: Gear[] = [
   {
@@ -90,4 +91,5 @@ const baseGear: Gear[] = [
 
 // Merge in test gear items from JSON to populate the app as requested.
 // Keep test data after base items so curated examples remain visible first.
-export const gear: Gear[] = [...baseGear, ...testGear];
+// Merge curated examples, test JSON, and auto-ingested JSON gear
+export const gear: Gear[] = [...baseGear, ...testGear, ...gearFromJson];
