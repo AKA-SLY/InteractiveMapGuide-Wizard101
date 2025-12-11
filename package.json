@@ -4,15 +4,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "npm run build && vite preview --base /InteractiveMapGuide-Wizard101/ --host --port 4173"
+    "dev": "cross-env NODE_OPTIONS=--max-old-space-size=4096 vite",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=4096 vite build",
+    "preview": "cross-env NODE_OPTIONS=--max-old-space-size=4096 vite build && cross-env NODE_OPTIONS=--max-old-space-size=4096 vite preview --base /InteractiveMapGuide-Wizard101/ --host --port 4173"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "typescript": "^5.5.0",
