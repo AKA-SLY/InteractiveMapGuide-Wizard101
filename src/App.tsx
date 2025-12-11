@@ -1433,7 +1433,7 @@ function App() {
 
   return (
     <div className="page">
-      {/* Floating live preview button retained after removing top area */}
+      {/* Floating live preview button retained */}
       <a
         className="live-preview-fab"
         href="https://aka-sly.github.io/InteractiveMapGuide-Wizard101/"
@@ -1441,33 +1441,6 @@ function App() {
       >
         Live preview
       </a>
-
-      <div className="info-rail" aria-label="XML stats and shortcuts">
-        <div className="data-stats__card data-stats__card--compact">
-          <p className="eyebrow">Spell index</p>
-          <h3>{xmlDataStats.totalSpells.toLocaleString()} entries</h3>
-          <p className="hint">Parsed from the bundled Category Spells XML export.</p>
-          <p className="data-stats__examples">
-            Examples: {xmlDataStats.sampleSpells.join(", ") || "Unavailable"}
-          </p>
-        </div>
-        <div className="data-stats__card data-stats__card--compact">
-          <p className="eyebrow">Balance spells</p>
-          <h3>{xmlDataStats.balanceSpellCount.toLocaleString()} entries</h3>
-          <p className="hint">Balance-only subset sourced from the balance XML file.</p>
-        </div>
-        <div className="info-rail__xml">
-          <p className="eyebrow">XML quick hops</p>
-          <p className="hint">Use parsed spell names as instant search filters.</p>
-          <div className="chip-row">
-            {xmlQuickLinks.map((name) => (
-              <button key={name} className="chip-link" onClick={() => openXmlSpell(name)}>
-                {name}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
 
       <main className="content-layout" id="list">
         <section className="bookmark-shell">
