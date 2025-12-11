@@ -1192,6 +1192,15 @@ function App() {
   }, [category, dataset]);
 
   const itemSubcategories = useMemo(() => {
+    if (viewCategory === "Spell Cards") {
+      const tags = new Set<string>();
+      (dataset as GalleryItem[]).forEach((item) =>
+        (item.tags ?? []).forEach((tag) => tags.add(tag)),
+      );
+      const list = Array.from(tags).sort();
+      return list.length ? ["All", ...list] : ["All"];
+    }
+
     if (category === "Gear") {
       const tags = new Set<string>();
       (dataset as Gear[]).forEach((piece) => {
@@ -1227,7 +1236,7 @@ function App() {
     }
 
     return [];
-  }, [category, dataset]);
+  }, [category, dataset, viewCategory]);
 
   const primaryCategories = useMemo(
     () =>
@@ -1303,7 +1312,13 @@ function App() {
         .includes(search.toLowerCase().trim());
 
       if (viewCategory === "Spell Cards") {
-        return matchesSearch;
+        const tags = (item as GalleryItem).tags ?? ["Unknown School"];
+        const matchesSchool =
+          school === "All" || tags.some((tag) => tag.toLowerCase() === school.toLowerCase());
+        const matchesSub =
+          subcategoryFilter === "All" ||
+          tags.some((tag) => tag.toLowerCase() === subcategoryFilter.toLowerCase());
+        return matchesSearch && matchesSchool && matchesSub;
       }
 
       if (viewCategory === "Spells") {
@@ -1616,7 +1631,6 @@ function App() {
                     key={s}
                     className={s === school ? "school-pill active" : "school-pill"}
                     onClick={() => setSchool(s)}
-                    disabled={viewCategory === "Spell Cards"}
                     aria-pressed={s === school}
                     aria-label={`${s} school`}
                   >
@@ -1649,7 +1663,8 @@ function App() {
             {(category === "Gear" ||
               category === "Furniture" ||
               category === "Jewels" ||
-              category === "Quests") &&
+              category === "Quests" ||
+              viewCategory === "Spell Cards") &&
               itemSubcategories.length > 0 && (
                 <div className="filter-rail" aria-label="Item subcategories">
                   {itemSubcategories.map((filter) => (

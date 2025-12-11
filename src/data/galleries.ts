@@ -47,10 +47,12 @@ export const fireSpellCards: GalleryItem[] = buildGallery(
   fireSpellFiles,
   "Wizard101 Fire_Spells",
   "Spell Cards",
+  undefined,
+  () => ["Fire"],
 );
 
 // Corrected folder name to match the actual library structure
-export const henchmen: GalleryItem[] = buildGallery(henchmenFiles, "Henchmen", "Henchmen");
+export const henchmen: GalleryItem[] = buildGallery(henchmenFiles, "Henchment", "Henchmen");
 
 const jewelTags = (file: string) => {
   const match = file.match(/_(Circle|Square|Triangle|Tear|Star)/i);
