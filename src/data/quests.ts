@@ -1,5 +1,6 @@
 import { type Quest } from "../types";
 import { questsFromJson } from "./json/questsFromJson";
+import { questsFromHtml } from "./questsFromHtml";
 import { mergeByName } from "./util/merge";
 
 const baseQuests: Quest[] = [
@@ -229,4 +230,5 @@ const baseQuests: Quest[] = [
   },
 ];
 
-export const quests: Quest[] = mergeByName<Quest>(baseQuests, questsFromJson);
+// Merge base list with JSON-derived and locally saved HTML quest pages.
+export const quests: Quest[] = mergeByName<Quest>(baseQuests, [...questsFromJson, ...questsFromHtml]);

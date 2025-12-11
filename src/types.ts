@@ -173,6 +173,7 @@ export type CategoryKey =
   | "Spells"
   | "Treasure Cards"
   | "Gear"
+  | "Items"
   | "Characters"
   | "Fishing"
   | "Furniture"

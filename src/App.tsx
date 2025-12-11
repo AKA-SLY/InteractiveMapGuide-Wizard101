@@ -59,6 +59,7 @@ const categoryIconFallback: Record<CategoryKey | "Spell Cards", string> = {
   Spells: w101Icon("Damage_Spell"),
   "Treasure Cards": w101Icon("Treasure_Card"),
   Gear: w101Icon("All_Items"),
+  Items: w101Icon("All_Items"),
   Furniture: w101Icon("House"),
   Characters: w101Icon("Admin"),
   Henchmen: w101Icon("Minion"),

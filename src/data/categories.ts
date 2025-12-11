@@ -4,6 +4,7 @@ import { castles } from "./castles";
 import { fishing } from "./fishing";
 import { furniture } from "./furniture";
 import { gear } from "./gear";
+import { itemsFromCsv } from "./itemsFromCsv";
 import { henchmen, jewels, mounts, minions } from "./galleries";
 import { locations } from "./locations";
 import { quests } from "./quests";
@@ -39,6 +40,7 @@ export const categories: {
   { key: "Spells", icon: w101Icon("Damage_Spell"), dataset: spells },
   { key: "Treasure Cards", icon: w101Icon("Treasure_Card"), dataset: treasureCards },
   { key: "Gear", icon: w101Icon("All_Items"), dataset: gear },
+  { key: "Items", icon: w101Icon("All_Items"), dataset: itemsFromCsv },
   { key: "Furniture", icon: w101Icon("House"), dataset: furniture },
   { key: "Castles", icon: w101Icon("Castle"), dataset: castles },
   { key: "Scrolls", icon: w101Icon("Music_Scroll"), dataset: scrolls },
