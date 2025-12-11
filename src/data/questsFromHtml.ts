@@ -13,11 +13,37 @@ function extractTitle(html: string): string | null {
   return namePart || raw;
 }
 
-function wikiUrlFor(pageTitle: string): string {
-  // Expect pageTitle like "Quest:Some Name"; convert spaces to underscores
-  const path = pageTitle.replace(/\s+/g, "_");
-  // Keep colon and apostrophes; encode other characters safely
-  return encodeURI(`https://wiki.wizard101central.com/wiki/${path}`);
+function extractCategories(html: string): string[] {
+  const match = html.match(/"wgCategories":\s*(\[[^\]]*\])/);
+  if (!match) return [];
+  try {
+    const parsed = JSON.parse(match[1].replace(/\\"/g, '"')) as unknown;
+    return Array.isArray(parsed)
+      ? parsed.filter((c): c is string => typeof c === "string").map((c) => c.trim()).filter(Boolean)
+      : [];
+  } catch (err) {
+    console.error("Failed to parse quest categories", err);
+    return [];
+  }
+}
+
+function extractFirstParagraph(html: string): string | undefined {
+  const p = html.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
+  if (!p) return undefined;
+  const text = p[1]
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  return text || undefined;
+}
+
+function inferWorld(categories: string[]): string | undefined {
+  const questCategory = categories.find((c) => /Quests/i.test(c));
+  if (!questCategory) return undefined;
+  const match = questCategory.match(/^(.+?)(?: Side)? Quests$/i);
+  if (match) return match[1];
+  return undefined;
 }
 
 const collected: Quest[] = [];
@@ -27,9 +53,15 @@ for (const raw of Object.values(htmlModules)) {
   if (!pageTitle) continue;
   const questName = pageTitle.replace(/^Quest:/, "").trim();
   if (!questName) continue;
+
+  const categories = extractCategories(raw);
+  const world = inferWorld(categories);
+
   collected.push({
     name: questName,
-    wikiUrl: wikiUrlFor(pageTitle),
+    description: extractFirstParagraph(raw),
+    category: categories.find((c) => /Quests/i.test(c)) ?? categories[0],
+    world,
   });
 }
 
