@@ -1,8 +1,16 @@
 import { libraryPath, w101Icon } from "../lib/library";
 import { type GalleryItem } from "../types";
 
+const EXTRA_SKILL_ROOT = " Extra Skill Spells";
+
+const normalizeExtraSkillFolder = (folder: string) => {
+  const trimmed = folder.trimStart();
+  const withoutRoot = trimmed.replace(/^Extra Skill Spells\/?/i, "").trimStart();
+  return withoutRoot ? `${EXTRA_SKILL_ROOT}/${withoutRoot}` : EXTRA_SKILL_ROOT;
+};
+
 const extraSkillPath = (folder: string, file: string) =>
-  libraryPath(folder, file, "webp", (value) => value);
+  libraryPath(normalizeExtraSkillFolder(folder), file, "webp", (value) => value);
 
 const spellCard = (
   name: string,

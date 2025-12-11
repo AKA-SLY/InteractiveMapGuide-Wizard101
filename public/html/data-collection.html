@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wizard101 Data Collection</title>
+    <style>
+      body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 2rem; line-height: 1.6; }
+      code { background: #f4f4f4; padding: 0.15rem 0.35rem; border-radius: 4px; }
+      h1 { margin-top: 0; }
+      ol li { margin-bottom: 0.75rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Contribute Wizard101 game data</h1>
+    <p>
+      Drop JSON exports for spells, items, or other categories into the
+      <code>/Json</code> folder at the project root. The app automatically ingests every
+      <code>.json</code> array in that folder—no code edits required.
+    </p>
+    <ol>
+      <li>
+        Place your JSON files inside <code>/Json</code>. Each file may contain one array or
+        multiple objects representing spells, gear, treasure cards, etc.
+      </li>
+      <li>
+        Keep fields descriptive (for example: <code>name</code>, <code>school</code>,
+        <code>pip_cost</code>/<code>pips</code>, <code>accuracy</code>, <code>effect</code>,
+        <code>bonuses_raw</code>, <code>slot</code>, <code>categories</code>, <code>wiki_url</code>).
+      </li>
+      <li>
+        Run or refresh the app. The Vite build picks up new JSON files automatically
+        through the <code>import.meta.glob</code> loader.
+      </li>
+    </ol>
+    <p>
+      For large dumps, consider splitting files by category (for example
+      <code>gear_items.json</code> and <code>school_spells.json</code>) to keep them organized.
+    </p>
+  </body>
+</html>
