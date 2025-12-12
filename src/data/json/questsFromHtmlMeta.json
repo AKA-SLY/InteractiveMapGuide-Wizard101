@@ -1,0 +1,505 @@
+[
+  {
+    "name": "A Set of Steak Knives",
+    "description": "Goals: Craft 2 Poniards of Gallantry Talk to Wul'yahm Hand In: Wul'yahm",
+    "category": "Quests"
+  },
+  {
+    "name": "A Sight for Core Eyes",
+    "description": "Goals: Use the Apple Tub in the Haunted Cave",
+    "category": "Quests"
+  },
+  {
+    "name": "A Simple Fetch Quest",
+    "description": "Goals: Talk to Ethyl Enter Ethyl's House Enter Basement Defeat Neighborhood Watch Release Cell Door Talk to Ethyl Hand In: Ethyl",
+    "category": "Quests"
+  },
+  {
+    "name": "A Soldier's Duty",
+    "description": "Goals: Talk to Bricktop Hand In: Bricktop",
+    "category": "Quests"
+  },
+  {
+    "name": "A Solid Egg Sample",
+    "description": "Goals: Find the Egg Collect the Egg Talk to Edward Halley Hand In: Edward Halley",
+    "category": "Fire School Quests",
+    "world": "Fire School"
+  },
+  {
+    "name": "A Song of Brothers",
+    "description": "Goals: Talk to Geordi NightEyes in the Silent Market Hand In: Geordi NightEyes",
+    "category": "Quests"
+  },
+  {
+    "name": "A Song of George",
+    "description": "Given By: Sir George Martyn",
+    "category": "Quests"
+  },
+  {
+    "name": "A Star Is Born",
+    "description": "Given By: Starts automatically when entering The Stellarium",
+    "category": "Quests"
+  },
+  {
+    "name": "A Stormy Offering",
+    "description": "Goals: Collect 4 Sea Foam Crystals Use Storm Lord Altar Talk to Pierce Stanson Hand In: Pierce Stanson",
+    "category": "Quests"
+  },
+  {
+    "name": "A Strange Case",
+    "description": "Goals: Go to the State Wing",
+    "category": "Quests"
+  },
+  {
+    "name": "A Strange Race of People",
+    "description": "Goals: Go to the Path to Dun Dara Talk to Sir Malory Hand In: Sir Malory",
+    "category": "Quests"
+  },
+  {
+    "name": "A Stranger in Paradise",
+    "description": "Goals: Talk to Xipli Tailbiter in Three Points Hand In: Xipli Tailbiter",
+    "category": "Quests"
+  },
+  {
+    "name": "A Strenuous Course",
+    "description": "Goals: Talk to Zanetta Stormbreaker in The Crucible Hand In: Zanetta Stormbreaker",
+    "category": "Quests"
+  },
+  {
+    "name": "A Stroll With Trolls",
+    "description": "Goals: Defeat 3 Lumbering Trolls Talk to Nolan Stormgate Hand In: Nolan Stormgate",
+    "category": "Quests"
+  },
+  {
+    "name": "A Strong Defense...",
+    "description": "Goals: Gather 4 Wood Piles Talk to Rikugun Mikawa Hand In: Rikugun Mikawa",
+    "category": "Quests"
+  },
+  {
+    "name": "A Sunny Disposition",
+    "description": "Goals: Talk to Vassek Shadowspite in Stormriven Hall Hand In: Vassek Shadowspite",
+    "category": "Quests"
+  },
+  {
+    "name": "A Tale Told By An... You Know",
+    "description": "Given By: Starts automatically when entering 4th Lark",
+    "category": "Quests"
+  },
+  {
+    "name": "A Tale of Two Brothers",
+    "description": "Goals: Talk to Shojiro Gama in Hametsu Village Hand In: Shojiro Gama",
+    "category": "Quests"
+  },
+  {
+    "name": "A Tale of Two Captives",
+    "description": "Goals: Enter Prologue Hall Defeat The Narrator",
+    "category": "Quests"
+  },
+  {
+    "name": "A Task At Hand",
+    "description": "Goals: Talk to Dalia Falmea in Ravenwood Hand In: Dalia Falmea",
+    "category": "Quests"
+  },
+  {
+    "name": "A Task for Sweeney",
+    "description": "Goals: Talk to Rand Taymore Hand In: Rand Taymore",
+    "category": "Quests"
+  },
+  {
+    "name": "A Taste of Honey",
+    "description": "Goals: Go to Shoshun Village Pond Talk to Moolinda Wu in the School of Life Hand In: Moolinda Wu",
+    "category": "Life School Quests",
+    "world": "Life School"
+  },
+  {
+    "name": "A Taste of Poison",
+    "description": "Given By: Fianna Yellowknife",
+    "category": "Quests"
+  },
+  {
+    "name": "A Tell Tale Spar",
+    "description": "Goals: Find ExaltedBlade Descendant",
+    "category": "Quests"
+  },
+  {
+    "name": "A Test of Metal",
+    "description": "Goals: Defeat Gearhead and Collect Internal Gear Talk to Ernest Haldings Hand In: Ernest Haldings",
+    "category": "Quests"
+  },
+  {
+    "name": "A Test of Strength",
+    "description": "Goals: Talk to Yochimo Go to the Water Dojo Defeat Yochimo Talk to Noboru Akitame Hand In: Noboru Akitame",
+    "category": "Quests"
+  },
+  {
+    "name": "A Tun of Tunnel Trouble",
+    "description": "Given By: Starts automatically when entering Dundara's Tunnel",
+    "category": "Quests"
+  },
+  {
+    "name": "A Very Brave and Noble Thing",
+    "description": "Given By: Sir Perry Gilliam",
+    "category": "Quests"
+  },
+  {
+    "name": "A View to a Curse",
+    "description": "Given By: Edwin the ArcaneArchitect",
+    "category": "Quests"
+  },
+  {
+    "name": "A View to a Kill",
+    "description": "Goals: Talk to Alhazred in School of Balance Talk to Cyrus Drake Hand In: Cyrus Drake",
+    "category": "Myth School Quests",
+    "world": "Myth School"
+  },
+  {
+    "name": "A Voice for the Silent",
+    "description": "Given By: Jhae AskewedView",
+    "category": "Quests"
+  },
+  {
+    "name": "A Warm Welcome?",
+    "description": "Given By: Starts automatically when entering Guest Quarters",
+    "category": "Quests"
+  },
+  {
+    "name": "A Wee Bit O The Brogue",
+    "description": "Goals: Defeat 2 Foul Skirkers Destroy 3 Kegs of Effluent Talk to Abbot Ewan Hand In: Abbot Ewan",
+    "category": "Quests"
+  },
+  {
+    "name": "A Welcome Distraction",
+    "description": "Given By: Stikkan SandStrider",
+    "category": "Quests"
+  },
+  {
+    "name": "A Whole New World",
+    "description": "Goals: Talk to Bartleby in Ravenwood Go to Spiral Chamber in The Oasis Talk to Sergeant Major Talbot Hand In: Sergeant Major Talbot",
+    "category": "Quests"
+  },
+  {
+    "name": "A Whole Nuovo World",
+    "description": "Given By: Monsignor Del Monte",
+    "category": "Quests"
+  },
+  {
+    "name": "A Wing and a Prayer",
+    "description": "Given By: Hrafn Lorespeaker",
+    "category": "Quests"
+  },
+  {
+    "name": "A Wizard's Best Friend",
+    "description": "Goals: Talk to Sir Nigel Higgenbottom Talk to (in any order): Doctor Purreau Tennant Wastelander Dusty Shadowcloud Talk to Sir Nigel Higgenbottom Talk to Milo Barker Hand In: Milo Barker",
+    "category": "Quests"
+  },
+  {
+    "name": "A Wizard's Best Friend (Retired)",
+    "description": "Goals: Talk to Sir Nigel Higgenbottom Talk to: Doctor Purreau in the Hatchery Tennant Wastelander in the Pet Shop Dusty Shadowcloud in the Snack Shop Talk to Sir Nigel Higgenbottom Talk to Milo Barker Hand In: Milo Barker",
+    "category": "Quests"
+  },
+  {
+    "name": "A Wizard in Artorius's Court",
+    "description": "Given By: Arthur Wethersfield",
+    "category": "Quests"
+  },
+  {
+    "name": "A Wolf Among Bears",
+    "description": "Goals: Talk to Wulfric Foesbane Hand In: Wulfric Foesbane",
+    "category": "Quests"
+  },
+  {
+    "name": "A Yarn As Old as Time",
+    "description": "Goals: Go to the Temple of the Scratched Post Defeat Golden Horde Soldier Read Temple Book Go to the Woven Toy Temple Defeat Golden Horde Soldier Read Temple Book Go to the Temple of Purrfect Harmony Defeat Golden Horde Storykeeper Read Temple Book Talk to Acolyte Ang Hand In: Acolyte Ang",
+    "category": "Quests"
+  },
+  {
+    "name": "Aberrant Weight of Massive Ego",
+    "description": "Goals: Extinguish Fire Extinguish Fire Extinguish Fire Talk to Azulla Go to Aberrant Cave Defeat Aberrant Tung Ak Talk to Moo Bu Hand In: Moo Bu",
+    "category": "Quests"
+  },
+  {
+    "name": "About the Astrals",
+    "description": "Goals: Visit Celestial Trainers Hand In: Completes Automatically",
+    "category": "Quests"
+  },
+  {
+    "name": "Abyssal Cave",
+    "description": "Given By: Starts automatically when entering the Abyssal Cave",
+    "category": "Quests"
+  },
+  {
+    "name": "Acceptance at Last",
+    "description": "Given By: Zanetta Stormbreaker",
+    "category": "Quests"
+  },
+  {
+    "name": "Acetate Cloth",
+    "description": "Goals: Talk to Zan'ne in The Oasis Talk to Moolinda Wu in the School of Life Hand In: Moolinda Wu",
+    "category": "Life School Quests",
+    "world": "Life School"
+  },
+  {
+    "name": "Across the Spiral",
+    "description": "Given By: Tala Snakesquasher",
+    "category": "Quests"
+  },
+  {
+    "name": "Across the Universe",
+    "description": "Goals: Talk to Tezcat Threestar Hand In: Tezcat Threestar",
+    "category": "Quests"
+  },
+  {
+    "name": "Act Naturally",
+    "description": "Goals: Talk to Blossom in Ravenwood Talk to Moolinda Wu in the School of Life Hand In: Moolinda Wu",
+    "category": "Life School Quests",
+    "world": "Life School"
+  },
+  {
+    "name": "Acting Boarish",
+    "description": "Given By: Starts automatically when \"The Traitor Within\" is completed",
+    "category": "Quests"
+  },
+  {
+    "name": "Activate Them!",
+    "description": "Given By: Dr. Gordon Flemming",
+    "category": "Quests"
+  },
+  {
+    "name": "Adding the Frosting",
+    "description": "Given By: Arthur Wethersfield",
+    "category": "Balance School Quests",
+    "world": "Balance School"
+  },
+  {
+    "name": "Adepts of the Magi",
+    "description": "Goals: Go to the Adepts Chamber Defeat the Spider Adepts Talk to Old Cob Hand In: Old Cob",
+    "category": "Quests"
+  },
+  {
+    "name": "Administer Cure",
+    "description": "Goals: Defeat 6 Fire Elves",
+    "category": "Quests"
+  },
+  {
+    "name": "Advanced Combat",
+    "description": "Given By: Diego the Duelmaster",
+    "category": "Quests"
+  },
+  {
+    "name": "Advanced Placement",
+    "description": "Given By: Starts automatically when purchasing the Level 50 Elixir",
+    "category": "Quests"
+  },
+  {
+    "name": "Aegon's Experiment",
+    "description": "Given By: Starts automatically when the first Day 12 Daily Assignment has been completed.",
+    "category": "Quests"
+  },
+  {
+    "name": "Aerobots Are Da Bombs",
+    "description": "Given By: Frazzled Aerobot",
+    "category": "Quests"
+  },
+  {
+    "name": "Afraid of the Dark",
+    "description": "Given By: Starts automatically when entering Ice Council Chamber",
+    "category": "Quests"
+  },
+  {
+    "name": "Against Time",
+    "description": "Goals: Go to Zruvan Grotto in Caterwaul Canyons Search for The Chronocle in Zruvan Grotto",
+    "category": "Quests"
+  },
+  {
+    "name": "Aggravated Avians",
+    "description": "Given By: Acan Winefeather",
+    "category": "Quests"
+  },
+  {
+    "name": "Ain't Goin' Nowhere",
+    "description": "Given By: Chantico Blue Air",
+    "category": "Quests"
+  },
+  {
+    "name": "Ain't No Citadel High Enough",
+    "description": "Goals: Return to Port Aero Go to First Aero Dwarf House Defeat Aerobot Go to Second Aero Dwarf House Defeat Dark Cloud Cabalist Go to Third Aero Dwarf House Defeat Babe the Not-Blue Ox Meet your friends in Port Aero Talk to Mayor Quill Go to Aeroship Take Aeroship to Nimbus Talk to Helena Hand In: Helena",
+    "category": "Quests"
+  },
+  {
+    "name": "Air Apparent",
+    "description": "Goals: Talk to Sesshu Nedaki in the Shrine of the Spirit Use Spirit Shrine Talk to Sesshu Nedaki Talk to Tu Luk Kwo Hand In: Tu Luk Kwo",
+    "category": "Quests"
+  },
+  {
+    "name": "Akilles' Deal",
+    "description": "Goals: Go to Akilles' Tower Defeat General Akilles Destroy the Crystal Ball Talk to Nolan Stormgate Talk to Sergeant Muldoon Hand In: Sergeant Muldoon",
+    "category": "Quests"
+  },
+  {
+    "name": "Alas, Poor Morwen",
+    "description": "Given By: Helgar Goldenvoice",
+    "category": "Quests"
+  },
+  {
+    "name": "Alas Poor Wyrm",
+    "description": "Goals: Collect the Dragon Skull Talk to Gwendolyn Hand In: Gwendolyn",
+    "category": "Quests"
+  },
+  {
+    "name": "Ali Baboon's Last Stand",
+    "description": "Given By: Devinn the Drifter",
+    "category": "Quests"
+  },
+  {
+    "name": "Alkali Barrows",
+    "description": "Goals: Go to Alkali Barrows Investigate the Barrows Talk to Saireeh Hand In: Saireeh",
+    "category": "Quests"
+  },
+  {
+    "name": "All's Well",
+    "description": "Given By: Olemeeli Thornpaw",
+    "category": "Quests"
+  },
+  {
+    "name": "All's Well that Cleanses Well",
+    "description": "Goals: Talk to Rottingham Weiler in Governor's Mansion Talk to Phileas Dogg Talk to Phileas Dogg (outside) Defeat Irk Purify Well Talk to Phileas Dogg Hand In: Phileas Dogg",
+    "category": "Quests"
+  },
+  {
+    "name": "All Access Pass",
+    "description": "Goals: Talk to Rakstede Steelhorn Talk to Lail Brighteyes (in Darajani Zoo ) Hand In: Lail Brighteyes",
+    "category": "Quests"
+  },
+  {
+    "name": "All Hail Azoth",
+    "description": "Hand In: Completes Automatically",
+    "category": "Quests"
+  },
+  {
+    "name": "All Signs Point To...",
+    "description": "Given By: Belladonna Crisp",
+    "category": "Quests"
+  },
+  {
+    "name": "All That Glitters...",
+    "description": "Given By: Belladonna Crisp",
+    "category": "Quests"
+  },
+  {
+    "name": "All Things Must Pass",
+    "description": "Goals: Go to the bridge in Nidavellir Talk to Dworgyn in the School of Death Hand In: Dworgyn",
+    "category": "Death School Quests",
+    "world": "Death School"
+  },
+  {
+    "name": "All You Need To Do",
+    "description": "Given By: Captain K'torr J'rrol",
+    "category": "Quests"
+  },
+  {
+    "name": "All Your Basilisk...",
+    "description": "Goals: Talk to Milos Bookwyrm in The Atheneum Go to The Hoarder's Tower",
+    "category": "Myth School Quests",
+    "world": "Myth School"
+  },
+  {
+    "name": "All in the Crime Family",
+    "description": "Goals: Talk to Regina Lupinian Talk to Reggie Toadsworth Enter Archie Fan Club Have Archibald defeat Big Moose Talk to Archibald Ratfink Enter the Hiram Lodge Have Archibald defeat Josie the Tabbicat Talk to Archibald Ratfink Talk to Old Sage in the Blended Grove Read Tome of Weaving Complete 3 out of 5 badges : Apprentice Conjurer Companion",
+    "category": "Quests"
+  },
+  {
+    "name": "All is Revealed",
+    "description": "Given By: Wulfric Foesbane",
+    "category": "Quests"
+  },
+  {
+    "name": "All the Eels",
+    "description": "Given By: Sohomer Sunblade",
+    "category": "Quests"
+  },
+  {
+    "name": "Almost Friends",
+    "description": "Goals: Defeat 3 Jungletooth Talk to Tupa Taua Go to Tangleroot's Grove Defeat Tangleroot Talk to Tupa Taua Hand In: Tupa Taua",
+    "category": "Quests"
+  },
+  {
+    "name": "Almost Time to Go",
+    "description": "Given By: Velma von Venkman",
+    "category": "Quests"
+  },
+  {
+    "name": "Alone, Alone, All, All, Alone",
+    "description": "Goals: Find the Saqqara Bird Defeat Wazz and Collect Saqqara Bird Totem Talk to Yadullah Hand In: Yadullah",
+    "category": "Quests"
+  },
+  {
+    "name": "Alone in the Dark",
+    "description": "Given By: Kachiri Fire Cloud",
+    "category": "Quests"
+  },
+  {
+    "name": "Alone on the Stone",
+    "description": "Given By: Nigel Scruffington",
+    "category": "Quests"
+  },
+  {
+    "name": "Along Came a Spider",
+    "description": "Goals: Defeat Ice Weavers and Collect 2 Spider Eyes Talk to the Arena Master Hand In: Arena Master",
+    "category": "Quests"
+  },
+  {
+    "name": "Along the Watchtower",
+    "description": "Goals: Defeat 2 Snow Skulls (in Magni's Tower ) Use Signal Fire Talk to Magni Farsight Hand In: Magni Farsight",
+    "category": "Quests"
+  },
+  {
+    "name": "Alpha Slog",
+    "description": "Goals: Defeat Werewolf Hunter Enter Alpha House Defeat Alpha Wolf Talk to Vann Howlsing Hand In: Vann Howlsing",
+    "category": "Quests"
+  },
+  {
+    "name": "Always After Me Charms",
+    "description": "Given By: Fianna Yellowknife",
+    "category": "Quests"
+  },
+  {
+    "name": "Always Have MooShu",
+    "description": "Goals: Defeat Ashikata in his lair Talk to Lili Ma Hand In: Lili Ma",
+    "category": "Quests"
+  },
+  {
+    "name": "Amazing Bass",
+    "description": "Given By: Stallion Quartermane",
+    "category": "Quests"
+  },
+  {
+    "name": "Amber Tomb",
+    "description": "Goals: Defeat Goliath Stingers and",
+    "category": "Quests"
+  },
+  {
+    "name": "Ambiguity Archive",
+    "description": "Goals: Use the Preceptor of Congruency Use the Archive Pedestal Defeat Axenos Talk to Thornton Lewis Hand In: Thornton Lewis",
+    "category": "Quests"
+  },
+  {
+    "name": "Among Us Stalk the Sentinels",
+    "description": "Goals: Catch one: Dragonfly Fish Hard Albacore Sweet Yellow Grunion Talk to Yuri Smokesnare Hand In: Yuri Smokesnare",
+    "category": "Quests"
+  },
+  {
+    "name": "An Ailing Emperor",
+    "description": "Goals: Talk to Tan Keng in the Jade Palace Hand In: Tan Keng",
+    "category": "Quests"
+  },
+  {
+    "name": "An Honest Umbra?",
+    "description": "Given By: Zurellia the ChitinSmasher",
+    "category": "Quests"
+  },
+  {
+    "name": "An Imperial Cure",
+    "description": "Goals: Heal Emperor Yoshihito inside the Throne Room Defeat Jade Oni Talk to Emperor Yoshihito Hand In: Emperor Yoshihito",
+    "category": "Quests"
+  }
+]
