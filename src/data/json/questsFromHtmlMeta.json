@@ -1,505 +1,505 @@
 [
   {
     "name": "A Set of Steak Knives",
-    "description": "Goals: Craft 2 Poniards of Gallantry Talk to Wul'yahm Hand In: Wul'yahm",
+    "description": "Given by: Wul'yahm (The Oasis)\nThis is a side quest.\nGoals:\n- Craft 2 Poniards of Gallantry\n- Talk to Wul'yahm\nHand in: Wul'yahm\nRewards: Gold: 661; XP: 0; Completing this quest leads to acquiring the Apprentice Crafter Badge .",
     "category": "Quests"
   },
   {
     "name": "A Sight for Core Eyes",
-    "description": "Goals: Use the Apple Tub in the Haunted Cave",
+    "description": "Given by: Jack Hallow (The Commons)\nThis is a side quest.\nGoals:\n- Use the Apple Tub in the Haunted Cave\n- (and collect a random prize)\n- Talk to Jack Hallow\nHand in: Jack Hallow\nRewards: Gold: 7-15 (from tub); XP: 0; Treasure Card; Black Cat",
     "category": "Quests"
   },
   {
     "name": "A Simple Fetch Quest",
-    "description": "Goals: Talk to Ethyl Enter Ethyl's House Enter Basement Defeat Neighborhood Watch Release Cell Door Talk to Ethyl Hand In: Ethyl",
+    "description": "Given by: Lucy (Sky City)\nThis is a side quest.\nGoals:\n- Talk to Ethyl\n- Enter Ethyl's House\n- Enter Basement\n- Defeat Neighborhood Watch\n- Release Cell Door\n- Talk to Ethyl\nHand in: Ethyl\nRewards: Gold: 15,000; XP: 0; Spellement; Balance; 2 Old One's Endgame; Death; 2 Grim Reader; Fire; 2 Blast Off!; Ice; 2 Freeze Ray; Life; 2 Lord of the Jungle; Myth; 2 Barbarian's Saga; Storm; 2 Dark & Stormy",
     "category": "Quests"
   },
   {
     "name": "A Soldier's Duty",
-    "description": "Goals: Talk to Bricktop Hand In: Bricktop",
+    "description": "Given by: Rikugun Mikawa (Crimson Fields)\nThis is a storyline and an instance quest.\nGoals:\n- Talk to Bricktop\nHand in: Bricktop\nRewards: Gold: 0; XP: 490",
     "category": "Quests"
   },
   {
     "name": "A Solid Egg Sample",
-    "description": "Goals: Find the Egg Collect the Egg Talk to Edward Halley Hand In: Edward Halley",
+    "description": "Given by: Edward Halley (Royal Museum)\nThis is a side quest.\nGoals:\n- Find the Egg\n- Collect the Egg\n- Talk to Edward Halley\nHand in: Edward Halley\nRewards: Gold: 315; XP: 36,915",
     "category": "Fire School Quests",
     "world": "Fire School"
   },
   {
     "name": "A Song of Brothers",
-    "description": "Goals: Talk to Geordi NightEyes in the Silent Market Hand In: Geordi NightEyes",
+    "description": "Given by: Romo NightEyes (Bastion)\nThis is a side quest.\nGoals:\n- Talk to Geordi NightEyes in the Silent Market\nHand in: Geordi NightEyes\nRewards: Gold: 70; XP: 5,790",
     "category": "Quests"
   },
   {
     "name": "A Song of George",
-    "description": "Given By: Sir George Martyn",
+    "description": "Given by: Sir George Martyn (Dun Dara)\nThis is a storyline quest.\nGoals:\n- Go to The Lightning Lizard Cave\n- Defeat Catalan the Lightning Lizard\n- Talk to Sir George Martyn\nHand in: Sir George Martyn\nRewards: Gold: 320; XP: 15,355; Spellement; Balance; Chimera; Death; Dr. Von's Monster; Fire; Rain of Fire; Ice; Woolly Mammoth; Life; Gnomes!; Myth; Basilisk; Storm; Sirens",
     "category": "Quests"
   },
   {
     "name": "A Star Is Born",
-    "description": "Given By: Starts automatically when entering The Stellarium",
+    "description": "Given by: Starts automatically when entering The Stellarium\nThis is a storyline and an instance quest.\nGoals:\n- Go to Unimatus\n- Defeat Unimatus\n- Use the Energy Shroud Control\n- Go to Selwyn's Chamber\n- Defeat Selwyn Skywatcher\nHand in: Completes Automatically\nRewards: Gold: 70; XP: 1,595",
     "category": "Quests"
   },
   {
     "name": "A Stormy Offering",
-    "description": "Goals: Collect 4 Sea Foam Crystals Use Storm Lord Altar Talk to Pierce Stanson Hand In: Pierce Stanson",
+    "description": "Given by: Pierce Stanson (The Floating Land)\nThis is a storyline quest.\nGoals:\n- Collect 4 Sea Foam Crystals\n- Use Storm Lord Altar\n- Talk to Pierce Stanson\nHand in: Pierce Stanson\nRewards: Gold: 140; XP: 3,190; Spellement; Balance; Power Nova; Death; Scarecrow; Fire; Fire Dragon; Ice; Frost Giant; Life; Forest Lord; Myth; Orthrus; Storm; Storm Lord",
     "category": "Quests"
   },
   {
     "name": "A Strange Case",
-    "description": "Goals: Go to the State Wing",
+    "description": "Given by: Sherlock Bones (Barkingham Palace)\nThis is a side quest.\nGoals:\n- Go to the State Wing\n- (begins instance quest)\n- Talk to Catrin Cheshire\n- Talk to Sherlock Bones\nHand in: Sherlock Bones\nRewards: Gold: 40; XP: 680",
     "category": "Quests"
   },
   {
     "name": "A Strange Race of People",
-    "description": "Goals: Go to the Path to Dun Dara Talk to Sir Malory Hand In: Sir Malory",
+    "description": "Given by: Sir Malory (The Wyrd)\nThis is a storyline quest.\nGoals:\n- Go to the Path to Dun Dara\n- Talk to Sir Malory\nHand in: Sir Malory\nRewards: Gold: 150; XP: 7,245",
     "category": "Quests"
   },
   {
     "name": "A Stranger in Paradise",
-    "description": "Goals: Talk to Xipli Tailbiter in Three Points Hand In: Xipli Tailbiter",
+    "description": "Given by: Pacal Redmask (The Zocalo)\nThis is a storyline quest.\nGoals:\n- Talk to Xipli Tailbiter in Three Points\nHand in: Xipli Tailbiter\nRewards: Gold: 50; XP: 3,230",
     "category": "Quests"
   },
   {
     "name": "A Strenuous Course",
-    "description": "Goals: Talk to Zanetta Stormbreaker in The Crucible Hand In: Zanetta Stormbreaker",
+    "description": "Given by: Crystal Guide (The Necropolis)\nThis is a storyline quest.\nGoals:\n- Talk to Zanetta Stormbreaker in The Crucible\nHand in: Zanetta Stormbreaker\nRewards: Gold: 0; XP: 885",
     "category": "Quests"
   },
   {
     "name": "A Stroll With Trolls",
-    "description": "Goals: Defeat 3 Lumbering Trolls Talk to Nolan Stormgate Hand In: Nolan Stormgate",
+    "description": "Given by: Nolan Stormgate (Cyclops Lane)\nThis is a storyline quest.\nGoals:\n- Defeat 3 Lumbering Trolls\n- Talk to Nolan Stormgate\nHand in: Nolan Stormgate\nRewards: Gold: 22; XP: 155",
     "category": "Quests"
   },
   {
     "name": "A Strong Defense...",
-    "description": "Goals: Gather 4 Wood Piles Talk to Rikugun Mikawa Hand In: Rikugun Mikawa",
+    "description": "Given by: Rikugun Mikawa (Crimson Fields)\nThis is a storyline and an instance quest.\nGoals:\n- Gather 4 Wood Piles\n- Talk to Rikugun Mikawa\nHand in: Rikugun Mikawa\nRewards: Gold: 88; XP: 970",
     "category": "Quests"
   },
   {
     "name": "A Sunny Disposition",
-    "description": "Goals: Talk to Vassek Shadowspite in Stormriven Hall Hand In: Vassek Shadowspite",
+    "description": "Given by: Leland Hawkins (Stormriven)\nThis is a storyline quest.\nGoals:\n- Talk to Vassek Shadowspite in Stormriven Hall\nHand in: Vassek Shadowspite\nRewards: Gold: 35; XP: 845",
     "category": "Quests"
   },
   {
     "name": "A Tale Told By An... You Know",
-    "description": "Given By: Starts automatically when entering 4th Lark",
+    "description": "Given by: Starts automatically when entering 4th Lark\nThis is a side and an instance quest.\nGoals:\n- Attend Play Just ahead\n- Defeat Prosperity\n- Go To Next Play\n- Defeat Old Guy\n- Go To Next Play\n- Defeat Fredrick\n- Go To Next Play\n- Defeat The Spiral\nHand in: Completes Automatically\nRewards: Gold: 1,080; XP: 0",
     "category": "Quests"
   },
   {
     "name": "A Tale of Two Brothers",
-    "description": "Goals: Talk to Shojiro Gama in Hametsu Village Hand In: Shojiro Gama",
+    "description": "Given by: Sanisai Fukido (Tatakai Outpost)\nThis is a storyline quest.\nGoals:\n- Talk to Shojiro Gama in Hametsu Village\nHand in: Shojiro Gama\nRewards: Gold: 176; XP: 3,040; Furniture; Wooden Watchtower; Spellement; Balance; Spectral Blast; Death; Skeletal Pirate; Fire; Phoenix; Ice; Blight Hound; Life; Earth Walker; Myth; Minotaur; Storm; Stormzilla",
     "category": "Quests"
   },
   {
     "name": "A Tale of Two Captives",
-    "description": "Goals: Enter Prologue Hall Defeat The Narrator",
+    "description": "Given by: Ivan (Marketplace of Ideas)\nThis is a storyline quest.\nGoals:\n- Enter Prologue Hall\n- Defeat The Narrator\n- (complete instance quest)\n- Follow \"Ivan\" Right Outside\n- Follow The Bard\n- Talk to Old Quack\nHand in: Old Quack\nRewards: Gold: 60; XP: 0; Spellement; Balance; 4 Chameleon Clash; Death; 4 Anubis; Fire; 4 Ammut; Ice; 4 Shu; Life; 4 Taweret; Myth; 4 Thoth; Storm; 4 Heqet",
     "category": "Quests"
   },
   {
     "name": "A Task At Hand",
-    "description": "Goals: Talk to Dalia Falmea in Ravenwood Hand In: Dalia Falmea",
+    "description": "Given by: Tinu Bhak'mal (The Oasis)\nThis is a side quest.\nGoals:\n- Talk to Dalia Falmea in Ravenwood\nHand in: Dalia Falmea\nRewards: Gold: 0; XP: 65",
     "category": "Quests"
   },
   {
     "name": "A Task for Sweeney",
-    "description": "Goals: Talk to Rand Taymore Hand In: Rand Taymore",
+    "description": "Given by: Private Sweeney (Cyclops Lane)\nThis is a side quest.\nGoals:\n- Talk to Rand Taymore\nHand in: Rand Taymore\nRewards: Gold: 15; XP: 20",
     "category": "Quests"
   },
   {
     "name": "A Taste of Honey",
-    "description": "Goals: Go to Shoshun Village Pond Talk to Moolinda Wu in the School of Life Hand In: Moolinda Wu",
+    "description": "Given by: Moolinda Wu (Ravenwood)\nThis is a side quest.\nGoals:\n- Go to Shoshun Village Pond\n- Talk to Moolinda Wu in the School of Life\nHand in: Moolinda Wu\nRewards: Gold: 400; XP: 4,200; Spell; Forest Lord; Pet; Sylvan Satyr",
     "category": "Life School Quests",
     "world": "Life School"
   },
   {
     "name": "A Taste of Poison",
-    "description": "Given By: Fianna Yellowknife",
+    "description": "Given by: Fianna Yellowknife (High Road)\nThis is a storyline quest.\nGoals:\n- Defeat Night Goblins and Collect Information\n- Talk to Fianna Yellowknife\nHand in: Fianna Yellowknife\nRewards: Gold: 300; XP: 12,155",
     "category": "Quests"
   },
   {
     "name": "A Tell Tale Spar",
-    "description": "Goals: Find ExaltedBlade Descendant",
+    "description": "Given by: Yadullah (Fort Rachias)\nThis is a side quest.\nGoals:\n- Find ExaltedBlade Descendant\n- in Ruined Alcazar\n- Talk to Edric ExaltedBlade\nHand in: Edric ExaltedBlade\nRewards: Gold: 150; XP: 15,500",
     "category": "Quests"
   },
   {
     "name": "A Test of Metal",
-    "description": "Goals: Defeat Gearhead and Collect Internal Gear Talk to Ernest Haldings Hand In: Ernest Haldings",
+    "description": "Given by: Ernest Haldings (Chelsea Court)\nThis is a side quest.\nGoals:\n- Defeat Gearhead and Collect Internal Gear\n- Talk to Ernest Haldings\nHand in: Ernest Haldings\nRewards: Gold: 60; XP: 960; Spellement; Balance; Locust Swarm; Death; Banshee; Fire; Sunbird; Ice; Evil Snowman; Life; Nature's Wrath; Myth; Cyclops; Storm; Storm Shark; Spellement; Balance; Gearhead Destroyer; Death; Vampire; Fire; Immolate; Ice; Ice Wyvern; Life; Seraph; Myth; Cyclops Minion; Storm; Kraken",
     "category": "Quests"
   },
   {
     "name": "A Test of Strength",
-    "description": "Goals: Talk to Yochimo Go to the Water Dojo Defeat Yochimo Talk to Noboru Akitame Hand In: Noboru Akitame",
+    "description": "Given by: Noboru Akitame (Jade Palace)\nThis is a storyline quest.\nGoals:\n- Talk to Yochimo\n- Go to the Water Dojo\n- Defeat Yochimo\n- Talk to Noboru Akitame\nHand in: Noboru Akitame\nRewards: Gold: 0; XP: 2,415; Spellement; Balance; Spectral Blast; Death; Skeletal Pirate; Fire; Phoenix; Ice; Blight Hound; Life; Earth Walker; Myth; Minotaur; Storm; Stormzilla",
     "category": "Quests"
   },
   {
     "name": "A Tun of Tunnel Trouble",
-    "description": "Given By: Starts automatically when entering Dundara's Tunnel",
+    "description": "Given by: Starts automatically when entering Dundara's Tunnel\nThis is a storyline and an instance quest.\nGoals:\n- Explore Dundara's Tunnel\n- Defeat Goanna\n- Explore Dundara's Tunnel\n- Defeat Kangaroo Bushwhacker\n- Explore Dundara's Tunnel\n- Defeat Goanna\nHand in: Completes Automatically\nRewards: Gold: 610; XP: 209,160",
     "category": "Quests"
   },
   {
     "name": "A Very Brave and Noble Thing",
-    "description": "Given By: Sir Perry Gilliam",
+    "description": "Given by: Sir Perry Gilliam (High Road)\nThis is a storyline quest.\nGoals:\n- Defeat 3 Fire-Spitter Spawn in the Poisoned Well\n- Talk to Sir Perry Gilliam\nHand in: Sir Perry Gilliam\nRewards: Gold: 300; XP: 12,155",
     "category": "Quests"
   },
   {
     "name": "A View to a Curse",
-    "description": "Given By: Edwin the ArcaneArchitect",
+    "description": "Given by: Edwin the ArcaneArchitect (Kondha Desert)\nThis is a side quest.\nGoals:\n- Talk to Duran DuneFather}\n- (in Sands of Time Cave )\nHand in: Duran DuneFather\nRewards: Gold: 75; XP: 7,750",
     "category": "Quests"
   },
   {
     "name": "A View to a Kill",
-    "description": "Goals: Talk to Alhazred in School of Balance Talk to Cyrus Drake Hand In: Cyrus Drake",
+    "description": "Given by: Cyrus Drake (Ravenwood)\nThis is a side quest.\nGoals:\n- Talk to Alhazred in School of Balance\n- Talk to Cyrus Drake\nHand in: Cyrus Drake\nRewards: Gold: 75; XP: 1,800",
     "category": "Myth School Quests",
     "world": "Myth School"
   },
   {
     "name": "A Voice for the Silent",
-    "description": "Given By: Jhae AskewedView",
+    "description": "Given by: Jhae AskewedView (The Hive)\nThis is a side quest.\nGoals:\n- Rescue Bawb AskewedView\n- (in Answer Chamber )\n- Defeat Interrogator Rentenius\n- Free Bawb\n- Talk to Jhae AskewedView\nHand in: Jhae AskewedView\nRewards: Gold: 675; XP: 69,735; Spellement; Balance; King Artorius (Balance); Death; King Artorius (Death); Fire; King Artorius (Fire); Ice; King Artorius (Ice); Life; King Artorius (Life); Myth; King Artorius (Myth); Storm; King Artorius (Storm)",
     "category": "Quests"
   },
   {
     "name": "A Warm Welcome?",
-    "description": "Given By: Starts automatically when entering Guest Quarters",
+    "description": "Given by: Starts automatically when entering Guest Quarters\nThis is a storyline and an instance quest.\nGoals:\n- Defeat Eye Robot\nHand in: Completes Automatically\nRewards: Gold: 625; XP: 56,420",
     "category": "Quests"
   },
   {
     "name": "A Wee Bit O The Brogue",
-    "description": "Goals: Defeat 2 Foul Skirkers Destroy 3 Kegs of Effluent Talk to Abbot Ewan Hand In: Abbot Ewan",
+    "description": "Given by: Abbot Ewan (Lake Shore)\nThis is a storyline quest.\nGoals:\n- Defeat 2 Foul Skirkers\n- Destroy 3 Kegs of Effluent\n- Talk to Abbot Ewan\nHand in: Abbot Ewan\nRewards: Gold: 450; XP: 23,005; The complete quest rewards do not fit in the goal image, see the full list here:; Treasure Card; Shatter (2 Pip); Snack; Pixie Stix; Snack; Sugar Donut; Spellement; Balance; Chimera; Death; Dr. Von's Monster; Fire; Rain of Fire; Ice; Woolly Mammoth; Life; Gnomes!; Myth; Basilisk; Storm; Sirens",
     "category": "Quests"
   },
   {
     "name": "A Welcome Distraction",
-    "description": "Given By: Stikkan SandStrider",
+    "description": "Given by: Stikkan SandStrider (Crescent Beach)\nThis is a side quest.\nGoals:\n- Do the following:\n- Collect 5 Food Crates\n- Defeat 2 Driftwood Branches\n- Talk to Stikkan SandStrider\nHand in: Stikkan SandStrider\nRewards: Gold: 600; XP: 61,985; Spellement; Balance; King Artorius (Balance); Death; King Artorius (Death); Fire; King Artorius (Fire); Ice; King Artorius (Ice); Life; King Artorius (Life); Myth; King Artorius (Myth); Storm; King Artorius (Storm)",
     "category": "Quests"
   },
   {
     "name": "A Whole New World",
-    "description": "Goals: Talk to Bartleby in Ravenwood Go to Spiral Chamber in The Oasis Talk to Sergeant Major Talbot Hand In: Sergeant Major Talbot",
+    "description": "Given by: Merle Ambrose (The Commons)\nThis is a storyline quest.\nGoals:\n- Talk to Bartleby in Ravenwood\n- Go to Spiral Chamber in The Oasis\n- Talk to Sergeant Major Talbot\nHand in: Sergeant Major Talbot\nRewards: Gold: 0; XP: 115; Potion; 1; Furniture; Crystal Ball",
     "category": "Quests"
   },
   {
     "name": "A Whole Nuovo World",
-    "description": "Given By: Monsignor Del Monte",
+    "description": "Given by: Monsignor Del Monte (Puerto Nuovo)\nThis is a storyline quest.\nGoals:\n- Find Fernanda Maregellan\n- Defeat 3 Vexxor\n- Talk to Fernanda Maregellan\nHand in: Fernanda Maregellan\nRewards: Gold: 270; XP: 91,900; Spellement; Balance; Scales of Destiny; Death; Gravestorm; Fire; Glimpse of Infinity; Ice; Deathly Depths; Life; Starspawn; Myth; Improbable Gaze; Storm; Tree of Strife",
     "category": "Quests"
   },
   {
     "name": "A Wing and a Prayer",
-    "description": "Given By: Hrafn Lorespeaker",
+    "description": "Given by: Hrafn Lorespeaker (Ravenscar)\nThis is a storyline quest.\nGoals:\n- Defeat Winterwing Battlers\n- and Collect Feathers\n- Talk to Hrafn Lorespeaker\nHand in: Hrafn Lorespeaker\nRewards: Gold: 190; XP: 440",
     "category": "Quests"
   },
   {
     "name": "A Wizard's Best Friend",
-    "description": "Goals: Talk to Sir Nigel Higgenbottom Talk to (in any order): Doctor Purreau Tennant Wastelander Dusty Shadowcloud Talk to Sir Nigel Higgenbottom Talk to Milo Barker Hand In: Milo Barker",
+    "description": "Given by: Milo Barker (Pet Pavilion)\nThis is a side quest.\nGoals:\n- Talk to Sir Nigel Higgenbottom\n- Talk to (in any order):\n- Doctor Purreau\n- Tennant Wastelander\n- Dusty Shadowcloud\n- Talk to Sir Nigel Higgenbottom\n- Talk to Milo Barker\nHand in: Milo Barker\nRewards: Gold: 15; XP: 25",
     "category": "Quests"
   },
   {
     "name": "A Wizard's Best Friend (Retired)",
-    "description": "Goals: Talk to Sir Nigel Higgenbottom Talk to: Doctor Purreau in the Hatchery Tennant Wastelander in the Pet Shop Dusty Shadowcloud in the Snack Shop Talk to Sir Nigel Higgenbottom Talk to Milo Barker Hand In: Milo Barker",
+    "description": "Given by: Milo Barker (Pet Pavilion)\nThis is a side quest.\nGoals:\n- Talk to Sir Nigel Higgenbottom\n- Talk to:\n- Doctor Purreau in the Hatchery\n- Tennant Wastelander in the Pet Shop\n- Dusty Shadowcloud in the Snack Shop\n- Talk to Sir Nigel Higgenbottom\n- Talk to Milo Barker\nHand in: Milo Barker\nRewards: Gold: 15; XP: 25",
     "category": "Quests"
   },
   {
     "name": "A Wizard in Artorius's Court",
-    "description": "Given By: Arthur Wethersfield",
+    "description": "Given by: Arthur Wethersfield (Ravenwood)\nThis is a side quest.\nGoals:\n- Use Dee's Myth Mirror in the High Road\n- Defeat Quinn Legendbreaker in the\n- Mysterious Tower\n- (must complete instance quest )\n- Talk to Arthur Wethersfield in Ravenwood\nHand in: Arthur Wethersfield\nRewards: Gold: 120; XP: 25; Completing this quest leads to acquiring the Cipher of Lost Glyphs Badge .",
     "category": "Quests"
   },
   {
     "name": "A Wolf Among Bears",
-    "description": "Goals: Talk to Wulfric Foesbane Hand In: Wulfric Foesbane",
+    "description": "Given by: Osric Grimbold (Mirkholm Keep)\nThis is a storyline quest.\nGoals:\n- Talk to Wulfric Foesbane\nHand in: Wulfric Foesbane\nRewards: Gold: 135; XP: 70",
     "category": "Quests"
   },
   {
     "name": "A Yarn As Old as Time",
-    "description": "Goals: Go to the Temple of the Scratched Post Defeat Golden Horde Soldier Read Temple Book Go to the Woven Toy Temple Defeat Golden Horde Soldier Read Temple Book Go to the Temple of Purrfect Harmony Defeat Golden Horde Storykeeper Read Temple Book Talk to Acolyte Ang Hand In: Acolyte Ang",
+    "description": "Given by: Acolyte Ang (Catmandu)\nThis is a side quest.\nGoals:\n- Go to the Temple of the Scratched Post\n- Defeat Golden Horde Soldier\n- Read Temple Book\n- Go to the Woven Toy Temple\n- Defeat Golden Horde Soldier\n- Read Temple Book\n- Go to the Temple of Purrfect Harmony\n- Defeat Golden Horde Storykeeper\n- Read Temple Book\n- Talk to Acolyte Ang\nHand in: Acolyte Ang\nRewards: Gold: 1,000; XP: 0; Spellement; Balance; 4 Scales of Destiny; Death; 4 Gravestorm; Fire; 4 Glimpse of Infinity; Ice; 4 Deathly Depths; Life; 4 Starspawn; Myth; 4 Improbable Gaze; Storm; 4 Tree of Strife",
     "category": "Quests"
   },
   {
     "name": "Aberrant Weight of Massive Ego",
-    "description": "Goals: Extinguish Fire Extinguish Fire Extinguish Fire Talk to Azulla Go to Aberrant Cave Defeat Aberrant Tung Ak Talk to Moo Bu Hand In: Moo Bu",
+    "description": "Given by: Moo Bu (Catmandu)\nThis is a side quest.\nGoals:\n- Extinguish Fire\n- Extinguish Fire\n- Extinguish Fire\n- Talk to Azulla\n- Go to Aberrant Cave\n- Defeat Aberrant Tung Ak\n- Talk to Moo Bu\nHand in: Moo Bu\nRewards: Gold: 600; XP: 0; Spellement; Balance; 2 Scales of Destiny; Death; 2 Gravestorm; Fire; 2 Glimpse of Infinity; Ice; 2 Deathly Depths; Life; 2 Starspawn; Myth; 2 Improbable Gaze; Storm; 2 Tree of Strife",
     "category": "Quests"
   },
   {
     "name": "About the Astrals",
-    "description": "Goals: Visit Celestial Trainers Hand In: Completes Automatically",
+    "description": "Given by: Llewella Corey (Celestia Base Camp)\nThis is a side quest.\nGoals:\n- Visit Celestial Trainers\nHand in: Completes Automatically\nRewards: Gold: 30; XP: 200",
     "category": "Quests"
   },
   {
     "name": "Abyssal Cave",
-    "description": "Given By: Starts automatically when entering the Abyssal Cave",
+    "description": "Given by: Starts automatically when entering the Abyssal Cave\nThis is a storyline and an instance quest.\nGoals:\n- Explore the Abyssal Cave\n- Continue Exploring the Abyssal Cave\n- Defeat the Mantis Phantoms\n- Free the 3 Mantis' Remains\n- Due to a bug, this may not appear as a Goal in the Quest Log.\n- Find Atlach-Leng\n- Defeat Atlach-Leng and Collect the Moon's Tear\nHand in: Completes Automatically\nRewards: Gold: 1,370; XP: 156,905",
     "category": "Quests"
   },
   {
     "name": "Acceptance at Last",
-    "description": "Given By: Zanetta Stormbreaker",
+    "description": "Given by: Zanetta Stormbreaker (The Crucible)\nThis is a storyline quest.\nGoals:\n- Talk to Irenka Thundercrown\n- Talk to Milos Bookwyrm in The Atheneum\nHand in: Milos Bookwyrm\nRewards: Gold: 240; XP: 5,240; Spellement; Balance; Hydra; Death; Wraith; Fire; Helephant; Ice; Colossus; Life; Centaur; Myth; Stone Colossus; Storm; Triton",
     "category": "Quests"
   },
   {
     "name": "Acetate Cloth",
-    "description": "Goals: Talk to Zan'ne in The Oasis Talk to Moolinda Wu in the School of Life Hand In: Moolinda Wu",
+    "description": "Given by: Moolinda Wu (Ravenwood)\nThis is a side quest.\nGoals:\n- Talk to Zan'ne in The Oasis\n- Talk to Moolinda Wu in the School of Life\nHand in: Moolinda Wu\nRewards: Gold: 0; XP: 70",
     "category": "Life School Quests",
     "world": "Life School"
   },
   {
     "name": "Across the Spiral",
-    "description": "Given By: Tala Snakesquasher",
+    "description": "Given by: Tala Snakesquasher (Stone Town)\nThis is a storyline quest.\nGoals:\n- Defeat Musuth Berserkers and\n- Collect 3 Headdresses\n- Talk to Tala Snakesquasher\nHand in: Tala Snakesquasher\nRewards: Gold: 260; XP: 8,080; Spellement; Balance; Ra; Death; Skeletal Dragon; Fire; Efreet; Ice; Snow Angel; Life; Rebirth; Myth; Medusa; Storm; Leviathan",
     "category": "Quests"
   },
   {
     "name": "Across the Universe",
-    "description": "Goals: Talk to Tezcat Threestar Hand In: Tezcat Threestar",
+    "description": "Given by: Pacal Redmask (The Zocalo)\nThis is a side quest.\nGoals:\n- Talk to Tezcat Threestar\nHand in: Tezcat Threestar\nRewards: Gold: 55; XP: 4,080",
     "category": "Quests"
   },
   {
     "name": "Act Naturally",
-    "description": "Goals: Talk to Blossom in Ravenwood Talk to Moolinda Wu in the School of Life Hand In: Moolinda Wu",
+    "description": "Given by: Moolinda Wu (Ravenwood)\nThis is a side quest.\nGoals:\n- Talk to Blossom in Ravenwood\n- Talk to Moolinda Wu in the School of Life\nHand in: Moolinda Wu\nRewards: Gold: 65; XP: 1265",
     "category": "Life School Quests",
     "world": "Life School"
   },
   {
     "name": "Acting Boarish",
-    "description": "Given By: Starts automatically when \"The Traitor Within\" is completed",
+    "description": "Given by: Starts automatically when \"The Traitor Within\" is completed\nThis is a storyline and an instance quest.\nGoals:\n- Talk to Ulric Oathbreaker\n- Talk to Gunnar Quickaxe\n- Talk to Ulric Oathbreaker\n- Talk to Scarsnout\n- Defeat Scarsnout\n- Talk to Ulric Oathbreaker\nHand in: Ulric Oathbreaker\nRewards: Gold: 110; XP: 320",
     "category": "Quests"
   },
   {
     "name": "Activate Them!",
-    "description": "Given By: Dr. Gordon Flemming",
+    "description": "Given by: Dr. Gordon Flemming (Royal Hall)\nThis is a side quest.\nGoals:\n- Use the Tree Obelisk\n- Use the Skull Obelisk\n- Use the Moon Obelisk\n- Enter Spiritcrusher's Tomb\n- Defeat Pike Spiritcrusher\n- Talk to Dr. Gordon Flemming\nHand in: Dr. Gordon Flemming\nRewards: Gold: 66; XP: 320; Furniture; Fire Sarcophagus; Spellement; Balance; Scarab; Death; Dark Sprite; Fire; Fire Cat; Ice; Frost Beetle; Life; Imp; Myth; Blood Bat; Storm; Thunder Snake; Spellement; Balance; Scorpion; Death; Ghoul; Fire; Fire Elf; Ice; Snow Serpent; Life; Leprechaun; Myth; Troll; Storm; Lightning Bats",
     "category": "Quests"
   },
   {
     "name": "Adding the Frosting",
-    "description": "Given By: Arthur Wethersfield",
+    "description": "Given by: Arthur Wethersfield (Ravenwood)\nThis is a side quest.\nGoals:\n- Talk to Zan'ne in the Krokotopia Library\n- Talk to Niles at the Krokosphinx\n- Get Icy Water in the Entrance Hall\n- Talk to Arthur Wethersfield in Ravenwood\nHand in: Arthur Wethersfield\nRewards: Gold: 0; XP: 155",
     "category": "Balance School Quests",
     "world": "Balance School"
   },
   {
     "name": "Adepts of the Magi",
-    "description": "Goals: Go to the Adepts Chamber Defeat the Spider Adepts Talk to Old Cob Hand In: Old Cob",
+    "description": "Given by: Old Cob (The Hive)\nThis is a storyline quest.\nGoals:\n- Go to the Adepts Chamber\n- Defeat the Spider Adepts\n- Talk to Old Cob\nHand in: Old Cob\nRewards: Gold: 525; XP: 54,240; Spellement; Balance; King Artorius (Balance); Death; King Artorius (Death); Fire; King Artorius (Fire); Ice; King Artorius (Ice); Life; King Artorius (Life); Myth; King Artorius (Myth); Storm; King Artorius (Storm)",
     "category": "Quests"
   },
   {
     "name": "Administer Cure",
-    "description": "Goals: Defeat 6 Fire Elves",
+    "description": "Given by: Private Quinn (Firecat Alley)\nThis is a storyline quest.\nGoals:\n- Defeat 6 Fire Elves\n- ( Fire Elf Hunters or Fire Elf Pathfinders )\n- Defeat Alicane Swiftarrow\n- in the Fireglobe Theatre\n- Talk to Alicane Swiftarrow\n- Talk to Private Quinn\n- (completes when you talk to Feebo)\n- Talk to Private Quinn\nHand in: Private Quinn\nRewards: Gold: 25; XP: 250; Boots; Balance; Citrine Studded Boots; Death; Onyx Studded Boots; Fire; Ruby Studded Boots; Ice; Sapphire Studded Boots; Life; Jade Studded Boots; Myth; Peridot Studded Boots; Storm; Amethyst Studded Boots",
     "category": "Quests"
   },
   {
     "name": "Advanced Combat",
-    "description": "Given By: Diego the Duelmaster",
+    "description": "Given by: Diego the Duelmaster (Unicorn Way)\nThis is a side quest.\nGoals:\n- Complete the Tutorial\n- (requires entering the Arena )\nHand in: Completes Automatically\nRewards: Gold: 30; XP: 150",
     "category": "Quests"
   },
   {
     "name": "Advanced Placement",
-    "description": "Given By: Starts automatically when purchasing the Level 50 Elixir",
+    "description": "Given by: Starts automatically when purchasing the Level 50 Elixir\nThis is a storyline quest.\nGoals:\n- Talk to Merle Ambrose in The Commons\nHand in: Merle Ambrose\nRewards: Gold: 0; XP: 0",
     "category": "Quests"
   },
   {
     "name": "Aegon's Experiment",
-    "description": "Given By: Starts automatically when the first Day 12 Daily Assignment has been completed.",
+    "description": "Given by: Starts automatically when the first\nThis is a side quest.\nGoals:\n- Talk to Aegon Statz in Ravenwood\n- Talk to Aegon Statz in Unicorn Way\n- Use the Pekuliar Cauldron\n- Talk to Aegon Statz in Ravenwood\nHand in: Aegon Statz\nRewards: Gold: 100; XP: 300",
     "category": "Quests"
   },
   {
     "name": "Aerobots Are Da Bombs",
-    "description": "Given By: Frazzled Aerobot",
+    "description": "Given by: Frazzled Aerobot (Port Aero)\nThis is a side quest.\nGoals:\n- Defeat Fangles and collect 3 Bolts\n- in Northeast Aero Plains\n- Talk to the Frazzled Aerobot in Port Aero\nHand in: Frazzled Aerobot\nRewards: Gold: 13,600; XP: 0; Spellement; Balance; Scion of Balance; Death; Scion of Death; Fire; Scion of Fire; Ice; Scion of Ice; Life; Scion of Life; Myth; Scion of Myth; Storm; Scion of Storm",
     "category": "Quests"
   },
   {
     "name": "Afraid of the Dark",
-    "description": "Given By: Starts automatically when entering Ice Council Chamber",
+    "description": "Given by: Starts automatically when entering Ice Council Chamber\nThis is a storyline and an instance quest.\nGoals:\n- Speak to the Council\n- Defeat Einar Iceaxe\nHand in: Completes Automatically\nRewards: Gold: 1,170; XP: 48,270",
     "category": "Quests"
   },
   {
     "name": "Against Time",
-    "description": "Goals: Go to Zruvan Grotto in Caterwaul Canyons Search for The Chronocle in Zruvan Grotto",
+    "description": "Given by: Tyrehl (Caravan)\nThis is a storyline quest.\nGoals:\n- Go to Zruvan Grotto in Caterwaul Canyons\n- Search for The Chronocle in Zruvan Grotto\n- (complete instance quest)\n- Talk to The Chronocle\n- Return to the Timeless Tower\n- Talk to Chronomancer Tyrehl\n- in Caterwaul Canyons\nHand in: Tyrehl\nRewards: Gold: 7,000; XP: 472,500; Spellement; Balance; 2 Sand Wurm; Death; 2 Qismah's Curse; Fire; 2 Scorching Scimitars; Ice; 2 Climaclysm; Life; 2 Lamassu; Myth; 2 Snake Charmer; Storm; 2 Iron Sultan",
     "category": "Quests"
   },
   {
     "name": "Aggravated Avians",
-    "description": "Given By: Acan Winefeather",
+    "description": "Given by: Acan Winefeather (Mangrove Marsh)\nThis is a side quest.\nGoals:\n- Go to the Hatchery Nest\n- Talk to Acan Winefeather\n- Defeat Thunder Horn Zombies in the Cenote\n- Go to Huascar Bent Wing's Mine\n- Defeat Smoking Mirror Zombie\n- Collect Avian Egg\n- Return (Egg) to the Hatchery Nest\n- Talk to Acan Winefeather\nHand in: Acan Winefeather\nRewards: Gold: 1,045; XP: 70,295; Spellement; Balance; 2 Sabertooth; Death; 2 Avenging Fossil; Fire; 2 Sun Serpent; Ice; 2 Lord of Winter; Life; 2 Spinysaur; Myth; 2 Celestial Calendar; Storm; 2 Storm Owl",
     "category": "Quests"
   },
   {
     "name": "Ain't Goin' Nowhere",
-    "description": "Given By: Chantico Blue Air",
+    "description": "Given by: Chantico Blue Air (Cloudburst Forest)\nThis is a storyline quest.\nGoals:\n- Search for Lady Zenzen's Trail\n- Go to Clearing\n- Defeat Shemazan Blightmark\n- Collect Jeweled Scepter\n- Talk to Chantico Blue Air\nHand in: Chantico Blue Air\nRewards: Gold: 715; XP: 45,905; Spellement; Balance; Sabertooth; Death; Avenging Fossil; Fire; Sun Serpent; Ice; Lord of Winter; Life; Spinysaur; Myth; Celestial Calendar; Storm; Storm Owl",
     "category": "Quests"
   },
   {
     "name": "Ain't No Citadel High Enough",
-    "description": "Goals: Return to Port Aero Go to First Aero Dwarf House Defeat Aerobot Go to Second Aero Dwarf House Defeat Dark Cloud Cabalist Go to Third Aero Dwarf House Defeat Babe the Not-Blue Ox Meet your friends in Port Aero Talk to Mayor Quill Go to Aeroship Take Aeroship to Nimbus Talk to Helena Hand In: Helena",
+    "description": "Given by: Helena (Northeast Aero Plains)\nThis is a storyline quest.\nGoals:\n- Return to Port Aero\n- Go to First Aero Dwarf House\n- Defeat Aerobot\n- Go to Second Aero Dwarf House\n- Defeat Dark Cloud Cabalist\n- Go to Third Aero Dwarf House\n- Defeat Babe the Not-Blue Ox\n- Meet your friends in Port Aero\n- Talk to Mayor Quill\n- Go to Aeroship\n- Take Aeroship to Nimbus\n- Talk to Helena\nHand in: Helena\nRewards: Gold: 2,965; XP: 282,000; Spellement; Balance; Scion of Balance; Death; Scion of Death; Fire; Scion of Fire; Ice; Scion of Ice; Life; Scion of Life; Myth; Scion of Myth; Storm; Scion of Storm",
     "category": "Quests"
   },
   {
     "name": "Air Apparent",
-    "description": "Goals: Talk to Sesshu Nedaki in the Shrine of the Spirit Use Spirit Shrine Talk to Sesshu Nedaki Talk to Tu Luk Kwo Hand In: Tu Luk Kwo",
+    "description": "Given by: Sesshu Nedaki (Kishibe Village)\nThis is a storyline quest.\nGoals:\n- Talk to Sesshu Nedaki in the Shrine of the Spirit\n- Use Spirit Shrine\n- Talk to Sesshu Nedaki\n- Talk to Tu Luk Kwo\nHand in: Tu Luk Kwo\nRewards: Gold: 95; XP: 3,435; Robe; Balance; Robe of Prudence; Death; Tunic of Calculation; Fire; Tunic of Purpose; Ice; Robe of Intent; Life; Garments of Realization; Myth; Vestment of Notion; Storm; Interpretive Cloak; Spellement; Balance; Spectral Blast; Death; Skeletal Pirate; Fire; Phoenix; Ice; Blight Hound; Life; Earth Walker; Myth; Minotaur; Storm; Stormzilla",
     "category": "Quests"
   },
   {
     "name": "Akilles' Deal",
-    "description": "Goals: Go to Akilles' Tower Defeat General Akilles Destroy the Crystal Ball Talk to Nolan Stormgate Talk to Sergeant Muldoon Hand In: Sergeant Muldoon",
+    "description": "Given by: Romulus (Cyclops Lane)\nThis is a storyline quest.\nGoals:\n- Go to Akilles' Tower\n- Defeat General Akilles\n- Destroy the Crystal Ball\n- Talk to Nolan Stormgate\n- Talk to Sergeant Muldoon\nHand in: Sergeant Muldoon\nRewards: Gold: 30; XP: 220; Robe; Balance; Scholarly Robes; Death; Martyr's Raiment; Fire; Fireguard Robe; Ice; Frost Wolf Cloak; Life; Hallowed Robes; Myth; Trollskin Cloak; Storm; Stormforged Mantle; Spell; Balance; Spirit Shield; Death; None; Fire; None; Ice; None; Life; None; Myth; None; Storm; None",
     "category": "Quests"
   },
   {
     "name": "Alas, Poor Morwen",
-    "description": "Given By: Helgar Goldenvoice",
+    "description": "Given by: Helgar Goldenvoice (Outer Athanor)\nThis is a side quest.\nGoals:\n- Talk to Morwen Misteyes in the Inner Athanor\n- Go to the Pipe Junction\n- Defeat the Lava Spawns\n- Talk to Morwen Misteyes in the Inner Athanor\nHand in: Morwen Misteyes\nRewards: Gold: 5,000; XP: 0; Snack; 2 Peppercorn; Spellement; Balance; Scion of Balance; Death; Scion of Death; Fire; Scion of Fire; Ice; Scion of Ice; Life; Scion of Life; Myth; Scion of Myth; Storm; Scion of Storm",
     "category": "Quests"
   },
   {
     "name": "Alas Poor Wyrm",
-    "description": "Goals: Collect the Dragon Skull Talk to Gwendolyn Hand In: Gwendolyn",
+    "description": "Given by: Gwendolyn (Dun Dara)\nThis is a storyline quest.\nGoals:\n- Collect the Dragon Skull\n- Talk to Gwendolyn\nHand in: Gwendolyn\nRewards: Gold: 150; XP: 7,680",
     "category": "Quests"
   },
   {
     "name": "Ali Baboon's Last Stand",
-    "description": "Given By: Devinn the Drifter",
+    "description": "Given by: Devinn the Drifter (Thieves' Den)\nThis is a storyline quest.\nGoals:\n- Enter Ali Baboon's Private Lounge\n- Defeat Hairy Qhrum\n- Explore Ali Baboon's Private Lounge\n- Defeat Ali Baboon\n- Talk to Devinn the Drifter\nHand in: Devinn the Drifter\nRewards: Gold: 2,300; XP: 315,000; Spellement; Balance; Sand Wurm; Death; Qismah's Curse; Fire; Scorching Scimitars; Ice; Climaclysm; Life; Lamassu; Myth; Snake Charmer; Storm; Iron Sultan",
     "category": "Quests"
   },
   {
     "name": "Alkali Barrows",
-    "description": "Goals: Go to Alkali Barrows Investigate the Barrows Talk to Saireeh Hand In: Saireeh",
+    "description": "Given by: Sandiago (Caravan)\nThis is a storyline quest.\nGoals:\n- Go to Alkali Barrows\n- Investigate the Barrows\n- Talk to Saireeh\nHand in: Saireeh\nRewards: Gold: 300; XP: 48,000",
     "category": "Quests"
   },
   {
     "name": "All's Well",
-    "description": "Given By: Olemeeli Thornpaw",
+    "description": "Given by: Olemeeli Thornpaw (Savannah)\nThis is a storyline quest.\nGoals:\n- Collect 3 Well Stones\n- Repair Well\n- Talk to Olemeeli Thornpaw\nHand in: Olemeeli Thornpaw\nRewards: Gold: 190; XP: 5,340",
     "category": "Quests"
   },
   {
     "name": "All's Well that Cleanses Well",
-    "description": "Goals: Talk to Rottingham Weiler in Governor's Mansion Talk to Phileas Dogg Talk to Phileas Dogg (outside) Defeat Irk Purify Well Talk to Phileas Dogg Hand In: Phileas Dogg",
+    "description": "Given by: Lassie (New Vicorgia)\nThis is a storyline quest.\nGoals:\n- Talk to Rottingham Weiler in Governor's Mansion\n- Talk to Phileas Dogg\n- Talk to Phileas Dogg (outside)\n- Defeat Irk\n- Purify Well\n- Talk to Phileas Dogg\nHand in: Phileas Dogg\nRewards: Gold: 570; XP: 192,990; Spellement; Balance; 2 Scales of Destiny; Death; 2 Gravestorm; Fire; 2 Glimpse of Infinity; Ice; 2 Deathly Depths; Life; 2 Starspawn; Myth; 2 Improbable Gaze; Storm; 2 Tree of Strife",
     "category": "Quests"
   },
   {
     "name": "All Access Pass",
-    "description": "Goals: Talk to Rakstede Steelhorn Talk to Lail Brighteyes (in Darajani Zoo ) Hand In: Lail Brighteyes",
+    "description": "Given by: Hathi Irontrunk (Stone Town)\nThis is a storyline quest.\nGoals:\n- Talk to Rakstede Steelhorn\n- Talk to Lail Brighteyes (in Darajani Zoo )\nHand in: Lail Brighteyes\nRewards: Gold: 80; XP: 2,690",
     "category": "Quests"
   },
   {
     "name": "All Hail Azoth",
-    "description": "Hand In: Completes Automatically",
+    "description": "Given by: Abner K. Doodle (The Commons)\nThis is a side quest.\nGoals:\n- Learn about Azoth\n- (completes automatically upon accepting)\nHand in: Completes Automatically\nRewards: Gold: 0; XP: 0",
     "category": "Quests"
   },
   {
     "name": "All Signs Point To...",
-    "description": "Given By: Belladonna Crisp",
+    "description": "Given by: Belladonna Crisp (Pigswick Academy)\nThis is a storyline quest.\nGoals:\n- Talk to Benedict Glendemming\n- Go to Hall of the Harpy\n- Defeat Beatrice Wildwind\n- Talk to Benedict Glendemming\n- Talk to Belladonna Crisp\nHand in: Belladonna Crisp\nRewards: Gold: 120; XP: 1,515; Treasure Card; Disarm",
     "category": "Quests"
   },
   {
     "name": "All That Glitters...",
-    "description": "Given By: Belladonna Crisp",
+    "description": "Given by: Belladonna Crisp (Pigswick Academy)\nThis is a side quest.\nGoals:\n- Talk to Oliver Quickneedle\n- Talk to Ophelia Moonreach\n- Talk to Geoffrey Spellsmith\n- Talk to Belladonna Crisp\nHand in: Belladonna Crisp\nRewards: Gold: 40; XP: 460",
     "category": "Quests"
   },
   {
     "name": "All Things Must Pass",
-    "description": "Goals: Go to the bridge in Nidavellir Talk to Dworgyn in the School of Death Hand In: Dworgyn",
+    "description": "Given by: Dworgyn (Nightside)\nThis is a side quest.\nGoals:\n- Go to the bridge in Nidavellir\n- Talk to Dworgyn in the School of Death\nHand in: Dworgyn\nRewards: Gold: 400; XP: 4,500; Spell; Skeletal Dragon",
     "category": "Death School Quests",
     "world": "Death School"
   },
   {
     "name": "All You Need To Do",
-    "description": "Given By: Captain K'torr J'rrol",
+    "description": "Given by: Captain K'torr J'rrol (Tyrian Gorge)\nThis is a storyline quest.\nGoals:\n- Talk to Dorian BrightEyes\nHand in: Dorian BrightEyes\nRewards: Gold: 75; XP: 7,750",
     "category": "Quests"
   },
   {
     "name": "All Your Basilisk...",
-    "description": "Goals: Talk to Milos Bookwyrm in The Atheneum Go to The Hoarder's Tower",
+    "description": "Given by: Cyrus Drake (Ravenwood)\nThis is a side quest.\nGoals:\n- Talk to Milos Bookwyrm in The Atheneum\n- Go to The Hoarder's Tower\n- in the Plaza of Conquests\n- Defeat The Hoarder\n- Use the Books of Myth\n- Talk to Cyrus Drake in Ravenwood\nHand in: Cyrus Drake\nRewards: Gold: 75; XP: 1,800",
     "category": "Myth School Quests",
     "world": "Myth School"
   },
   {
     "name": "All in the Crime Family",
-    "description": "Goals: Talk to Regina Lupinian Talk to Reggie Toadsworth Enter Archie Fan Club Have Archibald defeat Big Moose Talk to Archibald Ratfink Enter the Hiram Lodge Have Archibald defeat Josie the Tabbicat Talk to Archibald Ratfink Talk to Old Sage in the Blended Grove Read Tome of Weaving Complete 3 out of 5 badges : Apprentice Conjurer Companion",
+    "description": "Given by: Old Sage (Selenopolis)\nThis is a side quest.\nGoals:\n- Talk to Regina Lupinian\n- Talk to Reggie Toadsworth\n- Enter Archie Fan Club\n- Have Archibald defeat Big Moose\n- Talk to Archibald Ratfink\n- Enter the Hiram Lodge\n- Have Archibald defeat Josie the Tabbicat\n- Talk to Archibald Ratfink\n- Talk to Old Sage in the Blended Grove\n- Read Tome of Weaving\n- Complete 3 out of 5 badges :\n- Apprentice Conjurer Companion\n- (Help Party Group Members with 6 Mainline Quests from Marleybone through Zafaria )\n- Marleybonian Myth Fisher\n- (Catch Royal Gurnard in Marleybone)\n- Lockpick Lumper\n- (Defeat Lockpick O'Leary 7 times)\n- Foe of Phantoms\n- (Defeat 30 Grave Phantoms )\n- Myth Team Player\n- (Use \"Join a Team\" kiosk to help 10 teams)\n- Talk to Old Sage in the Blended Grove\nHand in: Old Sage\nRewards: Gold: 60; XP: 0; Completing this quest leads to acquiring the Apprentice Myth Weaver Badge .",
     "category": "Quests"
   },
   {
     "name": "All is Revealed",
-    "description": "Given By: Wulfric Foesbane",
+    "description": "Given by: Wulfric Foesbane (Mirkholm Keep)\nThis is a storyline quest.\nGoals:\n- Take the Torch\n- Ignite the Shelves\n- Defeat Moonstrider Guard\n- (inside Moonstrider Guard's Cave )\n- Use the first Gate Lever\n- Defeat Moonstrider Watcher\n- (inside Moonstrider Watcher's Cave )\n- Use the second Gate Lever\n- Go to (Enter) Wolf Palace\n- Defeat Munin Mistweaver\n- Talk to Ivar Andersson\n- Talk to Bjorn Ironclaws in Northguard\nHand in: Bjorn Ironclaws\nRewards: Gold: 135; XP: 420",
     "category": "Quests"
   },
   {
     "name": "All the Eels",
-    "description": "Given By: Sohomer Sunblade",
+    "description": "Given by: Sohomer Sunblade (Triton Avenue)\nThis is a side quest.\nGoals:\n- Defeat 3 Electric Eels\n- Talk to Sohomer Sunblade\nHand in: Sohomer Sunblade\nRewards: Gold: 10; XP: 75",
     "category": "Quests"
   },
   {
     "name": "Almost Friends",
-    "description": "Goals: Defeat 3 Jungletooth Talk to Tupa Taua Go to Tangleroot's Grove Defeat Tangleroot Talk to Tupa Taua Hand In: Tupa Taua",
+    "description": "Given by: Tupa Taua (The Floating Land)\nThis is a storyline quest.\nGoals:\n- Defeat 3 Jungletooth\n- Talk to Tupa Taua\n- Go to Tangleroot's Grove\n- Defeat Tangleroot\n- Talk to Tupa Taua\nHand in: Tupa Taua\nRewards: Gold: 440; XP: 3,760; Spellement; Balance; Power Nova; Death; Scarecrow; Fire; Fire Dragon; Ice; Frost Giant; Life; Forest Lord; Myth; Orthrus; Storm; Storm Lord",
     "category": "Quests"
   },
   {
     "name": "Almost Time to Go",
-    "description": "Given By: Velma von Venkman",
+    "description": "Given by: Velma von Venkman (Panopticon)\nThis is a storyline quest.\nGoals:\n- Talk to Ione Virga in the Dry Dock\nHand in: Ione Virga\nRewards: Gold: 220; XP: 15,756; Hat; Balance; Red Helm of Good Fortune; Death; Red Helm of Looming Mortality; Fire; Red Helm of the Eternal Flame; Ice; Red Helm of Persistence; Life; Red Helm of the Survivor; Myth; Red Helm of Infamous Jest; Storm; Red Helm of Resilience; Robe; Balance; Red Shirt of Good Fortune; Death; Red Shirt of Looming Mortality; Fire; Red Shirt of the Eternal Flame; Ice; Red Shirt of Persistence; Life; Red Shirt of the Survivor; Myth; Red Shirt of Infamous Jest; Storm; Red Shirt of Resilience; Boots; Balance; Red Boots of Good Fortune; Death; Red Boots of Looming Mortality; Fire; Red Boots of the Eternal Flame; Ice; Red Boots of Persistence; Life; Red Boots of the Survivor; Myth; Red Boots of Infamous Jest; Storm; Red Boots of Resilience; Wand; Balance; Hexacorder of Good Fortune; Death; Looming Mortality Hexacorder; Fire; Eternal Flame Hexacorder; Ice; Hexacorder of Persistence; Life; Hexacorder of the Survivor; Myth; Hexacorder of Infamous Jest; Storm; Haxacorder of Resilience",
     "category": "Quests"
   },
   {
     "name": "Alone, Alone, All, All, Alone",
-    "description": "Goals: Find the Saqqara Bird Defeat Wazz and Collect Saqqara Bird Totem Talk to Yadullah Hand In: Yadullah",
+    "description": "Given by: Yadullah (Fort Rachias)\nThis is a storyline quest.\nGoals:\n- Find the Saqqara Bird\n- Defeat Wazz and Collect Saqqara Bird Totem\n- Talk to Yadullah\nHand in: Yadullah\nRewards: Gold: 450; XP: 46,490",
     "category": "Quests"
   },
   {
     "name": "Alone in the Dark",
-    "description": "Given By: Kachiri Fire Cloud",
+    "description": "Given by: Kachiri Fire Cloud (Cenote)\nThis is a side quest.\nGoals:\n- Defeat 2 Thunder Horn Zombies\n- Talk to Kachiri Fire Cloud\nHand in: Kachiri Fire Cloud\nRewards: Gold: 355; XP: 20,555; Spellement; Balance; Sabertooth; Death; Avenging Fossil; Fire; Sun Serpent; Ice; Lord of Winter; Life; Spinysaur; Myth; Celestial Calendar; Storm; Storm Owl",
     "category": "Quests"
   },
   {
     "name": "Alone on the Stone",
-    "description": "Given By: Nigel Scruffington",
+    "description": "Given by: Nigel Scruffington (Stone of Heaven)\nThis is a side quest.\nGoals:\n- Defeat 6 Follicle Falcons\n- Talk to Nigel Scruffington\n- (NPC moves closer to exit)\nHand in: Nigel Scruffington\nRewards: Gold: 200; XP: 0; Spellement; Balance; Scales of Destiny; Death; Gravestorm; Fire; Glimpse of Infinity; Ice; Deathly Depths; Life; Starspawn; Myth; Improbable Gaze; Storm; Tree of Strife",
     "category": "Quests"
   },
   {
     "name": "Along Came a Spider",
-    "description": "Goals: Defeat Ice Weavers and Collect 2 Spider Eyes Talk to the Arena Master Hand In: Arena Master",
+    "description": "Given by: Arena Master (Grand Arena)\nThis is a storyline quest.\nGoals:\n- Defeat Ice Weavers and Collect 2 Spider Eyes\n- Talk to the Arena Master\nHand in: Arena Master\nRewards: Gold: 45; XP: 685; Spellement; Balance; Scorpion; Death; Ghoul; Fire; Fire Elf; Ice; Snow Serpent; Life; Leprechaun; Myth; Troll; Storm; Lightning Bats; Spellement; Balance; Locust Swarm; Death; Banshee; Fire; Sunbird; Ice; Evil Snowman; Life; Nature's Wrath; Myth; Cyclops; Storm; Storm Shark",
     "category": "Quests"
   },
   {
     "name": "Along the Watchtower",
-    "description": "Goals: Defeat 2 Snow Skulls (in Magni's Tower ) Use Signal Fire Talk to Magni Farsight Hand In: Magni Farsight",
+    "description": "Given by: Magni Farsight (Vestrilund)\nThis is a side quest.\nGoals:\n- Defeat 2 Snow Skulls (in Magni's Tower )\n- Use Signal Fire\n- Talk to Magni Farsight\nHand in: Magni Farsight\nRewards: Gold: 355; XP: 7,970",
     "category": "Quests"
   },
   {
     "name": "Alpha Slog",
-    "description": "Goals: Defeat Werewolf Hunter Enter Alpha House Defeat Alpha Wolf Talk to Vann Howlsing Hand In: Vann Howlsing",
+    "description": "Given by: Vann Howlsing (Howling Lands)\nThis is a side quest.\nGoals:\n- Defeat Werewolf Hunter\n- Enter Alpha House\n- Defeat Alpha Wolf\n- Talk to Vann Howlsing\nHand in: Vann Howlsing\nRewards: Gold: 1,030; XP: 0; 175px 175px 175px 175px; Spellement; Balance; 3 Wheel of Fortune; Death; 3 Mortality; Fire; 3 The Chariot; Ice; 3 The Hierophant; Life; 3 The World; Myth; 3 The Emperor; Storm; 3 The Tower",
     "category": "Quests"
   },
   {
     "name": "Always After Me Charms",
-    "description": "Given By: Fianna Yellowknife",
+    "description": "Given by: Fianna Yellowknife (High Road)\nThis is a side quest.\nGoals:\n- Defeat Hrefna Nightfeather in The Wild\n- (in Hrefna's Cave )\n- Talk to Fianna Yellowknife in High Road\nHand in: Fianna Yellowknife\nRewards: Gold: 415; XP: 19,920; Spell; Balance; Supernova; Death; Bad Juju; Fire; Backdraft; Ice; Cooldown; Life; Guardian Spirit; Myth; Dimension Shift; Storm; Healing Current",
     "category": "Quests"
   },
   {
     "name": "Always Have MooShu",
-    "description": "Goals: Defeat Ashikata in his lair Talk to Lili Ma Hand In: Lili Ma",
+    "description": "Given by: Lili Ma (Tatakai Outpost)\nThis is a side quest.\nGoals:\n- Defeat Ashikata in his lair\n- Talk to Lili Ma\nHand in: Lili Ma\nRewards: Gold: 176; XP: 2,085; Furniture; Incense Plate; Spellement; Balance; Spectral Blast; Death; Skeletal Pirate; Fire; Phoenix; Ice; Blight Hound; Life; Earth Walker; Myth; Minotaur; Storm; Stormzilla",
     "category": "Quests"
   },
   {
     "name": "Amazing Bass",
-    "description": "Given By: Stallion Quartermane",
+    "description": "Given by: Stallion Quartermane (Telos)\nThis is a storyline quest.\nGoals:\n- Go to Bass Chamber\n- Defeat Old One Automaton\n- (complete instance quest)\n- Talk to Stallion Quartermane\nHand in: Stallion Quartermane\nRewards: Gold: 825; XP: 80,600; Spellement; Balance; Old One's Endgame; Death; Grim Reader; Fire; Blast Off!; Ice; Freeze Ray; Life; Lord of the Jungle; Myth; Barbarian's Saga; Storm; Dark & Stormy",
     "category": "Quests"
   },
   {
     "name": "Amber Tomb",
-    "description": "Goals: Defeat Goliath Stingers and",
+    "description": "Given by: Queen Sabina (Moon Cliffs)\nThis is a storyline quest.\nGoals:\n- Defeat Goliath Stingers and\n- Collect Venom (in Stinger Cave )\n- Talk to Queen Sabina\nHand in: Queen Sabina\nRewards: Gold: 450; XP: 46,490",
     "category": "Quests"
   },
   {
     "name": "Ambiguity Archive",
-    "description": "Goals: Use the Preceptor of Congruency Use the Archive Pedestal Defeat Axenos Talk to Thornton Lewis Hand In: Thornton Lewis",
+    "description": "Given by: Thornton Lewis (District of the Stars)\nThis is a side quest.\nGoals:\n- Use the Preceptor of Congruency\n- Use the Archive Pedestal\n- Defeat Axenos\n- Talk to Thornton Lewis\nHand in: Thornton Lewis\nRewards: Gold: 290; XP: 6,205; Deck; Treasure Deck; Spellement; Balance; Power Nova; Death; Scarecrow; Fire; Fire Dragon; Ice; Frost Giant; Life; Forest Lord; Myth; Orthrus; Storm; Storm Lord",
     "category": "Quests"
   },
   {
     "name": "Among Us Stalk the Sentinels",
-    "description": "Goals: Catch one: Dragonfly Fish Hard Albacore Sweet Yellow Grunion Talk to Yuri Smokesnare Hand In: Yuri Smokesnare",
+    "description": "Given by: Yuri Smokesnare (The Atheneum)\nThis is a side quest.\nGoals:\n- Catch one:\n- Dragonfly Fish\n- Hard Albacore\n- Sweet Yellow Grunion\n- Talk to Yuri Smokesnare\nHand in: Yuri Smokesnare\nRewards: Gold: 35; XP: 420",
     "category": "Quests"
   },
   {
     "name": "An Ailing Emperor",
-    "description": "Goals: Talk to Tan Keng in the Jade Palace Hand In: Tan Keng",
+    "description": "Given by: Jade Champion (Jade Palace)\nThis is a storyline quest.\nGoals:\n- Talk to Tan Keng in the Jade Palace\nHand in: Tan Keng\nRewards: Gold: 0; XP: 490",
     "category": "Quests"
   },
   {
     "name": "An Honest Umbra?",
-    "description": "Given By: Zurellia the ChitinSmasher",
+    "description": "Given by: Zurellia the ChitinSmasher (Sardonyx)\nThis is a side quest.\nGoals:\n- Go to Vazivika's House\n- Defeat Vazivika the SpiritBreaker\n- Talk to Zurellia the ChitinSmasher\nHand in: Zurellia the ChitinSmasher\nRewards: Gold: 525; XP: 54,240; Spellement; Balance; King Artorius (Balance); Death; King Artorius (Death); Fire; King Artorius (Fire); Ice; King Artorius (Ice); Life; King Artorius (Life); Myth; King Artorius (Myth); Storm; King Artorius (Storm)",
     "category": "Quests"
   },
   {
     "name": "An Imperial Cure",
-    "description": "Goals: Heal Emperor Yoshihito inside the Throne Room Defeat Jade Oni Talk to Emperor Yoshihito Hand In: Emperor Yoshihito",
+    "description": "Given by: Tan Keng (Jade Palace)\nThis is a storyline quest.\nGoals:\n- Heal Emperor Yoshihito inside the Throne Room\n- Defeat Jade Oni\n- Talk to Emperor Yoshihito\nHand in: Emperor Yoshihito\nRewards: Gold: 103; XP: 4,140; Ring; Student's Band; Decoration; Imperial Banner; Spellement; Balance; 2 Spectral Blast; Death; 2 Skeletal Pirate; Fire; 2 Phoenix; Ice; 2 Blight Hound; Life; 2 Earth Walker; Myth; 2 Minotaur; Storm; 2 Stormzilla",
     "category": "Quests"
   }
 ]
