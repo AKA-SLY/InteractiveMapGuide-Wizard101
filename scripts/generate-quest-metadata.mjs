@@ -26,15 +26,29 @@ function extractCategories(html) {
   }
 }
 
-function extractFirstParagraph(html) {
-  const p = html.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
-  if (!p) return undefined;
-  const text = p[1]
+function stripTags(text) {
+  return text
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/gi, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-  return text || undefined;
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/gi, "&");
+}
+
+function extractFirstParagraph(html) {
+  const cleaned = html
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/<style[\s\S]*?<\/style>/gi, "");
+
+  const paragraphs = [...cleaned.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)];
+  for (const [, raw] of paragraphs) {
+    const text = stripTags(raw).replace(/\s+/g, " ").trim();
+    if (text && /[A-Za-z]{3}/.test(text) && text.length > 25) {
+      return text;
+    }
+  }
+
+  return undefined;
 }
 
 function inferWorld(categories) {
