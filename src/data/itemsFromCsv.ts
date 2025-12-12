@@ -34,7 +34,7 @@ for (const [path, raw] of Object.entries(csvModules)) {
       name: r.title.replace(/^Item:/, ""),
       category: "Items",
       image: "", // no local images in this CSV
-      wikiUrl: r.url,
+      tags: ["CSV import", "Wiki archive"],
     });
   }
 }
