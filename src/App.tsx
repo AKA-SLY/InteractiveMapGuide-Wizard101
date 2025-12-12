@@ -8,8 +8,9 @@ import { schools } from "./data/schools";
 import { spells } from "./data/spells";
 import { treasureCards } from "./data/treasureCards";
 import { type WorldBubble, worlds } from "./data/worlds";
-import { extraSkillsIcon } from "./data/extraSkills";
-import { fireSpellCards } from "./data/galleries";
+import { fireSpellCards, worldMaps } from "./data/galleries";
+import { questsFromHtml } from "./data/questsFromHtml";
+import { itemsFromCsv } from "./data/itemsFromCsv";
 import {
   type CategoryKey,
   type Character,
@@ -79,6 +80,7 @@ const categoryIconFallback: Record<CategoryKey | "Spell Cards", string> = {
   "Fishing Spells": w101Icon("Fishing"),
 };
 const extraSkillKeys: CategoryKey[] = ["Gardening", "Monstrology", "Cantrip", "Fishing Spells"];
+const backpackKeys: CategoryKey[] = ["Gear", ...extraSkillKeys];
 const npcCategoryKeys: CategoryKey[] = ["Characters", "Minions", "Henchmen", "Bosses"];
 const housingCategoryKeys: CategoryKey[] = ["Furniture", "Castles", "Scrolls"];
 const placeholderThumb = (label: string) =>
@@ -642,15 +644,7 @@ function Details({
             { label: "Slot", value: piece.type, icon: statIconFor("Amulet") },
             { label: "School", value: piece.school, icon: statIconFor("School", piece.school) },
             { label: "Level", value: `L${piece.level}`, icon: statIconFor("Level") },
-            { label: "Stats", value: piece.stats, icon: statIconFor("Stats") },
-            { label: "Location", value: piece.location, icon: statIconFor("Location") },
             { label: "Subcategory", value: piece.subcategory, icon: statIconFor("Subcategory") },
-            ...(piece.setName
-              ? [{ label: "Set", value: piece.setName, icon: statIconFor("Set") }]
-              : []),
-            ...(piece.setBonus
-              ? [{ label: "Set bonus", value: piece.setBonus, icon: statIconFor("Bonus") }]
-              : []),
           ],
           gearTemplate(piece),
         );
@@ -831,8 +825,6 @@ function Details({
     return undefined;
   })();
 
-  const wikiUrl = (item as { wikiUrl?: string }).wikiUrl;
-
   const sources: SpellSource[] | undefined = (() => {
     if (category === "Spells") return (item as Spell).sources;
     if (category === "Treasure Cards") return (item as TreasureCard).sources;
@@ -852,30 +844,19 @@ function Details({
     switch (category) {
       case "Spells": {
         const spell = item as Spell;
-        return mergeStatLines(statLines, [
-          { label: "Description", value: spell.description, icon: statIconFor("Effect") },
-          {
-            label: "Treasure card",
-            value: spell.hasTreasureCard ? "Available" : "Unavailable",
-            icon: w101Icon("Treasure_Card"),
-          },
-          ...(spell.treasureCardNote
-            ? [{ label: "Treasure card note", value: spell.treasureCardNote, icon: w101Icon("Treasure_Card") }]
-            : []),
-        ]);
+        return spell.treasureCardNote
+          ? [{ label: "Treasure card note", value: spell.treasureCardNote, icon: w101Icon("Treasure_Card") }]
+          : [];
       }
       case "Treasure Cards": {
         const tc = item as TreasureCard;
-        return mergeStatLines(statLines, [
-          { label: "Description", value: tc.description, icon: statIconFor("Effect") },
-          ...(tc.relatedSpell
-            ? [{ label: "Related spell", value: tc.relatedSpell, icon: statIconFor("Spell") }]
-            : []),
-        ]);
+        return tc.relatedSpell
+          ? [{ label: "Related spell", value: tc.relatedSpell, icon: statIconFor("Spell") }]
+          : [];
       }
       case "Gear": {
         const piece = item as Gear;
-        return mergeStatLines(statLines, [
+        return [
           { label: "Stats", value: piece.stats, icon: statIconFor("Stats") },
           { label: "Location", value: piece.location, icon: statIconFor("Location") },
           ...(piece.setName
@@ -884,77 +865,43 @@ function Details({
           ...(piece.setBonus
             ? [{ label: "Set bonus", value: piece.setBonus, icon: statIconFor("Bonus") }]
             : []),
-        ]);
-      }
-      case "Characters": {
-        const npc = item as Character;
-        return mergeStatLines(statLines, [
-          ...(npc.tip ? [{ label: "Tip", value: npc.tip, icon: statIconFor("Tip") }] : []),
-          ...(npc.loot && npc.loot.length
-            ? [{ label: "Loot", value: npc.loot.join(", "), icon: statIconFor("Loot") }]
-            : []),
-        ]);
-      }
-      case "Bosses": {
-        const npc = item as Character;
-        return mergeStatLines(statLines, [
-          ...(npc.tip ? [{ label: "Tip", value: npc.tip, icon: statIconFor("Tip") }] : []),
-          ...(npc.loot && npc.loot.length
-            ? [{ label: "Loot", value: npc.loot.join(", "), icon: statIconFor("Loot") }]
-            : []),
-        ]);
-      }
-      case "Fishing": {
-        const spot = item as FishingSpot;
-        return mergeStatLines(statLines, [
-          { label: "World", value: spot.world, icon: statIconFor("World") },
-          { label: "School", value: spot.school, icon: statIconFor("School", spot.school) },
-          { label: "Rank", value: spot.rank, icon: statIconFor("Rank") },
-          { label: "Notes", value: spot.note, icon: statIconFor("Note") },
-        ]);
+        ];
       }
       case "Furniture": {
         const furni = item as Furniture;
-        return mergeStatLines(statLines, [
-          { label: "World", value: furni.world, icon: statIconFor("World") },
-          { label: "Location", value: furni.location, icon: statIconFor("Location") },
+        return [
           ...(furni.description
             ? [{ label: "Description", value: furni.description, icon: statIconFor("Description") }]
             : []),
-        ]);
+          ...(furni.crafting
+            ? [{ label: "Crafting", value: furni.crafting, icon: statIconFor("Crafting") }]
+            : []),
+        ];
       }
       case "Castles": {
         const home = item as Furniture;
-        return mergeStatLines(statLines, [
-          { label: "World", value: home.world, icon: statIconFor("World") },
-          { label: "Location", value: home.location, icon: statIconFor("Location") },
-          ...(home.description
-            ? [{ label: "Description", value: home.description, icon: statIconFor("Description") }]
-            : []),
-        ]);
+        return home.description
+          ? [{ label: "Description", value: home.description, icon: statIconFor("Description") }]
+          : [];
       }
       case "Scrolls": {
         const scroll = item as Furniture;
-        return mergeStatLines(statLines, [
-          { label: "World", value: scroll.world, icon: statIconFor("World") },
-          { label: "Location", value: scroll.location, icon: statIconFor("Location") },
-          ...(scroll.description
-            ? [{ label: "Description", value: scroll.description, icon: statIconFor("Description") }]
-            : []),
-        ]);
+        return scroll.description
+          ? [{ label: "Description", value: scroll.description, icon: statIconFor("Description") }]
+          : [];
       }
       case "Locations": {
         const loc = item as Location;
-        return mergeStatLines(statLines, [
+        return [
           ...(loc.description ? [{ label: "Description", value: loc.description, icon: statIconFor("Description") }] : []),
           ...(loc.access ? [{ label: "Access", value: loc.access, icon: statIconFor("Access") }] : []),
           ...(loc.collectibles && loc.collectibles.length
             ? [{ label: "Collectibles", value: loc.collectibles.join(", "), icon: statIconFor("Collectible") }]
             : []),
-        ]);
+        ];
       }
       default:
-        return statLines;
+        return [];
     }
   })();
 
@@ -972,58 +919,33 @@ function Details({
           </button>
         </header>
 
-        <div className="panel__summary">
-          <div className="panel__thumb panel__thumb--stacked">
-            <img
-              src={thumb}
-              alt=""
-              data-alt={getAltImage(item, category) || ""}
-              onError={(e) => {
-                const alt = (e.currentTarget.getAttribute("data-alt") || "").trim();
-                if (alt && e.currentTarget.src !== alt) {
-                  e.currentTarget.src = alt;
-                  return;
-                }
-                if (e.currentTarget.src !== thumbFallback) {
-                  e.currentTarget.src = thumbFallback;
-                }
-              }}
-            />
-            <p className="hint">Official art can replace this placeholder.</p>
-            {wikiUrl && (
-              <a className="chip-link chip-link--inline" href={wikiUrl} target="_blank" rel="noreferrer">
-                View wiki article
-              </a>
-            )}
-          </div>
-          <div className="panel__stats" role="list">
-            {statLines.map((line) => (
-              <div className="stat-row" role="listitem" key={line.label}>
-                <span className="stat-row__label">
-                  {line.icon && (
-                    <img
-                      src={line.icon}
-                      alt=""
-                      className="stat-row__icon"
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                      }}
-                    />
-                  )}
-                  {line.label}
-                </span>
-                <span className="stat-row__value">{line.value}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <div className="panel__grid">
+          <section className="panel__box panel__box--image" aria-label="Artwork">
+            <h4 className="panel__box-title">Image & art</h4>
+            <div className="panel__thumb panel__thumb--stacked">
+              <img
+                src={thumb}
+                alt=""
+                data-alt={getAltImage(item, category) || ""}
+                onError={(e) => {
+                  const alt = (e.currentTarget.getAttribute("data-alt") || "").trim();
+                  if (alt && e.currentTarget.src !== alt) {
+                    e.currentTarget.src = alt;
+                    return;
+                  }
+                  if (e.currentTarget.src !== thumbFallback) {
+                    e.currentTarget.src = thumbFallback;
+                  }
+                }}
+              />
+              <p className="hint">Official art can replace this placeholder.</p>
+            </div>
+          </section>
 
-        {(description || detailLines.length > 0) && (
-          <details className="accordion" open>
-            <summary>Details & description</summary>
-            <div className="accordion__body stat-grid">
-              {description && <p className="panel__body stat-row__value">{description}</p>}
-              {detailLines.map((line) => (
+          <section className="panel__box panel__box--stats" aria-label="Core stats" role="list">
+            <h4 className="panel__box-title">Stats</h4>
+            <div className="panel__stats" role="presentation">
+              {statLines.map((line) => (
                 <div className="stat-row" role="listitem" key={line.label}>
                   <span className="stat-row__label">
                     {line.icon && (
@@ -1042,47 +964,74 @@ function Details({
                 </div>
               ))}
             </div>
-          </details>
-        )}
+          </section>
 
-        {sources && sources.length > 0 && (
-          <details className="accordion" open>
-            <summary>Acquisition & sources</summary>
-            <div className="accordion__body source-list">
-              {sources.map((src) => (
-                <div className="stat-row" key={`${src.type}-${src.detail}`}>
-                  <span className="stat-row__label">{src.type}</span>
-                  <span className="stat-row__value">
-                    {src.detail}
-                    {src.location && (
-                      <>
-                        {" "}—{" "}
-                        <button
-                          className="chip-link chip-link--inline"
-                          onClick={() => onSelectLocation(src.location!)}
-                        >
-                          {src.location}
-                        </button>
-                      </>
-                    )}
-                    {src.npc && (
-                      <>
-                        {" "}(
-                        <button
-                          className="chip-link chip-link--inline"
-                          onClick={() => onSelectCharacter(src.npc!)}
-                        >
-                          NPC: {src.npc}
-                        </button>
-                        )
-                      </>
-                    )}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </details>
-        )}
+          {(description || detailLines.length > 0) && (
+            <section className="panel__box panel__box--details" aria-label="Details">
+              <h4 className="panel__box-title">Details & description</h4>
+              {description && <p className="panel__body stat-row__value">{description}</p>}
+              <div className="stat-grid" role="list">
+                {detailLines.map((line) => (
+                  <div className="stat-row" role="listitem" key={line.label}>
+                    <span className="stat-row__label">
+                      {line.icon && (
+                        <img
+                          src={line.icon}
+                          alt=""
+                          className="stat-row__icon"
+                          onError={(e) => {
+                            e.currentTarget.style.display = "none";
+                          }}
+                        />
+                      )}
+                      {line.label}
+                    </span>
+                    <span className="stat-row__value">{line.value}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {sources && sources.length > 0 && (
+            <section className="panel__box panel__box--sources" aria-label="Acquisition">
+              <h4 className="panel__box-title">Acquisition & sources</h4>
+              <div className="source-list" role="list">
+                {sources.map((src) => (
+                  <div className="stat-row" key={`${src.type}-${src.detail}`} role="listitem">
+                    <span className="stat-row__label">{src.type}</span>
+                    <span className="stat-row__value">
+                      {src.detail}
+                      {src.location && (
+                        <>
+                          {" "}—{" "}
+                          <button
+                            className="chip-link chip-link--inline"
+                            onClick={() => onSelectLocation(src.location!)}
+                          >
+                            {src.location}
+                          </button>
+                        </>
+                      )}
+                      {src.npc && (
+                        <>
+                          {" "}(
+                          <button
+                            className="chip-link chip-link--inline"
+                            onClick={() => onSelectCharacter(src.npc!)}
+                          >
+                            NPC: {src.npc}
+                          </button>
+                          )
+                        </>
+                      )}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
 
         <div className="panel__actions">
           <button className="ghost" onClick={onClose}>
@@ -1095,11 +1044,6 @@ function Details({
             >
               Add to compare
             </button>
-          )}
-          {wikiUrl && (
-            <a className="ghost ghost--chip" href={wikiUrl} target="_blank" rel="noreferrer">
-              Open wiki
-            </a>
           )}
         </div>
       </div>
@@ -1120,7 +1064,7 @@ function App() {
   const [characterFilter, setCharacterFilter] = useState<string>("All");
   const [worldFilter, setWorldFilter] = useState<string>("All Worlds");
   const [spellView, setSpellView] = useState<"Spell list" | "Spell cards">("Spell list");
-  const [extraSkillsOpen, setExtraSkillsOpen] = useState<boolean>(false);
+  const [backpackOpen, setBackpackOpen] = useState<boolean>(false);
   const [npcOpen, setNpcOpen] = useState<boolean>(false);
   const [housingOpen, setHousingOpen] = useState<boolean>(false);
   const [subcategoryFilter, setSubcategoryFilter] = useState<string>("All");
@@ -1147,6 +1091,20 @@ function App() {
     }
     return max;
   }, [parsedCompare]);
+
+  const questSourceCount = questsFromHtml.length;
+  const itemSourceCount = itemsFromCsv.length;
+  const mapSourceCount = worldMaps.length;
+  const spellCardCount = fireSpellCards.length;
+
+  const questSourceSamples = useMemo(() => questsFromHtml.slice(0, 3), []);
+  const itemSourceSamples = useMemo(() => itemsFromCsv.slice(0, 3), []);
+  const mapSamples = useMemo(() => worldMaps.slice(0, 3), []);
+
+  const libraryLink = useMemo(
+    () => encodeURI(`${import.meta.env.BASE_URL}W101 Images/`),
+    [],
+  );
 
   const viewCategory: ViewCategory =
     category === "Spells" && spellView === "Spell cards" ? "Spell Cards" : category;
@@ -1243,6 +1201,7 @@ function App() {
     () =>
       categories.filter(
         (entry) =>
+          entry.key !== "Gear" &&
           !extraSkillKeys.includes(entry.key) &&
           !npcCategoryKeys.includes(entry.key) &&
           !housingCategoryKeys.includes(entry.key),
@@ -1257,10 +1216,14 @@ function App() {
     () => categories.filter((entry) => housingCategoryKeys.includes(entry.key)),
     [],
   );
-  const extraSkillCategories = useMemo(
-    () => categories.filter((entry) => extraSkillKeys.includes(entry.key)),
-    [],
-  );
+  const backpackCategories = useMemo(() => {
+    const ordered = backpackKeys.reduce((list, key) => {
+      const found = categories.find((entry) => entry.key === key);
+      if (found) list.push(found);
+      return list;
+    }, [] as typeof categories);
+    return ordered;
+  }, []);
   const xmlQuickLinks = useMemo(() => xmlDataStats.sampleSpells, []);
 
   const addGearToCompare = (piece: Gear) => {
@@ -1434,14 +1397,128 @@ function App() {
 
   return (
     <div className="page">
-      {/* Floating live preview button retained */}
-      <a
-        className="live-preview-fab"
-        href="https://aka-sly.github.io/InteractiveMapGuide-Wizard101/"
-        aria-label="Open live preview"
-      >
-        Live preview
-      </a>
+      <header className="top-bar">
+        <div className="top-bar__lede">
+          <p className="eyebrow">Data sources wired into the guide</p>
+          <h1>Wizard101 Interactive Guide</h1>
+          <p className="lede">
+            Local HTML quest pages, CSV item links, and the bundled <code>W101 Images</code> library now
+            feed directly into the catalog. Everything you see below is extracted from the downloaded
+            files in this project—no redirects to external wikis required.
+          </p>
+
+          <div className="actions">
+            <a className="chip-link chip-link--inline" href={libraryLink} target="_blank" rel="noreferrer">
+              Open W101 Images
+            </a>
+            <button
+              className="chip-link chip-link--inline"
+              type="button"
+              onClick={() => {
+                setCategory("Items");
+                setSelected(null);
+                setSearch("");
+                setSelectedCategory("Items");
+                setPage(1);
+              }}
+            >
+              Browse CSV items
+            </button>
+            <button
+              className="chip-link chip-link--inline"
+              type="button"
+              onClick={() => {
+                setCategory("Quests");
+                setSelected(null);
+                setSearch("");
+                setSelectedCategory("Quests");
+                setPage(1);
+              }}
+            >
+              Browse HTML quests
+            </button>
+          </div>
+        </div>
+
+        <div className="top-bar__actions">
+          <div className="data-stats">
+            <article className="data-stats__card">
+              <p className="eyebrow">Quest HTML</p>
+              <h3>{questSourceCount} pages linked</h3>
+              <p className="hint">
+                Parsed from the <code>html&apos;s/Quests</code> folder; tap a chip to filter the in-app quest list.
+              </p>
+              <div className="chip-row">
+                {questSourceSamples.map((quest) => (
+                  <button
+                    key={quest.name}
+                    type="button"
+                    className="chip-link chip-link--inline"
+                    onClick={() => {
+                      setCategory("Quests");
+                      setSelected(null);
+                      setSearch(quest.name);
+                      setSelectedCategory("Quests");
+                      setPage(1);
+                    }}
+                    title={`Show ${quest.name} quests in the list`}
+                  >
+                    {quest.name}
+                  </button>
+                ))}
+              </div>
+            </article>
+
+            <article className="data-stats__card data-stats__card--compact">
+              <p className="eyebrow">Item CSV</p>
+              <h3>{itemSourceCount} item links</h3>
+              <p className="hint">Imported from the <code>Incomplete ItemList.csv</code> file to populate the Items tab.</p>
+              <div className="chip-row">
+                {itemSourceSamples.map((item) => (
+                  <button
+                    key={item.name}
+                    type="button"
+                    className="chip-link chip-link--inline"
+                    onClick={() => {
+                      setCategory("Items");
+                      setSelected(null);
+                      setSearch(item.name);
+                      setSelectedCategory("Items");
+                      setPage(1);
+                    }}
+                    title={`Filter items to ${item.name}`}
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            </article>
+
+            <article className="data-stats__card data-stats__card--compact">
+              <p className="eyebrow">W101 Images</p>
+              <h3>{spellCardCount + mapSourceCount} library files</h3>
+              <p className="hint">Fire spell cards, world maps, and more are read directly from the bundled art library.</p>
+              <div className="chip-row">
+                <span className="chip-link chip-link--inline" aria-label="Fire spell art available">
+                  🔥 {spellCardCount} spell cards
+                </span>
+                {mapSamples.map((map) => (
+                  <a
+                    key={map.name}
+                    className="chip-link chip-link--inline"
+                    href={map.image}
+                    target="_blank"
+                    rel="noreferrer"
+                    title={`Open ${map.name} world map`}
+                  >
+                    {map.name} map
+                  </a>
+                ))}
+              </div>
+            </article>
+          </div>
+        </div>
+      </header>
 
       <main className="content-layout" id="list">
         <section className="bookmark-shell">
@@ -1553,24 +1630,24 @@ function App() {
             <div className="bookmark--group">
               <button
                 className={
-                  extraSkillsOpen
+                  backpackOpen
                     ? "bookmark bookmark--primary active"
                     : "bookmark bookmark--primary"
                 }
-                aria-pressed={extraSkillsOpen}
-                aria-expanded={extraSkillsOpen}
-                onClick={() => setExtraSkillsOpen((open) => !open)}
-                title="Extra Skills"
+                aria-pressed={backpackOpen}
+                aria-expanded={backpackOpen}
+                onClick={() => setBackpackOpen((open) => !open)}
+                title="Backpack"
               >
                 <span className="icon" aria-hidden>
-                  <img src={extraSkillsIcon} alt="" />
+                  <img src={categoryIconFallback.Gear} alt="" />
                 </span>
-                <span className="bookmark__label">Extra Skills</span>
+                <span className="bookmark__label">Backpack</span>
               </button>
 
-              {extraSkillsOpen && (
-                <div className="bookmark-group__body" aria-label="Extra skills categories">
-                  {extraSkillCategories.map((c) => (
+              {backpackOpen && (
+                <div className="bookmark-group__body" aria-label="Backpack categories">
+                  {backpackCategories.map((c) => (
                     <button
                       key={c.key}
                       className={
@@ -1586,9 +1663,9 @@ function App() {
                       }}
                     >
                       <span className="icon" aria-hidden>
-                        <img src={c.icon} alt="" />
+                        <img src={c.icon ?? categoryIconFallback[c.key]} alt="" />
                       </span>
-                      <span className="bookmark__label">{c.key}</span>
+                      <span className="bookmark__label">{displayCategory(c.key as ViewCategory)}</span>
                     </button>
                   ))}
                 </div>

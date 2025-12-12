@@ -16,4 +16,10 @@ if (unsafeCharacters.some((ch) => projectPath.includes(ch))) {
 export default defineConfig({
   plugins: [react()],
   base: "/InteractiveMapGuide-Wizard101/",
+  build: {
+    // Disable brotli-size calculations to reduce memory overhead during rollup output analysis
+    brotliSize: false,
+    // Keep chunk warnings high enough to avoid noisy logs on large static asset copies
+    chunkSizeWarningLimit: 2500,
+  },
 });
