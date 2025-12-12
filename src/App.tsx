@@ -9,7 +9,9 @@ import { spells } from "./data/spells";
 import { treasureCards } from "./data/treasureCards";
 import { type WorldBubble, worlds } from "./data/worlds";
 import { extraSkillsIcon } from "./data/extraSkills";
-import { fireSpellCards } from "./data/galleries";
+import { fireSpellCards, worldMaps } from "./data/galleries";
+import { questsFromHtml } from "./data/questsFromHtml";
+import { itemsFromCsv } from "./data/itemsFromCsv";
 import {
   type CategoryKey,
   type Character,
@@ -831,8 +833,6 @@ function Details({
     return undefined;
   })();
 
-  const wikiUrl = (item as { wikiUrl?: string }).wikiUrl;
-
   const sources: SpellSource[] | undefined = (() => {
     if (category === "Spells") return (item as Spell).sources;
     if (category === "Treasure Cards") return (item as TreasureCard).sources;
@@ -990,11 +990,6 @@ function Details({
               }}
             />
             <p className="hint">Official art can replace this placeholder.</p>
-            {wikiUrl && (
-              <a className="chip-link chip-link--inline" href={wikiUrl} target="_blank" rel="noreferrer">
-                View wiki article
-              </a>
-            )}
           </div>
           <div className="panel__stats" role="list">
             {statLines.map((line) => (
@@ -1096,11 +1091,6 @@ function Details({
               Add to compare
             </button>
           )}
-          {wikiUrl && (
-            <a className="ghost ghost--chip" href={wikiUrl} target="_blank" rel="noreferrer">
-              Open wiki
-            </a>
-          )}
         </div>
       </div>
     </div>
@@ -1147,6 +1137,20 @@ function App() {
     }
     return max;
   }, [parsedCompare]);
+
+  const questSourceCount = questsFromHtml.length;
+  const itemSourceCount = itemsFromCsv.length;
+  const mapSourceCount = worldMaps.length;
+  const spellCardCount = fireSpellCards.length;
+
+  const questSourceSamples = useMemo(() => questsFromHtml.slice(0, 3), []);
+  const itemSourceSamples = useMemo(() => itemsFromCsv.slice(0, 3), []);
+  const mapSamples = useMemo(() => worldMaps.slice(0, 3), []);
+
+  const libraryLink = useMemo(
+    () => encodeURI(`${import.meta.env.BASE_URL}W101 Images/`),
+    [],
+  );
 
   const viewCategory: ViewCategory =
     category === "Spells" && spellView === "Spell cards" ? "Spell Cards" : category;
@@ -1434,14 +1438,128 @@ function App() {
 
   return (
     <div className="page">
-      {/* Floating live preview button retained */}
-      <a
-        className="live-preview-fab"
-        href="https://aka-sly.github.io/InteractiveMapGuide-Wizard101/"
-        aria-label="Open live preview"
-      >
-        Live preview
-      </a>
+      <header className="top-bar">
+        <div className="top-bar__lede">
+          <p className="eyebrow">Data sources wired into the guide</p>
+          <h1>Wizard101 Interactive Guide</h1>
+          <p className="lede">
+            Local HTML quest pages, CSV item links, and the bundled <code>W101 Images</code> library now
+            feed directly into the catalog. Everything you see below is extracted from the downloaded
+            files in this project—no redirects to external wikis required.
+          </p>
+
+          <div className="actions">
+            <a className="chip-link chip-link--inline" href={libraryLink} target="_blank" rel="noreferrer">
+              Open W101 Images
+            </a>
+            <button
+              className="chip-link chip-link--inline"
+              type="button"
+              onClick={() => {
+                setCategory("Items");
+                setSelected(null);
+                setSearch("");
+                setSelectedCategory("Items");
+                setPage(1);
+              }}
+            >
+              Browse CSV items
+            </button>
+            <button
+              className="chip-link chip-link--inline"
+              type="button"
+              onClick={() => {
+                setCategory("Quests");
+                setSelected(null);
+                setSearch("");
+                setSelectedCategory("Quests");
+                setPage(1);
+              }}
+            >
+              Browse HTML quests
+            </button>
+          </div>
+        </div>
+
+        <div className="top-bar__actions">
+          <div className="data-stats">
+            <article className="data-stats__card">
+              <p className="eyebrow">Quest HTML</p>
+              <h3>{questSourceCount} pages linked</h3>
+              <p className="hint">
+                Parsed from the <code>html&apos;s/Quests</code> folder; tap a chip to filter the in-app quest list.
+              </p>
+              <div className="chip-row">
+                {questSourceSamples.map((quest) => (
+                  <button
+                    key={quest.name}
+                    type="button"
+                    className="chip-link chip-link--inline"
+                    onClick={() => {
+                      setCategory("Quests");
+                      setSelected(null);
+                      setSearch(quest.name);
+                      setSelectedCategory("Quests");
+                      setPage(1);
+                    }}
+                    title={`Show ${quest.name} quests in the list`}
+                  >
+                    {quest.name}
+                  </button>
+                ))}
+              </div>
+            </article>
+
+            <article className="data-stats__card data-stats__card--compact">
+              <p className="eyebrow">Item CSV</p>
+              <h3>{itemSourceCount} item links</h3>
+              <p className="hint">Imported from the <code>Incomplete ItemList.csv</code> file to populate the Items tab.</p>
+              <div className="chip-row">
+                {itemSourceSamples.map((item) => (
+                  <button
+                    key={item.name}
+                    type="button"
+                    className="chip-link chip-link--inline"
+                    onClick={() => {
+                      setCategory("Items");
+                      setSelected(null);
+                      setSearch(item.name);
+                      setSelectedCategory("Items");
+                      setPage(1);
+                    }}
+                    title={`Filter items to ${item.name}`}
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            </article>
+
+            <article className="data-stats__card data-stats__card--compact">
+              <p className="eyebrow">W101 Images</p>
+              <h3>{spellCardCount + mapSourceCount} library files</h3>
+              <p className="hint">Fire spell cards, world maps, and more are read directly from the bundled art library.</p>
+              <div className="chip-row">
+                <span className="chip-link chip-link--inline" aria-label="Fire spell art available">
+                  🔥 {spellCardCount} spell cards
+                </span>
+                {mapSamples.map((map) => (
+                  <a
+                    key={map.name}
+                    className="chip-link chip-link--inline"
+                    href={map.image}
+                    target="_blank"
+                    rel="noreferrer"
+                    title={`Open ${map.name} world map`}
+                  >
+                    {map.name} map
+                  </a>
+                ))}
+              </div>
+            </article>
+          </div>
+        </div>
+      </header>
 
       <main className="content-layout" id="list">
         <section className="bookmark-shell">
