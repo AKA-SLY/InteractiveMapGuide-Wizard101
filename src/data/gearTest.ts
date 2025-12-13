@@ -1,4 +1,4 @@
-//import raw from "../../Json/gear_items_test.json";
+// Do not use!! import raw from "../../Json/gear_items_test.json";
 import { type Gear } from "../types";
 
 type RawItem = {
