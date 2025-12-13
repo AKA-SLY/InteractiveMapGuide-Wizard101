@@ -22,3 +22,42 @@ export const allJsonArrays = (): any[][] => {
 };
 
 export const jsonArrayEntries = (): any[] => allJsonArrays().flat();
+
+export type JsonCategoryPage = {
+  category: string;
+  slug: string;
+  title?: string;
+  tables: { class?: string[]; rows?: string[][] }[];
+};
+
+export const jsonCategoryPages: JsonCategoryPage[] = [];
+
+const categoryModules = import.meta.glob("../../Json/**/data.json", { eager: true }) as Record<string, JsonModule>;
+
+for (const [key, mod] of Object.entries(categoryModules)) {
+  const value: any = (mod as any)?.default ?? mod;
+  const [, afterJson] = key.split("/Json/");
+  const [category] = afterJson?.split("/") ?? [];
+
+  if (!category || !value || typeof value !== "object") continue;
+
+  for (const [slug, page] of Object.entries(value as Record<string, any>)) {
+    const tables = Array.isArray((page as any)?.tables) ? ((page as any).tables as any[]) : [];
+    jsonCategoryPages.push({
+      category,
+      slug,
+      title: (page as any)?.title as string | undefined,
+      tables,
+    });
+  }
+}
+
+export const flattenJsonCells = (tables: JsonCategoryPage["tables"]): string[] =>
+  tables
+    .flatMap((table) => table?.rows ?? [])
+    .flat()
+    .map((cell) => (cell == null ? "" : String(cell)).trim())
+    .filter(Boolean);
+
+export const wikiUrlFromSlug = (slug: string) =>
+  `https://www.wizard101central.com/wiki/${slug.replace(/\.html?$/i, "")}`;
