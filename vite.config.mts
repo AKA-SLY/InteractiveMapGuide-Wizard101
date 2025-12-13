@@ -15,7 +15,9 @@ if (unsafeCharacters.some((ch) => projectPath.includes(ch))) {
 
 export default defineConfig({
   plugins: [react()],
-  base: "/InteractiveMapGuide-Wizard101/",
+  // Use relative asset paths so the app works on GitHub Pages, custom domains,
+  // or any subpath without showing a blank screen from missing bundles.
+  base: "./",
   build: {
     // Disable brotli-size calculations to reduce memory overhead during rollup output analysis
     brotliSize: false,
