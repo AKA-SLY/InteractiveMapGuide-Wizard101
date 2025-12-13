@@ -1,5 +1,5 @@
 import { type Gear } from "../../types";
-import { jsonArrayEntries } from "./index";
+import { jsonArrayEntries, jsonRecordValues } from "./index";
 
 type RawItem = {
   name?: string;
@@ -50,19 +50,23 @@ const subcategoryFrom = (slot?: string, categories?: string[]) => categories?.[0
 const isGearish = (entry: any): entry is RawItem =>
   entry && typeof entry === "object" && ("slot" in entry || "bonuses_raw" in entry || "level_required" in entry);
 
-export const gearFromJson: Gear[] = jsonArrayEntries()
+const jsonEntries = [...jsonArrayEntries(), ...jsonRecordValues()];
+
+export const gearFromJson: Gear[] = jsonEntries
   .filter(isGearish)
   .map((item): Gear | null => {
-    if (!item.name || !item.slot) return null;
+    const slot = (item.slot as string) || (item as any).gear_slot;
+    const name = (item.name as string) || (item as any).display_name || (item as any).label;
+    if (!name || !slot) return null;
     return {
-      name: item.name,
-      school: coerceSchool(item.school),
-      type: item.slot || "Gear",
-      subcategory: subcategoryFrom(item.slot, item.categories),
-      level: item.level_required ?? 0,
-      stats: statsFrom(item.bonuses_raw),
+      name,
+      school: coerceSchool((item as any).school),
+      type: slot || "Gear",
+      subcategory: subcategoryFrom(slot, (item as any).categories),
+      level: (item as any).level_required ?? (item as any).level_requirement ?? 0,
+      stats: statsFrom((item as any).bonuses_raw),
       location: makeLocation(item.dropped_by),
-      sources: item.wiki_url ? [{ type: "Other", detail: "Wiki", location: item.wiki_url }] : undefined,
+      sources: (item as any).wiki_url ? [{ type: "Other", detail: "Wiki", location: (item as any).wiki_url }] : undefined,
     };
   })
   .filter((v): v is Gear => v !== null);
