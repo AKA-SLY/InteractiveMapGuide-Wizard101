@@ -1,5 +1,5 @@
 import { type Character } from "../../types";
-import { jsonArrayEntries } from "./index";
+import { flattenJsonCells, jsonArrayEntries, jsonCategoryPages, wikiUrlFromSlug } from "./index";
 
 type Raw = Record<string, any>;
 
@@ -24,7 +24,7 @@ const toArray = (v: any): string[] | undefined =>
 
 const isCharacterish = (e: Raw) => e && typeof e === "object" && typeof e.name === "string" && (e.world || e.location || e.role);
 
-export const charactersFromJson: Character[] = jsonArrayEntries()
+const simpleCharacters = jsonArrayEntries()
   .filter(isCharacterish)
   .map((e: Raw): Character | null => {
     if (!e.name) return null;
@@ -50,3 +50,27 @@ export const charactersFromJson: Character[] = jsonArrayEntries()
     };
   })
   .filter((v): v is Character => v !== null);
+
+const cleanName = (title?: string) =>
+  title?.replace(/^NPC:/i, "").replace(/-\s*Wizard101 Wiki.*$/i, "").trim() ?? undefined;
+
+const categoryCharacters: Character[] = jsonCategoryPages
+  .filter((page) => /npc/i.test(page.category) || /trainer/i.test(page.category))
+  .map((page) => {
+    const name = cleanName(page.title) ?? page.slug.replace(/\.html?$/i, "").replace(/[_-]/g, " ");
+    const world = page.category.replace(/\s*npc$/i, "").trim() || "Unknown World";
+    const cells = flattenJsonCells(page.tables);
+    const location = cells.find((cell) => /commons|area|street|swamp|village|plaza/i.test(cell)) ?? cells[0] ?? world;
+    const role = /trainer/i.test(page.category) ? "Trainer" : "NPC";
+    const classification = /trainer/i.test(page.category) ? (["Trainer"] as Character["classification"]) : undefined;
+    return {
+      name,
+      role,
+      world,
+      location: location || world,
+      classification,
+      wikiUrl: wikiUrlFromSlug(page.slug),
+    };
+  });
+
+export const charactersFromJson: Character[] = [...simpleCharacters, ...categoryCharacters];

@@ -2,7 +2,11 @@ import { type GalleryItem } from "../types";
 
 // Load the CSV from the local repo (raw string at build time)
 // Note: the folder name contains an apostrophe, so use backticks for the path string.
-const csvModules = import.meta.glob(`../../html's/*.csv`, { as: "raw", eager: true }) as Record<string, string>;
+const csvModules = import.meta.glob(`../../html's/*.csv`, {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
 
 function parseCsv(raw: string): { url: string; title: string }[] {
   const out: { url: string; title: string }[] = [];

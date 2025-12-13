@@ -765,12 +765,47 @@ input[type="text"] {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(27, 15, 43, 0.45);
+  background: rgba(27, 15, 43, 0.4);
   display: grid;
   place-items: center;
   padding: 20px;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(2px);
   z-index: 30;
+}
+
+.fatal {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #2b1441, #120a1f);
+  color: #fef9ed;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  z-index: 1000;
+}
+
+.fatal__panel {
+  width: min(720px, 100%);
+  background: #fef9ed;
+  color: #2b1441;
+  border: 2px solid #c98611;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+}
+
+.fatal__eyebrow {
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  font-size: 12px;
+  color: #c98611;
+}
+
+.fatal__hint {
+  margin: 10px 0 0;
+  color: #5c4d7b;
 }
 
 .panel {
