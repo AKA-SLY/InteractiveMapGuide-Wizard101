@@ -1,9 +1,5 @@
 import { type Spell } from "../../types";
-import {
-  jsonArrayEntries,
-  jsonCategoryPages,
-  wikiUrlFromSlug,
-} from "./index";
+import { jsonArrayEntries, jsonCategoryPages, jsonRecordValues, wikiUrlFromSlug } from "./index";
 
 type Raw = Record<string, any>;
 
@@ -26,7 +22,7 @@ const coerceSchool = (value: string | null | undefined): Spell["school"] | null 
 const isSpellish = (e: Raw) =>
   e && typeof e === "object" && typeof e.name === "string" && (e.school != null || e.pip_cost != null || e.accuracy != null || e.effect != null);
 
-const simpleSpells = jsonArrayEntries()
+const simpleSpells = [...jsonArrayEntries(), ...jsonRecordValues()]
   .filter(isSpellish)
   .map((e: Raw): Spell | null => {
     const school = coerceSchool(e.school);
@@ -70,22 +66,69 @@ const schoolFromCategory = (category: string): Spell["school"] | null => {
 const cleanTitle = (title?: string) =>
   title?.replace(/^ItemCard:/i, "").replace(/-\s*Wizard101 Wiki.*$/i, "").trim() ?? undefined;
 
+const parsePipCost = (value: string | null | undefined) => {
+  const digits = (value ?? "").match(/\d+/g)?.map(Number) ?? [];
+  return digits.length ? digits.reduce((sum, n) => sum + n, 0) : 0;
+};
+
+const pickHeader = (rows: any[][]) => {
+  const index = rows.findIndex((row) => row.some((cell) => typeof cell === "string" && /spell/i.test(cell)));
+  return { index, header: index >= 0 ? rows[index] : [] } as const;
+};
+
+const lookupCell = (row: any[], headers: string[], key: string) => {
+  const index = headers.findIndex((h) => h.includes(key));
+  return index >= 0 ? row[index] : undefined;
+};
+
+const toString = (value: any) => (value == null ? "" : String(value)).trim();
+
+const parseSpellTables = (page: (typeof jsonCategoryPages)[number]): Spell[] => {
+  const school = schoolFromCategory(page.category) ?? "Balance";
+  const baseSource = { type: "Other" as const, detail: "Wizard101 Wiki", location: wikiUrlFromSlug(page.slug) };
+
+  return page.tables.flatMap((table) => {
+    const rows = table.rows ?? [];
+    if (!rows.length) return [] as Spell[];
+
+    const { index: headerIndex, header } = pickHeader(rows);
+    const normalizedHeader = header.map((h) => toString(h).toLowerCase());
+    const dataRows = normalizedHeader.length ? rows.slice(headerIndex + 1) : rows.slice(1);
+
+    return dataRows
+      .map((rowRaw) => {
+        const row = rowRaw as any[];
+        const name = toString(lookupCell(row, normalizedHeader, "spell") ?? row[0]);
+        if (!name) return null;
+
+        const pipCost = parsePipCost(toString(lookupCell(row, normalizedHeader, "pip")));
+        const description = toString(lookupCell(row, normalizedHeader, "description") ?? row[3] ?? "See wiki entry");
+        const levelRequirementRaw = lookupCell(row, normalizedHeader, "level") ?? row[1];
+        const levelRequirement = Number.isFinite(Number(levelRequirementRaw)) ? Number(levelRequirementRaw) : undefined;
+
+        const questNote = row.slice(header.length).map(toString).find((v) => v.toLowerCase().includes("quest"));
+        const sources = questNote
+          ? [baseSource, { type: "Quest", detail: questNote } as Spell["sources"][number]]
+          : [baseSource];
+
+        return {
+          name,
+          school,
+          rank: pipCost || 0,
+          pipCost,
+          accuracy: "100%",
+          effect: description || "See wiki entry",
+          description: description || "See wiki entry",
+          levelRequirement,
+          sources,
+        } satisfies Spell;
+      })
+      .filter((v): v is Spell => v !== null);
+  });
+};
+
 const categorySpells: Spell[] = jsonCategoryPages
   .filter((page) => /spell/i.test(page.category))
-  .map((page) => {
-    const school = schoolFromCategory(page.category);
-    const name = cleanTitle(page.title) ?? page.slug.replace(/\.html?$/i, "").replace(/[_-]/g, " ");
-    const sources = [{ type: "Other", detail: "Wizard101 Wiki", location: wikiUrlFromSlug(page.slug) }];
-    return {
-      name,
-      school: school ?? "Balance",
-      rank: 0,
-      pipCost: 0,
-      accuracy: "100%",
-      effect: "See wiki entry",
-      description: "Imported from scraped spell data",
-      sources,
-    };
-  });
+  .flatMap(parseSpellTables);
 
 export const spellsFromJson: Spell[] = [...simpleSpells, ...categorySpells];
