@@ -1,0 +1,7145 @@
+{
+  "ItemCard_Accurate.html": {
+    "title": "ItemCard:Accurate - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Acuity.html": {
+    "title": "ItemCard:Acuity - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Aegis_Balanceblade.html": {
+    "title": "ItemCard:Aegis Balanceblade - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Aegis_Bladestorm.html": {
+    "title": "ItemCard:Aegis Bladestorm - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Alhazred's_Swarm.html": {
+    "title": "ItemCard:Alhazred's Swarm - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Availing_Hands.html": {
+    "title": "ItemCard:Availing Hands - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Balance_Assist.html": {
+    "title": "ItemCard:Balance Assist - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Balance_Brandon.html": {
+    "title": "ItemCard:Balance Brandon - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minion"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "5",
+            "Brandon (Balance)",
+            "Brandon",
+            "10",
+            "2,035"
+          ]
+        ]
+      }
+    ]
+  },
+  "ItemCard_Balance_of_Power.html": {
+    "title": "ItemCard:Balance of Power - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Balanceblade.html": {
+    "title": "ItemCard:Balanceblade - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Balanced_Volley.html": {
+    "title": "ItemCard:Balanced Volley - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Balancespear.html": {
+    "title": "ItemCard:Balancespear - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Bestow.html": {
+    "title": "ItemCard:Bestow - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Black_Mantle.html": {
+    "title": "ItemCard:Black Mantle - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Blade_Dance.html": {
+    "title": "ItemCard:Blade Dance - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Blade_Dilution.html": {
+    "title": "ItemCard:Blade Dilution - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Bladestorm.html": {
+    "title": "ItemCard:Bladestorm - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Burst.html": {
+    "title": "ItemCard:Burst - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Cat_Nap.html": {
+    "title": "ItemCard:Cat Nap - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Cat_Thug.html": {
+    "title": "ItemCard:Cat Thug - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Chameleon_Clash.html": {
+    "title": "ItemCard:Chameleon Clash - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Chimera.html": {
+    "title": "ItemCard:Chimera - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Chromatic_Blast.html": {
+    "title": "ItemCard:Chromatic Blast - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Clash.html": {
+    "title": "ItemCard:Clash - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Cloaked_Balanceblade.html": {
+    "title": "ItemCard:Cloaked Balanceblade - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Clockwork_Minion.html": {
+    "title": "ItemCard:Clockwork Minion - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minion"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "4",
+            "Clockwork Helper",
+            "Clockwork Golem",
+            "4",
+            "550"
+          ]
+        ]
+      }
+    ]
+  },
+  "ItemCard_Clockwork_Spider.html": {
+    "title": "ItemCard:Clockwork Spider - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Counterforce.html": {
+    "title": "ItemCard:Counterforce - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Courageous_Charge.html": {
+    "title": "ItemCard:Courageous Charge - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Crusade.html": {
+    "title": "ItemCard:Crusade - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Desert_Hound.html": {
+    "title": "ItemCard:Desert Hound - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Donate_Power.html": {
+    "title": "ItemCard:Donate Power - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Dragonblade.html": {
+    "title": "ItemCard:Dragonblade - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Dragonlance.html": {
+    "title": "ItemCard:Dragonlance - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Dragonspear.html": {
+    "title": "ItemCard:Dragonspear - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Dust-Up.html": {
+    "title": "ItemCard:Dust-Up - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Elemental_Blade.html": {
+    "title": "ItemCard:Elemental Blade - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Elemental_Defuse.html": {
+    "title": "ItemCard:Elemental Defuse - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Elemental_Golem.html": {
+    "title": "ItemCard:Elemental Golem - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Elemental_Prism.html": {
+    "title": "ItemCard:Elemental Prism - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Elemental_Shield.html": {
+    "title": "ItemCard:Elemental Shield - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Elemental_Spear.html": {
+    "title": "ItemCard:Elemental Spear - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Elemental_Surge.html": {
+    "title": "ItemCard:Elemental Surge - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Elemental_Trap.html": {
+    "title": "ItemCard:Elemental Trap - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Erosion.html": {
+    "title": "ItemCard:Erosion - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Eye_of_Vigilance.html": {
+    "title": "ItemCard:Eye of Vigilance - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Feint.html": {
+    "title": "ItemCard:Feint - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Flash.html": {
+    "title": "ItemCard:Flash - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Frostfang.html": {
+    "title": "ItemCard:Frostfang - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Gearhead_Destroyer.html": {
+    "title": "ItemCard:Gearhead Destroyer - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Helping_Hands.html": {
+    "title": "ItemCard:Helping Hands - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Hex.html": {
+    "title": "ItemCard:Hex - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Hydra.html": {
+    "title": "ItemCard:Hydra - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Impact.html": {
+    "title": "ItemCard:Impact - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Iron_Curse.html": {
+    "title": "ItemCard:Iron Curse - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Jade_Oni_(Attack).html": {
+    "title": "ItemCard:Jade Oni (Attack) - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Judgement.html": {
+    "title": "ItemCard:Judgement - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Justice_Slash.html": {
+    "title": "ItemCard:Justice Slash - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Justiceblade.html": {
+    "title": "ItemCard:Justiceblade - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_King_Artorius_(Balance).html": {
+    "title": "ItemCard:King Artorius (Balance) - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Kite_Shield.html": {
+    "title": "ItemCard:Kite Shield - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Krokotillian.html": {
+    "title": "ItemCard:Krokotillian - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Lernaean_Hydra.html": {
+    "title": "ItemCard:Lernaean Hydra - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Lightkeeper's_Beam.html": {
+    "title": "ItemCard:Lightkeeper's Beam - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Locust_Swarm.html": {
+    "title": "ItemCard:Locust Swarm - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Lord_of_Atonement.html": {
+    "title": "ItemCard:Lord of Atonement - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Loremaster.html": {
+    "title": "ItemCard:Loremaster - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Lycian_Chimera.html": {
+    "title": "ItemCard:Lycian Chimera - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Major_Balance_Burst.html": {
+    "title": "ItemCard:Major Balance Burst - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Major_Burst.html": {
+    "title": "ItemCard:Major Burst - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Major_Clash.html": {
+    "title": "ItemCard:Major Clash - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Major_Crusade.html": {
+    "title": "ItemCard:Major Crusade - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Major_Flash.html": {
+    "title": "ItemCard:Major Flash - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Major_Impact.html": {
+    "title": "ItemCard:Major Impact - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Mana_Burn.html": {
+    "title": "ItemCard:Mana Burn - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Mander_Minion.html": {
+    "title": "ItemCard:Mander Minion - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minion"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "3",
+            "Helpful Mander",
+            "Hall Servant",
+            "1",
+            "300"
+          ]
+        ]
+      }
+    ]
+  },
+  "ItemCard_Mass_Hex.html": {
+    "title": "ItemCard:Mass Hex - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Mass_Supernova.html": {
+    "title": "ItemCard:Mass Supernova - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Mass_Weakness.html": {
+    "title": "ItemCard:Mass Weakness - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Mega_Burst.html": {
+    "title": "ItemCard:Mega Burst - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Mega_Impact.html": {
+    "title": "ItemCard:Mega Impact - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Mighty_Judgement.html": {
+    "title": "ItemCard:Mighty Judgement - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Minor_Clash.html": {
+    "title": "ItemCard:Minor Clash - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Minor_Crusade.html": {
+    "title": "ItemCard:Minor Crusade - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Minor_Flash.html": {
+    "title": "ItemCard:Minor Flash - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Morganthe's_Will.html": {
+    "title": "ItemCard:Morganthe's Will - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Muzzle.html": {
+    "title": "ItemCard:Muzzle - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Nerys.html": {
+    "title": "ItemCard:Nerys - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minion"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "5",
+            "Nerys Barbed Heart",
+            "Spriggan",
+            "7",
+            "1,700"
+          ]
+        ]
+      }
+    ]
+  },
+  "ItemCard_Niles'_Omen.html": {
+    "title": "ItemCard:Niles' Omen - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Niles'_Rage.html": {
+    "title": "ItemCard:Niles' Rage - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Ninja_Piglets.html": {
+    "title": "ItemCard:Ninja Piglets - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Obsidian_Colossus.html": {
+    "title": "ItemCard:Obsidian Colossus - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Plague_Ninja_Pig.html": {
+    "title": "ItemCard:Plague Ninja Pig - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Power_Nova.html": {
+    "title": "ItemCard:Power Nova - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Power_Play.html": {
+    "title": "ItemCard:Power Play - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Precision.html": {
+    "title": "ItemCard:Precision - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Prismatic_Judge.html": {
+    "title": "ItemCard:Prismatic Judge - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Quartermane.html": {
+    "title": "ItemCard:Quartermane - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Ra.html": {
+    "title": "ItemCard:Ra - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Rampaging_Chimera.html": {
+    "title": "ItemCard:Rampaging Chimera - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Reprieve.html": {
+    "title": "ItemCard:Reprieve - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Reshuffle.html": {
+    "title": "ItemCard:Reshuffle - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Respite.html": {
+    "title": "ItemCard:Respite - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Restoring_Hands.html": {
+    "title": "ItemCard:Restoring Hands - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Righting_the_Scales.html": {
+    "title": "ItemCard:Righting the Scales - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Sabertooth.html": {
+    "title": "ItemCard:Sabertooth - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Samoorai.html": {
+    "title": "ItemCard:Samoorai - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Sandstone_Colossus.html": {
+    "title": "ItemCard:Sandstone Colossus - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Sandstorm.html": {
+    "title": "ItemCard:Sandstorm - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Sap_Health.html": {
+    "title": "ItemCard:Sap Health - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Savage_Paw.html": {
+    "title": "ItemCard:Savage Paw - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Scales_of_Destiny.html": {
+    "title": "ItemCard:Scales of Destiny - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Scarab.html": {
+    "title": "ItemCard:Scarab - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Scorpion.html": {
+    "title": "ItemCard:Scorpion - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Shield_Wall.html": {
+    "title": "ItemCard:Shield Wall - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Sirocco_Djinni.html": {
+    "title": "ItemCard:Sirocco Djinni - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Sniper.html": {
+    "title": "ItemCard:Sniper - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spearstorm.html": {
+    "title": "ItemCard:Spearstorm - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spectral_Blast.html": {
+    "title": "ItemCard:Spectral Blast - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spectral_Minion.html": {
+    "title": "ItemCard:Spectral Minion - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spinning_Scythe.html": {
+    "title": "ItemCard:Spinning Scythe - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spirit_Blade.html": {
+    "title": "ItemCard:Spirit Blade - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spirit_Blast.html": {
+    "title": "ItemCard:Spirit Blast - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spirit_Defuse.html": {
+    "title": "ItemCard:Spirit Defuse - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spirit_Prism.html": {
+    "title": "ItemCard:Spirit Prism - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spirit_Shield.html": {
+    "title": "ItemCard:Spirit Shield - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spirit_Spear.html": {
+    "title": "ItemCard:Spirit Spear - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spirit_Trap.html": {
+    "title": "ItemCard:Spirit Trap - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spirit_Weakness.html": {
+    "title": "ItemCard:Spirit Weakness - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spiritual_Golem.html": {
+    "title": "ItemCard:Spiritual Golem - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Spiritual_Tribunal.html": {
+    "title": "ItemCard:Spiritual Tribunal - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Steal_Pip.html": {
+    "title": "ItemCard:Steal Pip - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Steel_Colossus.html": {
+    "title": "ItemCard:Steel Colossus - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Steel_Giant.html": {
+    "title": "ItemCard:Steel Giant - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Super_Burst.html": {
+    "title": "ItemCard:Super Burst - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Super_Clash.html": {
+    "title": "ItemCard:Super Clash - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Super_Crusade.html": {
+    "title": "ItemCard:Super Crusade - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Super_Flash.html": {
+    "title": "ItemCard:Super Flash - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Super_Impact.html": {
+    "title": "ItemCard:Super Impact - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Supernova.html": {
+    "title": "ItemCard:Supernova - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Sword_and_Shield.html": {
+    "title": "ItemCard:Sword and Shield - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Trap_Dilution.html": {
+    "title": "ItemCard:Trap Dilution - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Ultra_Burst.html": {
+    "title": "ItemCard:Ultra Burst - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Ultra_Impact.html": {
+    "title": "ItemCard:Ultra Impact - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Unbalance.html": {
+    "title": "ItemCard:Unbalance - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Vicious_Egg.html": {
+    "title": "ItemCard:Vicious Egg - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minion"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "3",
+            "Vicious Viper",
+            "Pit Viper",
+            "1",
+            "500"
+          ]
+        ]
+      }
+    ]
+  },
+  "ItemCard_Weakening_Mantle.html": {
+    "title": "ItemCard:Weakening Mantle - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Weakness.html": {
+    "title": "ItemCard:Weakness - Wizard101 Wiki",
+    "tables": []
+  },
+  "ItemCard_Wrath_of_Aquila.html": {
+    "title": "ItemCard:Wrath of Aquila - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Abyssal_Wurm.html": {
+    "title": "Spell:Abyssal Wurm - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Abyssal_Wurm_(Tier_2a).html": {
+    "title": "Spell:Abyssal Wurm (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Abyssal_Wurm_(Tier_2b).html": {
+    "title": "Spell:Abyssal Wurm (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Abyssal_Wurm_(Tier_3a).html": {
+    "title": "Spell:Abyssal Wurm (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Abyssal_Wurm_(Tier_3b).html": {
+    "title": "Spell:Abyssal Wurm (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Accelerate.html": {
+    "title": "Spell:Accelerate - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Add_1_Power_Pip.html": {
+    "title": "Spell:Add 1 Power Pip - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Add_2_Power_Pips.html": {
+    "title": "Spell:Add 2 Power Pips - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Add_3_Power_Pips.html": {
+    "title": "Spell:Add 3 Power Pips - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Aegis_Bladestorm.html": {
+    "title": "Spell:Aegis Bladestorm - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Alhazred's_Swarm.html": {
+    "title": "Spell:Alhazred's Swarm - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Anti-Sand_Wurm.html": {
+    "title": "Spell:Anti-Sand Wurm - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Arid_Hound.html": {
+    "title": "Spell:Arid Hound - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Attack_Sea_Lion.html": {
+    "title": "Spell:Attack Sea Lion - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minion"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Availing_Claws.html": {
+    "title": "Spell:Availing Claws - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Availing_Hands.html": {
+    "title": "Spell:Availing Hands - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Elemental Defuse, Spirit Defuse",
+            "Next \u00bb Mana Burn, Nerys"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Healing Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Availing_Hands_(100+1,000).html": {
+    "title": "Spell:Availing Hands (100+1,000) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Availing_Hands_(120+830).html": {
+    "title": "Spell:Availing Hands (120+830) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Availing_Hands_(85+870).html": {
+    "title": "Spell:Availing Hands (85+870) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Avalanche_Trap.html": {
+    "title": "Spell:Avalanche Trap - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            "Potent Trap"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Axe_Flurry.html": {
+    "title": "Spell:Axe Flurry - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Bad_News_Badger.html": {
+    "title": "Spell:Bad News Badger - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Bal-wark.html": {
+    "title": "Spell:Bal-wark - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Balance_Bites.html": {
+    "title": "Spell:Balance Bites - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Balance_Blades.html": {
+    "title": "Spell:Balance Blades - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Balance_Bot.html": {
+    "title": "Spell:Balance Bot - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Balance_Morganthe_Attack.html": {
+    "title": "Spell:Balance Morganthe Attack - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Balance_School_Spells.html": {
+    "title": "Spell:Balance School Spells - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Balance Spells from Arthur Wethersfield and AlhazredBalance Spells from Arthur Wethersfield and Alhazred"
+          ],
+          [
+            "Spell",
+            "Level",
+            "Pip Cost",
+            "Description"
+          ],
+          [
+            "Scarab",
+            "1",
+            "1",
+            "Deals 65-105 Balance Damage"
+          ],
+          [
+            "Scorpion",
+            "5",
+            "2",
+            "Deals 160-200 Balance Damage"
+          ],
+          [
+            "Weakness",
+            "8",
+            "0",
+            "Applies a -25% Damage Charm"
+          ],
+          [
+            "Locust Swarm",
+            "10",
+            "3",
+            "Deals 245-305 Balance Damage"
+          ],
+          [
+            "Sandstorm",
+            "16",
+            "4",
+            "Deals 255-295 Balance Damage to all enemies"
+          ],
+          [
+            "Elemental Golem",
+            "20",
+            "4",
+            "Deals 245-305 Balance Damage to target and applies -50% Storm, Fire, and Ice Damage Wards on caster"
+          ],
+          [
+            "Gearhead Destroyer",
+            "20",
+            "4",
+            "Deals 345-405 Balance Damage"
+          ],
+          [
+            "Balance of Power",
+            "22",
+            "2",
+            "Applies a +25% Balance Damage Global"
+          ],
+          [
+            "Spectral Blast",
+            "26",
+            "4",
+            "Deals 440 Fire Damage, 365 Ice Damage, or 550 Storm Damage"
+          ],
+          [
+            "Donate Power",
+            "33",
+            "1",
+            "Target gains 2 regular Pips"
+          ],
+          [
+            "Blade Dilution",
+            "40",
+            "1",
+            "Removes up to four helpful Charms from target to apply a +15% Blade on target per Charm removed"
+          ],
+          [
+            "Trap Dilution",
+            "40",
+            "1",
+            "Removes up to four harmful Wards from ally to apply a +20% Trap on ally per Ward removed"
+          ],
+          [
+            "Iron Curse",
+            "42",
+            "4",
+            "Deals 55 Balance Damage and 300 Balance Damage over 3 Rounds to all enemies"
+          ],
+          [
+            "Hydra",
+            "42",
+            "6",
+            "Deals 230 Fire Damage, Ice Damage, and Storm Damage"
+          ],
+          [
+            "Obsidian Colossus",
+            "45",
+            "6",
+            "Deals 445 Balance Damage to and applies two -20% Damage Charms on target"
+          ],
+          [
+            "Power Nova",
+            "50",
+            "7",
+            "Deals 665 Balance Damage to all enemies"
+          ],
+          [
+            "Ra",
+            "60",
+            "8",
+            "Deals 420-500 Balance Damage to and applies a -40% Damage Charm on all enemies"
+          ],
+          [
+            "Jinn's Fortune",
+            "70",
+            "3",
+            "Applies a +30% Damage Trap on target if caster has a harmful Ward (max 2), and applies a -50% Damage Ward on caster if target has a helpful Ward (max 2)"
+          ],
+          [
+            "Duststorm Jinn",
+            "70",
+            "9",
+            "Deals 285 Storm, Fire, and Ice Damage to target, or removes two helpful Wards from caster and two harmful Wards from target to deal 480 Storm, Fire, and Ice Damage"
+          ],
+          [
+            "Chimera",
+            "70",
+            "9",
+            "Deals 290 Myth Damage, Life Damage, and Death Damage"
+          ],
+          [
+            "Spinning Scythe",
+            "75",
+            "5",
+            "Deals 470 Balance Damage"
+          ],
+          [
+            "Courageous Charge",
+            "75",
+            "2",
+            "Deals 130 Balance Damage to target and applies a +20% outgoing Armor Piercing Aura on caster for 4 Rounds if target has a helpful Aura"
+          ],
+          [
+            "Sabertooth",
+            "80",
+            "10",
+            "Deals 805-905 Balance Damage to target and applies -50% Fire, Ice, Storm, Myth, Life, and Death Damage Wards on caster"
+          ],
+          [
+            "King Artorius (Balance)",
+            "90",
+            "8",
+            "Deals 665 Balance Damage to and applies a -45% Damage Charm on target, and applies a +10% Balance Armor Piercing Charm on self"
+          ],
+          [
+            "Oni's Shadow",
+            "100",
+            "3",
+            "Applies a +25% Damage Blade on caster if target has a helpful Charm (max 2), and applies a -25% Damage Charm on target if caster has a harmful Charm (max 2)"
+          ],
+          [
+            "Tribunal Oni",
+            "100",
+            "9",
+            "Deals 285 Myth, Death, and Life Damage to target; removes two helpful Charms from caster and two harmful Charms from target to deal 500 Myth, Death, and Life Damage"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Balance Spells from Other TrainersBalance Spells from Other Trainers"
+          ],
+          [
+            "Spell",
+            "Level",
+            "Pip Cost",
+            "Description",
+            "Trainers"
+          ],
+          [
+            "Elemental Trap",
+            "15",
+            "1",
+            "Applies +30% Fire, Ice, and Storm Damage Wards",
+            "Niles"
+          ],
+          [
+            "Elemental Weakness",
+            "15",
+            "1",
+            "Applies -30% Ice, Storm, and Fire Damage Charms",
+            "Niles"
+          ],
+          [
+            "Spirit Weakness",
+            "15",
+            "1",
+            "Applies -30% Death, Myth, and Life Damage Charms",
+            "Niles"
+          ],
+          [
+            "Spirit Trap",
+            "20",
+            "1",
+            "Applies +30% Death, Myth, and Life Damage Wards",
+            "Niles"
+          ],
+          [
+            "Reshuffle",
+            "20",
+            "4",
+            "Reshuffles all used or discarded cards back into the deck",
+            "Mildred Farseer"
+          ],
+          [
+            "Unbalance",
+            "22",
+            "2",
+            "Applies a Balance Dispel Charm",
+            "Mildred Farseer"
+          ],
+          [
+            "Elemental Blade",
+            "25",
+            "1",
+            "Applies +35% Ice, Storm, and Fire Damage Blades",
+            "Niles"
+          ],
+          [
+            "Spirit Blade",
+            "25",
+            "1",
+            "Applies +35% Death, Myth, and Life Damage Blades",
+            "Niles"
+          ],
+          [
+            "Sap Health",
+            "25",
+            "1",
+            "Sacrifices a friendly Minion to restore 500 Health to caster",
+            "Croaky"
+          ],
+          [
+            "Elemental Spear",
+            "80",
+            "1",
+            "Applies +20% Ice, Storm, and Fire Armor Piercing Charms",
+            "Enya Firemoon"
+          ],
+          [
+            "Spirit Spear",
+            "80",
+            "1",
+            "Applies +20% Death, Myth, and Life Armor Piercing Charms",
+            "Enya Firemoon"
+          ],
+          [
+            "Counterforce",
+            "97",
+            "4",
+            "Applies a +20% Balance Armor Piercing and +20% Balance Critical Chance Global",
+            "Amelia Stardust"
+          ],
+          [
+            "Precision",
+            "100",
+            "0",
+            "Applies a +25% Accuracy Charm",
+            "Jaki Whisperwind"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Balance Spells from Other SourcesBalance Spells from Other Sources"
+          ],
+          [
+            "Spell",
+            "Level",
+            "Pip Cost",
+            "Description",
+            "Sources"
+          ],
+          [
+            "Brave Sir Badger",
+            "N/A",
+            "3 1",
+            "Deals 390 Balance Damage to target and applies a +25% outgoing Damage Aura on caster for 4 Rounds",
+            "Spellements: Brave Sir Badger Reagents"
+          ],
+          [
+            "Dyvim's Resurgence",
+            "N/A",
+            "2 1",
+            "Deals 315 Balance Damage to and a -60% Healing Ward and +30% Damage Ward on target",
+            "Spellements: Dyvim's Resurgence Reagents"
+          ],
+          [
+            "Loremaster",
+            "N/A",
+            "2 1",
+            "Deals 315-395 Balance Damage to and applies -15% Damage and -25% Accuracy Charms on target",
+            "Recipes: Loremaster (Spell) Recipe from GradySpellements: Loremaster Reagents"
+          ],
+          [
+            "Ninja Piglets",
+            "N/A",
+            "2 1",
+            "Deals 420-510 Balance Damage",
+            "Recipes: Ninja Piglets Recipe from GradySpellements: Ninja Piglets Reagents"
+          ],
+          [
+            "Samoorai",
+            "N/A",
+            "3 1",
+            "Deals 510-590 Balance Damage",
+            "Recipes: Samoorai Recipe from Master Yan Kan KookSpellements: Samoorai Reagents"
+          ],
+          [
+            "Savage Paw",
+            "N/A",
+            "3 1",
+            "Deals 500 Balance Damage to target and applies a +25% Damage Blade on caster",
+            "Recipes: Savage Paw Recipe from GradySpellements: Savage Paw Reagents"
+          ],
+          [
+            "Spiritual Tribunal",
+            "N/A",
+            "2 1",
+            "Deals 425 Myth Damage, Life Damage, or Death Damage",
+            "Spellements: Spiritual Tribunal Reagents"
+          ],
+          [
+            "Steal Pip",
+            "N/A",
+            "0",
+            "Steals one Pip from target",
+            "Spellements: Steal Pip Reagents"
+          ],
+          [
+            "Terminus' Strike",
+            "N/A",
+            "8",
+            "Removes up to seven harmful Charms from caster to apply up to seven -15% Damage Charms on caster, then deals 645 Balance Damage to target",
+            "Spellements: Terminus' Strike Reagents"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Balance Spells from QuestsBalance Spells from Quests"
+          ],
+          [
+            "Spell",
+            "Level",
+            "Pip Cost",
+            "Description",
+            "Prerequisites"
+          ],
+          [
+            "Elemental Shield",
+            "N/A",
+            "0",
+            "Applies -50% Fire, Ice, and Storm Damage Wards",
+            "Quest: Grim Tales"
+          ],
+          [
+            "Precision",
+            "7",
+            "0",
+            "Applies a +25% Accuracy Charm",
+            "Quest: Introduction to Balance"
+          ],
+          [
+            "Spirit Shield",
+            "N/A",
+            "0",
+            "Applies -50% Death, Myth, and Life Damage Wards",
+            "Quest: Akilles' Deal"
+          ],
+          [
+            "Balanceblade",
+            "12",
+            "0",
+            "Applies a +25% Damage Charm",
+            "Quest: Everything Being Equal"
+          ],
+          [
+            "Black Mantle",
+            "N/A",
+            "0",
+            "Applies a -45% Accuracy Charm",
+            "Quest: Take a Walk on the Nightside"
+          ],
+          [
+            "Mander Minion",
+            "18",
+            "3",
+            "Summons a Minion of Balance",
+            "Quest: Bugging Out!"
+          ],
+          [
+            "Helping Hands",
+            "N/A",
+            "3",
+            "Restores 125 Health and 465 Health over 3 Rounds",
+            "Quest: Back to Balance"
+          ],
+          [
+            "Hex",
+            "N/A",
+            "0",
+            "Applies a +30% Damage Ward",
+            "Quest: Temple Dweller"
+          ],
+          [
+            "Judgement",
+            "28",
+            "X",
+            "Deals 100 Balance Damage per Pip",
+            "Quest: Winds of Change"
+          ],
+          [
+            "Bladestorm",
+            "N/A",
+            "1",
+            "Applies a +20% Damage Charm on all allies",
+            "Quest: Bad News..."
+          ],
+          [
+            "Elemental Defuse",
+            "35",
+            "5",
+            "Applies Fire, Ice, and Storm Dispel Charms",
+            "Quest: Thief of Spells"
+          ],
+          [
+            "Spirit Defuse",
+            "35",
+            "5",
+            "Applies Life, Death, and Myth Dispel Charms",
+            "Quest: Thief of Spells"
+          ],
+          [
+            "Spectral Minion",
+            "38",
+            "3",
+            "Summons a Minion of Fire, Ice, or Storm",
+            "Quest: Balancing Act"
+          ],
+          [
+            "Power Nova",
+            "48",
+            "7",
+            "Deals 665 Balance Damage to all enemies",
+            "Quest: Breaking Glass"
+          ],
+          [
+            "Availing Hands",
+            "55",
+            "4",
+            "Restores 70 Health and 780 Health over 3 Rounds",
+            "Quest: The Runedown"
+          ],
+          [
+            "Ra",
+            "58",
+            "8",
+            "Deals 420-500 Balance Damage to and applies a -40% Damage Charm on all enemies",
+            "Quest: Sun King"
+          ],
+          [
+            "Chimera",
+            "68",
+            "9",
+            "Deals 290 Myth Damage, Life Damage, and Death Damage",
+            "Quest: Lights, Chimera, Action!"
+          ],
+          [
+            "Mana Burn",
+            "72",
+            "5",
+            "Deals 50 Balance Damage to target per target's Pips, and removes 3 Pips from target",
+            "Quest: No Pain, No Agravaine"
+          ],
+          [
+            "Supernova",
+            "75",
+            "2",
+            "Destroys target's Aura to deal 405 Balance Damage",
+            "Quest: Always After Me Charms"
+          ],
+          [
+            "Nerys",
+            "75",
+            "5",
+            "Summons a Minion of Balance",
+            "Quest: The Barbed Heart"
+          ],
+          [
+            "Sabertooth",
+            "80",
+            "10",
+            "Deals 805-905 Balance Damage to target and applies -50% Fire, Ice, Storm, Myth, Life, and Death Damage Wards on caster",
+            "Quest: Keep Smilodon"
+          ],
+          [
+            "King Artorius (Balance)",
+            "N/A",
+            "8",
+            "Deals 665 Balance Damage to and applies a -45% Damage Charm on target, and applies a +10% Balance Armor Piercing Charm on self",
+            "Quest: Letters of Light"
+          ],
+          [
+            "Gaze of Fate",
+            "100",
+            "5",
+            "Deals 120 Balance Damage and 120 random School Damage to target and applies a +25% Balance Damage Global",
+            "Quest: Walpurgisnacht"
+          ],
+          [
+            "Nested Fury",
+            "108",
+            "6",
+            "Deals 410 Ice Damage, 495 Fire Damage, or 620 Storm Damage to all enemies",
+            "Quest: Nested Fury"
+          ],
+          [
+            "Sand Wurm",
+            "N/A",
+            "4",
+            "Deals 250 Balance Damage and applies a +35% Damage Ward split among selected enemies",
+            "Quest: Sand Wurm"
+          ],
+          [
+            "Scion of Balance",
+            "N/A",
+            "11",
+            "Deals 955 Balance Damage to target, or if caster has at least six helpful Charms, deals 1,910 Balance Damage to target and removes all helpful Charms from caster",
+            "Quest: Finally Growing Into It"
+          ],
+          [
+            "Mockenspiel",
+            "N/A",
+            "5",
+            "Deals 390 Balance Damage to target then removes up to three School Blades from caster to apply a +35% Damage Charm on caster per Blade removed",
+            "Quest: Mole Problems"
+          ],
+          [
+            "Old One's Endgame",
+            "N/A",
+            "6",
+            "Deals 380 Balance Damage to all enemies and applies a Balance to random School Damage Prism Charm on caster",
+            "Quest: Looney Attunes"
+          ],
+          [
+            "Scales of Destiny",
+            "N/A",
+            "1 1 1",
+            "Deals 205 Life Damage, Ice Damage, and Balance Damage",
+            "Quest: Something Wicked That Way Goes"
+          ],
+          [
+            "Rainbow Serpent",
+            "N/A",
+            "3 1",
+            "Deals 410 Storm Damage to all enemies",
+            "Quest: Wrecking Rainbow"
+          ],
+          [
+            "Chameleon Clash",
+            "N/A",
+            "7",
+            "Deals 665 Damage of a random School except Balance",
+            "Quest: The Other Reptiles"
+          ],
+          [
+            "Wheel of Fortune",
+            "N/A",
+            "10",
+            "Deals 700 Balance Damage and 210 Balance Damage after 3 Rounds to and applies a -25% Damage Charm on target",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Balance_of_Power.html": {
+    "title": "Spell:Balance of Power - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Gearhead Destroyer",
+            "Next \u00bb Spectral Blast"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Balanceblade.html": {
+    "title": "Spell:Balanceblade - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Precision",
+            "Next \u00bb Mander Minion"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Balanceblade_(+100%).html": {
+    "title": "Spell:Balanceblade (+100%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Balanceblade_(+30%).html": {
+    "title": "Spell:Balanceblade (+30%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Balanceblade_(+35%).html": {
+    "title": "Spell:Balanceblade (+35%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Balancespear.html": {
+    "title": "Spell:Balancespear - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Balaphant.html": {
+    "title": "Spell:Balaphant - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Barbarous.html": {
+    "title": "Spell:Barbarous - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Battle_Meditation.html": {
+    "title": "Spell:Battle Meditation - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Bestow.html": {
+    "title": "Spell:Bestow - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Big_Bad_Hound.html": {
+    "title": "Spell:Big Bad Hound - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Black_Mantle.html": {
+    "title": "Spell:Black Mantle - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Black_Mantle_(-55%,_0_Pip).html": {
+    "title": "Spell:Black Mantle (-55%, 0 Pip) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Black_Mantle_(-55%,_3_Pip).html": {
+    "title": "Spell:Black Mantle (-55%, 3 Pip) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Blade_Dance_(0_Pip).html": {
+    "title": "Spell:Blade Dance (0 Pip) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Blade_Dance_(3_Pip).html": {
+    "title": "Spell:Blade Dance (3 Pip) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Blade_Dilution.html": {
+    "title": "Spell:Blade Dilution - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Donate Power",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Bladestorm.html": {
+    "title": "Spell:Bladestorm - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Bladestorm_(+25%).html": {
+    "title": "Spell:Bladestorm (+25%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Bladestorm_(+40%).html": {
+    "title": "Spell:Bladestorm (+40%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Blind_Strike.html": {
+    "title": "Spell:Blind Strike - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Blindfolded_Hit_(Balance,_Tier_1).html": {
+    "title": "Spell:Blindfolded Hit (Balance, Tier 1) - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Casts List"
+          ],
+          [
+            "Similar To",
+            "Notes"
+          ],
+          [
+            "Super Clash",
+            "Deals 80 Balance Damage"
+          ],
+          [
+            "Locust Swarm (Tier 2a)",
+            "N/A"
+          ],
+          [
+            "Gearhead Destroyer (Tier 2a)",
+            "N/A"
+          ],
+          [
+            "Fang Guardian",
+            "N/A"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Blindfolded_Hit_(Balance,_Tier_2).html": {
+    "title": "Spell:Blindfolded Hit (Balance, Tier 2) - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Casts List"
+          ],
+          [
+            "Similar To",
+            "Notes"
+          ],
+          [
+            "Major Balance Burst",
+            "N/A"
+          ],
+          [
+            "Gearhead Destroyer (Tier 3a)",
+            "N/A"
+          ],
+          [
+            "Spectral Blast (Tier 3a)",
+            "N/A"
+          ],
+          [
+            "Hydra (Tier 3b)",
+            "N/A"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Blindfolded_Hit_(Balance,_Tier_3).html": {
+    "title": "Spell:Blindfolded Hit (Balance, Tier 3) - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Casts List"
+          ],
+          [
+            "Similar To",
+            "Notes"
+          ],
+          [
+            "Ultra Burst",
+            "N/A"
+          ],
+          [
+            "Hydra (Tier 4b)",
+            "N/A"
+          ],
+          [
+            "Gaze of Fate",
+            "N/A"
+          ],
+          [
+            "Chimera",
+            "N/A"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Blindfolded_Hit_(Balance,_Tier_4).html": {
+    "title": "Spell:Blindfolded Hit (Balance, Tier 4) - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Casts List"
+          ],
+          [
+            "Similar To",
+            "Notes"
+          ],
+          [
+            "Super Clash",
+            "(180 Damage)"
+          ],
+          [
+            "Hydra (Tier 5b)",
+            "N/A"
+          ],
+          [
+            "Mockenspiel (Tier 2a)",
+            "N/A"
+          ],
+          [
+            "Sabertooth",
+            "N/A"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Blitzing_Rage.html": {
+    "title": "Spell:Blitzing Rage - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Bombing_Run.html": {
+    "title": "Spell:Bombing Run - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Boop!.html": {
+    "title": "Spell:Boop! - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Boxenspiel.html": {
+    "title": "Spell:Boxenspiel - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Boxenspiel_(Tier_2a).html": {
+    "title": "Spell:Boxenspiel (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Boxenspiel_(Tier_2b).html": {
+    "title": "Spell:Boxenspiel (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Boxenspiel_(Tier_3a).html": {
+    "title": "Spell:Boxenspiel (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Boxenspiel_(Tier_3b).html": {
+    "title": "Spell:Boxenspiel (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Brave_Sir_Badger.html": {
+    "title": "Spell:Brave Sir Badger - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Brave_Sir_Badger_(Tier_2a).html": {
+    "title": "Spell:Brave Sir Badger (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Brave_Sir_Badger_(Tier_2b).html": {
+    "title": "Spell:Brave Sir Badger (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Brave_Sir_Badger_(Tier_3a).html": {
+    "title": "Spell:Brave Sir Badger (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Brave_Sir_Badger_(Tier_3b).html": {
+    "title": "Spell:Brave Sir Badger (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Brave_Sir_Badger_(Tier_4a).html": {
+    "title": "Spell:Brave Sir Badger (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Brave_Sir_Badger_(Tier_4b).html": {
+    "title": "Spell:Brave Sir Badger (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Brave_Sir_Badger_(Tier_5a).html": {
+    "title": "Spell:Brave Sir Badger (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Brave_Sir_Badger_(Tier_5b).html": {
+    "title": "Spell:Brave Sir Badger (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Call_Witness.html": {
+    "title": "Spell:Call Witness - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minions"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "0",
+            "Balance Witness",
+            "Smoke Elemental",
+            "1",
+            "75"
+          ],
+          [
+            "0",
+            "Death Witness",
+            "Smoke Elemental",
+            "1",
+            "50"
+          ],
+          [
+            "0",
+            "Life Witness",
+            "Diseased Water Spirit",
+            "1",
+            "75"
+          ],
+          [
+            "0",
+            "Myth Witness",
+            "Diseased Water Spirit",
+            "1",
+            "50"
+          ],
+          [
+            "0",
+            "Storm Witness",
+            "Diseased Water Spirit",
+            "1",
+            "25"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Candy.html": {
+    "title": "Spell:Candy - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Cat_Thug_(160).html": {
+    "title": "Spell:Cat Thug (160) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Cat_Thug_(180).html": {
+    "title": "Spell:Cat Thug (180) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chameleon_Clash.html": {
+    "title": "Spell:Chameleon Clash - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "",
+            "Next \u00bb Wheel of Fortune"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "Strong",
+            "Giant",
+            "Monstrous",
+            "Gargantuan",
+            "Colossal",
+            "Epic"
+          ],
+          [
+            "Accuracy Enchants",
+            "Keen Eyes",
+            "Accurate",
+            "Sniper",
+            "Unstoppable",
+            "Extraordinary"
+          ],
+          [
+            "Miscellaneous Enchants",
+            "Monstrology"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Chameleon_Clash_(Tier_2a).html": {
+    "title": "Spell:Chameleon Clash (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chameleon_Clash_(Tier_2b).html": {
+    "title": "Spell:Chameleon Clash (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chameleon_Clash_(Tier_3a).html": {
+    "title": "Spell:Chameleon Clash (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chameleon_Clash_(Tier_3b).html": {
+    "title": "Spell:Chameleon Clash (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chameleon_Cover.html": {
+    "title": "Spell:Chameleon Cover - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chameleon_Mangle.html": {
+    "title": "Spell:Chameleon Mangle - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chimera.html": {
+    "title": "Spell:Chimera - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Ra",
+            "Next \u00bb Sabertooth"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Chimera_(240).html": {
+    "title": "Spell:Chimera (240) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chimera_(375).html": {
+    "title": "Spell:Chimera (375) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chimera_(620-660).html": {
+    "title": "Spell:Chimera (620-660) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chimera_(Tier_2a).html": {
+    "title": "Spell:Chimera (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chimera_(Tier_2b).html": {
+    "title": "Spell:Chimera (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chimera_(Tier_3a).html": {
+    "title": "Spell:Chimera (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chimera_(Tier_3b).html": {
+    "title": "Spell:Chimera (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chimera_(Tier_4a).html": {
+    "title": "Spell:Chimera (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chimera_(Tier_4b).html": {
+    "title": "Spell:Chimera (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chimera_(Tier_5a).html": {
+    "title": "Spell:Chimera (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chimera_(Tier_5b).html": {
+    "title": "Spell:Chimera (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Chromatic_Blast.html": {
+    "title": "Spell:Chromatic Blast - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Clash.html": {
+    "title": "Spell:Clash - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Clever_Trap.html": {
+    "title": "Spell:Clever Trap - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Clockwork_Spider_(325).html": {
+    "title": "Spell:Clockwork Spider (325) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Clockwork_Spider_(355).html": {
+    "title": "Spell:Clockwork Spider (355) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Colossal_Scorpion.html": {
+    "title": "Spell:Colossal Scorpion - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Conversation.html": {
+    "title": "Spell:Conversation - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Counterforce.html": {
+    "title": "Spell:Counterforce - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Courageous_Charge.html": {
+    "title": "Spell:Courageous Charge - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Courageous_Charge_(X_Pip).html": {
+    "title": "Spell:Courageous Charge (X Pip) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Crippling_Blow.html": {
+    "title": "Spell:Crippling Blow - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Crowns.html": {
+    "title": "Spell:Crowns - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Crusade.html": {
+    "title": "Spell:Crusade - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Cunning_Trap.html": {
+    "title": "Spell:Cunning Trap - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Curse-Eater.html": {
+    "title": "Spell:Curse-Eater - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_DOT_for_a_DOT.html": {
+    "title": "Spell:DOT for a DOT - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Deadly_Sting.html": {
+    "title": "Spell:Deadly Sting - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Desert_Banshee.html": {
+    "title": "Spell:Desert Banshee - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Desert_Hound_(Balance).html": {
+    "title": "Spell:Desert Hound (Balance) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Desert_Lord.html": {
+    "title": "Spell:Desert Lord - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Desert_Minotaur.html": {
+    "title": "Spell:Desert Minotaur - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Donate_Power.html": {
+    "title": "Spell:Donate Power - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Spectral Blast",
+            "Next \u00bb Blade Dilution"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Donate_Power_(+3_Pips).html": {
+    "title": "Spell:Donate Power (+3 Pips) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Donate_Power_(6_Pip).html": {
+    "title": "Spell:Donate Power (6 Pip) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Double_Down.html": {
+    "title": "Spell:Double Down - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Double_Strike.html": {
+    "title": "Spell:Double Strike - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dragonblade.html": {
+    "title": "Spell:Dragonblade - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dragonblade_(+30%).html": {
+    "title": "Spell:Dragonblade (+30%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dragonlance.html": {
+    "title": "Spell:Dragonlance - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dragonspear.html": {
+    "title": "Spell:Dragonspear - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dragonspear_(+10%).html": {
+    "title": "Spell:Dragonspear (+10%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dread_Calibrator.html": {
+    "title": "Spell:Dread Calibrator - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dune_Trap.html": {
+    "title": "Spell:Dune Trap - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            "Potent Trap"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Duststorm_Jinn.html": {
+    "title": "Spell:Duststorm Jinn - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Donate Power",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Dyvim's_Resurgence.html": {
+    "title": "Spell:Dyvim's Resurgence - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            "Potent Trap",
+            "Indemnity",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Dyvim's_Resurgence_(Tier_2a).html": {
+    "title": "Spell:Dyvim's Resurgence (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dyvim's_Resurgence_(Tier_2b).html": {
+    "title": "Spell:Dyvim's Resurgence (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dyvim's_Resurgence_(Tier_3a).html": {
+    "title": "Spell:Dyvim's Resurgence (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dyvim's_Resurgence_(Tier_3b).html": {
+    "title": "Spell:Dyvim's Resurgence (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dyvim's_Resurgence_(Tier_4a).html": {
+    "title": "Spell:Dyvim's Resurgence (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dyvim's_Resurgence_(Tier_4b).html": {
+    "title": "Spell:Dyvim's Resurgence (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dyvim's_Resurgence_(Tier_5a).html": {
+    "title": "Spell:Dyvim's Resurgence (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Dyvim's_Resurgence_(Tier_5b).html": {
+    "title": "Spell:Dyvim's Resurgence (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Efreets_of_Strength.html": {
+    "title": "Spell:Efreets of Strength - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Eldritch_Checkmate.html": {
+    "title": "Spell:Eldritch Checkmate - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Eldritch_Checkmate_(Tier_2a).html": {
+    "title": "Spell:Eldritch Checkmate (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Eldritch_Checkmate_(Tier_2b).html": {
+    "title": "Spell:Eldritch Checkmate (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Eldritch_Checkmate_(Tier_3a).html": {
+    "title": "Spell:Eldritch Checkmate (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Eldritch_Checkmate_(Tier_3b).html": {
+    "title": "Spell:Eldritch Checkmate (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Elemental_Blade.html": {
+    "title": "Spell:Elemental Blade - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Elemental_Blade_(Ice-Fire).html": {
+    "title": "Spell:Elemental Blade (Ice-Fire) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Elemental_Blade_(Ice-Storm).html": {
+    "title": "Spell:Elemental Blade (Ice-Storm) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Elemental_Defuse.html": {
+    "title": "Spell:Elemental Defuse - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "None",
+            "Next \u00bb Availing Hands"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Elemental_Golem.html": {
+    "title": "Spell:Elemental Golem - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Elemental Shield",
+            ""
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "Strong",
+            "Giant",
+            "Monstrous",
+            "Gargantuan",
+            "Colossal",
+            "Epic"
+          ],
+          [
+            "Accuracy Enchants",
+            "Keen Eyes",
+            "Accurate",
+            "Sniper",
+            "Unstoppable",
+            "Extraordinary"
+          ],
+          [
+            "Miscellaneous Enchants",
+            "Bolstered Ward",
+            "Aegis",
+            "Monstrology"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Elemental_Golem_(Tier_2a).html": {
+    "title": "Spell:Elemental Golem (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Elemental_Golem_(Tier_3a).html": {
+    "title": "Spell:Elemental Golem (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Elemental_Golem_(Tier_4a).html": {
+    "title": "Spell:Elemental Golem (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Elemental_Golem_(Tier_5a).html": {
+    "title": "Spell:Elemental Golem (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Elemental_Prism.html": {
+    "title": "Spell:Elemental Prism - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Elemental_Shield.html": {
+    "title": "Spell:Elemental Shield - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "",
+            "Next \u00bb Elemental Golem"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Elemental_Shield_(-55%).html": {
+    "title": "Spell:Elemental Shield (-55%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Elemental_Spear.html": {
+    "title": "Spell:Elemental Spear - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Elemental_Surge.html": {
+    "title": "Spell:Elemental Surge - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Elemental_Trap.html": {
+    "title": "Spell:Elemental Trap - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Elemental_Weakness.html": {
+    "title": "Spell:Elemental Weakness - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Embiggen.html": {
+    "title": "Spell:Embiggen - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Embolden.html": {
+    "title": "Spell:Embolden - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Energize.html": {
+    "title": "Spell:Energize - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Erosion_Colossus.html": {
+    "title": "Spell:Erosion Colossus - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Evil_Sandman.html": {
+    "title": "Spell:Evil Sandman - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Exchange_of_Fate.html": {
+    "title": "Spell:Exchange of Fate - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Exercise.html": {
+    "title": "Spell:Exercise - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Exit_Combat.html": {
+    "title": "Spell:Exit Combat - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Eye_of_Vigilance.html": {
+    "title": "Spell:Eye of Vigilance - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Donate Power",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Fable_Trap.html": {
+    "title": "Spell:Fable Trap - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Fair_Trade.html": {
+    "title": "Spell:Fair Trade - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Fanaticism.html": {
+    "title": "Spell:Fanaticism - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Fanaticism_(Beastmoon).html": {
+    "title": "Spell:Fanaticism (Beastmoon) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Feedback_Loop.html": {
+    "title": "Spell:Feedback Loop - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Feral_Pounce.html": {
+    "title": "Spell:Feral Pounce - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Flip_the_Board.html": {
+    "title": "Spell:Flip the Board - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_For_Science____etc!.html": {
+    "title": "Spell:For Science... etc! - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gaze_of_Fate.html": {
+    "title": "Spell:Gaze of Fate - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Gaze_of_Fate_(Tier_2).html": {
+    "title": "Spell:Gaze of Fate (Tier 2) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gear_Shift.html": {
+    "title": "Spell:Gear Shift - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gearhead_Destroyer.html": {
+    "title": "Spell:Gearhead Destroyer - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Sandstorm",
+            "Next \u00bb Balance of Power"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Gearhead_Destroyer_(Tier_2a).html": {
+    "title": "Spell:Gearhead Destroyer (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gearhead_Destroyer_(Tier_2b).html": {
+    "title": "Spell:Gearhead Destroyer (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gearhead_Destroyer_(Tier_2c).html": {
+    "title": "Spell:Gearhead Destroyer (Tier 2c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gearhead_Destroyer_(Tier_3a).html": {
+    "title": "Spell:Gearhead Destroyer (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gearhead_Destroyer_(Tier_3b).html": {
+    "title": "Spell:Gearhead Destroyer (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gearhead_Destroyer_(Tier_3c).html": {
+    "title": "Spell:Gearhead Destroyer (Tier 3c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gearhead_Destroyer_(Tier_4a).html": {
+    "title": "Spell:Gearhead Destroyer (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gearhead_Destroyer_(Tier_4b).html": {
+    "title": "Spell:Gearhead Destroyer (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gearhead_Destroyer_(Tier_4c).html": {
+    "title": "Spell:Gearhead Destroyer (Tier 4c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gearhead_Destroyer_(Tier_5a).html": {
+    "title": "Spell:Gearhead Destroyer (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gearhead_Destroyer_(Tier_5b).html": {
+    "title": "Spell:Gearhead Destroyer (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gearhead_Destroyer_(Tier_5c).html": {
+    "title": "Spell:Gearhead Destroyer (Tier 5c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Gnomeostasis!.html": {
+    "title": "Spell:Gnomeostasis! - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Grave_Imbalance.html": {
+    "title": "Spell:Grave Imbalance - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Grave_Imbalance_I.html": {
+    "title": "Spell:Grave Imbalance I - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hateful_Destiny.html": {
+    "title": "Spell:Hateful Destiny - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Heist_Prep.html": {
+    "title": "Spell:Heist Prep - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Helping_Claws.html": {
+    "title": "Spell:Helping Claws - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Helping_Hands.html": {
+    "title": "Spell:Helping Hands - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Healing Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Helping_Hands_(60+540).html": {
+    "title": "Spell:Helping Hands (60+540) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Heroic_Strike.html": {
+    "title": "Spell:Heroic Strike - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hex.html": {
+    "title": "Spell:Hex - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Hex_(+35%).html": {
+    "title": "Spell:Hex (+35%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hex_(+40%).html": {
+    "title": "Spell:Hex (+40%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hex_(+66%).html": {
+    "title": "Spell:Hex (+66%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hex_(1_Pip).html": {
+    "title": "Spell:Hex (1 Pip) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hexes.html": {
+    "title": "Spell:Hexes - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Homework_(Balance).html": {
+    "title": "Spell:Homework (Balance) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hunger.html": {
+    "title": "Spell:Hunger - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hunting_Howl.html": {
+    "title": "Spell:Hunting Howl - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hydra.html": {
+    "title": "Spell:Hydra - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Donate Power",
+            "Next \u00bb Power Nova"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Hydra_(265).html": {
+    "title": "Spell:Hydra (265) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hydra_(Tier_2a).html": {
+    "title": "Spell:Hydra (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hydra_(Tier_2b).html": {
+    "title": "Spell:Hydra (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hydra_(Tier_3a).html": {
+    "title": "Spell:Hydra (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hydra_(Tier_3b).html": {
+    "title": "Spell:Hydra (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hydra_(Tier_4a).html": {
+    "title": "Spell:Hydra (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hydra_(Tier_4b).html": {
+    "title": "Spell:Hydra (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hydra_(Tier_5a).html": {
+    "title": "Spell:Hydra (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Hydra_(Tier_5b).html": {
+    "title": "Spell:Hydra (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Imbalance_Curse.html": {
+    "title": "Spell:Imbalance Curse - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Imperil.html": {
+    "title": "Spell:Imperil - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Incitement.html": {
+    "title": "Spell:Incitement - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Infection_(Balance).html": {
+    "title": "Spell:Infection (Balance) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Innervation.html": {
+    "title": "Spell:Innervation - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Inspire_Courage.html": {
+    "title": "Spell:Inspire Courage - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Instinct.html": {
+    "title": "Spell:Instinct - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Invigorate.html": {
+    "title": "Spell:Invigorate - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Iron_Curse.html": {
+    "title": "Spell:Iron Curse - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Donate Power",
+            ""
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Iron_Curse_(Tier_2).html": {
+    "title": "Spell:Iron Curse (Tier 2) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Iron_Curse_(Tier_3).html": {
+    "title": "Spell:Iron Curse (Tier 3) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Iron_Curse_(Tier_4).html": {
+    "title": "Spell:Iron Curse (Tier 4) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Iron_Curse_(Tier_5).html": {
+    "title": "Spell:Iron Curse (Tier 5) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_It_Devours.html": {
+    "title": "Spell:It Devours - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Jade_Oni_(Attack).html": {
+    "title": "Spell:Jade Oni (Attack) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Jinn's_Fortune.html": {
+    "title": "Spell:Jinn's Fortune - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Donate Power",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Judgement.html": {
+    "title": "Spell:Judgement - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Mander Minion",
+            "Next \u00bb Spectral Minion"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Judgement_(125).html": {
+    "title": "Spell:Judgement (125) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Judgement_(Tier_2a).html": {
+    "title": "Spell:Judgement (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Judgement_(Tier_2b).html": {
+    "title": "Spell:Judgement (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Judgement_(Tier_3a).html": {
+    "title": "Spell:Judgement (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Judgement_(Tier_3b).html": {
+    "title": "Spell:Judgement (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Judgement_(Tier_4a).html": {
+    "title": "Spell:Judgement (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Judgement_(Tier_4b).html": {
+    "title": "Spell:Judgement (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Judgement_(Tier_5a).html": {
+    "title": "Spell:Judgement (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Judgement_(Tier_5b).html": {
+    "title": "Spell:Judgement (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Just_Cause.html": {
+    "title": "Spell:Just Cause - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Justiceblade_(Balance).html": {
+    "title": "Spell:Justiceblade (Balance) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_King_Artorius_(Balance).html": {
+    "title": "Spell:King Artorius (Balance) - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Sabertooth",
+            "Next \u00bb Nested Fury"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_King_Artorius_(Balance)_(Tier_2a).html": {
+    "title": "Spell:King Artorius (Balance) (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_King_Artorius_(Balance)_(Tier_2b).html": {
+    "title": "Spell:King Artorius (Balance) (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_King_Artorius_(Balance)_(Tier_3a).html": {
+    "title": "Spell:King Artorius (Balance) (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_King_Artorius_(Balance)_(Tier_3b).html": {
+    "title": "Spell:King Artorius (Balance) (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_King_Artorius_(Balance)_(Tier_4a).html": {
+    "title": "Spell:King Artorius (Balance) (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_King_Artorius_(Balance)_(Tier_4b).html": {
+    "title": "Spell:King Artorius (Balance) (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_King_Artorius_(Balance)_(Tier_5a).html": {
+    "title": "Spell:King Artorius (Balance) (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_King_Artorius_(Balance)_(Tier_5b).html": {
+    "title": "Spell:King Artorius (Balance) (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_King_of_Order.html": {
+    "title": "Spell:King of Order - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Krokotillian.html": {
+    "title": "Spell:Krokotillian - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Lernaean_Hydra.html": {
+    "title": "Spell:Lernaean Hydra - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Lie_in_Wait.html": {
+    "title": "Spell:Lie in Wait - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Lightkeeper's_Beam.html": {
+    "title": "Spell:Lightkeeper's Beam - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Locust_Swarm.html": {
+    "title": "Spell:Locust Swarm - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Weakness",
+            "Next \u00bb Sandstorm"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Locust_Swarm_(285-345).html": {
+    "title": "Spell:Locust Swarm (285-345) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Locust_Swarm_(300).html": {
+    "title": "Spell:Locust Swarm (300) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Locust_Swarm_(345-405).html": {
+    "title": "Spell:Locust Swarm (345-405) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Locust_Swarm_(Tier_2a).html": {
+    "title": "Spell:Locust Swarm (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Locust_Swarm_(Tier_2b).html": {
+    "title": "Spell:Locust Swarm (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Locust_Swarm_(Tier_3a).html": {
+    "title": "Spell:Locust Swarm (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Locust_Swarm_(Tier_3b).html": {
+    "title": "Spell:Locust Swarm (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Locust_Swarm_(Tier_4a).html": {
+    "title": "Spell:Locust Swarm (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Locust_Swarm_(Tier_4b).html": {
+    "title": "Spell:Locust Swarm (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Locust_Swarm_(Tier_5a).html": {
+    "title": "Spell:Locust Swarm (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Locust_Swarm_(Tier_5b).html": {
+    "title": "Spell:Locust Swarm (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Lord_of_Atonement.html": {
+    "title": "Spell:Lord of Atonement - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Loremaster.html": {
+    "title": "Spell:Loremaster - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Loremaster_(0_Pip).html": {
+    "title": "Spell:Loremaster (0 Pip) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Loremaster_(Tier_2a).html": {
+    "title": "Spell:Loremaster (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Loremaster_(Tier_2b).html": {
+    "title": "Spell:Loremaster (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Loremaster_(Tier_2c).html": {
+    "title": "Spell:Loremaster (Tier 2c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Loremaster_(Tier_3a).html": {
+    "title": "Spell:Loremaster (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Loremaster_(Tier_3b).html": {
+    "title": "Spell:Loremaster (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Loremaster_(Tier_3c).html": {
+    "title": "Spell:Loremaster (Tier 3c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Loremaster_(Tier_4a).html": {
+    "title": "Spell:Loremaster (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Loremaster_(Tier_4b).html": {
+    "title": "Spell:Loremaster (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Loremaster_(Tier_4c).html": {
+    "title": "Spell:Loremaster (Tier 4c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Loremaster_(Tier_5a).html": {
+    "title": "Spell:Loremaster (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Loremaster_(Tier_5b).html": {
+    "title": "Spell:Loremaster (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Loremaster_(Tier_5c).html": {
+    "title": "Spell:Loremaster (Tier 5c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Lousy_Thief.html": {
+    "title": "Spell:Lousy Thief - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Lycian_Chimera.html": {
+    "title": "Spell:Lycian Chimera - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_M_A_D_ness.html": {
+    "title": "Spell:M.A.D.ness - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mana_Burn.html": {
+    "title": "Spell:Mana Burn - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Availing Hands",
+            "Next \u00bb Supernova"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Mana_Burn_(-4_Pips).html": {
+    "title": "Spell:Mana Burn (-4 Pips) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mander_Blast.html": {
+    "title": "Spell:Mander Blast - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mander_Minion.html": {
+    "title": "Spell:Mander Minion - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Balanceblade",
+            "Next \u00bb Judgement"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minion"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "3",
+            "Helpful Mander",
+            "Hall Servant",
+            "1",
+            "300"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Mark_of_Moirai.html": {
+    "title": "Spell:Mark of Moirai - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mass_Hex.html": {
+    "title": "Spell:Mass Hex - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mass_Weakness.html": {
+    "title": "Spell:Mass Weakness - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Memory.html": {
+    "title": "Spell:Memory - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Metal_Mauler.html": {
+    "title": "Spell:Metal Mauler - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mighty_Judgement.html": {
+    "title": "Spell:Mighty Judgement - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mockenspiel.html": {
+    "title": "Spell:Mockenspiel - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Scion of Balance",
+            "Next \u00bb Old One's Endgame"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Mockenspiel_(Tier_2a).html": {
+    "title": "Spell:Mockenspiel (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mockenspiel_(Tier_2b).html": {
+    "title": "Spell:Mockenspiel (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mockenspiel_(Tier_3a).html": {
+    "title": "Spell:Mockenspiel (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mockenspiel_(Tier_3b).html": {
+    "title": "Spell:Mockenspiel (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mockenspiel_(Tier_4a).html": {
+    "title": "Spell:Mockenspiel (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mockenspiel_(Tier_4b).html": {
+    "title": "Spell:Mockenspiel (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mockenspiel_(Tier_5a).html": {
+    "title": "Spell:Mockenspiel (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Mockenspiel_(Tier_5b).html": {
+    "title": "Spell:Mockenspiel (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Morganthe's_Will.html": {
+    "title": "Spell:Morganthe's Will - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Muzzle.html": {
+    "title": "Spell:Muzzle - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack.html": {
+    "title": "Spell:Natural Attack - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_100-210-320).html": {
+    "title": "Spell:Natural Attack (Balance 100-210-320) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_100-580).html": {
+    "title": "Spell:Natural Attack (Balance 100-580) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_105).html": {
+    "title": "Spell:Natural Attack (Balance 105) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_105-120-295).html": {
+    "title": "Spell:Natural Attack (Balance 105-120-295) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_105-140-295).html": {
+    "title": "Spell:Natural Attack (Balance 105-140-295) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_105-200-295).html": {
+    "title": "Spell:Natural Attack (Balance 105-200-295) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_105-200-305).html": {
+    "title": "Spell:Natural Attack (Balance 105-200-305) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_105-210-315,_80%).html": {
+    "title": "Spell:Natural Attack (Balance 105-210-315, 80%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_105-210-315,_85%).html": {
+    "title": "Spell:Natural Attack (Balance 105-210-315, 85%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_105-210-315-420).html": {
+    "title": "Spell:Natural Attack (Balance 105-210-315-420) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_105x,_4_Pip_max).html": {
+    "title": "Spell:Natural Attack (Balance 105x, 4 Pip max) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_110-1,540).html": {
+    "title": "Spell:Natural Attack (Balance 110-1,540) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_110-205-300,_80%).html": {
+    "title": "Spell:Natural Attack (Balance 110-205-300, 80%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_110-205-300,_85%).html": {
+    "title": "Spell:Natural Attack (Balance 110-205-300, 85%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_110-210-315).html": {
+    "title": "Spell:Natural Attack (Balance 110-210-315) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_110-215-320).html": {
+    "title": "Spell:Natural Attack (Balance 110-215-320) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_110-215-425).html": {
+    "title": "Spell:Natural Attack (Balance 110-215-425) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_110-220-330).html": {
+    "title": "Spell:Natural Attack (Balance 110-220-330) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_110-X_Pips).html": {
+    "title": "Spell:Natural Attack (Balance 110-X Pips) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_110x).html": {
+    "title": "Spell:Natural Attack (Balance 110x) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_115-225-335).html": {
+    "title": "Spell:Natural Attack (Balance 115-225-335) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_115-240-365).html": {
+    "title": "Spell:Natural Attack (Balance 115-240-365) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_120-220-320).html": {
+    "title": "Spell:Natural Attack (Balance 120-220-320) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_125-160).html": {
+    "title": "Spell:Natural Attack (Balance 125-160) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_130-230-330).html": {
+    "title": "Spell:Natural Attack (Balance 130-230-330) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_135-170-325).html": {
+    "title": "Spell:Natural Attack (Balance 135-170-325) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_135-230-325).html": {
+    "title": "Spell:Natural Attack (Balance 135-230-325) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_135-235-335).html": {
+    "title": "Spell:Natural Attack (Balance 135-235-335) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_135-275-425).html": {
+    "title": "Spell:Natural Attack (Balance 135-275-425) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_135-X_Pips).html": {
+    "title": "Spell:Natural Attack (Balance 135-X Pips) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_145-180).html": {
+    "title": "Spell:Natural Attack (Balance 145-180) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_150-250-350).html": {
+    "title": "Spell:Natural Attack (Balance 150-250-350) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_150-250-445).html": {
+    "title": "Spell:Natural Attack (Balance 150-250-445) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_155-250-345).html": {
+    "title": "Spell:Natural Attack (Balance 155-250-345) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_160-195-350).html": {
+    "title": "Spell:Natural Attack (Balance 160-195-350) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_160-255-350).html": {
+    "title": "Spell:Natural Attack (Balance 160-255-350) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_160-320-480).html": {
+    "title": "Spell:Natural Attack (Balance 160-320-480) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_165-265-355).html": {
+    "title": "Spell:Natural Attack (Balance 165-265-355) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_165-330-495).html": {
+    "title": "Spell:Natural Attack (Balance 165-330-495) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_175-350-525).html": {
+    "title": "Spell:Natural Attack (Balance 175-350-525) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_175-360-545).html": {
+    "title": "Spell:Natural Attack (Balance 175-360-545) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_180).html": {
+    "title": "Spell:Natural Attack (Balance 180) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_180-360-540).html": {
+    "title": "Spell:Natural Attack (Balance 180-360-540) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_195-390-585).html": {
+    "title": "Spell:Natural Attack (Balance 195-390-585) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_200-315-435).html": {
+    "title": "Spell:Natural Attack (Balance 200-315-435) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_45).html": {
+    "title": "Spell:Natural Attack (Balance 45) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_70-150-235).html": {
+    "title": "Spell:Natural Attack (Balance 70-150-235) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_85-180).html": {
+    "title": "Spell:Natural Attack (Balance 85-180) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_85-180-275).html": {
+    "title": "Spell:Natural Attack (Balance 85-180-275) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_85-375).html": {
+    "title": "Spell:Natural Attack (Balance 85-375) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_85-X_Pips).html": {
+    "title": "Spell:Natural Attack (Balance 85-X Pips) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_85x,_100%).html": {
+    "title": "Spell:Natural Attack (Balance 85x, 100%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_85x,_85%).html": {
+    "title": "Spell:Natural Attack (Balance 85x, 85%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_85x,_90%).html": {
+    "title": "Spell:Natural Attack (Balance 85x, 90%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_90,_85%).html": {
+    "title": "Spell:Natural Attack (Balance 90, 85%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_90,_90%).html": {
+    "title": "Spell:Natural Attack (Balance 90, 90%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_90-180-270).html": {
+    "title": "Spell:Natural Attack (Balance 90-180-270) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_90-190-295).html": {
+    "title": "Spell:Natural Attack (Balance 90-190-295) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_90-X_Pips).html": {
+    "title": "Spell:Natural Attack (Balance 90-X Pips) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Balance_95-130).html": {
+    "title": "Spell:Natural Attack (Balance 95-130) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Broodmother).html": {
+    "title": "Spell:Natural Attack (Broodmother) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Captain_Pork).html": {
+    "title": "Spell:Natural Attack (Captain Pork) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Cough).html": {
+    "title": "Spell:Natural Attack (Cough) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Cronus_Balance).html": {
+    "title": "Spell:Natural Attack (Cronus Balance) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Dimachaerus).html": {
+    "title": "Spell:Natural Attack (Dimachaerus) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Natural_Attack_(Vigilant_Jarilo).html": {
+    "title": "Spell:Natural Attack (Vigilant Jarilo) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nerys.html": {
+    "title": "Spell:Nerys - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Availing Hands",
+            "None"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minion"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "5",
+            "Nerys Barbed Heart",
+            "Spriggan",
+            "7",
+            "1,700"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Nested_Darkness.html": {
+    "title": "Spell:Nested Darkness - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nested_Darkness_(Tier_2a).html": {
+    "title": "Spell:Nested Darkness (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nested_Darkness_(Tier_2b).html": {
+    "title": "Spell:Nested Darkness (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nested_Darkness_(Tier_3a).html": {
+    "title": "Spell:Nested Darkness (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nested_Darkness_(Tier_3b).html": {
+    "title": "Spell:Nested Darkness (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nested_Fury.html": {
+    "title": "Spell:Nested Fury - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Sabertooth",
+            "Next \u00bb Sand Wurm"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Nested_Fury_(2_Shadow_Pip).html": {
+    "title": "Spell:Nested Fury (2 Shadow Pip) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nested_Fury_(Tier_2a).html": {
+    "title": "Spell:Nested Fury (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nested_Fury_(Tier_2b).html": {
+    "title": "Spell:Nested Fury (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nested_Fury_(Tier_3a).html": {
+    "title": "Spell:Nested Fury (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nested_Fury_(Tier_3b).html": {
+    "title": "Spell:Nested Fury (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nested_Fury_(Tier_4a).html": {
+    "title": "Spell:Nested Fury (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nested_Fury_(Tier_4b).html": {
+    "title": "Spell:Nested Fury (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nested_Fury_(Tier_5a).html": {
+    "title": "Spell:Nested Fury (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Nested_Fury_(Tier_5b).html": {
+    "title": "Spell:Nested Fury (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Next_Verse_(Balance).html": {
+    "title": "Spell:Next Verse (Balance) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Niles'_Knock-Out.html": {
+    "title": "Spell:Niles' Knock-Out - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ninja_Piglets.html": {
+    "title": "Spell:Ninja Piglets - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Ninja_Piglets_(Tier_2a).html": {
+    "title": "Spell:Ninja Piglets (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ninja_Piglets_(Tier_2b).html": {
+    "title": "Spell:Ninja Piglets (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ninja_Piglets_(Tier_3a).html": {
+    "title": "Spell:Ninja Piglets (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ninja_Piglets_(Tier_3b).html": {
+    "title": "Spell:Ninja Piglets (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ninja_Piglets_(Tier_4a).html": {
+    "title": "Spell:Ninja Piglets (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ninja_Piglets_(Tier_4b).html": {
+    "title": "Spell:Ninja Piglets (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ninja_Piglets_(Tier_5a).html": {
+    "title": "Spell:Ninja Piglets (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ninja_Piglets_(Tier_5b).html": {
+    "title": "Spell:Ninja Piglets (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Obsidian_Colossus.html": {
+    "title": "Spell:Obsidian Colossus - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Weakness",
+            ""
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Obsidian_Colossus_(420).html": {
+    "title": "Spell:Obsidian Colossus (420) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Obsidian_Colossus_(460).html": {
+    "title": "Spell:Obsidian Colossus (460) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Obsidian_Colossus_(Tier_2).html": {
+    "title": "Spell:Obsidian Colossus (Tier 2) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Obsidian_Colossus_(Tier_3).html": {
+    "title": "Spell:Obsidian Colossus (Tier 3) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Obsidian_Colossus_(Tier_4).html": {
+    "title": "Spell:Obsidian Colossus (Tier 4) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Obsidian_Colossus_(Tier_5).html": {
+    "title": "Spell:Obsidian Colossus (Tier 5) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Old_One's_Endgame.html": {
+    "title": "Spell:Old One's Endgame - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Mockenspiel",
+            ""
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "Strong",
+            "Giant",
+            "Monstrous",
+            "Gargantuan",
+            "Colossal",
+            "Epic"
+          ],
+          [
+            "Accuracy Enchants",
+            "Keen Eyes",
+            "Accurate",
+            "Sniper",
+            "Unstoppable",
+            "Extraordinary"
+          ],
+          [
+            "Miscellaneous Enchants",
+            "Aegis",
+            "Monstrology"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Old_One's_Endgame_(Tier_2a).html": {
+    "title": "Spell:Old One's Endgame (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Old_One's_Endgame_(Tier_2b).html": {
+    "title": "Spell:Old One's Endgame (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Old_One's_Endgame_(Tier_3a).html": {
+    "title": "Spell:Old One's Endgame (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Old_One's_Endgame_(Tier_3b).html": {
+    "title": "Spell:Old One's Endgame (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Old_One's_Endgame_(Tier_4a).html": {
+    "title": "Spell:Old One's Endgame (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Old_One's_Endgame_(Tier_4b).html": {
+    "title": "Spell:Old One's Endgame (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Old_One's_Endgame_(Tier_5a).html": {
+    "title": "Spell:Old One's Endgame (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Old_One's_Endgame_(Tier_5b).html": {
+    "title": "Spell:Old One's Endgame (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Omni_Curse.html": {
+    "title": "Spell:Omni Curse - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Oni's_Shadow.html": {
+    "title": "Spell:Oni's Shadow - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Donate Power",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Overruled.html": {
+    "title": "Spell:Overruled - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Pariah's_Curse.html": {
+    "title": "Spell:Pariah's Curse - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Patient_Hydra.html": {
+    "title": "Spell:Patient Hydra - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Phalanx.html": {
+    "title": "Spell:Phalanx - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Phalanx_I.html": {
+    "title": "Spell:Phalanx I - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Phalanx_II.html": {
+    "title": "Spell:Phalanx II - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Phalanx_III.html": {
+    "title": "Spell:Phalanx III - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Pictures.html": {
+    "title": "Spell:Pictures - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Pip,_Pip,_Cheerio.html": {
+    "title": "Spell:Pip, Pip, Cheerio - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Pip_Pluck.html": {
+    "title": "Spell:Pip Pluck - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Plague_Ninja_Pig_(250-300).html": {
+    "title": "Spell:Plague Ninja Pig (250-300) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Plague_Ninja_Pig_(430-510).html": {
+    "title": "Spell:Plague Ninja Pig (430-510) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Plague_Ninja_Pig_(500-580).html": {
+    "title": "Spell:Plague Ninja Pig (500-580) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Poltergeist.html": {
+    "title": "Spell:Poltergeist - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Power_Conversion.html": {
+    "title": "Spell:Power Conversion - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Power_Nova.html": {
+    "title": "Spell:Power Nova - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Spectral Minion",
+            "Next \u00bb Ra"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Power_Nova_(530).html": {
+    "title": "Spell:Power Nova (530) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Power_Nova_(Tier_2a).html": {
+    "title": "Spell:Power Nova (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Power_Nova_(Tier_2b).html": {
+    "title": "Spell:Power Nova (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Power_Nova_(Tier_3a).html": {
+    "title": "Spell:Power Nova (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Power_Nova_(Tier_3b).html": {
+    "title": "Spell:Power Nova (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Power_Nova_(Tier_4a).html": {
+    "title": "Spell:Power Nova (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Power_Nova_(Tier_4b).html": {
+    "title": "Spell:Power Nova (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Power_Nova_(Tier_5a).html": {
+    "title": "Spell:Power Nova (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Power_Nova_(Tier_5b).html": {
+    "title": "Spell:Power Nova (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Power_Play.html": {
+    "title": "Spell:Power Play - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Power_Play_(+60%).html": {
+    "title": "Spell:Power Play (+60%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Pre-emptive_Strike.html": {
+    "title": "Spell:Pre-emptive Strike - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Precision.html": {
+    "title": "Spell:Precision - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "None",
+            "Next \u00bb Balanceblade"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Precision_(+10%).html": {
+    "title": "Spell:Precision (+10%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Precision_(+20%).html": {
+    "title": "Spell:Precision (+20%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Provoke_(Balance).html": {
+    "title": "Spell:Provoke (Balance) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ra.html": {
+    "title": "Spell:Ra - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Power Nova",
+            "Next \u00bb Chimera"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            "Indemnity",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Ra_(-50%).html": {
+    "title": "Spell:Ra (-50%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ra_(450-550).html": {
+    "title": "Spell:Ra (450-550) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ra_(635-715).html": {
+    "title": "Spell:Ra (635-715) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ra_(Tier_2a).html": {
+    "title": "Spell:Ra (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ra_(Tier_2b).html": {
+    "title": "Spell:Ra (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ra_(Tier_3a).html": {
+    "title": "Spell:Ra (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ra_(Tier_3b).html": {
+    "title": "Spell:Ra (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ra_(Tier_4a).html": {
+    "title": "Spell:Ra (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ra_(Tier_4b).html": {
+    "title": "Spell:Ra (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ra_(Tier_5a).html": {
+    "title": "Spell:Ra (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ra_(Tier_5b).html": {
+    "title": "Spell:Ra (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Rainbow_Serpent.html": {
+    "title": "Spell:Rainbow Serpent - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Rainbow_Serpent_(Tier_2a).html": {
+    "title": "Spell:Rainbow Serpent (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Rainbow_Serpent_(Tier_2b).html": {
+    "title": "Spell:Rainbow Serpent (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Rainbow_Serpent_(Tier_3a).html": {
+    "title": "Spell:Rainbow Serpent (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Rainbow_Serpent_(Tier_3b).html": {
+    "title": "Spell:Rainbow Serpent (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Rainbow_Serpent_(Tier_4a).html": {
+    "title": "Spell:Rainbow Serpent (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Rainbow_Serpent_(Tier_4b).html": {
+    "title": "Spell:Rainbow Serpent (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ravaging_Sun.html": {
+    "title": "Spell:Ravaging Sun - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Ray_of_Blight.html": {
+    "title": "Spell:Ray of Blight - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Reckless_Chance.html": {
+    "title": "Spell:Reckless Chance - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Reconciliation.html": {
+    "title": "Spell:Reconciliation - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Reconstruct.html": {
+    "title": "Spell:Reconstruct - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Regret.html": {
+    "title": "Spell:Regret - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Reinforce.html": {
+    "title": "Spell:Reinforce - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Reshuffle.html": {
+    "title": "Spell:Reshuffle - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Reshuffle_(2_Pip).html": {
+    "title": "Spell:Reshuffle (2 Pip) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Rest_and_Retreat.html": {
+    "title": "Spell:Rest and Retreat - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Restoring_Hands.html": {
+    "title": "Spell:Restoring Hands - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Reverse-Fortune.html": {
+    "title": "Spell:Reverse-Fortune - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Reverse-Fortune_(Tier_2).html": {
+    "title": "Spell:Reverse-Fortune (Tier 2) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Reverse-Fortune_(Tier_3).html": {
+    "title": "Spell:Reverse-Fortune (Tier 3) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Righteous_Strength.html": {
+    "title": "Spell:Righteous Strength - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Righting_the_Scales.html": {
+    "title": "Spell:Righting the Scales - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Donate Power",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Sabertooth.html": {
+    "title": "Spell:Sabertooth - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Chimera",
+            "Next \u00bb Nested Fury"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            "Bolstered Ward",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Sabertooth_(Tier_2a).html": {
+    "title": "Spell:Sabertooth (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sabertooth_(Tier_2b).html": {
+    "title": "Spell:Sabertooth (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sabertooth_(Tier_3a).html": {
+    "title": "Spell:Sabertooth (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sabertooth_(Tier_3b).html": {
+    "title": "Spell:Sabertooth (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sabertooth_(Tier_4a).html": {
+    "title": "Spell:Sabertooth (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sabertooth_(Tier_4b).html": {
+    "title": "Spell:Sabertooth (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sabertooth_(Tier_5a).html": {
+    "title": "Spell:Sabertooth (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sabertooth_(Tier_5b).html": {
+    "title": "Spell:Sabertooth (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Samoorai.html": {
+    "title": "Spell:Samoorai - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Samoorai_(Tier_2a).html": {
+    "title": "Spell:Samoorai (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Samoorai_(Tier_2b).html": {
+    "title": "Spell:Samoorai (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Samoorai_(Tier_2c).html": {
+    "title": "Spell:Samoorai (Tier 2c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Samoorai_(Tier_3a).html": {
+    "title": "Spell:Samoorai (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Samoorai_(Tier_3b).html": {
+    "title": "Spell:Samoorai (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Samoorai_(Tier_3c).html": {
+    "title": "Spell:Samoorai (Tier 3c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Samoorai_(Tier_4a).html": {
+    "title": "Spell:Samoorai (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Samoorai_(Tier_4b).html": {
+    "title": "Spell:Samoorai (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Samoorai_(Tier_4c).html": {
+    "title": "Spell:Samoorai (Tier 4c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Samoorai_(Tier_5a).html": {
+    "title": "Spell:Samoorai (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Samoorai_(Tier_5b).html": {
+    "title": "Spell:Samoorai (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Samoorai_(Tier_5c).html": {
+    "title": "Spell:Samoorai (Tier 5c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sanction.html": {
+    "title": "Spell:Sanction - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sanction_(Beastmoon).html": {
+    "title": "Spell:Sanction (Beastmoon) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Colossus.html": {
+    "title": "Spell:Sand Colossus - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Monster.html": {
+    "title": "Spell:Sand Monster - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Stalker.html": {
+    "title": "Spell:Sand Stalker - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Trap.html": {
+    "title": "Spell:Sand Trap - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Troll.html": {
+    "title": "Spell:Sand Troll - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Wurm.html": {
+    "title": "Spell:Sand Wurm - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Nested Fury",
+            "None"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            "Potent Trap",
+            "Indemnity",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Sand_Wurm_(2_Shadow_Pip).html": {
+    "title": "Spell:Sand Wurm (2 Shadow Pip) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Wurm_(Tier_2a).html": {
+    "title": "Spell:Sand Wurm (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Wurm_(Tier_2b).html": {
+    "title": "Spell:Sand Wurm (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Wurm_(Tier_3a).html": {
+    "title": "Spell:Sand Wurm (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Wurm_(Tier_3b).html": {
+    "title": "Spell:Sand Wurm (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Wurm_(Tier_4a).html": {
+    "title": "Spell:Sand Wurm (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Wurm_(Tier_4b).html": {
+    "title": "Spell:Sand Wurm (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Wurm_(Tier_5a).html": {
+    "title": "Spell:Sand Wurm (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sand_Wurm_(Tier_5b).html": {
+    "title": "Spell:Sand Wurm (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sandstone_Colossus.html": {
+    "title": "Spell:Sandstone Colossus - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sandstorm.html": {
+    "title": "Spell:Sandstorm - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Locust Swarm",
+            "Next \u00bb Gearhead Destroyer"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Sandstorm_(295-335).html": {
+    "title": "Spell:Sandstorm (295-335) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sandstorm_(565-645).html": {
+    "title": "Spell:Sandstorm (565-645) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sandstorm_(Tier_2a).html": {
+    "title": "Spell:Sandstorm (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sandstorm_(Tier_2b).html": {
+    "title": "Spell:Sandstorm (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sandstorm_(Tier_3a).html": {
+    "title": "Spell:Sandstorm (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sandstorm_(Tier_3b).html": {
+    "title": "Spell:Sandstorm (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sandstorm_(Tier_4a).html": {
+    "title": "Spell:Sandstorm (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sandstorm_(Tier_4b).html": {
+    "title": "Spell:Sandstorm (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sandstorm_(Tier_5a).html": {
+    "title": "Spell:Sandstorm (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sandstorm_(Tier_5b).html": {
+    "title": "Spell:Sandstorm (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sap_Health.html": {
+    "title": "Spell:Sap Health - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Healing Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Savage_Paw.html": {
+    "title": "Spell:Savage Paw - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Savage_Paw_(Tier_2).html": {
+    "title": "Spell:Savage Paw (Tier 2) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Savage_Paw_(Tier_3).html": {
+    "title": "Spell:Savage Paw (Tier 3) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Savage_Paw_(Tier_4).html": {
+    "title": "Spell:Savage Paw (Tier 4) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Savage_Paw_(Tier_5).html": {
+    "title": "Spell:Savage Paw (Tier 5) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scald_(Balance).html": {
+    "title": "Spell:Scald (Balance) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scales_of_Destiny.html": {
+    "title": "Spell:Scales of Destiny - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "Strong",
+            "Giant",
+            "Monstrous",
+            "Gargantuan",
+            "Colossal",
+            "Epic"
+          ],
+          [
+            "Accuracy Enchants",
+            "Keen Eyes",
+            "Accurate",
+            "Sniper",
+            "Unstoppable",
+            "Extraordinary"
+          ],
+          [
+            "Miscellaneous Enchants",
+            "Monstrology"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Scales_of_Destiny_(Tier_2a).html": {
+    "title": "Spell:Scales of Destiny (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scales_of_Destiny_(Tier_2b).html": {
+    "title": "Spell:Scales of Destiny (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scales_of_Destiny_(Tier_3a).html": {
+    "title": "Spell:Scales of Destiny (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scales_of_Destiny_(Tier_3b).html": {
+    "title": "Spell:Scales of Destiny (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scales_of_Destiny_(Tier_4a).html": {
+    "title": "Spell:Scales of Destiny (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scales_of_Destiny_(Tier_4b).html": {
+    "title": "Spell:Scales of Destiny (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scales_of_Destiny_(Tier_5a).html": {
+    "title": "Spell:Scales of Destiny (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scales_of_Destiny_(Tier_5b).html": {
+    "title": "Spell:Scales of Destiny (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scarab.html": {
+    "title": "Spell:Scarab - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "",
+            "Next \u00bb Scorpion"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Scarab_(80-120).html": {
+    "title": "Spell:Scarab (80-120) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scarab_(Tier_2a).html": {
+    "title": "Spell:Scarab (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scarab_(Tier_2b).html": {
+    "title": "Spell:Scarab (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scarab_(Tier_2c).html": {
+    "title": "Spell:Scarab (Tier 2c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scarab_(Tier_3a).html": {
+    "title": "Spell:Scarab (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scarab_(Tier_3b).html": {
+    "title": "Spell:Scarab (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scarab_(Tier_3c).html": {
+    "title": "Spell:Scarab (Tier 3c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scarab_(Tier_4a).html": {
+    "title": "Spell:Scarab (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scarab_(Tier_4b).html": {
+    "title": "Spell:Scarab (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scarab_(Tier_4c).html": {
+    "title": "Spell:Scarab (Tier 4c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scarab_(Tier_5a).html": {
+    "title": "Spell:Scarab (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scarab_(Tier_5b).html": {
+    "title": "Spell:Scarab (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scarab_(Tier_5c).html": {
+    "title": "Spell:Scarab (Tier 5c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scion_of_Balance.html": {
+    "title": "Spell:Scion of Balance - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Sand Wurm",
+            "Next \u00bb Mockenspiel"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Scion_of_Balance_(Tier_2a).html": {
+    "title": "Spell:Scion of Balance (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scion_of_Balance_(Tier_2b).html": {
+    "title": "Spell:Scion of Balance (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scion_of_Balance_(Tier_3a).html": {
+    "title": "Spell:Scion of Balance (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scion_of_Balance_(Tier_3b).html": {
+    "title": "Spell:Scion of Balance (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scion_of_Balance_(Tier_4a).html": {
+    "title": "Spell:Scion of Balance (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scion_of_Balance_(Tier_4b).html": {
+    "title": "Spell:Scion of Balance (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scion_of_Balance_(Tier_5a).html": {
+    "title": "Spell:Scion of Balance (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scion_of_Balance_(Tier_5b).html": {
+    "title": "Spell:Scion of Balance (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion.html": {
+    "title": "Spell:Scorpion - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Scarab",
+            "Next \u00bb Weakness"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Scorpion_(185-225).html": {
+    "title": "Spell:Scorpion (185-225) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion_(Tier_2a).html": {
+    "title": "Spell:Scorpion (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion_(Tier_2b).html": {
+    "title": "Spell:Scorpion (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion_(Tier_2c).html": {
+    "title": "Spell:Scorpion (Tier 2c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion_(Tier_3a).html": {
+    "title": "Spell:Scorpion (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion_(Tier_3b).html": {
+    "title": "Spell:Scorpion (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion_(Tier_3c).html": {
+    "title": "Spell:Scorpion (Tier 3c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion_(Tier_4a).html": {
+    "title": "Spell:Scorpion (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion_(Tier_4b).html": {
+    "title": "Spell:Scorpion (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion_(Tier_4c).html": {
+    "title": "Spell:Scorpion (Tier 4c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion_(Tier_5a).html": {
+    "title": "Spell:Scorpion (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion_(Tier_5b).html": {
+    "title": "Spell:Scorpion (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion_(Tier_5c).html": {
+    "title": "Spell:Scorpion (Tier 5c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scorpion_Venom.html": {
+    "title": "Spell:Scorpion Venom - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scouring_Sand.html": {
+    "title": "Spell:Scouring Sand - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scouring_Sand_I.html": {
+    "title": "Spell:Scouring Sand I - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scouring_Sand_II.html": {
+    "title": "Spell:Scouring Sand II - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scouring_Sand_III.html": {
+    "title": "Spell:Scouring Sand III - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Scuttling_Scorpion.html": {
+    "title": "Spell:Scuttling Scorpion - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Shadow_Surge.html": {
+    "title": "Spell:Shadow Surge - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Shadow_of_Fate.html": {
+    "title": "Spell:Shadow of Fate - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Shadow_of_Fate_(Tier_2).html": {
+    "title": "Spell:Shadow of Fate (Tier 2) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Shadowy_Ambush.html": {
+    "title": "Spell:Shadowy Ambush - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Shamanic_Pact.html": {
+    "title": "Spell:Shamanic Pact - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Shield_Wall.html": {
+    "title": "Spell:Shield Wall - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Shifting_Sands.html": {
+    "title": "Spell:Shifting Sands - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sirocco_Djinni_(735).html": {
+    "title": "Spell:Sirocco Djinni (735) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sirocco_Djinni_(755).html": {
+    "title": "Spell:Sirocco Djinni (755) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Skeletal_Raider.html": {
+    "title": "Spell:Skeletal Raider - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sleight_of_Hand.html": {
+    "title": "Spell:Sleight of Hand - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Slow_Erode.html": {
+    "title": "Spell:Slow Erode - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sneak_Attack.html": {
+    "title": "Spell:Sneak Attack - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sorcerer's_Portent.html": {
+    "title": "Spell:Sorcerer's Portent - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Space.html": {
+    "title": "Spell:Space - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Blast.html": {
+    "title": "Spell:Spectral Blast - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Balance of Power",
+            "Next \u00bb Donate Power"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Spectral_Blast_(505-420-635).html": {
+    "title": "Spell:Spectral Blast (505-420-635) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Blast_(Tier_2a).html": {
+    "title": "Spell:Spectral Blast (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Blast_(Tier_2b).html": {
+    "title": "Spell:Spectral Blast (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Blast_(Tier_2c).html": {
+    "title": "Spell:Spectral Blast (Tier 2c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Blast_(Tier_3a).html": {
+    "title": "Spell:Spectral Blast (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Blast_(Tier_3b).html": {
+    "title": "Spell:Spectral Blast (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Blast_(Tier_3c).html": {
+    "title": "Spell:Spectral Blast (Tier 3c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Blast_(Tier_4a).html": {
+    "title": "Spell:Spectral Blast (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Blast_(Tier_4b).html": {
+    "title": "Spell:Spectral Blast (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Blast_(Tier_4c).html": {
+    "title": "Spell:Spectral Blast (Tier 4c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Blast_(Tier_5a).html": {
+    "title": "Spell:Spectral Blast (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Blast_(Tier_5b).html": {
+    "title": "Spell:Spectral Blast (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Blast_(Tier_5c).html": {
+    "title": "Spell:Spectral Blast (Tier 5c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spectral_Minion.html": {
+    "title": "Spell:Spectral Minion - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Judgement",
+            "Next \u00bb Power Nova"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minions"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "3",
+            "Fire Elemental",
+            "Flame Servant",
+            "1",
+            "400"
+          ],
+          [
+            "3",
+            "Ice Guardian",
+            "Ice Colossus",
+            "1",
+            "400"
+          ],
+          [
+            "3",
+            "Water Elemental",
+            "Diseased Water Spirit",
+            "1",
+            "700"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Spider_Sovereign.html": {
+    "title": "Spell:Spider Sovereign - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiked_Buckler.html": {
+    "title": "Spell:Spiked Buckler - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiked_Shield.html": {
+    "title": "Spell:Spiked Shield - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spinning_Scythe.html": {
+    "title": "Spell:Spinning Scythe - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Spirit_Blade.html": {
+    "title": "Spell:Spirit Blade - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Spirit_Blade_(+25%).html": {
+    "title": "Spell:Spirit Blade (+25%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spirit_Blast.html": {
+    "title": "Spell:Spirit Blast - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spirit_Defuse.html": {
+    "title": "Spell:Spirit Defuse - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "None",
+            "Next \u00bb Availing Hands"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Spirit_Shield.html": {
+    "title": "Spell:Spirit Shield - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Spirit_Shield_(-55%).html": {
+    "title": "Spell:Spirit Shield (-55%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spirit_Spear.html": {
+    "title": "Spell:Spirit Spear - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Spirit_Trap.html": {
+    "title": "Spell:Spirit Trap - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Spirit_Weakness.html": {
+    "title": "Spell:Spirit Weakness - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Golem_(Tier_2b).html": {
+    "title": "Spell:Spiritual Golem (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Golem_(Tier_3b).html": {
+    "title": "Spell:Spiritual Golem (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Golem_(Tier_4b).html": {
+    "title": "Spell:Spiritual Golem (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Golem_(Tier_5b).html": {
+    "title": "Spell:Spiritual Golem (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Tribunal.html": {
+    "title": "Spell:Spiritual Tribunal - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Spiritual_Tribunal_(Tier_2a).html": {
+    "title": "Spell:Spiritual Tribunal (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Tribunal_(Tier_2b).html": {
+    "title": "Spell:Spiritual Tribunal (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Tribunal_(Tier_2c).html": {
+    "title": "Spell:Spiritual Tribunal (Tier 2c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Tribunal_(Tier_3a).html": {
+    "title": "Spell:Spiritual Tribunal (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Tribunal_(Tier_3b).html": {
+    "title": "Spell:Spiritual Tribunal (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Tribunal_(Tier_3c).html": {
+    "title": "Spell:Spiritual Tribunal (Tier 3c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Tribunal_(Tier_4a).html": {
+    "title": "Spell:Spiritual Tribunal (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Tribunal_(Tier_4b).html": {
+    "title": "Spell:Spiritual Tribunal (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Tribunal_(Tier_4c).html": {
+    "title": "Spell:Spiritual Tribunal (Tier 4c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Tribunal_(Tier_5a).html": {
+    "title": "Spell:Spiritual Tribunal (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Tribunal_(Tier_5b).html": {
+    "title": "Spell:Spiritual Tribunal (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Spiritual_Tribunal_(Tier_5c).html": {
+    "title": "Spell:Spiritual Tribunal (Tier 5c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Squid's_Game.html": {
+    "title": "Spell:Squid's Game - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Stalking_Smilodon.html": {
+    "title": "Spell:Stalking Smilodon - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Steal_Pip.html": {
+    "title": "Spell:Steal Pip - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Strength_Blade.html": {
+    "title": "Spell:Strength Blade - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Stunning_Swarm.html": {
+    "title": "Spell:Stunning Swarm - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sudden_Flare.html": {
+    "title": "Spell:Sudden Flare - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sugar.html": {
+    "title": "Spell:Sugar - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Summer.html": {
+    "title": "Spell:Summer - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Summon_Spriggan.html": {
+    "title": "Spell:Summon Spriggan - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minion"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "3",
+            "Sandy Spriggan",
+            "Nerys Barbed Heart",
+            "3",
+            "225"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Sun_Ra.html": {
+    "title": "Spell:Sun Ra - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Super_Clash.html": {
+    "title": "Spell:Super Clash - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Supernova.html": {
+    "title": "Spell:Supernova - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Quest Spells"
+          ],
+          [
+            "\u00ab Previous Mana Burn",
+            "None"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Accuracy Enchants",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Supernova_(535,_75%).html": {
+    "title": "Spell:Supernova (535, 75%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Supernova_(535,_85%).html": {
+    "title": "Spell:Supernova (535, 85%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Sweeping_Sanction.html": {
+    "title": "Spell:Sweeping Sanction - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Swindler.html": {
+    "title": "Spell:Swindler - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Terminus'_Strike.html": {
+    "title": "Spell:Terminus' Strike - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "Strong",
+            "Giant",
+            "Monstrous",
+            "Gargantuan",
+            "Colossal",
+            "Epic"
+          ],
+          [
+            "Accuracy Enchants",
+            "Keen Eyes",
+            "Accurate",
+            "Sniper",
+            "Unstoppable",
+            "Extraordinary"
+          ],
+          [
+            "Miscellaneous Enchants",
+            "Aegis",
+            "Monstrology"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Terminus'_Strike_(Tier_2a).html": {
+    "title": "Spell:Terminus' Strike (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Terminus'_Strike_(Tier_2b).html": {
+    "title": "Spell:Terminus' Strike (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Terminus'_Strike_(Tier_3a).html": {
+    "title": "Spell:Terminus' Strike (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Terminus'_Strike_(Tier_3b).html": {
+    "title": "Spell:Terminus' Strike (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Terminus'_Strike_(Tier_4a).html": {
+    "title": "Spell:Terminus' Strike (Tier 4a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Terminus'_Strike_(Tier_4b).html": {
+    "title": "Spell:Terminus' Strike (Tier 4b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Terminus'_Strike_(Tier_5a).html": {
+    "title": "Spell:Terminus' Strike (Tier 5a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Terminus'_Strike_(Tier_5b).html": {
+    "title": "Spell:Terminus' Strike (Tier 5b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Terrible_Tiger.html": {
+    "title": "Spell:Terrible Tiger - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_The_Moon.html": {
+    "title": "Spell:The Moon - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_The_Sun.html": {
+    "title": "Spell:The Sun - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Thieving_Beetle.html": {
+    "title": "Spell:Thieving Beetle - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Thunderous_Wave_Mace.html": {
+    "title": "Spell:Thunderous Wave Mace - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Tide_of_Battle.html": {
+    "title": "Spell:Tide of Battle - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Tide_of_Doom.html": {
+    "title": "Spell:Tide of Doom - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Time.html": {
+    "title": "Spell:Time - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Tip_the_Scales.html": {
+    "title": "Spell:Tip the Scales - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Tomb_Blade.html": {
+    "title": "Spell:Tomb Blade - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            "Sharpened Blade"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Tornado_Blade.html": {
+    "title": "Spell:Tornado Blade - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            "Sharpened Blade"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Tower_Shield_(Balance).html": {
+    "title": "Spell:Tower Shield (Balance) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Trap_Dilution.html": {
+    "title": "Spell:Trap Dilution - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Donate Power",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Tribunal_Oni.html": {
+    "title": "Spell:Tribunal Oni - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Donate Power",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Turn_the_Tables.html": {
+    "title": "Spell:Turn the Tables - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Unbalance.html": {
+    "title": "Spell:Unbalance - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Unbalance_(All_Enemies).html": {
+    "title": "Spell:Unbalance (All Enemies) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Unbroken_Strike.html": {
+    "title": "Spell:Unbroken Strike - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Vengeful_Ronin.html": {
+    "title": "Spell:Vengeful Ronin - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_We_Bring_Aid.html": {
+    "title": "Spell:We Bring Aid - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_We_Bring_Civility.html": {
+    "title": "Spell:We Bring Civility - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_We_Bring_Creation.html": {
+    "title": "Spell:We Bring Creation - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_We_Bring_Defense.html": {
+    "title": "Spell:We Bring Defense - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_We_Bring_History.html": {
+    "title": "Spell:We Bring History - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_We_Bring_Tech.html": {
+    "title": "Spell:We Bring Tech - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_We_Discover,_yes_.html": {
+    "title": "Spell:We Discover, yes? - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_We_Enlighten,_no_.html": {
+    "title": "Spell:We Enlighten, no? - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_We_Uplift,_Right_.html": {
+    "title": "Spell:We Uplift, Right? - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_We_are_Conquest.html": {
+    "title": "Spell:We are Conquest - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_We_are_Destruction.html": {
+    "title": "Spell:We are Destruction - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Weakening_Mantle.html": {
+    "title": "Spell:Weakening Mantle - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Weakness.html": {
+    "title": "Spell:Weakness - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Scorpion",
+            "Next \u00bb Locust Swarm"
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Miscellaneous Enchants",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Weakness_(-30%).html": {
+    "title": "Spell:Weakness (-30%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Weakness_(-50%).html": {
+    "title": "Spell:Weakness (-50%) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Weaknesses.html": {
+    "title": "Spell:Weaknesses - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Wear_of_Time.html": {
+    "title": "Spell:Wear of Time - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Wheel_of_Fortune.html": {
+    "title": "Spell:Wheel of Fortune - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Trainable Spells"
+          ],
+          [
+            "\u00ab Previous Chameleon Clash",
+            ""
+          ]
+        ]
+      },
+      {
+        "class": [
+          "spell-enchant-table",
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Damage Enchants",
+            "Strong",
+            "Giant",
+            "Monstrous",
+            "Gargantuan",
+            "Colossal",
+            "Epic"
+          ],
+          [
+            "Accuracy Enchants",
+            "Keen Eyes",
+            "Accurate",
+            "Sniper",
+            "Unstoppable",
+            "Extraordinary"
+          ],
+          [
+            "Miscellaneous Enchants",
+            "Indemnity",
+            "Monstrology"
+          ]
+        ]
+      }
+    ]
+  },
+  "Spell_Wheel_of_Fortune_(Tier_2a).html": {
+    "title": "Spell:Wheel of Fortune (Tier 2a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Wheel_of_Fortune_(Tier_2b).html": {
+    "title": "Spell:Wheel of Fortune (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Wheel_of_Fortune_(Tier_3a).html": {
+    "title": "Spell:Wheel of Fortune (Tier 3a) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Wheel_of_Fortune_(Tier_3b).html": {
+    "title": "Spell:Wheel of Fortune (Tier 3b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Wind-Up.html": {
+    "title": "Spell:Wind-Up - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Witness_Pip.html": {
+    "title": "Spell:Witness Pip - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Wombat_Evolved.html": {
+    "title": "Spell:Wombat Evolved - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Wombat_Frenzy.html": {
+    "title": "Spell:Wombat Frenzy - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Wounding_Slash.html": {
+    "title": "Spell:Wounding Slash - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Wounding_Strike.html": {
+    "title": "Spell:Wounding Strike - Wizard101 Wiki",
+    "tables": []
+  },
+  "Spell_Wrath_of_Aquila.html": {
+    "title": "Spell:Wrath of Aquila - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Availing_Hands.html": {
+    "title": "TreasureCard:Availing Hands - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Balance_Brandon.html": {
+    "title": "TreasureCard:Balance Brandon - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minion"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "5",
+            "Brandon (Balance)",
+            "Brandon",
+            "10",
+            "2,035"
+          ]
+        ]
+      }
+    ]
+  },
+  "TreasureCard_Balance_of_Power.html": {
+    "title": "TreasureCard:Balance of Power - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Balanceblade.html": {
+    "title": "TreasureCard:Balanceblade - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Big_Bad_Hound.html": {
+    "title": "TreasureCard:Big Bad Hound - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Black_Mantle.html": {
+    "title": "TreasureCard:Black Mantle - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Blademaster.html": {
+    "title": "TreasureCard:Blademaster - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Bladestorm.html": {
+    "title": "TreasureCard:Bladestorm - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Caruso.html": {
+    "title": "TreasureCard:Caruso - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minion"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "5",
+            "Caruso",
+            "Keela White Talon",
+            "9",
+            "1,850"
+          ]
+        ]
+      }
+    ]
+  },
+  "TreasureCard_Chimera.html": {
+    "title": "TreasureCard:Chimera - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Chimera_(Tier_2b).html": {
+    "title": "TreasureCard:Chimera (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Cinder_Shield.html": {
+    "title": "TreasureCard:Cinder Shield - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Clockwork_Spider.html": {
+    "title": "TreasureCard:Clockwork Spider - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Counterforce.html": {
+    "title": "TreasureCard:Counterforce - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Crystal_Shield.html": {
+    "title": "TreasureCard:Crystal Shield - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Dampen_Magic.html": {
+    "title": "TreasureCard:Dampen Magic - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Donate_Power.html": {
+    "title": "TreasureCard:Donate Power - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Double_Unbalance.html": {
+    "title": "TreasureCard:Double Unbalance - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Dragonblade_(Balance).html": {
+    "title": "TreasureCard:Dragonblade (Balance) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Dragonspear.html": {
+    "title": "TreasureCard:Dragonspear - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Eldritch_Banshee.html": {
+    "title": "TreasureCard:Eldritch Banshee - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Elemental_Blade.html": {
+    "title": "TreasureCard:Elemental Blade - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Elemental_Defuse.html": {
+    "title": "TreasureCard:Elemental Defuse - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Elemental_Golem.html": {
+    "title": "TreasureCard:Elemental Golem - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Elemental_Shield.html": {
+    "title": "TreasureCard:Elemental Shield - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Elemental_Spear.html": {
+    "title": "TreasureCard:Elemental Spear - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Elemental_Trap.html": {
+    "title": "TreasureCard:Elemental Trap - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Exit_Combat.html": {
+    "title": "TreasureCard:Exit Combat - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Eye_of_Vigilance.html": {
+    "title": "TreasureCard:Eye of Vigilance - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Fang_Guardian.html": {
+    "title": "TreasureCard:Fang Guardian - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Franklinstove_(350).html": {
+    "title": "TreasureCard:Franklinstove (350) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Franklinstove_(390-430).html": {
+    "title": "TreasureCard:Franklinstove (390-430) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Gaze_of_Fate.html": {
+    "title": "TreasureCard:Gaze of Fate - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Gear_Spinner.html": {
+    "title": "TreasureCard:Gear Spinner - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Gearhead_Destroyer.html": {
+    "title": "TreasureCard:Gearhead Destroyer - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Gearhead_Destroyer_(Tier_2b).html": {
+    "title": "TreasureCard:Gearhead Destroyer (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Gearhead_Destroyer_(Tier_2c).html": {
+    "title": "TreasureCard:Gearhead Destroyer (Tier 2c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Helping_Hands.html": {
+    "title": "TreasureCard:Helping Hands - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Hex.html": {
+    "title": "TreasureCard:Hex - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Hydra.html": {
+    "title": "TreasureCard:Hydra - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Hydra_(Tier_2b).html": {
+    "title": "TreasureCard:Hydra (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Iron_Curse.html": {
+    "title": "TreasureCard:Iron Curse - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Jade_Oni_(Attack).html": {
+    "title": "TreasureCard:Jade Oni (Attack) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Judgement.html": {
+    "title": "TreasureCard:Judgement - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_King_Artorius_(Balance).html": {
+    "title": "TreasureCard:King Artorius (Balance) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_King_Artorius_(Balance)_(Tier_2b).html": {
+    "title": "TreasureCard:King Artorius (Balance) (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Krokotillian.html": {
+    "title": "TreasureCard:Krokotillian - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Lady_Blackhope.html": {
+    "title": "TreasureCard:Lady Blackhope - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Lernaean_Hydra.html": {
+    "title": "TreasureCard:Lernaean Hydra - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Levee_Shield.html": {
+    "title": "TreasureCard:Levee Shield - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Locust_Swarm.html": {
+    "title": "TreasureCard:Locust Swarm - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Locust_Swarm_(Tier_2b).html": {
+    "title": "TreasureCard:Locust Swarm (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Lord_of_Atonement.html": {
+    "title": "TreasureCard:Lord of Atonement - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Loremaster.html": {
+    "title": "TreasureCard:Loremaster - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Lycian_Chimera.html": {
+    "title": "TreasureCard:Lycian Chimera - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Mana_Burn.html": {
+    "title": "TreasureCard:Mana Burn - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Mander_Minion.html": {
+    "title": "TreasureCard:Mander Minion - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minion"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "3",
+            "Helpful Mander",
+            "Hall Servant",
+            "1",
+            "300"
+          ]
+        ]
+      }
+    ]
+  },
+  "TreasureCard_Mockenspiel.html": {
+    "title": "TreasureCard:Mockenspiel - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Mutate_Swarm_(Ice).html": {
+    "title": "TreasureCard:Mutate Swarm (Ice) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Nested_Fury.html": {
+    "title": "TreasureCard:Nested Fury - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Ninja_Piglets.html": {
+    "title": "TreasureCard:Ninja Piglets - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Obsidian_Colossus.html": {
+    "title": "TreasureCard:Obsidian Colossus - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Obsidian_Colossus_(420).html": {
+    "title": "TreasureCard:Obsidian Colossus (420) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Old_One's_Endgame.html": {
+    "title": "TreasureCard:Old One's Endgame - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Oni_No_War.html": {
+    "title": "TreasureCard:Oni No War - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Pip_Gift.html": {
+    "title": "TreasureCard:Pip Gift - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Plague_Ninja_Pig.html": {
+    "title": "TreasureCard:Plague Ninja Pig - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Pop_Pip.html": {
+    "title": "TreasureCard:Pop Pip - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Power_Nova.html": {
+    "title": "TreasureCard:Power Nova - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Power_Nova_(Tier_2b).html": {
+    "title": "TreasureCard:Power Nova (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Power_Play.html": {
+    "title": "TreasureCard:Power Play - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Precision.html": {
+    "title": "TreasureCard:Precision - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Ra.html": {
+    "title": "TreasureCard:Ra - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Ra_(Tier_2b).html": {
+    "title": "TreasureCard:Ra (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Rainbow_Serpent.html": {
+    "title": "TreasureCard:Rainbow Serpent - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Reshuffle.html": {
+    "title": "TreasureCard:Reshuffle - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Righting_the_Scales.html": {
+    "title": "TreasureCard:Righting the Scales - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Sabertooth.html": {
+    "title": "TreasureCard:Sabertooth - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Sabertooth_(Tier_2b).html": {
+    "title": "TreasureCard:Sabertooth (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Samoorai.html": {
+    "title": "TreasureCard:Samoorai - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Sand_Wurm.html": {
+    "title": "TreasureCard:Sand Wurm - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Sandstone_Colossus.html": {
+    "title": "TreasureCard:Sandstone Colossus - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Sandstorm.html": {
+    "title": "TreasureCard:Sandstorm - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Sap_Health.html": {
+    "title": "TreasureCard:Sap Health - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Savage_Paw.html": {
+    "title": "TreasureCard:Savage Paw - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Scales_of_Destiny.html": {
+    "title": "TreasureCard:Scales of Destiny - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Scarab.html": {
+    "title": "TreasureCard:Scarab - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Scarab_(Tier_2b).html": {
+    "title": "TreasureCard:Scarab (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Scarab_(Tier_2c).html": {
+    "title": "TreasureCard:Scarab (Tier 2c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_School_Supplies.html": {
+    "title": "TreasureCard:School Supplies - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Scion_of_Balance.html": {
+    "title": "TreasureCard:Scion of Balance - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Scorpion.html": {
+    "title": "TreasureCard:Scorpion - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Scorpion_(Tier_2b).html": {
+    "title": "TreasureCard:Scorpion (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Scorpion_(Tier_2c).html": {
+    "title": "TreasureCard:Scorpion (Tier 2c) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Shield_Wall.html": {
+    "title": "TreasureCard:Shield Wall - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Sirocco_Djinni.html": {
+    "title": "TreasureCard:Sirocco Djinni - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Spectral_Blast.html": {
+    "title": "TreasureCard:Spectral Blast - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Spectral_Blast_(Tier_2b).html": {
+    "title": "TreasureCard:Spectral Blast (Tier 2b) - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Spectral_Minion.html": {
+    "title": "TreasureCard:Spectral Minion - Wizard101 Wiki",
+    "tables": [
+      {
+        "class": [
+          "data-table"
+        ],
+        "rows": [
+          [
+            "Minions"
+          ],
+          [
+            "# of Pips",
+            "Minion Name",
+            "Looks Like",
+            "Rank",
+            "Health"
+          ],
+          [
+            "3",
+            "Fire Elemental",
+            "Flame Servant",
+            "1",
+            "400"
+          ],
+          [
+            "3",
+            "Ice Guardian",
+            "Ice Colossus",
+            "1",
+            "400"
+          ],
+          [
+            "3",
+            "Water Elemental",
+            "Diseased Water Spirit",
+            "1",
+            "700"
+          ]
+        ]
+      }
+    ]
+  },
+  "TreasureCard_Spirit_Blade.html": {
+    "title": "TreasureCard:Spirit Blade - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Spirit_Defuse.html": {
+    "title": "TreasureCard:Spirit Defuse - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Spirit_Shield.html": {
+    "title": "TreasureCard:Spirit Shield - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Spirit_Spear.html": {
+    "title": "TreasureCard:Spirit Spear - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Spirit_Trap.html": {
+    "title": "TreasureCard:Spirit Trap - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Spiritual_Tribunal.html": {
+    "title": "TreasureCard:Spiritual Tribunal - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Steel_Colossus.html": {
+    "title": "TreasureCard:Steel Colossus - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Steel_Giant.html": {
+    "title": "TreasureCard:Steel Giant - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Stinging_Sandstorm.html": {
+    "title": "TreasureCard:Stinging Sandstorm - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Stone_Wall.html": {
+    "title": "TreasureCard:Stone Wall - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Supernova.html": {
+    "title": "TreasureCard:Supernova - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Unbalance.html": {
+    "title": "TreasureCard:Unbalance - Wizard101 Wiki",
+    "tables": []
+  },
+  "TreasureCard_Weakness.html": {
+    "title": "TreasureCard:Weakness - Wizard101 Wiki",
+    "tables": []
+  }
+}
