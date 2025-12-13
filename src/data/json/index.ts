@@ -23,6 +23,18 @@ export const allJsonArrays = (): any[][] => {
 
 export const jsonArrayEntries = (): any[] => allJsonArrays().flat();
 
+// Flatten plain object maps (non-arrays) into their values to support
+// datasets stored as keyed records instead of JSON arrays.
+export const jsonRecordValues = (): any[] => {
+  const out: any[] = [];
+  for (const value of Object.values(jsonModules)) {
+    if (value && typeof value === "object" && !Array.isArray(value)) {
+      out.push(...Object.values(value as Record<string, unknown>));
+    }
+  }
+  return out;
+};
+
 export type JsonCategoryPage = {
   category: string;
   slug: string;
