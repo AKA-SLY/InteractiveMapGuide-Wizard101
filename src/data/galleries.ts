@@ -9,6 +9,8 @@ import {
   minionFiles,
   worldMapFiles,
 } from "./libraryFiles";
+import { mountsFromJson } from "./json/mountsFromJson";
+import { mergeByName } from "./util/merge";
 
 const readableName = (fileName: string, prefix?: string) => {
   const withoutExt = fileName.replace(/\.[^.]+$/, "");
@@ -80,4 +82,7 @@ export const worldMaps: GalleryItem[] = buildGallery(worldMapFiles, "World map I
 
 export const icons: GalleryItem[] = buildGallery(iconFiles, "Icons", "Icons");
 
-export const mounts: GalleryItem[] = icons.filter((icon) => /mount/i.test(icon.name));
+export const mounts: GalleryItem[] = mergeByName<GalleryItem>(
+  icons.filter((icon) => /mount/i.test(icon.name)),
+  mountsFromJson,
+);
